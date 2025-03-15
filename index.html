@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LED XE BUÝT TRANSERCO</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="css/component.css" />
+    <link rel="stylesheet" href="css/default.css" /> -->
+    <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
+    <script src="js/script.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+  </head>
+  <body>
+    <div>
+      <div class="LED">
+        <p id="maTuyen">25</p>
+        <div class="luongTuyen" id="route-info">
+          <p id="diemDau">BẾN XE GIÁP BÁT</p>
+          <img id="arrow" src="assets/image/mui_ten_xanh.png" alt="" />
+          <p id="diemCuoi">BV NHIỆT ĐỚI T.Ư 2</p>
+        </div>
+        <img id="hanoibus" src="assets/image/hanoibus_green.png" alt="" />
+        <p id="xiNghiep">CÔNG TY CỔ PHẦN XE ĐIỆN HÀ NỘI</p>
+        <p id="MaTuyenCanGiua">25</p>
+        <p id="HuyDongRaTuyen">HUY ĐỘNG RA TUYẾN</p>
+        <p id="XeVeGara">XE VỀ GARA</p>
+        <img id="transerco" src="assets/image/transerco.png" alt="" />
+      </div>
+
+      <div class="BangDieuKhien">
+        <div class="NutBam">
+          <div class="daoChieuTuyen">
+            <button
+              class="daoChieuTuyen"
+              onclick="daoChieuLED('diemDau', 'diemCuoi')"
+            >
+              ĐẢO CHIỀU TUYẾN
+            </button>
+          </div>
+          <div class="ChayLed">
+            <button class="ChayLed" onclick="startToggle()">CHẠY</button>
+          </div>
+          <div class="DungLed">
+            <button class="DungLed" onclick="stopToggle()">ĐÓNG BĂNG</button>
+          </div>
+          <div class="TangCuongTuyen">
+            <button class="TangCuongTuyen" onclick="underConstruction()">
+              TĂNG CƯỜNG TUYẾN
+            </button>
+          </div>
+          <div class="XeVeGara">
+            <button class="XeVeGara" onclick="XeVeGara()">XE VỀ GARA</button>
+          </div>
+          <div class="HuyDongRaTuyen">
+            <button class="HuyDongRaTuyen" onclick="HuyDongRaTuyen()">
+              HUY ĐỘNG RA TUYẾN
+            </button>
+          </div>
+          <div class="RESET">
+            <button class="RESET" onclick="reset()">XÓA LED</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <p class="quote">EXAMPLE</p>
+  </footer>
+</html>
