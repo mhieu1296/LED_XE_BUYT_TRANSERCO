@@ -152,7 +152,7 @@ function hienThiTrungGian1() {
       console.log("Hàm TG1 xong, chuyển sang hàm TG2");
       hienThiTrungGian2();
     }
-  }, 250);
+  }, 150);
 }
 
 function hienThiTrungGian2() {
@@ -184,7 +184,7 @@ function hienThiTrungGian2() {
       console.log("Hàm TG2 xong, chuyển sang hàm 4");
       hienThiMaTuyenCanGiua();
     }
-  }, 250);
+  }, 150);
 }
 
 function hienThiMaTuyenCanGiua() {
@@ -249,7 +249,7 @@ function hienThiTrungGian3() {
       console.log("Hàm TG3 xong, chuyển sang hàm TG4");
       hienThiTrungGian4();
     }
-  }, 500);
+  }, 250);
 }
 
 function hienThiTrungGian4() {
@@ -281,7 +281,7 @@ function hienThiTrungGian4() {
       console.log("Hàm TG4 xong, chuyển sang hàm 5");
       hienThiMaTuyen_Transerco();
     }
-  }, 500);
+  }, 250);
 }
 
 function hienThiMaTuyen_Transerco() {
