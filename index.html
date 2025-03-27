@@ -15,28 +15,32 @@
   <body>
     <div>
       <div class="LED">
-        <p id="maTuyen">25</p>
+        <p id="maTuyen">22</p>
         <div class="luongTuyen" id="route-info">
-          <p id="diemDau">BẾN XE GIÁP BÁT</p>
-          <img id="arrow" src="assets/image/mui_ten_xanh.png" alt="" />
-          <p id="diemCuoi">BV NHIỆT ĐỚI T.Ư 2</p>
+          <p id="diemDau">BX GIA LÂM</p>
+          <img id="arrow" src="assets/image/mui_ten_xanh.gif" alt="->" />
+          <p id="diemCuoi">KĐT XA LA</p>
         </div>
-        <img id="hanoibus" src="assets/image/hanoibus_green.png" alt="" />
-        <p id="xiNghiep">CÔNG TY CỔ PHẦN XE ĐIỆN HÀ NỘI</p>
-        <p id="MaTuyenCanGiua">25</p>
+        <img
+          id="hanoibus"
+          src="assets/image/hanoibus_green.png"
+          alt="HANOIBUS"
+        />
+        <p id="xiNghiep">XÍ NGHIỆP XE ĐIỆN HÀ NỘI</p>
+        <p id="MaTuyenCanGiua">22</p>
         <p id="HuyDongRaTuyen">HUY ĐỘNG RA TUYẾN</p>
         <p id="XeVeGara">XE VỀ GARA</p>
-        <img id="transerco" src="assets/image/transerco.png" alt="" />
+        <img id="transerco" src="assets/image/transerco.png" alt="TRANSERCO" />
       </div>
-
       <div class="BangDieuKhien">
+        <p id="BangDieuKhienLabel">BẢNG ĐIỀU KHIỂN</p>
         <div class="NutBam">
           <div class="daoChieuTuyen">
             <button
               class="daoChieuTuyen"
               onclick="daoChieuLED('diemDau', 'diemCuoi')"
             >
-              ĐẢO CHIỀU TUYẾN
+              ĐẢO CHIỀU
             </button>
           </div>
           <div class="ChayLed">
@@ -45,27 +49,51 @@
           <div class="DungLed">
             <button class="DungLed" onclick="stopToggle()">ĐÓNG BĂNG</button>
           </div>
-          <div class="TangCuongTuyen">
-            <button class="TangCuongTuyen" onclick="underConstruction()">
-              TĂNG CƯỜNG TUYẾN
-            </button>
-          </div>
           <div class="XeVeGara">
             <button class="XeVeGara" onclick="XeVeGara()">XE VỀ GARA</button>
           </div>
           <div class="HuyDongRaTuyen">
             <button class="HuyDongRaTuyen" onclick="HuyDongRaTuyen()">
-              HUY ĐỘNG RA TUYẾN
+              XE HUY ĐỘNG
             </button>
           </div>
-          <div class="RESET">
+          <div class="Xoa">
             <button class="RESET" onclick="reset()">XÓA LED</button>
           </div>
         </div>
+        <div class="NhapDuLieu">
+          <p>Nhập mã tuyến: <input type="text" placeholder="92..." /></p>
+          <p>Nhập điểm đầu: <input type="text" placeholder="NHỔN..." /></p>
+          <p>
+            Nhập điểm cuối: <input type="text" placeholder="TT TÂY ĐẰNG..." />
+          </p>
+          <p>
+            Nhập tên xí nghiệp:
+            <input type="text" placeholder="XN BUS 10-10..." />
+          </p>
+        </div>
+      </div>
+      <div class="UngDungHoTroTotNhat">
+        <p id="UngDungHoTroTotNhat">
+          ỨNG DỤNG HỖ TRỢ TỐT NHẤT CHO CÁC TUYẾN XE BUÝT THUỘC
+        </p>
+        <img
+          id="logohanoibus"
+          src="assets/image/logohanoibus.png"
+          alt="TRANSERCO HANOIBUS"
+        />
+        <p id="va">VÀ</p>
+        <img
+          id="logohanoibrt"
+          src="assets/image/HANOI BRT.png"
+          alt="HANOI BRT"
+        />
+        <p id="CacHangKhac">
+          CÁC ĐƠN VỊ VTHKCC BẰNG XE BUÝT KHÁC CÓ THỂ CHO ĐÓNG BĂNG Ở MÀN HÌNH
+          HIỂN THỊ MÃ TUYẾN, ĐIỂM ĐẦU VÀ ĐIỂM CUỐI.
+        </p>
       </div>
     </div>
   </body>
-  <footer>
-    <p class="quote">EXAMPLE</p>
-  </footer>
+  <footer></footer>
 </html>

@@ -1,3 +1,17 @@
+console.log(
+  "%cTRANSERCO HANOIBUS",
+  "COLOR: GREEN; font-size: 20px; font-family: COURIER"
+);
+
+console.log(
+  "%cXin chào! 🚏🚌",
+  "color: red; font-size: 50px; font-weight: bold; font-family: tahoma"
+);
+console.log(
+  "%cLED xe buýt xin chào những người yêu xe buýt Hà Nội và Tổng Công ty Vận tải Hà Nội! Bạn có thể thao tác mọi thứ trên Dev Tools.",
+  "font-size: 20px; font-family: Arial"
+);
+
 function daoChieuLED(Dau, Cuoi) {
   // đảo điểm đầu và điểm cuối
   let diemDau = document.getElementById(Dau);
@@ -32,7 +46,7 @@ function hienThiMaTuyen_DiemDauCuoi() {
     console.log("Hàm 1 bị dừng");
     return;
   }
-
+  console.clear();
   console.log("Hàm 1 chạy");
 
   const elements = getElements();
@@ -52,6 +66,7 @@ function hienThiMaTuyen_DiemDauCuoi() {
 
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm 1 xong, chuyển sang hàm 2");
       hienThiMaTuyen_Hanoibus();
     }
@@ -64,7 +79,7 @@ function hienThiMaTuyen_Hanoibus() {
     console.log("Hàm 2 bị dừng");
     return;
   }
-
+  console.clear();
   console.log("Hàm 2 chạy");
 
   const elements = getElements();
@@ -84,6 +99,7 @@ function hienThiMaTuyen_Hanoibus() {
 
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm 2 xong, chuyển sang hàm 3");
       hienThiMaTuyen_XiNghiep();
     }
@@ -96,7 +112,7 @@ function hienThiMaTuyen_XiNghiep() {
     console.log("Hàm 3 bị dừng");
     return;
   }
-
+  console.clear();
   console.log("Hàm 3 chạy");
 
   const elements = getElements();
@@ -116,6 +132,7 @@ function hienThiMaTuyen_XiNghiep() {
 
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm 3 xong, chuyển sang hàm TG1");
       hienThiTrungGian1();
     }
@@ -129,7 +146,7 @@ function hienThiTrungGian1() {
     console.log("Hàm TG1 bị dừng");
     return;
   }
-
+  console.clear();
   console.log("Hàm TG1 chạy");
 
   const elements = getElements();
@@ -149,6 +166,7 @@ function hienThiTrungGian1() {
 
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm TG1 xong, chuyển sang hàm TG2");
       hienThiTrungGian2();
     }
@@ -162,6 +180,7 @@ function hienThiTrungGian2() {
     return;
   }
 
+  console.clear();
   console.log("Hàm TG2 chạy");
 
   const elements = getElements();
@@ -181,6 +200,7 @@ function hienThiTrungGian2() {
 
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm TG2 xong, chuyển sang hàm 4");
       hienThiMaTuyenCanGiua();
     }
@@ -194,6 +214,7 @@ function hienThiMaTuyenCanGiua() {
     return;
   }
 
+  console.clear();
   console.log("Hàm 4 chạy");
 
   const elements = getElements();
@@ -210,9 +231,9 @@ function hienThiMaTuyenCanGiua() {
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
   elements.VeGara.style.display = "none";
-
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm 4 xong, chuyển sang hàm TG3");
       hienThiTrungGian3();
     }
@@ -227,6 +248,7 @@ function hienThiTrungGian3() {
     return;
   }
 
+  console.clear();
   console.log("Hàm TG3 chạy");
 
   const elements = getElements();
@@ -246,6 +268,7 @@ function hienThiTrungGian3() {
 
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm TG3 xong, chuyển sang hàm TG4");
       hienThiTrungGian4();
     }
@@ -259,6 +282,7 @@ function hienThiTrungGian4() {
     return;
   }
 
+  console.clear();
   console.log("Hàm TG4 chạy");
 
   const elements = getElements();
@@ -267,7 +291,7 @@ function hienThiTrungGian4() {
     return;
   }
 
-  elements.maTuyen.style.display = "flex";
+  elements.maTuyen.style.display = "block";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "none";
   elements.xiNghiep.style.display = "none";
@@ -275,9 +299,9 @@ function hienThiTrungGian4() {
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
   elements.VeGara.style.display = "none";
-
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm TG4 xong, chuyển sang hàm 5");
       hienThiMaTuyen_Transerco();
     }
@@ -291,6 +315,7 @@ function hienThiMaTuyen_Transerco() {
     return;
   }
 
+  console.clear();
   console.log("Hàm 5 chạy");
 
   const elements = getElements();
@@ -310,6 +335,7 @@ function hienThiMaTuyen_Transerco() {
 
   setTimeout(() => {
     if (running) {
+      console.clear();
       console.log("Hàm 5 xong, chuyển sang hàm 1");
       hienThiMaTuyen_DiemDauCuoi();
     }
@@ -325,7 +351,6 @@ function startToggle() {
 }
 
 function stopToggle() {
-  // hàm đóng băng LED
   running = false;
   console.log("Đã đóng băng LED");
 }
