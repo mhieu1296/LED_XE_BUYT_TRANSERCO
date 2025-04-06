@@ -4,7 +4,7 @@ Chủ yếu tham khảo hiệu ứng LED tuyến của Công ty Xe điện Hà N
 Ứng dụng này được làm dưới sự trợ giúp của CHatGPT và một sinh viên mới năm nhất chưa biết gì về lập trình web.
 
 Trình tự hiển thị:
-1. Hiển thị mã tuyến, điểm đầu - điểm cuối trong 10 giây.
+1. Hiển thị mã tuyến, điểm đầu - điểm cuối trong 10 giây. 
    55A    CẦU GIẤY - TIMES CITY
 2. Hiển thị mã tuyến, logo Hanoibus trong 5 giây.
    55A      H A N O I B U S
