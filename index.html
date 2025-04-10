@@ -15,19 +15,19 @@
   <body>
     <div>
       <div class="LED">
-        <p id="maTuyen">22</p>
+        <p id="maTuyen">00</p>
         <div class="luongTuyen" id="route-info">
-          <p id="diemDau">BX GIA LÂM</p>
+          <p id="diemDau">ĐIỂM ĐẦU</p>
           <img id="arrow" src="assets/image/mui_ten_xanh.gif" alt="->" />
-          <p id="diemCuoi">KĐT XA LA</p>
+          <p id="diemCuoi">ĐIỂM CUỐI</p>
         </div>
         <img
           id="hanoibus"
           src="assets/image/hanoibus_green.png"
           alt="HANOIBUS"
         />
-        <p id="xiNghiep">XÍ NGHIỆP XE ĐIỆN HÀ NỘI</p>
-        <p id="MaTuyenCanGiua">22</p>
+        <p id="xiNghiep">XÍ NGHIỆP</p>
+        <p id="MaTuyenCanGiua">00</p>
         <p id="HuyDongRaTuyen">HUY ĐỘNG RA TUYẾN</p>
         <p id="XeVeGara">XE VỀ GARA</p>
         <img id="transerco" src="assets/image/transerco.png" alt="TRANSERCO" />
@@ -59,6 +59,11 @@
           </div>
           <div class="Xoa">
             <button class="RESET" onclick="reset()">XÓA LED</button>
+          </div>
+          <div>
+            <div class="NhapDuLieu">
+              <button class="NhapDuLieu" onclick="NhapDuLieu()">NẠP LED</button>
+            </div>
           </div>
         </div>
         <div class="NhapDuLieu">
