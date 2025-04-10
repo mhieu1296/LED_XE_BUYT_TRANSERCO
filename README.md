@@ -35,4 +35,4 @@ TẤT CẢ CHÚNG ĐỀU CHẠY VÔ HẠN ĐẾN KHI NHẤN NÚT ĐÓNG BĂNG HO
 Tuyến mặc định: 92       NHỔN- PHÚ SƠN của XN BUS 10-10. </br>
 Có thể thay đổi các thông tin như Mã tuyến, điểm đầu, điểm cuối, tên xí nghiệp. Thay đổi xong nhấn NẠP LED sẽ được. Sẽ có cảnh báo khi không nhập đủ thông tin.</br>
 </br>
-Nếu bạn muốn trải nghiệm, hãy truy cập [Markdown](https://ledxebuyt.netlify.app)
+Nếu bạn muốn trải nghiệm, hãy truy cập [tại đây](https://ledxebuyt.netlify.app).
