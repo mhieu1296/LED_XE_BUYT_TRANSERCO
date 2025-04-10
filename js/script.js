@@ -444,7 +444,7 @@ function NhapDuLieu() {
   document.getElementById("diemDau").innerText = diemDau;
   document.getElementById("diemCuoi").innerText = diemCuoi;
   document.getElementById("xiNghiep").innerText = xiNghiep;
-  document.getElementById("MaTuyenCanGiua").innerText = xiNghiep;
+  document.getElementById("MaTuyenCanGiua").innerText = maTuyen;
 
   // Lưu vào localStorage
   localStorage.setItem("maTuyen", maTuyen);
