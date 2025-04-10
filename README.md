@@ -7,7 +7,7 @@ Trình tự hiển thị:
 1. Hiển thị mã tuyến, điểm đầu - điểm cuối trong 10 giây. </br> 
    55A    CẦU GIẤY - TIMES CITY
 2. Hiển thị mã tuyến, logo Hanoibus trong 5 giây. </br>
-   55A      H A N O I B U S
+   55A    H A N O I B U S
 3. Hiển thị mã tuyến, tên xí nghiệp trong 5 giây.</br>
    55A      CÔNG TY CP XE ĐIỆN HÀ NỘI
 
@@ -29,5 +29,9 @@ TG4. hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm tiếp th
 5. Hiển thị mã tuyến, logo Transerco trong 5 giây. </br>
    55A      T R A N S E R C O
 </br>
-TẤT CẢ CHÚNG ĐỀU CHẠY VÔ HẠN ĐẾN KHI NHẤN NÚT ĐÓNG BĂNG HOẶC XOÁ LED THÌ MỚI NGƯNG.
+TẤT CẢ CHÚNG ĐỀU CHẠY VÔ HẠN ĐẾN KHI NHẤN NÚT ĐÓNG BĂNG HOẶC XOÁ LED THÌ MỚI NGƯNG. </br>
+Ứng dụng hỗ trợ đảo chiều tuyến, đóng băng LED, hiển thị HUY ĐỘNG RA TUYẾN, XE VỀ GARA, xóa hoàn toàn LED. </br>
+
+Tuyến mặc định: 92       NHỔN- PHÚ SƠN của XN BUS 10-10. </br>
+Có thể thay đổi các thông tin như Mã tuyến, điểm đầu, điểm cuối, tên xí nghiệp. Thay đổi xong nhấn NẠP LED sẽ được. Sẽ có cảnh báo khi không nhập đủ thông tin.</br>
 
