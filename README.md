@@ -11,23 +11,23 @@ Trình tự hiển thị:
 3. Hiển thị mã tuyến, tên xí nghiệp trong 5 giây.</br>
    55A      CÔNG TY CP XE ĐIỆN HÀ NỘI
 
-{
-HÀM HIỂN THỊ HIỆU ỨNG
+{</br>
+HÀM HIỂN THỊ HIỆU ỨNG</br>
 TG1. hiệu ứng xóa mã tuyến trong 0.15 giây</br>
 TG2. hiệu ứng xoá tên xí nghiệp trong 0.15 giây.</br>
-}
+}</br>
 
 4. Hiển thị mã tuyến dạng căn giữa bảng LED trong 5 giây.</br>
          55A
 
-{
-HÀM HIỂN THỊ HIỆU ỨNG
-TG3. hiệu ứng xóa mã tuyến căn giữa trong 0.25 giây.
-TG4. hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm tiếp theo trong 0.25 giây.
-}
+{</br>
+HÀM HIỂN THỊ HIỆU ỨNG</br>
+TG3. hiệu ứng xóa mã tuyến căn giữa trong 0.25 giây.</br>
+TG4. hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm tiếp theo trong 0.25 giây.</br>
+}</br>
 
 5. Hiển thị mã tuyến, logo Transerco trong 5 giây. </br>
    55A      T R A N S E R C O
-
+</br>
 TẤT CẢ CHÚNG ĐỀU CHẠY VÔ HẠN ĐẾN KHI NHẤN NÚT ĐÓNG BĂNG HOẶC XOÁ LED THÌ MỚI NGƯNG.
 
