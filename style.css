@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
   gap: 0px;
-  margin: auto;
+  margin-top: 5px;
+  margin: 15px 15px;
   font-family: SVN-Big-Noodle-Titling;
   /* font-family: Segoe UI, "Tahoma", Geneva, Verdana, sans-serif; */
   text-align: center;
@@ -24,7 +25,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 10px auto;
+  margin: 15px 15px;
   background-color: white;
   border-radius: 20px;
   /* max-width: auto; */
@@ -179,7 +180,7 @@
   align-items: center;
   color: RED;
   font-family: UTM-HelvetINS;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   transform: scale(1.5, 1);
   /* margin-top: 5%; */
   font-size: 65pt;
@@ -214,9 +215,12 @@ footer {
 }
 
 body {
+  margin: 0;
+  height: 100vh;
   background-image: url("assets/image/53a (2).jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-blend-mode: screen;
 }
 
@@ -225,7 +229,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0px auto;
+  margin: 15px 15px;
   background-color: white;
   border-radius: 20px;
   max-width: auto;
