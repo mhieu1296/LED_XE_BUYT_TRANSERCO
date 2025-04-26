@@ -27,15 +27,13 @@ function daoChieuLED(Dau, Cuoi) {
 function NhapDuLieu() {
   // Lấy tất cả các input trong div NhapDuLieu
   const inputs = document.querySelectorAll(".NhapDuLieu input");
-
   // Kiểm tra xem có ô nào bị bỏ trống không
   for (let input of inputs) {
     if (input.value.trim() === "") {
-      alert(
-        "Vui lòng nhập đầy đủ Mã tuyến, điểm đầu, điểm cuối và tên xí nghiệp."
-      );
+      document.getElementById("canhBao").innerText =
+        "HÃY NHẬP TẤT CẢ CÁC TRƯỜNG";
       return;
-    }
+    } else document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
   }
 
   // Gán giá trị từ input vào các thẻ <p> tương ứng
@@ -51,6 +49,16 @@ function NhapDuLieu() {
   localStorage.setItem("xiNghiep", xiNghiep);
   localStorage.setItem("MaTuyenCanGiua", maTuyen);
   console.log("Đã nhập đầy đủ thông tin.");
+  document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
+}
+
+function xoaInput() {
+  // xóa nội dung các input form
+  const inputs = document.querySelectorAll(".NhapDuLieu input");
+
+  for (let input of inputs) {
+    input.value = "";
+  }
 }
 
 window.onload = function () {

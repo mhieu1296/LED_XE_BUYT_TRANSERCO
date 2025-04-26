@@ -329,31 +329,6 @@ footer {
   align-items: center;
 }
 
-@font-face {
-  font-family: "SVN-Agency-FB";
-  src: url("../assets/fonts/SVN-Agency-FB-bold.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "UTM-HelvetIns";
-  src: url("../assets/fonts/00119-UTM-HelvetIns.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "TT-Commons-Pro";
-  src: url("../assets/fonts/TT_Commons_Pro_Trial_Compact_DemiBold.ttf")
-    format("truetype");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SVN-Big-Noodle-Titling";
-  src: url("../assets/fonts/SVN-Big-Noodle-Titling.otf") format("truetype");
-  font-style: normal;
-}
-
 .road-line {
   position: fixed;
   bottom: 50px;

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NHẬP LIỆU | LED XE BUÝT TRANSERCO</title>
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <link rel="stylesheet" href="css/input.css" />
+    <link rel="stylesheet" href="css/font.css" />
     <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
     <script src="js/dieu_khien_LED.js"></script>
     <script src="js/hien_thi_LED.js"></script>
@@ -14,7 +14,7 @@
   <body>
     <div class="parent">
       <div class="Nhap">
-        <p id="BangDieuKhienLabel">NHẬP DỮ LIỆU TUYẾN</p>
+        <p id="NhapLabel">NHẬP DỮ LIỆU TUYẾN</p>
         <img
           id="logobus"
           src="assets/image/tong_cong_ty_vt_hanoi.png"
@@ -22,22 +22,21 @@
         />
         <div class="NhapDuLieu">
           <p id="maTuyenInput">Nhập mã tuyến:</p>
-          <input type="text" placeholder="92..." />
+          <input type="text" placeholder="16..." />
           <p id="diemDauInput">Nhập điểm đầu:</p>
-          <input type="text" placeholder="NHỔN..." />
+          <input type="text" placeholder="BX MỸ ĐÌNH..." />
           <p id="diemCuoiInput">Nhập điểm cuối:</p>
-          <input type="text" placeholder="TT TÂY ĐẰNG..." />
+          <input type="text" placeholder="BX NƯỚC NGẦM..." />
           <p id="xiNghiepInput">Nhập tên xí nghiệp:</p>
-          <input type="text" placeholder="XN BUS 10-10..." />
+          <input type="text" placeholder="XN BUS CẦU BƯƠU..." />
           <div class="NutBam">
-            <button class="NhapDuLieu" onclick="NhapDuLieu(), goToLEDPage()">
-              LƯU
-            </button>
-            <button class="NhapDuLieu" onclick="NhapDuLieu(), goToLEDPage()">
-              XÓA
+            <button class="NhapDuLieu" onclick="NhapDuLieu()">LƯU</button>
+            <button class="NhapDuLieu" onclick="goToLEDPage()">
+              VỀ TRANG LED
             </button>
           </div>
         </div>
+        <p id="canhBao"></p>
       </div>
     </div>
   </body>
