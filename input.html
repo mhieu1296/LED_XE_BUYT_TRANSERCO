@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NHẬP LIỆU | LED XE BUÝT TRANSERCO</title>
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="css/input.css" />
+    <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
+    <script src="js/dieu_khien_LED.js"></script>
+    <script src="js/hien_thi_LED.js"></script>
+    <script src="js/dieu_huong.js"></script>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="Nhap">
+        <p id="BangDieuKhienLabel">NHẬP DỮ LIỆU TUYẾN</p>
+        <img
+          id="logobus"
+          src="assets/image/tong_cong_ty_vt_hanoi.png"
+          alt="TRANSERCO HANOIBUS"
+        />
+        <div class="NhapDuLieu">
+          <p id="maTuyenInput">Nhập mã tuyến:</p>
+          <input type="text" placeholder="92..." />
+          <p id="diemDauInput">Nhập điểm đầu:</p>
+          <input type="text" placeholder="NHỔN..." />
+          <p id="diemCuoiInput">Nhập điểm cuối:</p>
+          <input type="text" placeholder="TT TÂY ĐẰNG..." />
+          <p id="xiNghiepInput">Nhập tên xí nghiệp:</p>
+          <input type="text" placeholder="XN BUS 10-10..." />
+          <div class="NutBam">
+            <button class="NhapDuLieu" onclick="NhapDuLieu(), goToLEDPage()">
+              LƯU
+            </button>
+            <button class="NhapDuLieu" onclick="NhapDuLieu(), goToLEDPage()">
+              XÓA
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

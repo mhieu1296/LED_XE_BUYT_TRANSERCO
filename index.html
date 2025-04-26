@@ -4,101 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LED XE BUÝT TRANSERCO</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- <link rel="stylesheet" href="css/component.css" />
-    <link rel="stylesheet" href="css/default.css" /> -->
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
-    <!-- <script src="js/script.js"></script> -->
     <script src="js/dieu_khien_LED.js"></script>
     <script src="js/hien_thi_LED.js"></script>
+    <script src="js/dieu_huong.js"></script>
+    <script src="js/window_onload.js"></script>
   </head>
   <body>
     <div>
       <div class="LED">
         <p id="maTuyen">00</p>
-        <div class="luongTuyen" id="route-info">
-          <p id="diemDau">ĐIỂM ĐẦU</p>
-          <img id="arrow" src="assets/image/mui_ten_xanh.gif" alt="->" />
-          <p id="diemCuoi">ĐIỂM CUỐI</p>
+        <div class="luongTuyen_Parent">
+          <div class="luongTuyen" id="route-info">
+            <p id="diemDau">ĐÂY LÀ ĐIỂM ĐẦU</p>
+            <img id="arrow" src="assets/image/mui_ten_xanh.gif" alt="->" />
+            <p id="diemCuoi">ĐÂY LÀ ĐIỂM CUỐI</p>
+          </div>
+          <p id="xiNghiep">ĐÂY LÀ TÊN XÍ NGHIỆP</p>
+          <p id="MaTuyenCanGiua">00</p>
+          <p id="HuyDongRaTuyen">XE HUY ĐỘNG</p>
+          <p id="XeVeGara">XE VỀ GARA</p>
+          <div class="image">
+            <img
+              id="hanoibus"
+              src="assets/image/hanoibus_green.png"
+              alt="HANOIBUS"
+            />
+            <img
+              id="transerco"
+              src="assets/image/transerco.png"
+              alt="TRANSERCO"
+            />
+          </div>
         </div>
-        <img
-          id="hanoibus"
-          src="assets/image/hanoibus_green.png"
-          alt="HANOIBUS"
-        />
-        <p id="xiNghiep">XÍ NGHIỆP</p>
-        <p id="MaTuyenCanGiua">00</p>
-        <p id="HuyDongRaTuyen">HUY ĐỘNG RA TUYẾN</p>
-        <p id="XeVeGara">XE VỀ GARA</p>
-        <img id="transerco" src="assets/image/transerco.png" alt="TRANSERCO" />
       </div>
       <div class="BangDieuKhien">
         <p id="BangDieuKhienLabel">BẢNG ĐIỀU KHIỂN</p>
         <div class="NutBam">
-          <div class="daoChieuTuyen">
-            <button
-              class="daoChieuTuyen"
-              onclick="daoChieuLED('diemDau', 'diemCuoi')"
-            >
-              ĐẢO CHIỀU
-            </button>
-          </div>
-          <div class="ChayLed">
-            <button class="ChayLed" onclick="startToggle()">CHẠY</button>
-          </div>
-          <div class="DungLed">
-            <button class="DungLed" onclick="stopToggle()">ĐÓNG BĂNG</button>
-          </div>
-          <div class="XeVeGara">
-            <button class="XeVeGara" onclick="XeVeGara()">XE VỀ GARA</button>
-          </div>
-          <div class="HuyDongRaTuyen">
-            <button class="HuyDongRaTuyen" onclick="HuyDongRaTuyen()">
-              XE HUY ĐỘNG
-            </button>
-          </div>
-          <div class="Xoa">
-            <button class="RESET" onclick="reset()">XÓA LED</button>
-          </div>
-          <div>
-            <div class="NhapDuLieu">
-              <button class="NhapDuLieu" onclick="NhapDuLieu()">NẠP LED</button>
-            </div>
-          </div>
-        </div>
-        <div class="NhapDuLieu">
-          <p>Nhập mã tuyến: <input type="text" placeholder="92..." /></p>
-          <p>Nhập điểm đầu: <input type="text" placeholder="NHỔN..." /></p>
-          <p>
-            Nhập điểm cuối: <input type="text" placeholder="TT TÂY ĐẰNG..." />
-          </p>
-          <p>
-            Nhập tên xí nghiệp:
-            <input type="text" placeholder="XN BUS 10-10..." />
-          </p>
+          <button
+            class="daoChieuTuyen"
+            onclick="daoChieuLED('diemDau', 'diemCuoi')"
+          >
+            ĐẢO CHIỀU
+          </button>
+          <button class="ChayLed" onclick="start()">CHẠY</button>
+          <button class="DungLed" onclick="stop()">ĐÓNG BĂNG</button>
+          <button class="XeVeGara" onclick="XeVeGara()">XE VỀ GARA</button>
+          <button class="HuyDongRaTuyen" onclick="HuyDongRaTuyen()">
+            XE HUY ĐỘNG
+          </button>
+          <button class="RESET" onclick="reset()">XÓA LED</button>
+          <button class="TEST" onclick="chayChu()">H.ỨNG CHẠY CHỮ</button>
+          <button class="NhapDuLieu" onclick="goToInputPage()">NHẬP</button>
         </div>
       </div>
       <div class="UngDungHoTroTotNhat">
         <p id="UngDungHoTroTotNhat">
-          ỨNG DỤNG HỖ TRỢ TỐT NHẤT CHO CÁC TUYẾN XE BUÝT THUỘC
+          ỨNG DỤNG HỖ TRỢ TỐT NHẤT CHO CÁC TUYẾN XE BUÝT
+          <u>TRUYỀN THỐNG</u> TẠI HÀ NỘI, THUỘC
         </p>
         <img
-          id="logohanoibus"
+          id="logobus"
           src="assets/image/logohanoibus.png"
           alt="TRANSERCO HANOIBUS"
         />
-        <p id="va">VÀ</p>
+        <p id="UngDungHoTroTotNhat">,</p>
+        <img id="logobus" src="assets/image/HANOI BRT.png" alt="HANOI BRT" />
+        <p id="UngDungHoTroTotNhat">VÀ</p>
         <img
-          id="logohanoibrt"
-          src="assets/image/HANOI BRT.png"
-          alt="HANOI BRT"
+          id="logobus"
+          src="assets/image/bus_lien_ninh.png"
+          alt="BUSLIENINH"
         />
-        <p id="CacHangKhac">
-          CÁC ĐƠN VỊ VTHKCC BẰNG XE BUÝT KHÁC CÓ THỂ CHO ĐÓNG BĂNG Ở MÀN HÌNH
-          HIỂN THỊ MÃ TUYẾN, ĐIỂM ĐẦU VÀ ĐIỂM CUỐI.
+        <p id="UngDungHoTroTotNhat">CÁC ĐƠN VỊ VTHKCC BẰNG XE BUÝT KHÁC NHƯ</p>
+        <img id="logobus" src="assets/image/vinbus.png" alt="vinbus" />
+        <img
+          id="logobus"
+          src="assets/image/baoyengroup.png"
+          alt="baoyengroup"
+        />
+        <img
+          id="logobus"
+          src="assets/image/congtyxekhach.png"
+          alt="congtyxekhach"
+        />
+        <p id="UngDungHoTroTotNhat">... THẬM CHÍ LÀ</p>
+        <img src="assets/image/saigonbus.png" alt="SAIGONBUS" id="logobus" />
+        <p id="UngDungHoTroTotNhat">CÓ THỂ BẬT MODE LIÊN NINH HOẶC MODE BRT</p>
+        <p id="UngDungHoTroTotNhat">
+          ỨNG DỤNG NÀY KHÔNG PHẢI CỦA TRANSERCO VÀ CÁC DOANH NGHIỆP KỂ TRÊN. ĐÂY
+          CHỈ LÀ SẢN PHẨM CÁ NHÂN.
         </p>
       </div>
     </div>
   </body>
-  <footer></footer>
+  <footer>
+    <div class="road-line"></div>
+  </footer>
 </html>

@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  height: 100vh;
+  /* background-image: url("assets/image/1079931_ONGXWJ0.jpg"); */
+  background-color: rgba(167, 228, 255, 255);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: screen;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NutBam button {
+  margin: 15px;
+  gap: 10px;
+  font-size: 15pt;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #cb4e4e;
+  color: #fff;
+  box-shadow: 0 6px #ab3c3c;
+  transition: none;
+  border: none;
+  cursor: pointer;
+  width: 120px;
+  height: 60px;
+}
+
+.BangDieuKhien button:hover {
+  /* chỉ áp dụng cho nút, k áp dụng cho dòng chữ BẢNG ĐIỀU KHIỂN*/
+  box-shadow: 0 4px #ab3c3c;
+  border-radius: 5px;
+  top: 2px;
+}
+
+.BangDieuKhien button:active {
+  background: 0 0 #3c5cab;
+  box-shadow: 0 4px #849ed4;
+  border-radius: 5px;
+  top: 6px;
+}
+
+.Nhap {
+  background-color: white;
+  border-radius: 20px;
+}

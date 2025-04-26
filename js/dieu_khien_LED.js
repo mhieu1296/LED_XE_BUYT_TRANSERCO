@@ -44,13 +44,7 @@ function NhapDuLieu() {
   const diemCuoi = inputs[2].value;
   const xiNghiep = inputs[3].value;
 
-  document.getElementById("maTuyen").innerText = maTuyen;
-  document.getElementById("diemDau").innerText = diemDau;
-  document.getElementById("diemCuoi").innerText = diemCuoi;
-  document.getElementById("xiNghiep").innerText = xiNghiep;
-  document.getElementById("MaTuyenCanGiua").innerText = maTuyen;
-
-  // Lưu vào localStorage
+  // lưu localstorage
   localStorage.setItem("maTuyen", maTuyen);
   localStorage.setItem("diemDau", diemDau);
   localStorage.setItem("diemCuoi", diemCuoi);
@@ -70,18 +64,18 @@ window.onload = function () {
   const diemCuoi = localStorage.getItem("diemCuoi");
   const xiNghiep = localStorage.getItem("xiNghiep");
 
-  if (maTuyen) document.getElementById("maTuyen").innerText = maTuyen;
+  if (maTuyen) {
+    document.getElementById("maTuyen").innerText = maTuyen;
+    document.getElementById("MaTuyenCanGiua").innerText = maTuyen;
+  }
   if (diemDau) document.getElementById("diemDau").innerText = diemDau;
   if (diemCuoi) document.getElementById("diemCuoi").innerText = diemCuoi;
   if (xiNghiep) {
     document.getElementById("xiNghiep").innerText = xiNghiep;
-    document.getElementById("MaTuyenCanGiua").innerText = maTuyen;
   }
 };
 
-function underConstruction() {
-  const button = document.getElementsByClassName("TangCuongTuyen");
-  button[0].addEventListener("click", function () {
-    alert("Tính năng đang được xây dựng");
-  });
+function chayChu() {
+  const chay = document.getElementById("route-info");
+  chay.classList.toggle("marquee");
 }

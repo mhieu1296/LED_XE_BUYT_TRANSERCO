@@ -1,3 +1,17 @@
+body {
+  margin: 0;
+  height: 100vh;
+  /* background-image: url("assets/image/1079931_ONGXWJ0.jpg"); */
+  background-color: rgba(167, 228, 255, 255);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: screen;
+
+  /* display: flex; */
+  justify-content: center;
+}
+
 .LED {
   display: flex;
   justify-content: center;
@@ -16,7 +30,9 @@
   flex-wrap: nowrap;
   border-radius: 20px;
   max-width: auto;
-  min-width: auto;
+  min-width: 300px;
+
+  overflow: hidden;
 }
 
 .BangDieuKhien {
@@ -28,10 +44,11 @@
   margin: 15px 15px;
   background-color: white;
   border-radius: 20px;
+  flex-direction: column;
   /* max-width: auto; */
   opacity: 90%;
   max-width: auto;
-  min-width: auto;
+  min-width: 300px;
 }
 
 #BangDieuKhienLabel {
@@ -48,8 +65,8 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* margin: 0px; */
-  /* border-radius: 5px; */
+  margin: 0px;
+  border-radius: 5px;
   background-color: white;
   border-radius: 20px;
   max-width: auto;
@@ -69,8 +86,19 @@
   transition: none;
   border: none;
   cursor: pointer;
-  width: 85px;
-  height: 85px;
+  width: 120px;
+  height: 60px;
+}
+
+.NutBam .ChayLed {
+  background: rgba(126, 208, 172, 255);
+  box-shadow: 0 6px rgba(110, 177, 146, 255);
+}
+
+.BangDieuKhien .ChayLed:hover {
+  box-shadow: 0 4px rgba(110, 177, 146, 255);
+  border-radius: 5px;
+  top: 2px;
 }
 
 .BangDieuKhien button:hover {
@@ -88,7 +116,7 @@
 }
 
 #maTuyen {
-  flex: 0.5;
+  flex: 0.5; /*0.5 phần*/
   display: flex;
   position: relative;
   color: red;
@@ -99,19 +127,51 @@
   padding-bottom: 10px;
   padding-left: 20px;
   font-size: 65pt;
-  letter-spacing: 5px;
+  margin-right: 20px;
+  letter-spacing: 4px;
   transform: scale(1, 1);
   position: relative;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  background-color: black;
 }
 
 .luongTuyen {
-  flex: 7.5; /* 6 phần */
-  display: flex;
+  flex: 7.5;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   gap: 10px;
   position: relative;
   text-align: center;
+  min-width: 0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  will-change: transform;
+}
+
+.luongTuyen_Parent {
+  flex: 7.5;
+  overflow: hidden;
+}
+
+/* phục vụ chạy chữ */
+#route-info {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+#route-info.marquee {
+  animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 #diemDau {
@@ -124,8 +184,9 @@
 
 #arrow {
   display: flex;
-  max-width: 75px;
-  max-height: 75px;
+  justify-content: center;
+  max-width: 55px;
+  max-height: 55px;
 }
 
 #diemCuoi {
@@ -137,7 +198,6 @@
 }
 
 #xiNghiep {
-  flex: 7.5;
   text-align: center;
   align-items: center;
   position: relative;
@@ -152,26 +212,43 @@
   gap: 10px;
   position: relative;
   text-align: center;
+  min-width: 0;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #hanoibus {
   display: flex;
-  flex: 6;
+  justify-content: center;
+  align-items: center;
+  flex: 7.5;
   max-width: 100%;
   height: auto;
   max-height: 60px;
   display: none;
   object-fit: contain;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 #transerco {
   display: flex;
-  flex: 6;
-  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex: 7.5;
+  max-width: 150%;
   height: auto;
   max-height: 60px;
   display: none;
   object-fit: contain;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 #MaTuyenCanGiua {
@@ -182,6 +259,7 @@
   font-family: UTM-HelvetINS;
   letter-spacing: 4px;
   transform: scale(1.5, 1);
+  text-transform: uppercase;
   /* margin-top: 5%; */
   font-size: 65pt;
   max-width: auto;
@@ -191,7 +269,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: RED;
+  font-family: UTM-HelvetINS;
+  color: rgb(17, 205, 142);
   font-size: 40pt;
   max-width: auto;
   letter-spacing: 2.5px;
@@ -201,7 +280,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: RED;
+  font-family: UTM-HelvetINS;
+  color: rgb(17, 205, 142);
   font-size: 40pt;
   max-width: auto;
   letter-spacing: 2.5px;
@@ -214,16 +294,6 @@ footer {
   text-align: center;
 }
 
-body {
-  margin: 0;
-  height: 100vh;
-  background-image: url("assets/image/53a (2).jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: screen;
-}
-
 .UngDungHoTroTotNhat {
   display: flex;
   justify-content: center;
@@ -233,7 +303,7 @@ body {
   background-color: white;
   border-radius: 20px;
   max-width: auto;
-  min-width: auto;
+  min-width: 300px;
   opacity: 90%;
 }
 
@@ -246,35 +316,11 @@ body {
   text-align: center;
 }
 
-#logohanoibus {
+#logobus {
   max-width: auto;
   max-height: 50px;
-  zoom: 75%;
-}
-
-#va {
-  font-family: UTM-HelvetIns;
-  font-size: 20px;
-  margin-right: 15px;
-  margin-left: 15px;
-  color: red;
-  text-align: center;
-}
-
-#logohanoibrt {
-  max-width: auto;
-  max-height: 50px;
-  zoom: 75%;
-}
-
-#CacHangKhac {
-  font-family: UTM-HelvetIns;
-  font-size: 20px;
-  margin-top: 5px;
-  margin-right: 15px;
-  margin-left: 15px;
-  color: red;
-  text-align: center;
+  zoom: 80%;
+  margin: 5px 5px 5px 5px;
 }
 
 footer {
@@ -285,25 +331,35 @@ footer {
 
 @font-face {
   font-family: "SVN-Agency-FB";
-  src: url("assets/fonts/SVN-Agency-FB-bold.ttf") format("truetype");
+  src: url("../assets/fonts/SVN-Agency-FB-bold.ttf") format("truetype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "UTM-HelvetIns";
-  src: url("assets/fonts/00119-UTM-HelvetIns.ttf") format("truetype");
+  src: url("../assets/fonts/00119-UTM-HelvetIns.ttf") format("truetype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "TT-Commons-Pro";
-  src: url("assets/fonts/TT_Commons_Pro_Trial_Compact_DemiBold.ttf")
+  src: url("../assets/fonts/TT_Commons_Pro_Trial_Compact_DemiBold.ttf")
     format("truetype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "SVN-Big-Noodle-Titling";
-  src: url("assets/fonts/SVN-Big-Noodle-Titling.otf") format("truetype");
+  src: url("../assets/fonts/SVN-Big-Noodle-Titling.otf") format("truetype");
   font-style: normal;
+}
+
+.road-line {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-top: 15px dashed white;
+  z-index: 0;
 }
