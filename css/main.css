@@ -131,9 +131,7 @@ body {
   position: relative;
   color: red;
   border: 2px;
-  /* font-family: SVN-Cintra; */
-  font-family: Segoe UI, "Tahoma", Geneva, Verdana, sans-serif;
-  /* font-weight: bold; */
+  font-family: SVN-Cintra;
   padding-bottom: 10px;
   padding-left: 20px;
   font-size: 65pt;
@@ -144,8 +142,6 @@ body {
   text-transform: uppercase;
   flex-shrink: 0;
   background-color: black;
-
-  /* animation: blink 1.25s steps(1, end) infinite; // hiệu ứng nhấp nháy */
 }
 
 @keyframes blink {
