@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LED XE BUÝT TRANSERCO</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/font.css" />
     <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
     <script src="js/dieu_khien_LED.js"></script>
@@ -59,45 +59,78 @@
           <button class="TEST" onclick="chayChu()">H.ỨNG CHẠY CHỮ</button>
           <button class="NhapDuLieu" onclick="goToInputPage()">NHẬP</button>
         </div>
+        <p id="BangDieuKhienLabel">MODE CHẠY</p>
+        <div class="NutBam">
+          <button
+            class="XEDIEN"
+            onclick="chonMode('xe_dien'), tatHieuUngNhay()"
+          >
+            C.TY XE ĐIỆN
+          </button>
+          <button
+            class="XEDIEN2"
+            onclick="chonMode('xe_dien2'), tatHieuUngNhay()"
+          >
+            C.TY XE ĐIỆN 2
+          </button>
+          <button
+            class="TRUYENTHONG"
+            onclick="chonMode('truyen_thong'), tatHieuUngNhay()"
+          >
+            TRUYỀN THỐNG
+          </button>
+          <button
+            class="LIENNINH"
+            onclick="chonMode('lien_ninh'), tatHieuUngNhay()"
+          >
+            C.TY LIÊN NINH
+          </button>
+          <button
+            class="HANOIBRT"
+            onclick="chonMode('hanoibrt'), tatHieuUngNhay()"
+          >
+            HANOI BRT
+          </button>
+          <button
+            class="BAOYEN"
+            onclick="chonMode('bao_yen'), batHieuUngNhay()"
+          >
+            C.TY BẢO YẾN
+          </button>
+        </div>
+        <p id="ModeDangChay">MODE MẶC ĐỊNH: XE ĐIỆN 2</p>
       </div>
-      <div class="UngDungHoTroTotNhat">
-        <p id="UngDungHoTroTotNhat">
-          ỨNG DỤNG HỖ TRỢ TỐT NHẤT CHO CÁC TUYẾN XE BUÝT
-          <u>TRUYỀN THỐNG</u> TẠI HÀ NỘI, THUỘC
-        </p>
-        <img
-          id="logobus"
-          src="assets/image/logohanoibus.png"
-          alt="TRANSERCO HANOIBUS"
-        />
-        <p id="UngDungHoTroTotNhat">,</p>
-        <img id="logobus" src="assets/image/HANOI BRT.png" alt="HANOI BRT" />
-        <p id="UngDungHoTroTotNhat">VÀ</p>
-        <img
-          id="logobus"
-          src="assets/image/bus_lien_ninh.png"
-          alt="BUSLIENINH"
-        />
-        <p id="UngDungHoTroTotNhat">CÁC ĐƠN VỊ VTHKCC BẰNG XE BUÝT KHÁC NHƯ</p>
-        <img id="logobus" src="assets/image/vinbus.png" alt="vinbus" />
-        <img
-          id="logobus"
-          src="assets/image/baoyengroup.png"
-          alt="baoyengroup"
-        />
-        <img
-          id="logobus"
-          src="assets/image/congtyxekhach.png"
-          alt="congtyxekhach"
-        />
-        <p id="UngDungHoTroTotNhat">... THẬM CHÍ LÀ</p>
-        <img src="assets/image/saigonbus.png" alt="SAIGONBUS" id="logobus" />
-        <p id="UngDungHoTroTotNhat">CÓ THỂ BẬT MODE LIÊN NINH HOẶC MODE BRT</p>
-        <p id="UngDungHoTroTotNhat">
-          ỨNG DỤNG NÀY KHÔNG PHẢI CỦA TRANSERCO VÀ CÁC DOANH NGHIỆP KỂ TRÊN. ĐÂY
-          CHỈ LÀ SẢN PHẨM CÁ NHÂN.
-        </p>
-      </div>
+      <details>
+        <summary id="UngDungHoTroTotNhat">THÔNG TIN</summary>
+        <div class="UngDungHoTroTotNhat">
+          <p id="UngDungHoTroTotNhat">
+            ỨNG DỤNG HỖ TRỢ TỐT NHẤT CHO CÁC TUYẾN XE BUÝT
+            <u>TRUYỀN THỐNG</u> TẠI HÀ NỘI, THUỘC
+          </p>
+          <img
+            id="logobus"
+            src="assets/image/logohanoibus.png"
+            alt="TRANSERCO HANOIBUS"
+          />
+          <p id="UngDungHoTroTotNhat">,</p>
+          <img id="logobus" src="assets/image/HANOI BRT.png" alt="HANOI BRT" />
+          <p id="UngDungHoTroTotNhat">VÀ</p>
+          <img
+            id="logobus"
+            src="assets/image/bus_lien_ninh.png"
+            alt="BUSLIENINH"
+          />
+          <p id="UngDungHoTroTotNhat">ỨNG DỤNG NÀY KHÔNG PHẢI CỦA</p>
+          <img
+            id="logobus"
+            src="assets/image/logohanoibus.png"
+            alt="TRANSERCO HANOIBUS"
+          />
+          <p id="UngDungHoTroTotNhat">
+            VÀ CÁC DOANH NGHIỆP KỂ TRÊN. ĐÂY CHỈ LÀ SẢN PHẨM CÁ NHÂN.
+          </p>
+        </div>
+      </details>
     </div>
   </body>
   <footer>

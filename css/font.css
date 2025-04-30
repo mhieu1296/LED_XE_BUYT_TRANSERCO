@@ -22,3 +22,15 @@
   src: url("../assets/fonts/SVN-Big-Noodle-Titling.otf") format("truetype");
   font-style: normal;
 }
+
+@font-face {
+  font-family: "SVN-Cintra";
+  src: url("../assets/fonts/SVN-Cintra.otf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "UTM-Neutra";
+  src: url("../assets/fonts/UTM-Neutra.ttf") format("truetype");
+  font-style: normal;
+}

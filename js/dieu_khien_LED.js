@@ -33,7 +33,9 @@ function NhapDuLieu() {
       document.getElementById("canhBao").innerText =
         "HÃY NHẬP TẤT CẢ CÁC TRƯỜNG";
       return;
-    } else document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
+    } else {
+      document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
+    }
   }
 
   // Gán giá trị từ input vào các thẻ <p> tương ứng
@@ -84,6 +86,19 @@ window.onload = function () {
 };
 
 function chayChu() {
+  // chạy chữ từ trái sang phải
   const chay = document.getElementById("route-info");
   chay.classList.toggle("marquee");
+}
+
+function batHieuUngNhay() {
+  // nhấp nháy mã tuyến
+  const element = document.getElementById("maTuyen");
+  element.style.animation = "blink 1.25s steps(1, end) infinite";
+}
+
+function tatHieuUngNhay() {
+  // tắt nhấp nháy mã tuyến
+  const element = document.getElementById("maTuyen");
+  element.style.animation = "none";
 }

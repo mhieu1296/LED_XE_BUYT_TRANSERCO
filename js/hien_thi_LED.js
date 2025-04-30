@@ -74,8 +74,8 @@ function hienThiMaTuyen_XiNghiep() {
   console.log("Hàm 3 chạy");
 
   const elements = getElements();
-  if (!elements.maTuyen || !elements.routeInfo || !elements.hanoibus) {
-    console.error("Lỗi: Một hoặc nhiều phần tử không tồn tại trong DOM.");
+  if (!elements.maTuyen || !elements.xiNghiep) {
+    console.error("Mã tuyến và xí nghiệp không tồn tại trong DOM.");
     return;
   }
 
@@ -260,6 +260,7 @@ function hienThiMaTuyen_Transerco() {
   elements.HuyDong.style.display = "none";
   elements.VeGara.style.display = "none";
 }
+
 // danh sách hiệu ứng
 let funcs = [
   hienThiMaTuyen_DiemDauCuoi,
@@ -273,12 +274,116 @@ let funcs = [
   hienThiMaTuyen_Transerco,
 ];
 
-// thời gian delay từng hiệu ứng
-// let delays = [30000, 5000, 5000, 150, 150, 5000, 250, 250, 5000]; // mode xe điện
-let delays = [15000, 5000, 0, 0, 0, 5000, 0, 0, 5000]; // mode truyền thống
-// let delays = [30000, 0, 0, 0, 0, 5000, 0, 0, 0]; // mode liên ninh
+// thời gian delay từng hiệu ứng mặc định
+let delays = [30000, 5000, 0, 0, 0, 5000, 0, 0, 5000]; // mode truyền thống
+
+function chonMode(mode) {
+  if (mode === "xe_dien") {
+    // đầy đủ
+    console.log("XE ĐIỆN");
+    document.getElementById("ModeDangChay").innerText =
+      "MODE ĐANG CHẠY: XE ĐIỆN";
+    delays.splice(
+      0,
+      delays.length,
+      ...[30000, 5000, 5000, 150, 150, 5000, 250, 250, 5000]
+    );
+    funcs.splice(
+      0,
+      funcs.length,
+      hienThiMaTuyen_DiemDauCuoi,
+      hienThiMaTuyen_Hanoibus,
+      hienThiMaTuyen_XiNghiep,
+      hienThiTrungGian1,
+      hienThiTrungGian2,
+      hienThiMaTuyenCanGiua,
+      hienThiTrungGian3,
+      hienThiTrungGian4,
+      hienThiMaTuyen_Transerco
+    );
+  } else if (mode === "xe_dien2") {
+    // đầy đủ, trừ hienThiMaTuyen_XiNghiep
+    console.log("XE ĐIỆN 2");
+    document.getElementById("ModeDangChay").innerText =
+      "MODE ĐANG CHẠY: XE ĐIỆN 2";
+    delays.splice(
+      0,
+      delays.length,
+      ...[30000, 5000, 150, 5000, 250, 250, 5000]
+    );
+    funcs.splice(
+      0,
+      funcs.length,
+      hienThiMaTuyen_DiemDauCuoi,
+      hienThiMaTuyen_Hanoibus,
+      hienThiTrungGian2,
+      hienThiMaTuyenCanGiua,
+      hienThiTrungGian3,
+      hienThiTrungGian4,
+      hienThiMaTuyen_Transerco
+    );
+  } else if (mode === "truyen_thong") {
+    // có hienThiMaTuyen_DiemDauCuoi, hienThiMaTuyen_Hanoibus, hienThiMaTuyenCanGiua và hienThiMaTuyen_Transerco
+    console.log("TRUYỀN THỐNG");
+    document.getElementById("ModeDangChay").innerText =
+      "MODE ĐANG CHẠY: TRUYỀN THỐNG";
+    delays.splice(0, delays.length, ...[30000, 5000, 5000, 5000]);
+    funcs.splice(
+      0,
+      funcs.length,
+      hienThiMaTuyen_DiemDauCuoi,
+      hienThiMaTuyen_Hanoibus,
+      hienThiMaTuyenCanGiua,
+      hienThiMaTuyen_Transerco
+    );
+  } else if (mode === "lien_ninh") {
+    // có hienThiMaTuyen_DiemDauCuoi và hienThiMaTuyenCanGiua
+    console.log("LIÊN NINH");
+    document.getElementById("ModeDangChay").innerText =
+      "MODE ĐANG CHẠY: LIÊN NINH";
+    delays.splice(0, delays.length, ...[30000, 5000]);
+    funcs.splice(
+      0,
+      funcs.length,
+      hienThiMaTuyen_DiemDauCuoi,
+      hienThiMaTuyenCanGiua
+    );
+  } else if (mode === "hanoibrt") {
+    // có
+    // hienThiMaTuyen_DiemDauCuoi,
+    // hienThiMaTuyen_XiNghiep,
+    // hienThiMaTuyen_Transerco
+    // console.log("HANOI BRT");
+    document.getElementById("ModeDangChay").innerText =
+      "MODE ĐANG CHẠY: HANOI BRT";
+    delays.splice(0, delays.length, ...[30000, 5000, 5000]);
+    funcs.splice(
+      0,
+      funcs.length,
+      hienThiMaTuyen_DiemDauCuoi,
+      hienThiMaTuyen_XiNghiep,
+      hienThiMaTuyen_Transerco
+    );
+  } else if (mode === "bao_yen") {
+    // có
+    // hienThiMaTuyen_DiemDauCuoi,
+    // hienThiMaTuyen_XiNghiep
+    // và nhấp nháy mã tuyến
+    console.log("BẢO YẾN");
+    document.getElementById("ModeDangChay").innerText =
+      "MODE ĐANG CHẠY: BẢO YẾN";
+    delays.splice(0, delays.length, ...[30000, 5000]);
+    funcs.splice(
+      0,
+      funcs.length,
+      hienThiMaTuyen_DiemDauCuoi,
+      hienThiMaTuyen_XiNghiep
+    );
+  }
+}
 
 async function start() {
+  // hàm chạy hiệu ứng
   if (running) return; // nếu đã chạy thì không chạy thêm nữa
   running = true;
 
@@ -292,6 +397,7 @@ async function start() {
 }
 
 function stop() {
+  // hàm dừng chạy
   running = false;
 }
 
