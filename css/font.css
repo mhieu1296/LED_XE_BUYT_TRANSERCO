@@ -30,6 +30,12 @@
 }
 
 @font-face {
+  font-family: "SVN-ProductSansBold";
+  src: url("../assets/fonts/SVN-ProductSansBold.otf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
   font-family: "UTM-Neutra";
   src: url("../assets/fonts/UTM-Neutra.ttf") format("truetype");
   font-style: normal;
