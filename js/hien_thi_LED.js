@@ -265,17 +265,12 @@ function hienThiMaTuyen_Transerco() {
 let funcs = [
   hienThiMaTuyen_DiemDauCuoi,
   hienThiMaTuyen_Hanoibus,
-  hienThiMaTuyen_XiNghiep,
-  hienThiTrungGian1,
-  hienThiTrungGian2,
   hienThiMaTuyenCanGiua,
-  hienThiTrungGian3,
-  hienThiTrungGian4,
   hienThiMaTuyen_Transerco,
 ];
 
 // thời gian delay từng hiệu ứng mặc định
-let delays = [30000, 5000, 0, 0, 0, 5000, 0, 0, 5000]; // mode truyền thống
+let delays = [30000, 5000, 5000, 5000]; // mode truyền thống
 
 function chonMode(mode) {
   if (mode === "xe_dien") {
