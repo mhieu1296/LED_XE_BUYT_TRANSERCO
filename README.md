@@ -6,7 +6,7 @@ Hỗ trợ nhiều mode chạy khác nhau: </br>
 3. Truyền thống</br>
 4. Liên Ninh</br>
 5. Hanoi BRT</br>
-6. Bảo Yến</br>
+6. Bảo Yến (nhấp nháy mã tuyến)</br>
 Ứng dụng này được làm dưới sự trợ giúp của ChatGPT và một sinh viên mới năm nhất chưa biết gì về lập trình web.
 
 Trình tự hiển thị:
