@@ -39,8 +39,9 @@ TẤT CẢ CHÚNG ĐỀU CHẠY VÔ HẠN ĐẾN KHI NHẤN NÚT ĐÓNG BĂNG HO
 Với các mode chạy sẽ có sự điều chỉnh về thứ tự các hàm chạy. Chi tiết hãy xem trong file hien_thi_LED.js sẽ có chú thích. </br>
 Ứng dụng hỗ trợ đảo chiều tuyến, đóng băng LED, hiển thị HUY ĐỘNG RA TUYẾN, XE VỀ GARA, xóa hoàn toàn LED. </br>
 
-Khi mới khởi động lần đầu tiên và nhấn CHẠY, sẽ không có gì hiển thị trên LED trừ mũi tên xanh, logo Hanoibus và Transerco. Hãy nhập thông tin LED bằng cách nhấn nút NHẬP. </br>
-Có thể thay đổi các thông tin như Mã tuyến, điểm đầu, điểm cuối, tên xí nghiệp. Thay đổi xong nhấn NẠP LED sẽ được. Sẽ có cảnh báo khi không nhập đủ thông tin.</br>
+</br>
+Có thể thay đổi các thông tin như Mã tuyến, điểm đầu, điểm cuối, tên xí nghiệp. Thay đổi xong nhấn LƯU sẽ được. Sẽ có cảnh báo khi không nhập đủ thông tin.</br>
+Khi mới khởi động lần đầu tiên và nhấn CHẠY, sẽ không có gì hiển thị trên LED trừ mũi tên xanh, logo Hanoibus và Transerco. Hãy nhập thông tin LED bằng cách nhấn nút NHẬP.  </BR>
 </br>
 Nếu bạn muốn trải nghiệm, hãy truy cập [tại đây](https://ledxebuyt.netlify.app). </br>
 LƯU Ý: ỨNG DỤNG NÀY KHÔNG PHẢI CỦA TRANSERCO VÀ CÁC DOANH NGHIỆP VẬN TẢI CÔNG CỘNG. ĐÂY CHỈ LÀ SẢN PHẨM CÁ NHÂN.
