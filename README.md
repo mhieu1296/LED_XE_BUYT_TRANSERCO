@@ -7,7 +7,7 @@ Hỗ trợ nhiều mode chạy khác nhau: </br>
 4. Liên Ninh</br>
 5. Hanoi BRT</br>
 6. Bảo Yến</br>
-Ứng dụng này được làm dưới sự trợ giúp của CHatGPT và một sinh viên mới năm nhất chưa biết gì về lập trình web.
+Ứng dụng này được làm dưới sự trợ giúp của ChatGPT và một sinh viên mới năm nhất chưa biết gì về lập trình web.
 
 Trình tự hiển thị:
 1. Hiển thị mã tuyến, điểm đầu - điểm cuối trong 30 giây. </br> 
@@ -42,4 +42,5 @@ Với các mode chạy sẽ có sự điều chỉnh về thứ tự các hàm c
 Khi mới khởi động lần đầu tiên và nhấn CHẠY, sẽ không có gì hiển thị trên LED trừ mũi tên xanh, logo Hanoibus và Transerco. Hãy nhập thông tin LED bằng cách nhấn nút NHẬP. </br>
 Có thể thay đổi các thông tin như Mã tuyến, điểm đầu, điểm cuối, tên xí nghiệp. Thay đổi xong nhấn NẠP LED sẽ được. Sẽ có cảnh báo khi không nhập đủ thông tin.</br>
 </br>
-Nếu bạn muốn trải nghiệm, hãy truy cập [tại đây](https://ledxebuyt.netlify.app).
+Nếu bạn muốn trải nghiệm, hãy truy cập [tại đây](https://ledxebuyt.netlify.app). </br>
+LƯU Ý: ỨNG DỤNG NÀY KHÔNG PHẢI CỦA TRANSERCO VÀ CÁC DOANH NGHIỆP VẬN TẢI CÔNG CỘNG. ĐÂY CHỈ LÀ SẢN PHẨM CÁ NHÂN.
