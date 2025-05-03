@@ -1,14 +1,13 @@
 body {
   margin: 0;
   height: 100vh;
-  /* background-image: url("assets/image/1079931_ONGXWJ0.jpg"); */
   background-color: rgba(167, 228, 255, 255);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-blend-mode: screen;
-
-  /* display: flex; */
+  min-width: 350px;
+  display: block;
   justify-content: center;
 }
 
@@ -16,12 +15,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0px;
   margin-top: 5px;
-  padding: 15px 15px;
   margin: 15px 15px;
   font-family: UTM-Neutra;
-  /* font-family: Segoe UI, "Tahoma", Geneva, Verdana, sans-serif; */
   text-align: center;
   border-style: solid;
   border-color: white;
@@ -31,8 +27,6 @@ body {
   flex-wrap: nowrap;
   border-radius: 20px;
   max-width: auto;
-  min-width: 350px;
-
   overflow: hidden;
 }
 
@@ -49,7 +43,6 @@ body {
   /* max-width: auto; */
   opacity: 90%;
   max-width: auto;
-  min-width: 350px;
 }
 
 #BangDieuKhienLabel {
@@ -241,6 +234,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #hanoibus {
@@ -275,19 +270,20 @@ body {
   /* display: flex; */
   justify-content: center;
   align-items: center;
-  color: RED;
-  font-family: UTM-HelvetIns;
-  letter-spacing: 4px;
-  transform: scale(1.5, 1);
-  text-transform: uppercase;
+  color: red;
+  border: 2px;
+  font-family: SVN-ProductSansBold;
   font-size: 65pt;
+  letter-spacing: 4px;
+  transform: scale(1, 1);
+  text-transform: uppercase;
 }
 
 #HuyDongRaTuyen {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: UTM-HelvetINS;
+  /* font-family: UTM-HelvetINS; */
   color: rgb(17, 205, 142);
   font-size: 40pt;
   max-width: auto;
@@ -298,7 +294,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: UTM-HelvetINS;
+  /* font-family: UTM-HelvetINS; */
   color: rgb(17, 205, 142);
   font-size: 40pt;
   max-width: auto;
@@ -321,7 +317,6 @@ footer {
   background-color: white;
   border-radius: 20px;
   max-width: auto;
-  min-width: 350px;
   opacity: 90%;
 }
 
