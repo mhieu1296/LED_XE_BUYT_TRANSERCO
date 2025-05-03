@@ -276,11 +276,11 @@ body {
   justify-content: center;
   align-items: center;
   color: RED;
-  font-family: UTM-HelvetINS;
+  font-family: UTM-HelvetIns;
   letter-spacing: 4px;
   transform: scale(1.5, 1);
   text-transform: uppercase;
-  /* margin-top: 5%; */
+  margin-top: 5%;
   font-size: 65pt;
   max-width: auto;
 }

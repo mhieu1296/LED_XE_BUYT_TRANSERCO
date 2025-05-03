@@ -63,28 +63,6 @@ function xoaInput() {
   }
 }
 
-window.onload = function () {
-  // xóa toàn bộ LED và dừng toàn bộ hoạt động LED khi tải xong trang, sẽ kích hoạt khi chạy hàm startToggle();
-  stopToggle();
-  reset();
-
-  // nhớ lại local storage
-  const maTuyen = localStorage.getItem("maTuyen");
-  const diemDau = localStorage.getItem("diemDau");
-  const diemCuoi = localStorage.getItem("diemCuoi");
-  const xiNghiep = localStorage.getItem("xiNghiep");
-
-  if (maTuyen) {
-    document.getElementById("maTuyen").innerText = maTuyen;
-    document.getElementById("MaTuyenCanGiua").innerText = maTuyen;
-  }
-  if (diemDau) document.getElementById("diemDau").innerText = diemDau;
-  if (diemCuoi) document.getElementById("diemCuoi").innerText = diemCuoi;
-  if (xiNghiep) {
-    document.getElementById("xiNghiep").innerText = xiNghiep;
-  }
-};
-
 function chayChu() {
   // chạy chữ từ trái sang phải
   const chay = document.getElementById("route-info");
