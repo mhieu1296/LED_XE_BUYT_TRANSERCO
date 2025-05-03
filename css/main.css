@@ -18,9 +18,9 @@ body {
   align-items: center;
   gap: 0px;
   margin-top: 5px;
+  padding: 15px 15px;
   margin: 15px 15px;
   font-family: UTM-Neutra;
-  font-weight: normal;
   /* font-family: Segoe UI, "Tahoma", Geneva, Verdana, sans-serif; */
   text-align: center;
   border-style: solid;
@@ -272,7 +272,7 @@ body {
 }
 
 #MaTuyenCanGiua {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   color: RED;
@@ -280,9 +280,8 @@ body {
   letter-spacing: 4px;
   transform: scale(1.5, 1);
   text-transform: uppercase;
-  margin-top: 5%;
+  /* margin-top: 5%; */
   font-size: 65pt;
-  max-width: auto;
 }
 
 #HuyDongRaTuyen {
