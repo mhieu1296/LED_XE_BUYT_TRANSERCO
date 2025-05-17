@@ -40,3 +40,9 @@
   src: url("../assets/fonts/UTM-Neutra.ttf") format("truetype");
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/fonts/Quicksand-Bold.ttf") format("truetype");
+  font-style: normal;
+}

@@ -374,6 +374,29 @@ function chonMode(mode) {
       hienThiMaTuyen_DiemDauCuoi,
       hienThiMaTuyen_XiNghiep
     );
+  } else if (mode === "dev_mode") {
+    // có đầy đủ hàm, nhưng các hàm chỉ chạy trong 2 giây.
+    console.log("DEV MODE");
+    document.getElementById("ModeDangChay").innerText =
+      "MODE ĐANG CHẠY: DEV MODE";
+    delays.splice(
+      0,
+      delays.length,
+      ...[2000, 2000, 2000, 150, 150, 2000, 250, 250, 2000]
+    );
+    funcs.splice(
+      0,
+      funcs.length,
+      hienThiMaTuyen_DiemDauCuoi,
+      hienThiMaTuyen_Hanoibus,
+      hienThiMaTuyen_XiNghiep,
+      hienThiTrungGian1,
+      hienThiTrungGian2,
+      hienThiMaTuyenCanGiua,
+      hienThiTrungGian3,
+      hienThiTrungGian4,
+      hienThiMaTuyen_Transerco
+    );
   }
 }
 
