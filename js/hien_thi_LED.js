@@ -462,27 +462,3 @@ function XeVeGara() {
   VeGara.style.display = "flex";
   console.log("Mode Xe về Gara");
 }
-
-function reset() {
-  // hàm xóa toàn bộ LED
-  stop();
-
-  document.getElementById("isPausing").innerText = "NO";
-
-  const maTuyen = document.getElementById("maTuyen");
-  const routeInfo = document.getElementById("route-info");
-  const hanoibus = document.getElementById("hanoibus");
-  const xiNghiep = document.getElementById("xiNghiep");
-  const TuyenCanGiua = document.getElementById("MaTuyenCanGiua");
-  const HuyDong = document.getElementById("HuyDongRaTuyen");
-  const VeGara = document.getElementById("XeVeGara");
-
-  maTuyen.style.display = "none";
-  routeInfo.style.display = "none";
-  hanoibus.style.display = "none";
-  xiNghiep.style.display = "none";
-  TuyenCanGiua.style.display = "none";
-  HuyDong.style.display = "none";
-  VeGara.style.display = "none";
-  console.log("Xóa LED thành công");
-}

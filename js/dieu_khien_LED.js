@@ -31,35 +31,6 @@ function daoChieuLED(Dau, Cuoi) {
   }
 }
 
-function NhapDuLieu() {
-  // Lấy tất cả các input trong div NhapDuLieu
-  const inputs = document.querySelectorAll(".NhapDuLieu input");
-  // Kiểm tra xem có ô nào bị bỏ trống không
-  for (let input of inputs) {
-    if (input.value.trim() === "") {
-      document.getElementById("canhBao").innerText =
-        "HÃY NHẬP ĐẦY ĐỦ CÁC TRƯỜNG!";
-      return;
-    } else {
-      document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
-    }
-  }
-
-  // Gán giá trị từ input vào localDrage để gán vào khi load trang (window_onload.js)
-  const maTuyen = inputs[0].value;
-  const diemDau = inputs[1].value;
-  const diemCuoi = inputs[2].value;
-  const xiNghiep = inputs[3].value;
-
-  localStorage.setItem("maTuyen", maTuyen);
-  localStorage.setItem("diemDau", diemDau);
-  localStorage.setItem("diemCuoi", diemCuoi);
-  localStorage.setItem("xiNghiep", xiNghiep);
-  localStorage.setItem("MaTuyenCanGiua", maTuyen);
-  console.log("Đã nhập đầy đủ thông tin.");
-  document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
-}
-
 function chayChu() {
   const chay = document.getElementById("route-info");
   const isRunning = chay.classList.toggle("marquee");
@@ -78,4 +49,28 @@ function tatHieuUngNhay() {
   // tắt nhấp nháy mã tuyến
   const element = document.getElementById("maTuyen");
   element.style.animation = "none";
+}
+
+function reset() {
+  // hàm xóa toàn bộ LED
+  stop();
+
+  document.getElementById("isPausing").innerText = "NO";
+
+  const maTuyen = document.getElementById("maTuyen");
+  const routeInfo = document.getElementById("route-info");
+  const hanoibus = document.getElementById("hanoibus");
+  const xiNghiep = document.getElementById("xiNghiep");
+  const TuyenCanGiua = document.getElementById("MaTuyenCanGiua");
+  const HuyDong = document.getElementById("HuyDongRaTuyen");
+  const VeGara = document.getElementById("XeVeGara");
+
+  maTuyen.style.display = "none";
+  routeInfo.style.display = "none";
+  hanoibus.style.display = "none";
+  xiNghiep.style.display = "none";
+  TuyenCanGiua.style.display = "none";
+  HuyDong.style.display = "none";
+  VeGara.style.display = "none";
+  console.log("Xóa LED thành công");
 }
