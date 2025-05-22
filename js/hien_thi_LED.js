@@ -90,7 +90,7 @@ function hienThiMaTuyen_XiNghiep() {
 }
 
 // các hàm hiệu ứng trung gian
-function hienThiTrungGian1() {
+function hienThiTrungGian1_1() {
   // hiệu ứng xóa mã tuyến
   if (!running) {
     console.log("Hàm TG1 bị dừng");
@@ -115,8 +115,8 @@ function hienThiTrungGian1() {
   elements.VeGara.style.display = "none";
 }
 
-function hienThiTrungGian1() {
-  // hiệu ứng xóa mã tuyến
+function hienThiTrungGian1_2() {
+  // hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa)
   if (!running) {
     console.log("Hàm TG1 bị dừng");
     return;
@@ -125,15 +125,15 @@ function hienThiTrungGian1() {
   console.log("Hàm TG1 chạy");
 
   const elements = getElements();
-  if (!elements.xiNghiep) {
-    console.error("Xí nghiệp không tồn tại trong DOM.");
+  if (!elements.maTuyen || !elements.xiNghiep) {
+    console.error("Mã tuyến và xí nghiệp không tồn tại trong DOM.");
     return;
   }
 
   elements.maTuyen.style.display = "none";
   elements.routeInfo.style.display = "none";
-  elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "flex";
+  elements.hanoibus.style.display = "flex";
+  elements.xiNghiep.style.display = "none";
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -276,8 +276,7 @@ function chonMode(mode) {
   if (mode === "xe_dien") {
     // đầy đủ
     console.log("XE ĐIỆN");
-    document.getElementById("ModeDangChay").innerText =
-      "MODE ĐANG CHẠY: XE ĐIỆN";
+    document.getElementById("MODE").innerText = "XE ĐIỆN";
     delays.splice(
       0,
       delays.length,
@@ -289,7 +288,7 @@ function chonMode(mode) {
       hienThiMaTuyen_DiemDauCuoi,
       hienThiMaTuyen_Hanoibus,
       hienThiMaTuyen_XiNghiep,
-      hienThiTrungGian1,
+      hienThiTrungGian1_1,
       hienThiTrungGian2,
       hienThiMaTuyenCanGiua,
       hienThiTrungGian3,
@@ -299,29 +298,28 @@ function chonMode(mode) {
   } else if (mode === "xe_dien2") {
     // đầy đủ, trừ hienThiMaTuyen_XiNghiep
     console.log("XE ĐIỆN 2");
-    document.getElementById("ModeDangChay").innerText =
-      "MODE ĐANG CHẠY: XE ĐIỆN 2";
+    document.getElementById("MODE").innerText = "XE ĐIỆN 2";
     delays.splice(
       0,
       delays.length,
-      ...[30000, 5000, 150, 5000, 250, 250, 5000]
+      ...[30000, 5000, 150, 150, 5000, 250, 250, 5000]
     );
     funcs.splice(
       0,
       funcs.length,
       hienThiMaTuyen_DiemDauCuoi,
       hienThiMaTuyen_Hanoibus,
+      hienThiTrungGian1_2,
       hienThiTrungGian2,
       hienThiMaTuyenCanGiua,
       hienThiTrungGian3,
       hienThiTrungGian4,
       hienThiMaTuyen_Transerco
     );
-  } else if (mode === "truyen_thong") {
+  } else if (mode === "thuong") {
     // có hienThiMaTuyen_DiemDauCuoi, hienThiMaTuyen_Hanoibus, hienThiMaTuyenCanGiua và hienThiMaTuyen_Transerco
-    console.log("TRUYỀN THỐNG");
-    document.getElementById("ModeDangChay").innerText =
-      "MODE ĐANG CHẠY: TRUYỀN THỐNG";
+    console.log("THƯỜNG");
+    document.getElementById("MODE").innerText = "THƯỜNG";
     delays.splice(0, delays.length, ...[30000, 5000, 5000, 5000]);
     funcs.splice(
       0,
@@ -334,8 +332,7 @@ function chonMode(mode) {
   } else if (mode === "lien_ninh") {
     // có hienThiMaTuyen_DiemDauCuoi và hienThiMaTuyenCanGiua
     console.log("LIÊN NINH");
-    document.getElementById("ModeDangChay").innerText =
-      "MODE ĐANG CHẠY: LIÊN NINH";
+    document.getElementById("MODE").innerText = "LIÊN NINH";
     delays.splice(0, delays.length, ...[30000, 5000]);
     funcs.splice(
       0,
@@ -347,16 +344,17 @@ function chonMode(mode) {
     // có
     // hienThiMaTuyen_DiemDauCuoi,
     // hienThiMaTuyen_XiNghiep,
+    // hienThiMaTuyenCanGiua,
     // hienThiMaTuyen_Transerco
-    // console.log("HANOI BRT");
-    document.getElementById("ModeDangChay").innerText =
-      "MODE ĐANG CHẠY: HANOI BRT";
-    delays.splice(0, delays.length, ...[30000, 5000, 5000]);
+    console.log("HANOI BRT");
+    document.getElementById("MODE").innerText = "HANOI BRT";
+    delays.splice(0, delays.length, ...[30000, 5000, 5000, 5000]);
     funcs.splice(
       0,
       funcs.length,
       hienThiMaTuyen_DiemDauCuoi,
       hienThiMaTuyen_XiNghiep,
+      hienThiMaTuyenCanGiua,
       hienThiMaTuyen_Transerco
     );
   } else if (mode === "bao_yen") {
@@ -365,8 +363,7 @@ function chonMode(mode) {
     // hienThiMaTuyen_XiNghiep
     // và nhấp nháy mã tuyến
     console.log("BẢO YẾN");
-    document.getElementById("ModeDangChay").innerText =
-      "MODE ĐANG CHẠY: BẢO YẾN";
+    document.getElementById("MODE").innerText = "BẢO YẾN";
     delays.splice(0, delays.length, ...[30000, 5000]);
     funcs.splice(
       0,
@@ -374,11 +371,10 @@ function chonMode(mode) {
       hienThiMaTuyen_DiemDauCuoi,
       hienThiMaTuyen_XiNghiep
     );
-  } else if (mode === "dev_mode") {
+  } else if (mode === "demo") {
     // có đầy đủ hàm, nhưng các hàm chỉ chạy trong 2 giây.
-    console.log("DEV MODE");
-    document.getElementById("ModeDangChay").innerText =
-      "MODE ĐANG CHẠY: DEV MODE";
+    console.log("DEMO");
+    document.getElementById("MODE").innerText = "DEMO";
     delays.splice(
       0,
       delays.length,
@@ -390,7 +386,7 @@ function chonMode(mode) {
       hienThiMaTuyen_DiemDauCuoi,
       hienThiMaTuyen_Hanoibus,
       hienThiMaTuyen_XiNghiep,
-      hienThiTrungGian1,
+      hienThiTrungGian1_1,
       hienThiTrungGian2,
       hienThiMaTuyenCanGiua,
       hienThiTrungGian3,
@@ -403,6 +399,8 @@ function chonMode(mode) {
 async function start() {
   // hàm chạy hiệu ứng
   if (running) return; // nếu đã chạy thì không chạy thêm nữa
+  document.getElementById("isRunning").innerText = "YES";
+  document.getElementById("isPausing").innerText = "NO";
   running = true;
 
   let index = 0;
@@ -416,6 +414,8 @@ async function start() {
 
 function stop() {
   // hàm dừng chạy
+  document.getElementById("isRunning").innerText = "NO";
+  document.getElementById("isPausing").innerText = "YES";
   running = false;
 }
 
@@ -466,6 +466,9 @@ function XeVeGara() {
 function reset() {
   // hàm xóa toàn bộ LED
   stop();
+
+  document.getElementById("isPausing").innerText = "NO";
+
   const maTuyen = document.getElementById("maTuyen");
   const routeInfo = document.getElementById("route-info");
   const hanoibus = document.getElementById("hanoibus");
@@ -483,9 +486,3 @@ function reset() {
   VeGara.style.display = "none";
   console.log("Xóa LED thành công");
 }
-
-window.onload = function () {
-  // xóa toàn bộ LED và dừng toàn bộ hoạt động LED khi tải xong trang, sẽ kích hoạt khi chạy hàm startToggle();
-  stop();
-  reset();
-};

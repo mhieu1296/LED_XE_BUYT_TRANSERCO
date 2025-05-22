@@ -8,7 +8,7 @@ console.log(
   "color: red; font-size: 50px; font-weight: bold; font-family: tahoma"
 );
 console.log(
-  "%cLED xe buýt xin chào những người yêu xe buýt Hà Nội và Tổng Công ty Vận tải Hà Nội! Bạn có thể thao tác mọi thứ trên Dev Tools.",
+  "%cLED xe buýt. Bạn có thể thao tác mọi thứ trên Dev Tools.",
   "font-size: 20px; font-family: Arial"
 );
 
@@ -16,10 +16,17 @@ function daoChieuLED(Dau, Cuoi) {
   // đảo điểm đầu và điểm cuối
   let diemDau = document.getElementById(Dau);
   let diemCuoi = document.getElementById(Cuoi);
+  let diemDauTrongPreview = document.getElementById("diemDauLuu");
+  let diemCuoiTrongPreview = document.getElementById("diemCuoiLuu");
   if (diemDau && diemCuoi) {
     let temp = diemDau.innerText;
     diemDau.innerText = diemCuoi.innerText;
     diemCuoi.innerText = temp;
+
+    let temp2 = diemDauTrongPreview.innerText;
+    diemDauTrongPreview.innerText = diemCuoiTrongPreview.innerText;
+    diemCuoiTrongPreview.innerText = temp2;
+
     console.log("Đã đổi thành công");
   }
 }
@@ -31,20 +38,19 @@ function NhapDuLieu() {
   for (let input of inputs) {
     if (input.value.trim() === "") {
       document.getElementById("canhBao").innerText =
-        "HÃY NHẬP TẤT CẢ CÁC TRƯỜNG";
+        "HÃY NHẬP ĐẦY ĐỦ CÁC TRƯỜNG!";
       return;
     } else {
       document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
     }
   }
 
-  // Gán giá trị từ input vào các thẻ <p> tương ứng
+  // Gán giá trị từ input vào localDrage để gán vào khi load trang (window_onload.js)
   const maTuyen = inputs[0].value;
   const diemDau = inputs[1].value;
   const diemCuoi = inputs[2].value;
   const xiNghiep = inputs[3].value;
 
-  // lưu localstorage
   localStorage.setItem("maTuyen", maTuyen);
   localStorage.setItem("diemDau", diemDau);
   localStorage.setItem("diemCuoi", diemCuoi);
@@ -54,19 +60,12 @@ function NhapDuLieu() {
   document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
 }
 
-function xoaInput() {
-  // xóa nội dung các input form
-  const inputs = document.querySelectorAll(".NhapDuLieu input");
-
-  for (let input of inputs) {
-    input.value = "";
-  }
-}
-
 function chayChu() {
-  // chạy chữ từ trái sang phải
   const chay = document.getElementById("route-info");
-  chay.classList.toggle("marquee");
+  const isRunning = chay.classList.toggle("marquee");
+
+  // Nếu đang chạy thì in YES, nếu không thì in NO
+  document.getElementById("isTextMoving").innerText = isRunning ? "YES" : "NO";
 }
 
 function batHieuUngNhay() {

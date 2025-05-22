@@ -1,53 +1,43 @@
 body {
   margin: 0;
   height: 100vh;
-  background-color: rgba(167, 228, 255, 255);
+  background-color: rgba(182, 255, 228, 255);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-blend-mode: screen;
   min-width: 350px;
-  display: block;
-  justify-content: center;
 }
 
 .LED {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
-  margin: 15px 15px;
-  /* font-family: UTM-Neutra; */
+  margin: 15px;
   font-family: SVN-ProductSansBold;
   text-align: center;
-  border-style: solid;
-  border-color: white;
-  border-width: 5px;
+  border: 5px solid white;
   background-color: black;
-  height: 100px;
-  flex-wrap: nowrap;
+  height: 150px;
   border-radius: 20px;
-  max-width: auto;
   overflow: hidden;
 }
 
 .BangDieuKhien {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 15px 15px;
+  margin: 15px;
   background-color: white;
   border-radius: 20px;
-  flex-direction: column;
-  /* max-width: auto; */
-  opacity: 90%;
-  max-width: auto;
+  opacity: 0.9;
 }
 
-#BangDieuKhienLabel {
+.BangDieuKhienLabel {
   display: flex;
+  margin: 10px;
   justify-content: center;
   align-items: center;
   font-family: Quicksand;
@@ -60,20 +50,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0px;
-  border-radius: 5px;
   background-color: white;
   border-radius: 20px;
-  max-width: auto;
 }
 
 .NutBam button {
-  margin: 15px;
-  gap: 10px;
+  margin: 10px;
   font-size: 15pt;
-  padding: 5px;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
   background: #cb4e4e;
   color: #fff;
@@ -81,102 +64,40 @@ body {
   transition: none;
   border: none;
   cursor: pointer;
-  width: 120px;
-  height: 60px;
+  width: 160px;
+  height: 40px;
 }
 
-.NutBam .ChayLed {
-  background: rgba(126, 208, 172, 255);
-  box-shadow: 0 6px rgba(110, 177, 146, 255);
+.NutBam button#cam {
+  background: rgba(252, 146, 104, 1);
+  box-shadow: 0 6px rgba(208, 95, 60, 1);
 }
 
-.BangDieuKhien .ChayLed:hover {
-  box-shadow: 0 4px rgba(110, 177, 146, 255);
-  border-radius: 5px;
-  top: 2px;
+.NutBam button#xanhla {
+  background: rgba(126, 208, 172, 1);
+  box-shadow: 0 6px rgba(110, 177, 146, 1);
 }
 
+.NutBam button#xanhduong {
+  background: rgba(167, 228, 255, 1);
+  box-shadow: 0 6px rgba(137, 208, 240, 1);
+}
+
+.BangDieuKhien .ChayLed:hover,
 .BangDieuKhien button:hover {
-  /* chỉ áp dụng cho nút, k áp dụng cho dòng chữ BẢNG ĐIỀU KHIỂN*/
   box-shadow: 0 4px #ab3c3c;
   border-radius: 5px;
-  top: 2px;
 }
 
-.BangDieuKhien button:active {
-  background: 0 0 #3c5cab;
-  box-shadow: 0 4px #849ed4;
-  border-radius: 5px;
-  top: 6px;
-}
-
-#ModeDangChay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Quicksand;
-  font-size: 20px;
-  color: red;
-}
-
-#maTuyen {
-  flex: 0.5; /*0.5 phần*/
-  display: flex;
-  position: relative;
-  color: red;
-  border: 2px;
-
-  padding-bottom: 10px;
-  padding-left: 20px;
-  font-size: 65pt;
-  margin-right: 20px;
-  letter-spacing: 4px;
-  transform: scale(1, 1);
-  position: relative;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  background-color: black;
-}
-
+/* Animations */
 @keyframes blink {
-  0% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
     opacity: 0;
   }
-  100% {
-    opacity: 1;
-  }
-}
-
-.luongTuyen {
-  flex: 7.5;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  text-align: center;
-  min-width: 0;
-  white-space: nowrap;
-  text-transform: uppercase;
-  will-change: transform;
-}
-
-.luongTuyen_Parent {
-  flex: 7.5;
-  overflow: hidden;
-}
-
-/* phục vụ chạy chữ */
-#route-info {
-  white-space: nowrap;
-  display: inline-block;
-}
-
-#route-info.marquee {
-  animation: marquee 12s linear infinite;
 }
 
 @keyframes marquee {
@@ -188,158 +109,211 @@ body {
   }
 }
 
-#diemDau {
+#ModeDangChay {
   display: flex;
-  color: rgb(17, 205, 142);
-  font-size: 40pt;
-  max-width: auto;
-  letter-spacing: 2.5px;
-}
-
-#arrow {
-  display: flex;
+  margin: 10px;
   justify-content: center;
-  max-width: 55px;
-  max-height: 55px;
-}
-
-#diemCuoi {
-  display: flex;
-  color: rgb(17, 205, 142);
-  font-size: 40pt;
-  max-width: auto;
-  letter-spacing: 2.5px;
-}
-
-#xiNghiep {
-  text-align: center;
   align-items: center;
-  position: relative;
-  color: rgb(17, 205, 142);
-  font-size: 40pt;
-  max-width: auto;
-  letter-spacing: 2.5px;
-  flex: 7.5; /* 6 phần */
+  font-family: Quicksand;
+  font-size: 20px;
+  color: red;
+}
+
+#maTuyen {
+  flex: 0.5;
   display: flex;
+  color: red;
+  margin: 30px;
+  font-size: 80pt;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  background-color: black;
+}
+
+.luongTuyen,
+#route-info {
+  display: inline-block;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.luongTuyen {
+  flex: 7.5;
   justify-content: center;
   align-items: center;
   gap: 10px;
   position: relative;
-  text-align: center;
-  min-width: 0;
+}
+
+/* dùng để chạy chữ, không xóa */
+.luongTuyen_Parent {
+  flex: 7.5;
+  overflow: hidden;
+}
+
+#route-info.marquee {
+  animation: marquee 12s linear infinite;
+}
+
+#diemDau,
+#diemCuoi,
+#HuyDongRaTuyen,
+#XeVeGara {
+  display: flex;
+  color: rgb(17, 205, 142);
+  font-size: 50pt;
+}
+
+#HuyDongRaTuyen,
+#XeVeGara {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50pt;
+}
+
+#arrow {
+  display: flex;
+  max-width: 55px;
+  max-height: 55px;
+  transform: scale(1);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#xiNghiep {
+  flex: 7.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   white-space: nowrap;
   text-transform: uppercase;
+  color: rgb(17, 205, 142);
+  font-size: 50pt;
 }
 
 .image {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 10px;
 }
 
-#hanoibus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 7.5;
-  max-width: 100%;
-  height: auto;
-  max-height: 60px;
-  display: none;
-  object-fit: contain;
-  min-width: 0;
-  white-space: nowrap;
-}
-
+#hanoibus,
 #transerco {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 7.5;
-  max-width: 150%;
-  height: auto;
-  max-height: 60px;
   display: none;
-  object-fit: contain;
-  min-width: 0;
-  white-space: nowrap;
+  max-width: 100%;
+  max-height: 60pt;
+  padding-left: 5px;
+  padding-right: 5px;
+  object-fit: cover;
 }
 
 #MaTuyenCanGiua {
   /* display: flex; */
   justify-content: center;
+  justify-items: center;
   align-items: center;
   color: red;
-  border: 2px;
-  font-size: 65pt;
-  letter-spacing: 4px;
-  transform: scale(1, 1);
   text-transform: uppercase;
-  margin: auto;
+  font-size: 80pt;
+  height: 150px;
+
+  overflow: hidden;
 }
 
-#HuyDongRaTuyen {
+.container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* font-family: UTM-HelvetINS; */
-  color: rgb(17, 205, 142);
-  font-size: 40pt;
-  max-width: auto;
-  letter-spacing: 2.5px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 15px;
+  gap: 15px;
 }
 
-#XeVeGara {
+.trangThai,
+.thongTin {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* font-family: UTM-HelvetINS; */
-  color: rgb(17, 205, 142);
-  font-size: 40pt;
-  max-width: auto;
-  letter-spacing: 2.5px;
-}
-
-footer {
-  display: block;
-  position: fixed;
-  justify-content: center;
-  text-align: center;
-}
-
-.UngDungHoTroTotNhat {
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  min-width: 350px;
+  background: #fff;
+  border-radius: 20px;
+  opacity: 0.9;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: column;
-  margin: 15px 15px;
-  background-color: white;
-  border-radius: 20px;
-  max-width: auto;
-  opacity: 90%;
 }
 
-#UngDungHoTroTotNhat {
+.trangThai {
+  flex-direction: column;
+}
+
+.tuyenPreview {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
   font-family: Quicksand;
   font-size: 20px;
-  margin-right: 15px;
-  margin-left: 15px;
+  color: rgba(126, 208, 172, 1);
+  text-transform: uppercase;
+  flex-direction: row;
+}
+
+#maTuyenLuu {
+  color: red;
+}
+
+.Table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-color: rgba(126, 208, 172, 1);
+  border-collapse: collapse;
+  font-family: Quicksand;
+  font-size: 20px;
+  /* min-width: 500px; */
+  table-layout: fixed;
+  margin: 15px;
+  text-transform: uppercase;
+  color: rgba(126, 208, 172, 1);
+}
+
+.Table th,
+.Table td {
+  /* display: block; */
+  flex-wrap: wrap;
+  border: 1px solid rgba(126, 208, 172, 1); /* Đường kẻ trong */
+  padding: 5px;
+  text-align: center;
+}
+
+.thongTin {
+  flex-direction: column;
+}
+
+.UngDungHoTroTotNhat {
+  font-family: Quicksand;
+  font-size: 20px;
+  margin: 15px;
   color: red;
   text-align: center;
 }
 
 #logobus {
-  max-width: auto;
-  max-height: 50px;
-  zoom: 80%;
-  margin: 10px 10px 10px 10px;
-}
-
-footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+#logobus img {
+  max-height: 50px;
+  zoom: 80%;
+  margin: 10px;
 }

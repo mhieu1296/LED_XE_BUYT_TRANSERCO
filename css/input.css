@@ -7,19 +7,19 @@ body {
   background-size: cover;
   background-position: center;
   background-blend-mode: screen;
-
+  min-width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.parent {
+.Nhap {
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 15px 15px;
+  padding: 15px 15px;
   background-color: white;
   border-radius: 20px;
   flex-direction: column;
@@ -29,10 +29,6 @@ body {
   min-width: 300px;
 }
 
-.Nhap {
-  margin: 10px 10px 10px 10px;
-}
-
 #NhapLabel {
   display: flex;
   justify-content: center;
@@ -40,6 +36,28 @@ body {
   font-family: Quicksand;
   font-size: 20px;
   color: red;
+}
+
+.NhapDuLieu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* dọc mặc định (cho màn hình dọc) */
+  gap: 15px;
+  padding: 10px;
+}
+
+.cotTrai,
+.cotPhai {
+  flex: 1;
+}
+
+@media (min-aspect-ratio: 4/3) {
+  /* Khi xoay ngang (aspect ratio rộng hơn), chia thành 2 cột */
+  .NhapDuLieu {
+    flex-direction: row;
+    gap: 30px;
+  }
 }
 
 .NutBam {
@@ -68,19 +86,8 @@ body {
   transition: none;
   border: none;
   cursor: pointer;
-  width: 120px;
-  height: 60px;
-}
-
-.NutBam .ChayLed {
-  background: rgba(126, 208, 172, 255);
-  box-shadow: 0 6px rgba(110, 177, 146, 255);
-}
-
-.NutBam .ChayLed:hover {
-  box-shadow: 0 4px rgba(110, 177, 146, 255);
-  border-radius: 5px;
-  top: 2px;
+  width: 160px;
+  height: 40px;
 }
 
 .NutBam button:hover {
@@ -97,10 +104,7 @@ body {
   top: 6px;
 }
 
-#maTuyenInput,
-#diemDauInput,
-#diemCuoiInput,
-#xiNghiepInput {
+.InputLabel {
   width: max-content;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -109,7 +113,7 @@ body {
 }
 
 input[type="text"] {
-  width: 300px;
+  width: 200px;
   border: none;
   border-bottom: 2px solid rgba(126, 208, 172, 255);
   font-family: "Courier New", Courier, monospace;

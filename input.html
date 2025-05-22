@@ -9,35 +9,38 @@
     <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
     <script src="js/dieu_khien_LED.js"></script>
     <script src="js/hien_thi_LED.js"></script>
-    <script src="js/dieu_huong.js"></script>
+    <script src="js/window_onload.js"></script>
+    <script src="js/theme.js"></script>
   </head>
   <body>
-    <div class="parent">
-      <div class="Nhap">
-        <p id="NhapLabel">NHẬP DỮ LIỆU TUYẾN</p>
-        <!-- <img
-          id="logobus"
-          src="assets/image/tong_cong_ty_vt_hanoi.png"
-          alt="TRANSERCO HANOIBUS"
-        /> -->
-        <div class="NhapDuLieu">
-          <p id="maTuyenInput">Nhập mã tuyến:</p>
-          <input type="text" placeholder="16..." />
-          <p id="diemDauInput">Nhập điểm đầu:</p>
-          <input type="text" placeholder="BX MỸ ĐÌNH..." />
-          <p id="diemCuoiInput">Nhập điểm cuối:</p>
-          <input type="text" placeholder="BX NƯỚC NGẦM..." />
-          <p id="xiNghiepInput">Nhập tên xí nghiệp:</p>
-          <input type="text" placeholder="XN BUS CẦU BƯƠU..." />
-          <div class="NutBam">
-            <button class="NhapDuLieu" onclick="NhapDuLieu()">LƯU</button>
-            <button class="NhapDuLieu" onclick="goToLEDPage()">
-              VỀ TRANG LED
-            </button>
-          </div>
+    <div class="Nhap">
+      <p id="NhapLabel">NHẬP DỮ LIỆU TUYẾN</p>
+      <div class="NhapDuLieu">
+        <div class="cotTrai">
+          <p class="InputLabel">Nhập mã tuyến:</p>
+          <input id="maTuyenInput" type="text" placeholder="16..." />
+
+          <p class="InputLabel">Nhập điểm đầu:</p>
+          <input id="diemDauInput" type="text" placeholder="BX MỸ ĐÌNH..." />
         </div>
-        <p id="canhBao"></p>
+        <div class="cotPhai">
+          <p class="InputLabel">Nhập điểm cuối:</p>
+          <input id="diemCuoiInput" type="text" placeholder="BX NƯỚC NGẦM..." />
+          <p class="InputLabel">Nhập tên xí nghiệp:</p>
+          <input
+            id="xiNghiepInput"
+            type="text"
+            placeholder="XN BUS CẦU BƯƠU..."
+          />
+        </div>
       </div>
+      <div class="NutBam">
+        <button class="NhapDuLieu" onclick="NhapDuLieu()">LƯU</button>
+        <a href="/">
+          <button class="NhapDuLieu">QUAY LẠI</button>
+        </a>
+      </div>
+      <p id="canhBao"></p>
     </div>
   </body>
 </html>

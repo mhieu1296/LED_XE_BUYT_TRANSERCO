@@ -3,6 +3,8 @@ window.onload = function () {
   stop();
   reset();
 
+  document.getElementById("isPausing").innerText = "NO";
+
   // nhớ lại local storage
   const maTuyen = localStorage.getItem("maTuyen");
   const diemDau = localStorage.getItem("diemDau");
@@ -14,4 +16,9 @@ window.onload = function () {
   document.getElementById("diemCuoi").innerText = diemCuoi;
   document.getElementById("xiNghiep").innerText = xiNghiep;
   document.getElementById("MaTuyenCanGiua").innerText = maTuyen;
+
+  document.getElementById("maTuyenLuu").innerText = maTuyen;
+  document.getElementById("diemDauLuu").innerText = diemDau;
+  document.getElementById("diemCuoiLuu").innerText = diemCuoi;
+  document.getElementById("xiNghiepLuu").innerText = xiNghiep;
 };
