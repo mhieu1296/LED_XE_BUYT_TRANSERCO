@@ -16,23 +16,38 @@
     <div class="Nhap">
       <p id="NhapLabel">NHẬP DỮ LIỆU TUYẾN</p>
       <div class="NhapDuLieu">
-        <div class="cotTrai">
-          <p class="InputLabel">Nhập mã tuyến:</p>
-          <input id="maTuyenInput" type="text" placeholder="16..." />
+        <!-- <p class="InputLabel">Nhập mã tuyến *</p>
+        <input id="maTuyenInput" type="text" placeholder="20A..." />
 
-          <p class="InputLabel">Nhập điểm đầu:</p>
-          <input id="diemDauInput" type="text" placeholder="BX MỸ ĐÌNH..." />
-        </div>
-        <div class="cotPhai">
-          <p class="InputLabel">Nhập điểm cuối:</p>
-          <input id="diemCuoiInput" type="text" placeholder="BX NƯỚC NGẦM..." />
-          <p class="InputLabel">Nhập tên xí nghiệp:</p>
-          <input
-            id="xiNghiepInput"
-            type="text"
-            placeholder="XN BUS CẦU BƯƠU..."
-          />
-        </div>
+        <p class="InputLabel">Nhập điểm đầu *</p>
+        <input id="diemDauInput" type="text" placeholder="NHỔN..." />
+        <p class="InputLabel">ĐIỂM GIŨA (OPT)</p>
+        <input id="diemGiuaInput" type="text" placeholder="QL32..." class="khongBatBuoc"/>
+        <p class="InputLabel">Nhập điểm cuối *</p>
+        <input id="diemCuoiInput" type="text" placeholder="BX SƠN TÂY..." />
+        <p class="InputLabel">Nhập tên xí nghiệp *</p> -->
+        <table>
+          <tr>
+            <td><p class="InputLabel">Nhập mã tuyến *</p></td>
+            <td><input id="maTuyenInput" type="text" placeholder="20A..." /></td>
+          </tr>
+          <tr>
+            <td><p class="InputLabel">Nhập điểm đầu *</p></td>
+            <td><input id="diemDauInput" type="text" placeholder="NHỔN..." /></td>
+          </tr>
+          <tr>
+            <td><p class="InputLabel">ĐIỂM GIŨA (OPT)</p></td>
+            <td><input id="diemGiuaInput" type="text" placeholder="QL32..." class="khongBatBuoc" /></td>
+          </tr>
+          <tr>
+            <td><p class="InputLabel">Nhập điểm cuối *</p></td>
+            <td><input id="diemCuoiInput" type="text" placeholder="BX SƠN TÂY..." /></td>
+          </tr>
+          <tr>
+            <td><p class="InputLabel">Nhập tên xí nghiệp *</p></td>
+            <td><input id="xiNghiepInput" type="text" placeholder="XN BUS 10-10..." /></td>
+          </tr>
+        </table>
       </div>
       <div class="NutBam">
         <button class="NhapDuLieu" onclick="NhapDuLieu()">LƯU</button>

@@ -6,7 +6,7 @@ body {
   background-size: cover;
   background-position: center;
   background-blend-mode: screen;
-  min-width: 350px;
+  min-width: 600px;
 }
 
 .LED {
@@ -140,6 +140,10 @@ body {
   gap: 10px;
   position: relative;
   text-transform: uppercase;
+
+  display: flex;
+  color: rgb(17, 205, 142);
+  font-size: 50pt;
 }
 
 /* dùng để chạy chữ, không xóa */
@@ -152,13 +156,12 @@ body {
   animation: marquee 12s linear infinite;
 }
 
-#diemDau,
+/* #diemDau,
+#diemGiua
 #diemCuoi,
 #HuyDongRaTuyen,
 #XeVeGara {
-  display: flex;
-  color: rgb(17, 205, 142);
-  font-size: 50pt;
+
 }
 
 #HuyDongRaTuyen,
@@ -167,9 +170,10 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 50pt;
-}
+} */
 
-#arrow {
+#mui_ten_xanh1,
+#mui_ten_xanh2 {
   display: flex;
   max-width: 55px;
   max-height: 55px;
