@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px;
+  margin: 30px;
   font-family: SVN-ProductSansBold;
   text-align: center;
   border: 5px solid white;
@@ -29,7 +29,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 15px;
+  margin: 30px;
   background-color: white;
   border-radius: 20px;
   opacity: 0.9;
@@ -131,28 +131,22 @@ body {
   background-color: black;
 }
 
-.luongTuyen,
-#route-info {
-  display: inline-block;
-  white-space: nowrap;
-  text-transform: uppercase;
-}
-
 .luongTuyen {
   flex: 7.5;
   justify-content: center;
   align-items: center;
   gap: 10px;
   position: relative;
+  text-transform: uppercase;
 }
 
 /* dùng để chạy chữ, không xóa */
-.luongTuyen_Parent {
+.NoiDungChayChu {
   flex: 7.5;
   overflow: hidden;
 }
 
-#route-info.marquee {
+.luongTuyen.marquee {
   animation: marquee 12s linear infinite;
 }
 
@@ -228,8 +222,8 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 15px;
-  gap: 15px;
+  margin: 30px;
+  gap: 30px;
 }
 
 .trangThai,

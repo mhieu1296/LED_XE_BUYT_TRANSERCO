@@ -270,7 +270,7 @@ let funcs = [
 ];
 
 // thời gian delay từng hiệu ứng mặc định
-let delays = [30000, 5000, 5000, 5000]; // mode truyền thống
+let delays = [30000, 2000, 5000, 2000]; // mode truyền thống
 
 function chonMode(mode) {
   if (mode === "xe_dien") {
@@ -320,7 +320,7 @@ function chonMode(mode) {
     // có hienThiMaTuyen_DiemDauCuoi, hienThiMaTuyen_Hanoibus, hienThiMaTuyenCanGiua và hienThiMaTuyen_Transerco
     console.log("THƯỜNG");
     document.getElementById("MODE").innerText = "THƯỜNG";
-    delays.splice(0, delays.length, ...[30000, 5000, 5000, 5000]);
+    delays.splice(0, delays.length, ...[30000, 2000, 5000, 2000]);
     funcs.splice(
       0,
       funcs.length,
