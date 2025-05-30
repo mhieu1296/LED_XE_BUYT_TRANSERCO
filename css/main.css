@@ -21,6 +21,8 @@ body {
   height: 150px;
   border-radius: 20px;
   overflow: hidden;
+
+  white-space: nowrap;
 }
 
 .BangDieuKhien {
@@ -182,7 +184,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  white-space: nowrap;
+  
   text-transform: uppercase;
   color: rgb(17, 205, 142);
   font-size: 50pt;
