@@ -156,21 +156,14 @@ body {
   animation: marquee 12s linear infinite;
 }
 
-/* #diemDau,
-#diemGiua
-#diemCuoi,
-#HuyDongRaTuyen,
-#XeVeGara {
-
-}
-
 #HuyDongRaTuyen,
 #XeVeGara {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgb(17, 205, 142);
   font-size: 50pt;
-} */
+}
 
 #mui_ten_xanh1,
 #mui_ten_xanh2 {

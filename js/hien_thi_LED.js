@@ -423,21 +423,7 @@ function HuyDongRaTuyen() {
   // hàm chỉ hiển thị HUY ĐỘNG RA TUYẾN
   stop();
   reset();
-  const maTuyen = document.getElementById("maTuyen");
-  const routeInfo = document.getElementById("route-info");
-  const hanoibus = document.getElementById("hanoibus");
-  const xiNghiep = document.getElementById("xiNghiep");
-  const TuyenCanGiua = document.getElementById("MaTuyenCanGiua");
-  const Transerco = document.getElementById("transerco");
-  const HuyDong = document.getElementById("HuyDongRaTuyen");
-
-  maTuyen.style.display = "none";
-  routeInfo.style.display = "none";
-  hanoibus.style.display = "none";
-  TuyenCanGiua.style.display = "none";
-  Transerco.style.display = "none";
-  xiNghiep.style.display = "none";
-  HuyDong.style.display = "flex";
+  document.getElementById("HuyDongRaTuyen").style.display = "flex";  
   console.log("Mode Huy động ra tuyến");
 }
 
@@ -445,20 +431,6 @@ function XeVeGara() {
   // hàm chỉ hiển thị XE VỀ GARA
   stop();
   reset();
-  const maTuyen = document.getElementById("maTuyen");
-  const routeInfo = document.getElementById("route-info");
-  const hanoibus = document.getElementById("hanoibus");
-  const xiNghiep = document.getElementById("xiNghiep");
-  const TuyenCanGiua = document.getElementById("MaTuyenCanGiua");
-  const Transerco = document.getElementById("transerco");
-  const VeGara = document.getElementById("XeVeGara");
-
-  maTuyen.style.display = "none";
-  routeInfo.style.display = "none";
-  hanoibus.style.display = "none";
-  xiNghiep.style.display = "none";
-  TuyenCanGiua.style.display = "none";
-  Transerco.style.display = "none";
-  VeGara.style.display = "flex";
-  console.log("Mode Xe về Gara");
+  document.getElementById("XeVeGara").style.display = "flex";
+  console.log("Mode XE VỀ GARA");
 }
