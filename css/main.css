@@ -123,7 +123,6 @@ body {
   position: relative;
   overflow: hidden;
   flex: 7.5;
-  max-width: 800px;
   height: 100%; 
   color: rgb(17, 205, 142);
   white-space: nowrap;
