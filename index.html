@@ -3,159 +3,161 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LED XE BUÝT TRANSERCO</title>
+    <title>BẢNG ĐIỆN TỬ XE BUÝT</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/font.css" />
     <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
     <script src="js/dieu_khien_LED.js"></script>
     <script src="js/hien_thi_LED.js"></script>
     <script src="js/window_onload.js"></script>
+    <!-- <script src="js/test.js"></script> -->
     <script src="js/theme.js"></script>
   </head>
   <body>
-    <div>
-      <div class="LED">
-        <p id="maTuyen">00</p>
-        <div class="NoiDungChayChu">
-          <!-- Không được xóa id route-info -->
-          <div class="luongTuyen" id="route-info">
-            <p id="diemDau">ĐÂY LÀ ĐIỂM ĐẦU</p>
-            <img id="mui_ten_xanh1" src="assets/image/mui_ten_xanh.gif" alt="->" />
-            <p id="diemGiua">ĐÂY LÀ ĐIỂM GIỮA</p>
-            <img id="mui_ten_xanh2" src="assets/image/mui_ten_xanh.gif" alt="->" />
-            <p id="diemCuoi">ĐÂY LÀ ĐIỂM CUỐI</p>
-          </div>
-          <p id="xiNghiep">ĐÂY LÀ TÊN XÍ NGHIỆP</p>
-          <p id="MaTuyenCanGiua">00</p>
-          <p id="HuyDongRaTuyen">XE HUY ĐỘNG</p>
-          <p id="XeVeGara">XE VỀ GARA</p>
-          <div class="image">
-            <img
-              id="hanoibus"
-              src="assets/image/hanoibus_green.png"
-              alt="HANOIBUS"
-            />
-            <img
-              id="transerco"
-              src="assets/image/transerco.png"
-              alt="TRANSERCO"
-            />
-          </div>
+    <div class="LED">
+      <p id="maTuyen">00</p>
+      <div class="NoiDungChayChu">
+        <!-- Không được xóa id route-info -->
+        <div id="route-info">
+          <p id="diemDau">ĐÂY LÀ ĐIỂM ĐẦU</p>
+          <img id="mui_ten_xanh1" src="assets/image/mui_ten_xanh.gif" alt="->" />
+          <p id="diemGiua">ĐÂY LÀ ĐIỂM GIỮA</p>
+          <img id="mui_ten_xanh2" src="assets/image/mui_ten_xanh.gif" alt="->" />
+          <p id="diemCuoi">ĐÂY LÀ ĐIỂM CUỐI</p>
+        </div>
+        <p id="xiNghiep">ĐÂY LÀ TÊN XÍ NGHIỆP</p>
+        <p id="MaTuyenCanGiua">00</p>
+        <p id="HuyDongRaTuyen">XE HUY ĐỘNG</p>
+        <p id="XeVeGara">XE VỀ GARA</p>
+        <div class="image">
+          <img
+            id="hanoibus"
+            src="assets/image/hanoibus_green.png"
+            alt="HANOIBUS"
+          />
+          <img
+            id="transerco"
+            src="assets/image/transerco.png"
+            alt="TRANSERCO"
+          />
         </div>
       </div>
-      <div class="BangDieuKhien">
-        <p class="BangDieuKhienLabel">BẢNG ĐIỀU KHIỂN</p>
-        <div class="NutBam">
-          <button class="ChayLed" id="xanhla" onclick="start()">CHẠY</button>
-          <button class="RESET" onclick="reset()">TẮT</button>
+      
+    </div>
+    <div class="BangDieuKhien">
+      <p class="BangDieuKhienLabel">BẢNG ĐIỀU KHIỂN</p>
+      <div class="NutBam">
+        <button class="ChayLed" id="xanhla" onclick="start()">CHẠY</button>
+        <button class="RESET" onclick="reset()">TẮT</button>
 
-          <button
-            class="daoChieuTuyen"
-            onclick="daoChieuLED('diemDau', 'diemCuoi')"
-          >
-            ĐẢO CHIỀU
-          </button>
-          <button class="DungLed" onclick="stop()">ĐÓNG BĂNG</button>
-          <button class="XeVeGara" onclick="XeVeGara()">XE VỀ GARA</button>
-          <button class="HuyDongRaTuyen" onclick="HuyDongRaTuyen()">
-            XE HUY ĐỘNG
-          </button>
-          <button class="TEST" onclick="chayChu()">CHẠY CHỮ</button>
-          <a href="input.html">
-            <button class="NhapDuLieu">NHẬP</button>
-          </a>
-        </div>
-        <p id="ModeDangChay">CHỌN MODE CHẠY</p>
-        <div class="NutBam">
-          <button
-            class="XEDIEN"
-            onclick="chonMode('xe_dien'), tatHieuUngNhay()"
-          >
-            XE ĐIỆN
-          </button>
-          <button
-            class="XEDIEN2"
-            onclick="chonMode('xe_dien2'), tatHieuUngNhay()"
-          >
-            XE ĐIỆN 2
-          </button>
-          <button class="THUONG" onclick="chonMode('thuong'), tatHieuUngNhay()">
-            THƯỜNG
-          </button>
-          <button
-            class="LIENNINH"
-            onclick="chonMode('lien_ninh'), tatHieuUngNhay()"
-          >
-            LIÊN NINH
-          </button>
-          <button
-            class="HANOIBRT"
-            onclick="chonMode('hanoibrt'), tatHieuUngNhay()"
-          >
-            HANOI BRT
-          </button>
-          <button
-            class="BAOYEN"
-            onclick="chonMode('bao_yen'), batHieuUngNhay()"
-          >
-            BẢO YẾN
-          </button>
-          <button class="DEMO`" onclick="chonMode('demo'), tatHieuUngNhay()">
-            DEMO
-          </button>
-        </div>
-        <p class="BangDieuKhienLabel">MÀU NỀN</p>
-        <div class="NutBam">
-          <button id="xanhduong" onclick="setColor(0)">XANH DƯƠNG</button>
-          <button id="xanhla" onclick="setColor(1)">XANH LÁ</button>
-          <button id="cam" onclick="setColor(2)">CAM</button>
-        </div>
+        <button
+          class="daoChieuTuyen"
+          onclick="daoChieuLED('diemDau', 'diemCuoi')"
+        >
+          ĐẢO CHIỀU
+        </button>
+        <button class="DungLed" onclick="stop()">ĐÓNG BĂNG</button>
+        <button class="XeVeGara" onclick="XeVeGara()">XE VỀ GARA</button>
+        <button class="HuyDongRaTuyen" onclick="HuyDongRaTuyen()">
+          XE HUY ĐỘNG
+        </button>
+        <button class="TEST" onclick="chayChu()">CHẠY CHỮ</button>
+        <a href="input.html">
+          <button class="NhapDuLieu">NHẬP</button>
+        </a>
       </div>
-      <div class="container">
-        <div class="trangThai">
-          <p class="BangDieuKhienLabel">THÔNG TIN TUYẾN</p>
-          <div class="tuyenPreview">
-            <p id="maTuyenLuu"></p>
-            <p id="diemDauLuu"></p>
-            <p id="mui_ten1">➜</p>
-            <p id="diemGiuaLuu"></p>
-            <p id="mui_ten2">➜</p>
-            <p id="diemCuoiLuu"></p>
-          </div>
-          <!-- <p id="xiNghiepLuu"></p> -->
-          <p class="BangDieuKhienLabel">TRẠNG THÁI HOẠT ĐỘNG</p>
-          <table class="Table">
-            <tr>
-              <th>ĐANG CHẠY?</th>
-              <th>TẠM DỪNG?</th>
-              <th>CHẠY CHỮ?</th>
-              <th>MODE</th>
-            </tr>
-            <tr>
-              <td id="isRunning"></td>
-              <td id="isPausing">NO</td>
-              <td id="isTextMoving">NO</td>
-              <td id="MODE">THƯỜNG</td>
-            </tr>
-          </table>
+      <p id="ModeDangChay">CHỌN MODE CHẠY</p>
+      <div class="NutBam">
+        <button
+          class="XEDIEN"
+          onclick="chonMode('xe_dien'), tatHieuUngNhay()"
+        >
+          XE ĐIỆN
+        </button>
+        <button
+          class="XEDIEN2"
+          onclick="chonMode('xe_dien2'), tatHieuUngNhay()"
+        >
+          XE ĐIỆN 2
+        </button>
+        <button class="THUONG" onclick="chonMode('thuong'), tatHieuUngNhay()">
+          THƯỜNG
+        </button>
+        <button
+          class="LIENNINH"
+          onclick="chonMode('lien_ninh'), tatHieuUngNhay()"
+        >
+          LIÊN NINH
+        </button>
+        <button
+          class="HANOIBRT"
+          onclick="chonMode('hanoibrt'), tatHieuUngNhay()"
+        >
+          HANOI BRT
+        </button>
+        <button
+          class="BAOYEN"
+          onclick="chonMode('bao_yen'), batHieuUngNhay()"
+        >
+          BẢO YẾN
+        </button>
+        <button class="DEMO`" onclick="chonMode('demo'), tatHieuUngNhay()">
+          DEMO
+        </button>
+      </div>
+      <p class="BangDieuKhienLabel">MÀU NỀN</p>
+      <div class="NutBam">
+        <button id="xanhduong" onclick="setColor(0)">XANH DƯƠNG</button>
+        <button id="xanhla" onclick="setColor(1)">XANH LÁ</button>
+        <button id="cam" onclick="setColor(2)">CAM</button>
+      </div>
+      <p></p>
+    </div>
+    <div class="container">
+      <div class="trangThai">
+        <p class="BangDieuKhienLabel">THÔNG TIN TUYẾN</p>
+        <div class="tuyenPreview">
+          <p id="maTuyenLuu"></p>
+          <p id="diemDauLuu"></p>
+          <p id="mui_ten1">➜</p>
+          <p id="diemGiuaLuu"></p>
+          <p id="mui_ten2">➜</p>
+          <p id="diemCuoiLuu"></p>
         </div>
-        <div class="thongTin">
-          <p class="UngDungHoTroTotNhat">HỖ TRỢ TỐT NHẤT CHO</p>
-          <div id="logobus">
-            <img src="assets/image/logohanoibus.png" alt="TRANSERCO HANOIBUS" />
-            <img src="assets/image/HANOI BRT.png" alt="HANOI BRT" />
-            <img src="assets/image/bus_lien_ninh.png" alt="BUSLIENINH" />
-            <img src="assets/image/baoyengroup.png" alt="BUSLIENINH" />
-          </div>
-          <p class="UngDungHoTroTotNhat">
-            CHÚ Ý: ĐÓNG BĂNG, TẮT LED TRƯỚC KHI ĐỔI MODE
-          </p>
-          <p class="UngDungHoTroTotNhat">
-            TÁC GIẢ: <a href= "https://github.com/mhieu1296" >NGUYỄN MINH HIẾU</a>, LỚP KTPM02 ĐẠI HỌC CÔNG NGHIỆP HÀ NỘI
-            <br />
-            CODE CÓ XẤU CÁC ANH GIƠ CAO ĐÁNH KHẼ THÔI Ạ 😭
-          </p>
+        <!-- <p id="xiNghiepLuu"></p> -->
+        <p class="BangDieuKhienLabel">TRẠNG THÁI HOẠT ĐỘNG</p>
+        <table class="Table">
+          <tr>
+            <th>ĐANG CHẠY?</th>
+            <th>TẠM DỪNG?</th>
+            <th>CHẠY CHỮ?</th>
+            <th>MODE</th>
+          </tr>
+          <tr>
+            <td id="isRunning"></td>
+            <td id="isPausing">NO</td>
+            <td id="isTextMoving">NO</td>
+            <td id="MODE">THƯỜNG</td>
+          </tr>
+          
+        </table>
+      </div>
+      <div class="thongTin">
+        <p class="UngDungHoTroTotNhat">HỖ TRỢ TỐT NHẤT CHO</p>
+        <div id="logobus">
+          <img src="assets/image/logohanoibus.png" alt="TRANSERCO HANOIBUS" />
+          <img src="assets/image/HANOI BRT.png" alt="HANOI BRT" />
+          <img src="assets/image/bus_lien_ninh.png" alt="BUSLIENINH" />
+          <img src="assets/image/baoyengroup.png" alt="BUSLIENINH" />
         </div>
+        <p class="UngDungHoTroTotNhat">
+          CHÚ Ý: ĐÓNG BĂNG, TẮT LED TRƯỚC KHI ĐỔI MODE
+        </p>
+        <p class="UngDungHoTroTotNhat">
+          TÁC GIẢ: <a href= "https://github.com/mhieu1296" >NGUYỄN MINH HIẾU</a>, LỚP KTPM02 ĐẠI HỌC CÔNG NGHIỆP HÀ NỘI
+          <br />
+          CODE CÓ XẤU CÁC ANH GIƠ CAO ĐÁNH KHẼ THÔI Ạ 😭
+        </p>
       </div>
     </div>
   </body>

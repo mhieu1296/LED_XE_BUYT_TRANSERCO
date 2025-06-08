@@ -1,12 +1,6 @@
 body {
-  margin: 0;
-  height: 100vh;
   background-color: rgba(182, 255, 228, 255);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: screen;
-  min-width: 600px;
+  min-width: 500px;
 }
 
 .LED {
@@ -91,7 +85,7 @@ body {
   border-radius: 5px;
 }
 
-/* Animations */
+/* hiệu ứng nhấp nháy maTuyen */
 @keyframes blink {
   0%,
   100% {
@@ -99,15 +93,6 @@ body {
   }
   50% {
     opacity: 0;
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
   }
 }
 
@@ -124,45 +109,53 @@ body {
 #maTuyen {
   flex: 0.5;
   display: flex;
-  color: red;
+  color: rgb(246,29,4);
   margin: 30px;
   font-size: 80pt;
-  letter-spacing: 5px;
   text-transform: uppercase;
   flex-shrink: 0;
-  background-color: black;
 }
 
-.luongTuyen {
-  flex: 7.5;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  text-transform: uppercase;
-
+.NoiDungChayChu {
   display: flex;
+  justify-content: center; 
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex: 7.5;
+  max-width: 800px;
+  height: 100%; 
+  color: rgb(17, 205, 142);
+  white-space: nowrap;
+}
+
+#route-info {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  position: absolute;
   color: rgb(17, 205, 142);
   font-size: 50pt;
+  text-transform: uppercase;
 }
 
-/* dùng để chạy chữ, không xóa */
-.NoiDungChayChu {
-  flex: 7.5;
-  overflow: hidden;
-}
 
-.luongTuyen.marquee {
-  animation: marquee 12s linear infinite;
-}
-
+#xiNghiep,
+#MaTuyenCanGiua,
 #HuyDongRaTuyen,
 #XeVeGara {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   color: rgb(17, 205, 142);
+  text-transform: uppercase;
   font-size: 50pt;
+  height: 100%; /* Để căn giữa chính xác */
+}
+
+#MaTuyenCanGiua{
+  font-size: 80pt;
 }
 
 #mui_ten_xanh1,
@@ -177,7 +170,7 @@ body {
 
 #xiNghiep {
   flex: 7.5;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -202,19 +195,6 @@ body {
   padding-left: 5px;
   padding-right: 5px;
   object-fit: cover;
-}
-
-#MaTuyenCanGiua {
-  /* display: flex; */
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  color: red;
-  text-transform: uppercase;
-  font-size: 80pt;
-  height: 150px;
-
-  overflow: hidden;
 }
 
 .container {

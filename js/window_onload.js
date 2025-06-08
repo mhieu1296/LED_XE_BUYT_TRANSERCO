@@ -38,4 +38,5 @@ window.onload = function () {
   }
   document.getElementById("diemCuoiLuu").innerText = diemCuoi;
   document.getElementById("xiNghiepLuu").innerText = xiNghiep;
+
 };

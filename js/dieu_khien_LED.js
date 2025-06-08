@@ -31,13 +31,57 @@ function daoChieuLED(Dau, Cuoi) {
   }
 }
 
-function chayChu() {
-  const chay = document.getElementById("route-info");
-  const isRunning = chay.classList.toggle("marquee");
+// hiệu ứng chạy chữ từ phải sang trái
+let isRunning = false;
+let animationId = null;
+let pos = 0;
+let lastTime = null;
+const toc_do = 100; // tốc độ px/s
 
-  // Nếu đang chạy thì in YES, nếu không thì in NO
-  document.getElementById("isTextMoving").innerText = isRunning ? "YES" : "NO";
+function scrollText(timestamp) {
+  if (!isRunning) return;
+
+  if (!lastTime) lastTime = timestamp;
+  const elapsed = (timestamp - lastTime) / 1000;
+  lastTime = timestamp;
+
+  const chaychu = document.getElementById('route-info');
+  const khung = document.getElementsByClassName('NoiDungChayChu')[0];
+
+  pos -= toc_do * elapsed;
+  if (pos < -chaychu.offsetWidth) {
+    pos = khung.offsetWidth;
+  }
+
+  chaychu.style.left = pos + 'px';
+
+  animationId = requestAnimationFrame(scrollText);
 }
+
+function chayChu() {
+  const khung = document.getElementsByClassName('NoiDungChayChu')[0];
+  const chaychu = document.getElementById('route-info');
+
+  if (!isRunning) {
+    pos = khung.offsetWidth;
+    lastTime = null;
+    isRunning = true;
+    animationId = requestAnimationFrame(scrollText);
+    console.log("▶️ Bắt đầu chạy chữ");
+  } else {
+    isRunning = false;
+    cancelAnimationFrame(animationId);
+
+    // 🧠 Căn giữa dòng chữ khi dừng lại
+    const centerPos = (khung.offsetWidth - chaychu.offsetWidth) / 2;
+    chaychu.style.left = centerPos + 'px';
+
+    console.log("⏹ Dừng và căn giữa chữ");
+  }
+}
+
+
+
 
 function batHieuUngNhay() {
   // nhấp nháy mã tuyến

@@ -10,7 +10,7 @@ function NhapDuLieu() {
     }
   }
 
-  // Gán giá trị từ input vào localDrage để gán vào khi load trang (window_onload.js)
+  // Gán giá trị từ input vào localStorage để gán vào khi load trang (window_onload.js)
   const maTuyen = inputs[0].value;
   const diemDau = inputs[1].value;
   const diemGiua = inputs[2].value;

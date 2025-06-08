@@ -270,7 +270,7 @@ let funcs = [
 ];
 
 // thời gian delay từng hiệu ứng mặc định
-let delays = [30000, 2000, 5000, 2000]; // mode truyền thống
+let delays = [30000, 3000, 5000, 3000]; // mode truyền thống
 
 function chonMode(mode) {
   if (mode === "xe_dien") {
@@ -280,7 +280,7 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[30000, 5000, 5000, 150, 150, 5000, 250, 250, 5000]
+      ...[30000, 5000, 5000, 200, 200, 5000, 300, 300, 5000]
     );
     funcs.splice(
       0,
@@ -302,7 +302,7 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[30000, 5000, 150, 150, 5000, 250, 250, 5000]
+      ...[30000, 5000, 200, 200, 5000, 300, 300, 5000]
     );
     funcs.splice(
       0,
@@ -320,7 +320,7 @@ function chonMode(mode) {
     // có hienThiMaTuyen_DiemDauCuoi, hienThiMaTuyen_Hanoibus, hienThiMaTuyenCanGiua và hienThiMaTuyen_Transerco
     console.log("THƯỜNG");
     document.getElementById("MODE").innerText = "THƯỜNG";
-    delays.splice(0, delays.length, ...[30000, 2000, 5000, 2000]);
+    delays.splice(0, delays.length, ...[30000, 3000, 5000, 3000]);
     funcs.splice(
       0,
       funcs.length,
@@ -378,7 +378,7 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[2000, 2000, 2000, 150, 150, 2000, 250, 250, 2000]
+      ...[2000, 2000, 2000, 200, 200, 2000, 300, 300, 2000]
     );
     funcs.splice(
       0,
@@ -397,7 +397,7 @@ function chonMode(mode) {
 }
 
 async function start() {
-  // hàm chạy hiệu ứng
+  // hàm chạy LED
   if (running) return; // nếu đã chạy thì không chạy thêm nữa
   document.getElementById("isRunning").innerText = "YES";
   document.getElementById("isPausing").innerText = "NO";
