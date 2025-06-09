@@ -36,7 +36,7 @@ let isRunning = false;
 let animationId = null;
 let pos = 0;
 let lastTime = null;
-const toc_do = 100; // tốc độ px/s
+const toc_do = 200; // tốc độ px/s
 
 function scrollText(timestamp) {
   if (!isRunning) return;
@@ -67,7 +67,8 @@ function chayChu() {
     lastTime = null;
     isRunning = true;
     animationId = requestAnimationFrame(scrollText);
-    console.log("▶️ Bắt đầu chạy chữ");
+    console.log("Bắt đầu chạy chữ");
+    document.getElementById("isTextMoving").innerText = "YES";
   } else {
     isRunning = false;
     cancelAnimationFrame(animationId);
@@ -75,8 +76,8 @@ function chayChu() {
     // 🧠 Căn giữa dòng chữ khi dừng lại
     const centerPos = (khung.offsetWidth - chaychu.offsetWidth) / 2;
     chaychu.style.left = centerPos + 'px';
-
-    console.log("⏹ Dừng và căn giữa chữ");
+    document.getElementById("isTextMoving").innerText = "NO";
+    console.log("Dừng chạy chữ");
   }
 }
 

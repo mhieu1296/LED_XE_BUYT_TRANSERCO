@@ -17,7 +17,6 @@
     <div class="LED">
       <p id="maTuyen">00</p>
       <div class="NoiDungChayChu">
-        <!-- Không được xóa id route-info -->
         <div id="route-info">
           <p id="diemDau">ĐÂY LÀ ĐIỂM ĐẦU</p>
           <img id="mui_ten_xanh1" src="assets/image/mui_ten_xanh.gif" alt="->" />
@@ -42,14 +41,12 @@
           />
         </div>
       </div>
-      
     </div>
     <div class="BangDieuKhien">
       <p class="BangDieuKhienLabel">BẢNG ĐIỀU KHIỂN</p>
       <div class="NutBam">
         <button class="ChayLed" id="xanhla" onclick="start()">CHẠY</button>
         <button class="RESET" onclick="reset()">TẮT</button>
-
         <button
           class="daoChieuTuyen"
           onclick="daoChieuLED('diemDau', 'diemCuoi')"
@@ -107,9 +104,13 @@
       </div>
       <p class="BangDieuKhienLabel">MÀU NỀN</p>
       <div class="NutBam">
-        <button id="xanhduong" onclick="setColor(0)">XANH DƯƠNG</button>
-        <button id="xanhla" onclick="setColor(1)">XANH LÁ</button>
-        <button id="cam" onclick="setColor(2)">CAM</button>
+        <button id="xanhduong" onclick="setColor(0)"></button>
+        <button id="xanhla" onclick="setColor(1)"></button>
+        <button id="cam" onclick="setColor(2)"></button>
+        <button id="vang" onclick="setColor(3)"></button>
+        <button id="tim" onclick="setColor(4)"></button>
+        <button id="hong" onclick="setColor(5)"></button>
+        <button id="do" onclick="setColor(6)"></button>
       </div>
       <p></p>
     </div>
