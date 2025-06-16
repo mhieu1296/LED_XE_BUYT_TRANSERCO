@@ -47,10 +47,6 @@ body {
   padding: 10px;
 }
 
-.cotTrai,
-.cotPhai {
-  flex: 1;
-}
 
 @media (min-aspect-ratio: 4/3) {
   /* Khi xoay ngang (aspect ratio rộng hơn), chia thành 2 cột */
@@ -82,26 +78,11 @@ body {
   border-radius: 5px;
   background: #cb4e4e;
   color: #fff;
-  box-shadow: 0 6px #ab3c3c;
   transition: none;
   border: none;
   cursor: pointer;
   width: 160px;
   height: 40px;
-}
-
-.NutBam button:hover {
-  /* chỉ áp dụng cho nút, k áp dụng cho dòng chữ BẢNG ĐIỀU KHIỂN*/
-  box-shadow: 0 4px #ab3c3c;
-  border-radius: 5px;
-  top: 2px;
-}
-
-.BangDieuKhien button:active {
-  background: 0 0 #3c5cab;
-  box-shadow: 0 4px #849ed4;
-  border-radius: 5px;
-  top: 6px;
 }
 
 .InputLabel {

@@ -73,7 +73,7 @@ function chayChu() {
     isRunning = false;
     cancelAnimationFrame(animationId);
 
-    // 🧠 Căn giữa dòng chữ khi dừng lại
+    //  Căn giữa dòng chữ khi dừng lại
     const centerPos = (khung.offsetWidth - chaychu.offsetWidth) / 2;
     chaychu.style.left = centerPos + 'px';
     document.getElementById("isTextMoving").innerText = "NO";
