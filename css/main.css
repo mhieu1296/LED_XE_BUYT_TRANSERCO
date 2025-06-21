@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(182, 255, 228, 255);
+  background-color: rgba(94,153,223,255);
   min-width: 500px;
 }
 
@@ -8,7 +8,8 @@ body {
   justify-content: center;
   align-items: center;
   margin: 30px;
-  font-family: SVN-ProductSansBold;
+  /* font-family: SVN-ProductSansBold; */
+  font-family: ChakraPetch;
   text-align: center;
   border: 5px solid white;
   background-color: black;
@@ -119,6 +120,7 @@ body {
   display: flex;
   color: rgb(246,29,4);
   margin: 30px;
+  font-family: ChakraPetch;
   font-size: 80pt;
   text-transform: uppercase;
   flex-shrink: 0;
@@ -146,6 +148,9 @@ body {
   text-transform: uppercase;
 }
 
+#route-info p{
+  margin: 5pxx;
+}
 
 #xiNghiep,
 #MaTuyenCanGiua,

@@ -9,3 +9,9 @@
   src: url("../assets/fonts/Quicksand-Bold.ttf") format("truetype");
   font-style: normal;
 }
+
+@font-face {
+  font-family: "ChakraPetch";
+  src: url("../assets/fonts/ChakraPetch-Bold.ttf") format("truetype");
+  font-style: normal;
+}
