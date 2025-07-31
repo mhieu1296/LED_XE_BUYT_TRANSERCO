@@ -10,7 +10,7 @@
     <script src="js/dieu_khien_LED.js"></script>
     <script src="js/hien_thi_LED.js"></script>
     <script src="js/window_onload.js"></script>
-    <!-- <script src="js/test.js"></script> -->
+    <script src="js/thu_gon_noi_dung.js"></script>
     <script src="js/theme.js"></script>
   </head>
   <body>
@@ -42,7 +42,14 @@
         </div>
       </div>
     </div>
-    <div class="BangDieuKhien">
+    <div class="ThuGonNoiDung">
+      <div class="NutBam">
+        <button class="ChayLed" id="xanhla" onclick="start()">CHẠY</button>
+        <button class="RESET" onclick="reset()">TẮT</button>
+        <button class="Details" onclick="toggleDivs()">NÂNG CAO</button>
+      </div>
+    </div>
+    <div id="BangDieuKhien" class="hiddenDiv">
       <p class="BangDieuKhienLabel">BẢNG ĐIỀU KHIỂN</p>
       <div class="NutBam">
         <button class="ChayLed" id="xanhla" onclick="start()">CHẠY</button>
@@ -59,17 +66,14 @@
           XE HUY ĐỘNG
         </button>
         <button class="TEST" onclick="chayChu()">CHẠY CHỮ</button>
-        <a href="input.html">
-          <button class="NhapDuLieu">NHẬP</button>
-        </a>
       </div>
       <p id="ModeDangChay">CHỌN MODE CHẠY</p>
       <div class="NutBam">
         <button
-          class="XEDIEN"
-          onclick="chonMode('xe_dien'), tatHieuUngNhay()"
+          class="DAYDU"
+          onclick="chonMode('day_du'), tatHieuUngNhay()"
         >
-          XE ĐIỆN
+          ĐẦY ĐỦ
         </button>
         <button
           class="XEDIEN2"
@@ -112,9 +116,14 @@
         <button id="hong" onclick="setColor(5)"></button>
         <button id="do" onclick="setColor(6)"></button>
       </div>
-      <p></p>
+      <p class="BangDieuKhienLabel">NHẬP DỮ LIỆU</p>
+      <div class="NutBam">
+        <a href="input.html">
+          <button class="NhapDuLieu">NHẬP</button>
+        </a>
+      </div>
     </div>
-    <div class="container">
+    <div id="container" class="hiddenDiv">
       <div class="trangThai">
         <p class="BangDieuKhienLabel">THÔNG TIN TUYẾN</p>
         <div class="tuyenPreview">
@@ -146,32 +155,18 @@
       <div class="thongTin">
         <p class="UngDungHoTroTotNhat">HỖ TRỢ TỐT NHẤT CHO</p>
         <div id="logobus">
-          <a href="https://transerco.com.vn" target="_blank">
-            <img src="assets/image/logohanoibus.png" alt="TRANSERCO HANOIBUS" />
-          </a>
-          <a href="https://transerco.com.vn/vi/xi-nghiep-bus-nhanh-brt-ha-noi/xi-nghiep-xe-buyt-nhanh-brt-ha-noi.html" target="_blank">
-            <img src="assets/image/HANOI BRT.png" alt="HANOI BRT" />
-          </a>
-          <a href="https://lienninh.com.vn" target="_blank">
-            <img src="assets/image/bus_lien_ninh.png" alt="BUSLIENINH" />
-          </a>
-          <a href="https://transerco.com.vn/vi/trung-tam-tan-dat/trung-tam-tan-dat.html" target="_blank">
-            <img src="assets/image/tt_tan_dat.png" alt="TANDAT" />
-          </a>
-          <a href="http://baoyenbus.com/" target="_blank">
-            <img src="assets/image/baoyengroup.png" alt="BAOYENGROUP" />
-          </a>
-          <a href="https://vinbus.vn/" target="_blank">
-            <img src="assets/image/vinbus.png" alt="VINBUS" />
-          </a>
+          <img src="assets/image/logohanoibus.png" alt="TRANSERCO HANOIBUS" />
+          <img src="assets/image/HANOI BRT.png" alt="HANOI BRT" />
+          <img src="assets/image/bus_lien_ninh.png" alt="BUSLIENINH" />
+          <img src="assets/image/tt_tan_dat.png" alt="TANDAT" />
+          <img src="assets/image/baoyengroup.png" alt="BAOYENGROUP" />
+          <img src="assets/image/vinbus.png" alt="VINBUS" />
         </div>
+        <a href="#" style="color: red"><P class="UngDungHoTroTotNhat" onclick="alert('Tính năng đang được xây dựng...')"> HƯỚNG DẪN SỬ DỤNG</P></a>
         <p class="UngDungHoTroTotNhat">
-          CHÚ Ý: ĐÓNG BĂNG, TẮT LED TRƯỚC KHI ĐỔI MODE
-        </p>
-        <p class="UngDungHoTroTotNhat">
-          TÁC GIẢ: <a href= "https://github.com/mhieu1296" style="color: red">NGUYỄN MINH HIẾU</a>, LỚP KTPM02 KHÓA K19 ĐH CÔNG NGHIỆP HÀ NỘI ✨
+          TÁC GIẢ: <a href= "https://github.com/mhieu1296" style="color: red">NGUYỄN MINH HIẾU</a>, KTPM02 K19 HAUI ✨
           <br />
-          CODE CÓ XẤU CÁC ANH GIƠ CAO ĐÁNH KHẼ THÔI Ạ 😭 <BR/>EM KHÔNG CHO VÀO CV ĐI INTERN ĐÂU CÁC ANH 🥲
+          CODE CÓ XẤU CÁC ANH GIƠ CAO ĐÁNH KHẼ THÔI Ạ 😭 <BR/> VÌ SỨ MỆNH THAY THẾ CHO BIỂN LẬT! <BR/> BẢN QUYỀN CÁC LOGO THUỘC VỀ CÁC ĐƠN VỊ VẬN TẢI CÔNG CỘNG
         </p>
       </div>
     </div>

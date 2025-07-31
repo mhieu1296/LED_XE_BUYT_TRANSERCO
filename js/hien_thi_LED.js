@@ -273,10 +273,10 @@ let funcs = [
 let delays = [30000, 3000, 5000, 3000]; // mode truyền thống
 
 function chonMode(mode) {
-  if (mode === "xe_dien") {
+  if (mode === "day_du") {
     // đầy đủ
-    console.log("XE ĐIỆN");
-    document.getElementById("MODE").innerText = "XE ĐIỆN";
+    console.log("ĐẦY ĐỦ");
+    document.getElementById("MODE").innerText = "ĐẦY ĐỦ";
     delays.splice(
       0,
       delays.length,
