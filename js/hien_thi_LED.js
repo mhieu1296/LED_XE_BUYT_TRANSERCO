@@ -54,7 +54,7 @@ function hienThiMaTuyen_Hanoibus() {
     return;
   }
 
-  elements.maTuyen.style.display = "flex";
+  elements.maTuyen.style.visibility = "visible";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "block";
   elements.xiNghiep.style.display = "none";
@@ -79,7 +79,7 @@ function hienThiMaTuyen_XiNghiep() {
     return;
   }
 
-  elements.maTuyen.style.display = "flex";
+  elements.maTuyen.style.visibility = "visible";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "none";
   elements.xiNghiep.style.display = "flex";
@@ -105,7 +105,7 @@ function hienThiTrungGian1_1() {
     return;
   }
 
-  elements.maTuyen.style.display = "none";
+  elements.maTuyen.style.visibility = "hidden";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "none";
   elements.xiNghiep.style.display = "flex";
@@ -130,7 +130,7 @@ function hienThiTrungGian1_2() {
     return;
   }
 
-  elements.maTuyen.style.display = "none";
+  elements.maTuyen.style.visibility = "hidden";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "flex";
   elements.xiNghiep.style.display = "none";
@@ -152,7 +152,7 @@ function hienThiTrungGian2() {
 
   const elements = getElements();
 
-  elements.maTuyen.style.display = "none";
+  elements.maTuyen.style.visibility = "hidden";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "none";
   elements.xiNghiep.style.display = "none";
@@ -199,7 +199,8 @@ function hienThiTrungGian3() {
   console.log("Hàm TG3 chạy");
 
   const elements = getElements();
-  elements.maTuyen.style.display = "none";
+  elements.maTuyen.style.display = "flex";
+  elements.maTuyen.style.visibility = "hidden";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "none";
   elements.xiNghiep.style.display = "none";
@@ -225,7 +226,7 @@ function hienThiTrungGian4() {
     return;
   }
 
-  elements.maTuyen.style.display = "block";
+  elements.maTuyen.style.visibility = "visible";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "none";
   elements.xiNghiep.style.display = "none";
@@ -252,6 +253,7 @@ function hienThiMaTuyen_Transerco() {
   }
 
   elements.maTuyen.style.display = "flex";
+  elements.maTuyen.style.visibility = "visible";
   elements.routeInfo.style.display = "none";
   elements.hanoibus.style.display = "none";
   elements.xiNghiep.style.display = "none";
@@ -270,7 +272,7 @@ let funcs = [
 ];
 
 // thời gian delay từng hiệu ứng mặc định
-let delays = [30000, 3000, 5000, 3000]; // mode truyền thống
+let delays = [2000, 3000, 5000, 3000]; // mode truyền thống
 
 function chonMode(mode) {
   if (mode === "day_du") {
@@ -280,7 +282,7 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[30000, 5000, 5000, 200, 200, 5000, 300, 300, 5000]
+      ...[2000, 5000, 5000, 200, 200, 5000, 300, 300, 5000]
     );
     funcs.splice(
       0,
@@ -302,7 +304,7 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[30000, 5000, 200, 200, 5000, 300, 300, 5000]
+      ...[2000, 5000, 200, 200, 5000, 300, 300, 5000]
     );
     funcs.splice(
       0,
@@ -320,7 +322,7 @@ function chonMode(mode) {
     // có hienThiMaTuyen_DiemDauCuoi, hienThiMaTuyen_Hanoibus, hienThiMaTuyenCanGiua và hienThiMaTuyen_Transerco
     console.log("THƯỜNG");
     document.getElementById("MODE").innerText = "THƯỜNG";
-    delays.splice(0, delays.length, ...[30000, 3000, 5000, 3000]);
+    delays.splice(0, delays.length, ...[2000, 3000, 5000, 3000]);
     funcs.splice(
       0,
       funcs.length,
@@ -333,7 +335,7 @@ function chonMode(mode) {
     // có hienThiMaTuyen_DiemDauCuoi và hienThiMaTuyenCanGiua
     console.log("LIÊN NINH");
     document.getElementById("MODE").innerText = "LIÊN NINH";
-    delays.splice(0, delays.length, ...[30000, 5000]);
+    delays.splice(0, delays.length, ...[2000, 5000]);
     funcs.splice(
       0,
       funcs.length,
@@ -348,7 +350,7 @@ function chonMode(mode) {
     // hienThiMaTuyen_Transerco
     console.log("HANOI BRT");
     document.getElementById("MODE").innerText = "HANOI BRT";
-    delays.splice(0, delays.length, ...[30000, 5000, 5000, 5000]);
+    delays.splice(0, delays.length, ...[2000, 5000, 5000, 5000]);
     funcs.splice(
       0,
       funcs.length,
@@ -364,7 +366,7 @@ function chonMode(mode) {
     // và nhấp nháy mã tuyến
     console.log("BẢO YẾN");
     document.getElementById("MODE").innerText = "BẢO YẾN";
-    delays.splice(0, delays.length, ...[30000, 5000]);
+    delays.splice(0, delays.length, ...[2000, 5000]);
     funcs.splice(
       0,
       funcs.length,

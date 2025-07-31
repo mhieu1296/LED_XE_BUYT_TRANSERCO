@@ -104,6 +104,7 @@ function reset() {
   const maTuyen = document.getElementById("maTuyen");
   const routeInfo = document.getElementById("route-info");
   const hanoibus = document.getElementById("hanoibus");
+  const transerco = document.getElementById("transerco");
   const xiNghiep = document.getElementById("xiNghiep");
   const TuyenCanGiua = document.getElementById("MaTuyenCanGiua");
   const HuyDong = document.getElementById("HuyDongRaTuyen");
@@ -112,6 +113,7 @@ function reset() {
   maTuyen.style.display = "none";
   routeInfo.style.display = "none";
   hanoibus.style.display = "none";
+  transerco.style.display = "none";
   xiNghiep.style.display = "none";
   TuyenCanGiua.style.display = "none";
   HuyDong.style.display = "none";
