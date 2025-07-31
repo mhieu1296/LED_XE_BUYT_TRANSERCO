@@ -272,7 +272,7 @@ let funcs = [
 ];
 
 // thời gian delay từng hiệu ứng mặc định
-let delays = [2000, 3000, 5000, 3000]; // mode truyền thống
+let delays = [30000, 3000, 5000, 3000]; // mode truyền thống
 
 function chonMode(mode) {
   if (mode === "day_du") {
@@ -282,7 +282,7 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[2000, 5000, 5000, 200, 200, 5000, 300, 300, 5000]
+      ...[30000, 5000, 5000, 200, 200, 5000, 300, 300, 5000]
     );
     funcs.splice(
       0,
@@ -304,7 +304,7 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[2000, 5000, 200, 200, 5000, 300, 300, 5000]
+      ...[30000, 5000, 200, 200, 5000, 300, 300, 5000]
     );
     funcs.splice(
       0,
@@ -322,7 +322,7 @@ function chonMode(mode) {
     // có hienThiMaTuyen_DiemDauCuoi, hienThiMaTuyen_Hanoibus, hienThiMaTuyenCanGiua và hienThiMaTuyen_Transerco
     console.log("THƯỜNG");
     document.getElementById("MODE").innerText = "THƯỜNG";
-    delays.splice(0, delays.length, ...[2000, 3000, 5000, 3000]);
+    delays.splice(0, delays.length, ...[30000, 3000, 5000, 3000]);
     funcs.splice(
       0,
       funcs.length,
@@ -335,7 +335,7 @@ function chonMode(mode) {
     // có hienThiMaTuyen_DiemDauCuoi và hienThiMaTuyenCanGiua
     console.log("LIÊN NINH");
     document.getElementById("MODE").innerText = "LIÊN NINH";
-    delays.splice(0, delays.length, ...[2000, 5000]);
+    delays.splice(0, delays.length, ...[30000, 5000]);
     funcs.splice(
       0,
       funcs.length,
@@ -350,7 +350,7 @@ function chonMode(mode) {
     // hienThiMaTuyen_Transerco
     console.log("HANOI BRT");
     document.getElementById("MODE").innerText = "HANOI BRT";
-    delays.splice(0, delays.length, ...[2000, 5000, 5000, 5000]);
+    delays.splice(0, delays.length, ...[30000, 5000, 5000, 5000]);
     funcs.splice(
       0,
       funcs.length,
@@ -366,7 +366,7 @@ function chonMode(mode) {
     // và nhấp nháy mã tuyến
     console.log("BẢO YẾN");
     document.getElementById("MODE").innerText = "BẢO YẾN";
-    delays.splice(0, delays.length, ...[2000, 5000]);
+    delays.splice(0, delays.length, ...[30000, 5000]);
     funcs.splice(
       0,
       funcs.length,
