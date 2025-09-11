@@ -1,5 +1,5 @@
 const background_color = [
-  "rgba(94,153,223,255)", // xanh dương hòa bình
+  "rgb(160,204,244)", // xanh dương hòa bình
   "rgba(182, 255, 228, 1)", // xanh lá buýt gom, xe điện, CNG
   "rgba(252, 146, 104, 1)", // cam xe đi sân bay Nội Bài
   "rgba(252,254,156,255)", // vàng

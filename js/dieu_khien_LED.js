@@ -81,8 +81,6 @@ function chayChu() {
   }
 }
 
-
-
 function batHieuUngNhay() {
   // nhấp nháy mã tuyến
   const element = document.getElementById("maTuyen");

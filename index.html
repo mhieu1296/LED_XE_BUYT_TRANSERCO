@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BẢNG ĐIỆN TỬ XE BUÝT</title>
+    <title>BẢNG ĐIỆN TỬ XE BUÝT BÁN TỰ ĐỘNG</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/font.css" />
     <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
@@ -12,6 +12,7 @@
     <script src="js/window_onload.js"></script>
     <script src="js/thu_gon_noi_dung.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/xac_nhan_xoa_du_lieu_tronglocal.js"></script>
   </head>
   <body>
     <div class="LED">
@@ -116,11 +117,12 @@
         <button id="hong" onclick="setColor(5)"></button>
         <button id="do" onclick="setColor(6)"></button>
       </div>
-      <p class="BangDieuKhienLabel">NHẬP DỮ LIỆU</p>
+      <p class="BangDieuKhienLabel">NHẬP, XÓA DỮ LIỆU TUYẾN</p>
       <div class="NutBam">
         <a href="input.html">
           <button class="NhapDuLieu">NHẬP</button>
         </a>
+        <button class="NhapDuLieu" onclick="xacNhan()">XÓA</button>
       </div>
     </div>
     <div id="container" class="hiddenDiv">
@@ -162,7 +164,9 @@
           <img src="assets/image/baoyengroup.png" alt="BAOYENGROUP" />
           <img src="assets/image/vinbus.png" alt="VINBUS" />
         </div>
-        <a href="#" style="color: red"><P class="UngDungHoTroTotNhat" onclick="alert('Tính năng đang được xây dựng...')"> HƯỚNG DẪN SỬ DỤNG</P></a>
+        <a href="#" style="color: red;" onclick="alert('Tính năng đang được xây dựng!')">
+          <p class="UngDungHoTroTotNhat">HƯỚNG DẪN SỬ DỤNG</p>
+        </a>
         <p class="UngDungHoTroTotNhat">
           TÁC GIẢ: <a href= "https://github.com/mhieu1296" style="color: red">NGUYỄN MINH HIẾU</a>, KTPM02 K19 HAUI ✨
           <br />

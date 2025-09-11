@@ -17,11 +17,11 @@ function getElements() {
 function hienThiMaTuyen_DiemDauCuoi() {
   // VD: 55A    CẦU GIẤY - TIMES CITY
   if (!running) {
-    console.log("Hàm 1 bị dừng");
+    console.log("Hàm hiển thị mã tuyến + điểm đầu cuối bị dừng");
     return;
   }
   console.clear();
-  console.log("Hàm 1 chạy");
+  console.log("Hàm mã tuyến + điểm đầu cuối chạy");
 
   const elements = getElements();
   if (!elements.maTuyen || !elements.routeInfo) {
@@ -42,11 +42,11 @@ function hienThiMaTuyen_DiemDauCuoi() {
 function hienThiMaTuyen_Hanoibus() {
   // VD: 55A      H A N O I B U S
   if (!running) {
-    console.log("Hàm 2 bị dừng");
+    console.log("Hàm mã tuyến + Hanoibus bị dừng");
     return;
   }
   console.clear();
-  console.log("Hàm 2 chạy");
+  console.log("Hàm mã tuyến + Hanoibus chạy");
 
   const elements = getElements();
   if (!elements.maTuyen || !elements.hanoibus) {
@@ -64,14 +64,39 @@ function hienThiMaTuyen_Hanoibus() {
   elements.VeGara.style.display = "none";
 }
 
-function hienThiMaTuyen_XiNghiep() {
-  // VD: 55A      CÔNG TY CP XE ĐIỆN HÀ NỘI
+function hienThiHanoibus() {
+  // VD: H A N O I B U S
   if (!running) {
-    console.log("Hàm 3 bị dừng");
+    console.log("Hàm hiển thị Hanoibus bị dừng");
     return;
   }
   console.clear();
-  console.log("Hàm 3 chạy");
+  console.log("Hàm hiển thị Hanoibus chạy");
+
+  const elements = getElements();
+  if (!elements.maTuyen || !elements.hanoibus) {
+    console.error("Hanoibus không tồn tại trong DOM.");
+    return;
+  }
+
+  elements.maTuyen.style.display = "none";
+  elements.routeInfo.style.display = "none";
+  elements.hanoibus.style.display = "block";
+  elements.xiNghiep.style.display = "none";
+  elements.TuyenCanGiua.style.display = "none";
+  elements.Transerco.style.display = "none";
+  elements.HuyDong.style.display = "none";
+  elements.VeGara.style.display = "none";
+}
+
+function hienThiMaTuyen_XiNghiep() {
+  // VD: 55A      CÔNG TY CP XE ĐIỆN HÀ NỘI
+  if (!running) {
+    console.log("Hàm hiển thị mã tuyến + xí nghiệp bị dừng");
+    return;
+  }
+  console.clear();
+  console.log("Hàm hiển thị mã tuyến + xí nghiệp chạy");
 
   const elements = getElements();
   if (!elements.maTuyen || !elements.xiNghiep) {
@@ -93,11 +118,11 @@ function hienThiMaTuyen_XiNghiep() {
 function hienThiTrungGian1_1() {
   // hiệu ứng xóa mã tuyến
   if (!running) {
-    console.log("Hàm TG1 bị dừng");
+    console.log("Hàm hiệu ứng xóa mã tuyến bị dừng");
     return;
   }
   console.clear();
-  console.log("Hàm TG1 chạy");
+  console.log("Hàm hiệu ứng xóa mã tuyến chạy");
 
   const elements = getElements();
   if (!elements.maTuyen || !elements.xiNghiep) {
@@ -118,11 +143,11 @@ function hienThiTrungGian1_1() {
 function hienThiTrungGian1_2() {
   // hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa)
   if (!running) {
-    console.log("Hàm TG1 bị dừng");
+    console.log("Hàm hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa) bị dừng");
     return;
   }
   console.clear();
-  console.log("Hàm TG1 chạy");
+  console.log("Hàm hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa) chạy");
 
   const elements = getElements();
   if (!elements.maTuyen || !elements.xiNghiep) {
@@ -143,12 +168,12 @@ function hienThiTrungGian1_2() {
 function hienThiTrungGian2() {
   // hiệu ứng xóa điểm đầu, cuối
   if (!running) {
-    console.log("Hàm TG2 bị dừng");
+    console.log("Hàm hiệu ứng xóa điểm đầu, cuối bị dừng");
     return;
   }
 
   console.clear();
-  console.log("Hàm TG2 chạy");
+  console.log("Hàm hiệu ứng xóa điểm đầu, cuối chạy");
 
   const elements = getElements();
 
@@ -165,12 +190,12 @@ function hienThiTrungGian2() {
 function hienThiMaTuyenCanGiua() {
   // VD:      55A
   if (!running) {
-    console.log("Hàm 4 bị dừng");
+    console.log("Hàm hiển thị mã tuyến căn giữa bị dừng");
     return;
   }
 
   console.clear();
-  console.log("Hàm 4 chạy");
+  console.log("Hàm hiển thị mã tuyến căn giữa chạy");
 
   const elements = getElements();
   if (!elements.TuyenCanGiua) {
@@ -191,12 +216,12 @@ function hienThiMaTuyenCanGiua() {
 function hienThiTrungGian3() {
   // hiệu ứng xóa mã tuyến căn giữa
   if (!running) {
-    console.log("Hàm TG3 bị dừng");
+    console.log("Hàm hiệu ứng xóa mã tuyến căn giữa bị dừng");
     return;
   }
 
   console.clear();
-  console.log("Hàm TG3 chạy");
+  console.log("Hàm hiệu ứng xóa mã tuyến căn giữa chạy");
 
   const elements = getElements();
   elements.maTuyen.style.display = "flex";
@@ -211,14 +236,14 @@ function hienThiTrungGian3() {
 }
 
 function hienThiTrungGian4() {
-  // hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm 5
+  // hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm hiển thị logo Transerco
   if (!running) {
-    console.log("Hàm TG4 bị dừng");
+    console.log("Hàm hiển thị mã tuyến để chuẩn bị cho hàm hiển thị logo Transerco bị dừng");
     return;
   }
 
   console.clear();
-  console.log("Hàm TG4 chạy");
+  console.log("Hàm hiển thị mã tuyến để chuẩn bị cho hàm hiển thị logo Transerco chạy");
 
   const elements = getElements();
   if (!elements.maTuyen) {
@@ -395,6 +420,9 @@ function chonMode(mode) {
       hienThiTrungGian4,
       hienThiMaTuyen_Transerco
     );
+  } else if (mode === "xe_ve_gara"){
+    // Mode hiển thị "XE VỀ GARA", logo Hanoibus và logo Transerco
+
   }
 }
 
