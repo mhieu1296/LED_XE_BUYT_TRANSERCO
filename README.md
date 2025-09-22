@@ -3,11 +3,11 @@ Hiệu ứng LED chủ yếu là "hiển thị - không hiển thị" hay có th
 Hỗ trợ nhiều mode chạy khác nhau: </br>
 1. Đầy đủ (1, 2, 3, TG1, TG2, 4, TG3, TG4, 5)</br>
 2. Xe điện 2 (1, 2, TG1, TG2, 4, TG3, TG4, 5)</br>
-3. Truyền thống (1, 2, 4, 5)</br>
+3. Truyền thống (1, 2, 4, 5). Đây là mode mặc định</br>
 4. Liên Ninh (1, 4)</br>
-5. Hanoi BRT</br>
-6. Bảo Yến (nhấp nháy mã tuyến)</br>
-Ứng dụng này được làm dưới sự trợ giúp của ChatGPT và một sinh viên mới năm nhất chưa biết gì về lập trình web.
+5. Hanoi BRT (1, 3, 4, 5)</br>
+6. Bảo Yến (nhấp nháy mã tuyến) (1, 3)</br>
+Ứng dụng này được làm dưới sự trợ giúp của ChatGPT và một sinh viên mới năm nhất (tính từ thời điểm commit lần đầu) chưa biết gì quá to tát về lập trình web.
 
 Trình tự hiển thị:
 1. Hiển thị mã tuyến, điểm đầu - điểm cuối trong 30 giây. </br> 
@@ -36,10 +36,17 @@ TG4. hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm tiếp th
    55A      T R A N S E R C O
 </br>
 TẤT CẢ CHÚNG ĐỀU CHẠY VÔ HẠN ĐẾN KHI NHẤN NÚT ĐÓNG BĂNG HOẶC XOÁ LED THÌ MỚI NGƯNG. </br>
-Với các mode chạy sẽ có sự điều chỉnh về thứ tự các hàm chạy. Chi tiết hãy xem trong file hien_thi_LED.js sẽ có chú thích. </br>
-Ứng dụng hỗ trợ đảo chiều tuyến, đóng băng LED, hiển thị HUY ĐỘNG RA TUYẾN, XE VỀ GARA, xóa hoàn toàn LED. </br>
-
+Với các mode chạy sẽ có sự điều chỉnh về thứ tự các hàm chạy. </br>
+Ứng dụng hỗ trợ đảo chiều tuyến, đóng băng LED, hiển thị HUY ĐỘNG RA TUYẾN, XE VỀ GARA, xóa hoàn toàn LED. Hỗ trợ chạy chữ khi bảng LED quá nhỏ. </br>
+Có hỗ trợ preview mã tuyến - tên tuyến, và các trạng thái như bật/tắt, dừng/chạy, chạy chữ hay không, tên mode đang chạy. </br>
+Có nhiều màu nền khác nhau.</br>
 </br>
+
+Hướng dẫn sử dụng nhanh: </br>
+Bước 1: Vào trang, lướt xuống nhấn vào nút Nhập. </br>
+Bước 2: Nhập mã tuyến, điểm đầu / giữa (optional) / cuối và xí nghiệp vận hành. Nhấn LƯU sau đó QUAY LẠI. </br>
+Bước 3: Chọn mode và nhấn nút CHẠY. Trong quá trình chạy, có thể đảo chiều hoặc cho chạy chữ. </br>
+Lưu ý: trước khi đổi mode, hiển thị XE HUY ĐỘNG / XE VỀ GARA, phải nhấn nút ĐÓNG BĂNG -> TẮT rồi mới được đổi mode. </br>
 Có thể thay đổi các thông tin như Mã tuyến, điểm đầu, điểm cuối, tên xí nghiệp. Thay đổi xong nhấn LƯU sẽ được. Sẽ có cảnh báo khi không nhập đủ thông tin.</br>
 Khi mới khởi động lần đầu tiên và nhấn CHẠY, sẽ không có gì hiển thị trên LED trừ mũi tên xanh, logo Hanoibus và Transerco. Hãy nhập thông tin LED bằng cách nhấn nút NHẬP.  </BR>
 </br>
