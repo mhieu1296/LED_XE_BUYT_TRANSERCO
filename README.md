@@ -44,10 +44,9 @@ Có nhiều màu nền khác nhau.</br>
 
 Hướng dẫn sử dụng nhanh: </br>
 Bước 1: Vào trang, Khi mới khởi động lần đầu tiên và nhấn CHẠY, sẽ không có gì hiển thị trên LED trừ mũi tên xanh, logo Hanoibus và Transerco. </br>Hãy nhập thông tin LED bằng cách nhấn nút NHẬP.  </BR>
-Bước 2: Nhập mã tuyến, điểm đầu / giữa (optional) / cuối và xí nghiệp vận hành. Nhấn LƯU sau đó QUAY LẠI. </br>
+Bước 2: Nhập mã tuyến, điểm đầu / giữa (optional) / cuối và xí nghiệp vận hành. Nhấn LƯU sau đó QUAY LẠI. Sẽ có cảnh báo khi không nhập đủ thông tin. </br>
 Bước 3: Chọn mode và nhấn nút CHẠY. Trong quá trình chạy, có thể đảo chiều hoặc cho chạy chữ. </br>
 Lưu ý: trước khi đổi mode, hiển thị XE HUY ĐỘNG / XE VỀ GARA, phải nhấn nút ĐÓNG BĂNG -> TẮT rồi mới được đổi mode. </br>
-Có thể thay đổi các thông tin như Mã tuyến, điểm đầu, điểm cuối, tên xí nghiệp. Thay đổi xong nhấn LƯU sẽ được. Sẽ có cảnh báo khi không nhập đủ thông tin.</br>
 </br>
 Nếu bạn muốn trải nghiệm, hãy truy cập [tại đây](https://ledxebuyt.netlify.app). </br>
 LƯU Ý: ỨNG DỤNG NÀY KHÔNG PHẢI CỦA TRANSERCO VÀ CÁC DOANH NGHIỆP VẬN TẢI CÔNG CỘNG. ĐÂY CHỈ LÀ SẢN PHẨM CÁ NHÂN.
