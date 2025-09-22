@@ -1,10 +1,10 @@
 Ứng dụng mô phỏng (không hoàn toàn giống) bảng LED hiển thị tuyến trên một số xe buýt của Tổng công ty Vận tải Hà Nội.
 Hiệu ứng LED chủ yếu là "hiển thị - không hiển thị" hay có thể gọi là "hiển thị luân phiên".
 Hỗ trợ nhiều mode chạy khác nhau: </br>
-1. Xe điện 1</br>
-2. Xe điện 2</br>
-3. Truyền thống</br>
-4. Liên Ninh</br>
+1. Đầy đủ (1, 2, 3, TG1, TG2, 4, TG3, TG4, 5)</br>
+2. Xe điện 2 (1, 2, TG1, TG2, 4, TG3, TG4, 5)</br>
+3. Truyền thống (1, 2, 4, 5)</br>
+4. Liên Ninh (1, 4)</br>
 5. Hanoi BRT</br>
 6. Bảo Yến (nhấp nháy mã tuyến)</br>
 Ứng dụng này được làm dưới sự trợ giúp của ChatGPT và một sinh viên mới năm nhất chưa biết gì về lập trình web.
@@ -45,3 +45,4 @@ Khi mới khởi động lần đầu tiên và nhấn CHẠY, sẽ không có g
 </br>
 Nếu bạn muốn trải nghiệm, hãy truy cập [tại đây](https://ledxebuyt.netlify.app). </br>
 LƯU Ý: ỨNG DỤNG NÀY KHÔNG PHẢI CỦA TRANSERCO VÀ CÁC DOANH NGHIỆP VẬN TẢI CÔNG CỘNG. ĐÂY CHỈ LÀ SẢN PHẨM CÁ NHÂN.
+</br> Các ông đi qua, các bà đi lại thấy code xấu quá thì giơ cao đánh khẽ cháu thôi nha. Cháu đưa ý tưởng, và cùng sự hỗ trợ của ChatGPT, và sự điều chỉnh logic đã tạo nên sản phẩm này. Thôi thì cũng gọi là vibe coding cũng được nha".
