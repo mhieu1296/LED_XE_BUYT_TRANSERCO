@@ -45,84 +45,48 @@
     </div>
     <div class="ThuGonNoiDung">
       <div class="NutBam">
-        <button class="ChayLed" id="xanhla" onclick="start()">CHẠY</button>
-        <button class="RESET" onclick="reset()">TẮT</button>
-        <button class="Details" onclick="toggleDivs()">NÂNG CAO</button>
+        <button class="ChayLed" id="xanhla">CHẠY</button>
+        <button class="RESET">TẮT</button>
+        <button class="Details">NÂNG CAO</button>
       </div>
     </div>
     <div id="BangDieuKhien" class="hiddenDiv">
       <p class="BangDieuKhienLabel">BẢNG ĐIỀU KHIỂN</p>
       <div class="NutBam">
-        <button class="ChayLed" id="xanhla" onclick="start()">CHẠY</button>
-        <button class="RESET" onclick="reset()">TẮT</button>
-        <button
-          class="daoChieuTuyen"
-          onclick="daoChieuLED('diemDau', 'diemCuoi')"
-        >
-          ĐẢO CHIỀU
-        </button>
-        <button class="DungLed" onclick="stop()">ĐÓNG BĂNG</button>
-        <button class="XeVeGara" onclick="XeVeGara()">XE VỀ GARA</button>
-        <button class="HuyDongRaTuyen" onclick="HuyDongRaTuyen()">
-          XE HUY ĐỘNG
-        </button>
-        <button class="TEST" onclick="chayChu()">CHẠY CHỮ</button>
+        <button class="ChayLed" id="xanhla">CHẠY</button>
+        <button class="RESET">TẮT</button>
+        <button class="daoChieuTuyen">ĐẢO CHIỀU</button>
+        <button class="DungLed">ĐÓNG BĂNG</button>
+        <button class="XeVeGara">XE VỀ GARA</button>
+        <button class="HuyDongRaTuyen">XE HUY ĐỘNG</button>
+        <button class="TEST">CHẠY CHỮ</button>
       </div>
       <p id="ModeDangChay">CHỌN MODE CHẠY</p>
       <div class="NutBam">
-        <button
-          class="DAYDU"
-          onclick="chonMode('day_du'), tatHieuUngNhay()"
-        >
-          ĐẦY ĐỦ
-        </button>
-        <button
-          class="XEDIEN2"
-          onclick="chonMode('xe_dien2'), tatHieuUngNhay()"
-        >
-          XE ĐIỆN 2
-        </button>
-        <button class="THUONG" onclick="chonMode('thuong'), tatHieuUngNhay()">
-          THƯỜNG
-        </button>
-        <button
-          class="LIENNINH"
-          onclick="chonMode('lien_ninh'), tatHieuUngNhay()"
-        >
-          LIÊN NINH
-        </button>
-        <button
-          class="HANOIBRT"
-          onclick="chonMode('hanoibrt'), tatHieuUngNhay()"
-        >
-          HANOI BRT
-        </button>
-        <button
-          class="BAOYEN"
-          onclick="chonMode('bao_yen'), batHieuUngNhay()"
-        >
-          BẢO YẾN
-        </button>
-        <button class="DEMO`" onclick="chonMode('demo'), tatHieuUngNhay()" >
-          DEMO
-        </button>
+        <button class="DAYDU">ĐẦY ĐỦ</button>
+        <button class="XEDIEN2">XE ĐIỆN 2</button>
+        <button class="THUONG">THƯỜNG</button>
+        <button class="LIENNINH">LIÊN NINH</button>
+        <button class="HANOIBRT">HANOI BRT</button>
+        <button class="BAOYEN">BẢO YẾN</button>
+        <button class="DEMO">DEMO</button>
       </div>
       <p class="BangDieuKhienLabel">MÀU NỀN</p>
       <div class="NutBam">
-        <button id="xanhduong" onclick="setColor(0)"></button>
-        <button id="xanhla" onclick="setColor(1)"></button>
-        <button id="cam" onclick="setColor(2)"></button>
-        <button id="vang" onclick="setColor(3)"></button>
-        <button id="tim" onclick="setColor(4)"></button>
-        <button id="hong" onclick="setColor(5)"></button>
-        <button id="do" onclick="setColor(6)"></button>
+        <button id="xanhduong"></button>
+        <button id="xanhla"></button>
+        <button id="cam"></button>
+        <button id="vang"></button>
+        <button id="tim"></button>
+        <button id="hong"></button>
+        <button id="do"></button>
       </div>
       <p class="BangDieuKhienLabel">NHẬP, XÓA DỮ LIỆU TUYẾN</p>
       <div class="NutBam">
         <a href="input.html">
           <button class="NhapDuLieu">NHẬP</button>
         </a>
-        <button class="NhapDuLieu" onclick="xacNhan()">XÓA</button>
+        <button class="NhapDuLieu">XÓA</button>
       </div>
     </div>
     <div id="container" class="hiddenDiv">
@@ -174,5 +138,6 @@
         </p>
       </div>
     </div>
+    <script src="js/event_listeners.js"></script>
   </body>
 </html>

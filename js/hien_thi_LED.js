@@ -264,12 +264,12 @@ function hienThiTrungGian4() {
 function hienThiMaTuyen_Transerco() {
   // VD: 55A      T R A N S E R C O
   if (!running) {
-    console.log("Hàm 5 bị dừng");
+    console.log("Hàm hiển thị mã tuyến và logo Tổng bị dừng");
     return;
   }
 
   console.clear();
-  console.log("Hàm 5 chạy");
+  console.log("Hàm hiển thị mã tuyến và logo Tổng chạy");
 
   const elements = getElements();
   if (!elements.maTuyen || !elements.Transerco) {
@@ -286,6 +286,49 @@ function hienThiMaTuyen_Transerco() {
   elements.Transerco.style.display = "flex";
   elements.HuyDong.style.display = "none";
   elements.VeGara.style.display = "none";
+}
+
+function hienThiTranserco() {
+  // VD: T R A N S E R C O
+  if (!running) {
+    console.log("Hàm hiển thị logo Tổng bị dừng");
+    return;
+  }
+
+  console.clear();
+  console.log("Hàm hiển thị logo Tổng chạy");
+
+  const elements = getElements();
+  if (!elements.maTuyen || !elements.Transerco) {
+    console.error("Mã tuyến và Transerco không tồn tại trong DOM.");
+    return;
+  }
+
+  elements.maTuyen.style.display = "none";
+  elements.maTuyen.style.visibility = "visible";
+  elements.routeInfo.style.display = "none";
+  elements.hanoibus.style.display = "none";
+  elements.xiNghiep.style.display = "none";
+  elements.TuyenCanGiua.style.display = "none";
+  elements.Transerco.style.display = "flex";
+  elements.HuyDong.style.display = "none";
+  elements.VeGara.style.display = "none";
+}
+
+function HuyDongRaTuyen() {
+  // hàm chỉ hiển thị HUY ĐỘNG RA TUYẾN
+  stop();
+  reset();
+  document.getElementById("HuyDongRaTuyen").style.display = "flex";  
+  console.log("Mode Huy động ra tuyến");
+}
+
+function XeVeGara() {
+  // hàm chỉ hiển thị XE VỀ GARA
+  stop();
+  reset();
+  document.getElementById("XeVeGara").style.display = "flex";
+  console.log("Mode XE VỀ GARA");
 }
 
 // danh sách hiệu ứng
@@ -420,11 +463,9 @@ function chonMode(mode) {
       hienThiTrungGian4,
       hienThiMaTuyen_Transerco
     );
-  } else if (mode === "xe_ve_gara"){
-    // Mode hiển thị "XE VỀ GARA", logo Hanoibus và logo Transerco
-
-  }
+  } 
 }
+
 
 async function start() {
   // hàm chạy LED
@@ -449,18 +490,4 @@ function stop() {
   running = false;
 }
 
-function HuyDongRaTuyen() {
-  // hàm chỉ hiển thị HUY ĐỘNG RA TUYẾN
-  stop();
-  reset();
-  document.getElementById("HuyDongRaTuyen").style.display = "flex";  
-  console.log("Mode Huy động ra tuyến");
-}
 
-function XeVeGara() {
-  // hàm chỉ hiển thị XE VỀ GARA
-  stop();
-  reset();
-  document.getElementById("XeVeGara").style.display = "flex";
-  console.log("Mode XE VỀ GARA");
-}

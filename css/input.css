@@ -1,6 +1,6 @@
 body {
-  background-color: rgba(94,153,223,255);
-  min-width: 350px;
+  background-color: rgb(160,204,244);
+  min-width: 550px;
 /* 
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Quicksand;
+  font-family: Averta-Std-CY;
   font-size: 20px;
   color: red;
 }
@@ -38,6 +38,9 @@ body {
   padding: 10px;
 }
 
+table{
+  min-width: 500px;
+}
 
 @media (min-aspect-ratio: 4/3) {
   /* Khi xoay ngang (aspect ratio rộng hơn), chia thành 2 cột */
@@ -74,6 +77,7 @@ body {
   cursor: pointer;
   width: 160px;
   height: 40px;
+  font-family: Averta-Std-CY;
 }
 
 .InputLabel {
@@ -85,7 +89,7 @@ body {
 }
 
 input[type="text"] {
-  width: 150px;
+  min-width: 350px;
   border: none;
   border-bottom: 2px solid rgba(126, 208, 172, 255);
   font-family: "Courier New", Courier, monospace;

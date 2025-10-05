@@ -53,7 +53,7 @@ body {
   margin: 10px;
   justify-content: center;
   align-items: center;
-  font-family: Quicksand;
+  font-family: Averta-Std-CY;
   
   font-size: 20px;
   color: red;
@@ -80,6 +80,7 @@ body {
   cursor: pointer;
   width: 160px;
   height: 40px;
+  font-family: Averta-Std-CY;
 }
 
 .NutBam button#cam {
@@ -132,7 +133,7 @@ body {
   margin: 10px;
   justify-content: center;
   align-items: center;
-  font-family: Quicksand;
+  font-family: Averta-Std-CY;
   font-size: 20px;
   color: red;
 }
@@ -298,7 +299,7 @@ body {
   gap: 15px;
   justify-content: center;
   align-items: center;
-  font-family: Quicksand;
+  font-family: Averta-Std-CY;
   font-size: 20px;
   color: rgba(126, 208, 172, 1);
   text-transform: uppercase;
@@ -316,7 +317,7 @@ body {
   border-style: solid;
   border-color: rgba(126, 208, 172, 1);
   border-collapse: collapse;
-  font-family: Quicksand;
+  font-family: Averta-Std-CY;
   font-size: 20px;
   /* min-width: 500px; */
   table-layout: fixed;
@@ -338,7 +339,7 @@ body {
 }
 
 .UngDungHoTroTotNhat {
-  font-family: Quicksand;
+  font-family: Averta-Std-CY;
   font-size: 20px;
   margin: 15px;
   color: red;
