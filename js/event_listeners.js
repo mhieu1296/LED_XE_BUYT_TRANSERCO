@@ -41,14 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Nút XE VỀ GARA
   document.querySelectorAll('.XeVeGara').forEach(btn => {
     btn.addEventListener('click', function() {
-      if (typeof HuyDongRaTuyen === 'function') HuyDongRaTuyen();
+      if (typeof HuyDongRaTuyen === 'function') XeVeGara();
     });
   });
 
   // Nút XE HUY ĐỘNG
   document.querySelectorAll('.HuyDongRaTuyen').forEach(btn => {
     btn.addEventListener('click', function() {
-      if (typeof XeVeGara === 'function') XeVeGara();
+      if (typeof XeVeGara === 'function') HuyDongRaTuyen();
     });
   });
 
