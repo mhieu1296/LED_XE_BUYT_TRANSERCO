@@ -1,5 +1,5 @@
 window.onload = function () {
-  // xóa toàn bộ LED và dừng toàn bộ hoạt động LED khi tải xong trang, sẽ kích hoạt khi chạy hàm startToggle();
+  // xóa toàn bộ LED và dừng toàn bộ hoạt động LED khi tải xong trang, sẽ kích hoạt khi chạy hàm chạy
   stop();
   reset();
 
@@ -11,9 +11,7 @@ window.onload = function () {
   const diemGiua = localStorage.getItem("diemGiua");
   const diemCuoi = localStorage.getItem("diemCuoi");
   const xiNghiep = localStorage.getItem("xiNghiep");
-
-  console.log(diemGiua);
-
+  
   document.getElementById("maTuyen").innerText = maTuyen;
   document.getElementById("diemDau").innerText = diemDau;
   // document.getElementById("diemGiua").innerText = diemGiua;

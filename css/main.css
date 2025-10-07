@@ -1,3 +1,13 @@
+.NutBam button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(60%);
+}
+
+.NutBam button:disabled:hover {
+  cursor: not-allowed;
+  box-shadow: 0 0 0 2px #ff0000;
+}
 body {
   background-color: rgb(160,204,244);
   min-width: 450px;

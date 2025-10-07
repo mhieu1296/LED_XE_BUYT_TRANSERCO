@@ -1,4 +1,6 @@
+
 let running = false;
+let isSessionActive = false;
 
 function getElements() {
   // lấy elements để điều khiển trạng thái hiển thị của từng elements
@@ -317,7 +319,7 @@ function hienThiTranserco() {
 
 function HuyDongRaTuyen() {
   // hàm chỉ hiển thị HUY ĐỘNG RA TUYẾN
-  stop();
+  dungLai();
   reset();
   document.getElementById("HuyDongRaTuyen").style.display = "flex";  
   console.log("Mode Huy động ra tuyến");
@@ -325,7 +327,7 @@ function HuyDongRaTuyen() {
 
 function XeVeGara() {
   // hàm chỉ hiển thị XE VỀ GARA
-  stop();
+  dungLai();
   reset();
   document.getElementById("XeVeGara").style.display = "flex";
   console.log("Mode XE VỀ GARA");
@@ -343,6 +345,10 @@ let funcs = [
 let delays = [30000, 3000, 5000, 3000]; // mode truyền thống
 
 function chonMode(mode) {
+  // Kill mọi hiệu ứng cũ ngay lập tức
+  isSessionActive = false;
+  running = false;
+  // ...existing code...
   if (mode === "day_du") {
     // đầy đủ
     console.log("ĐẦY ĐỦ");
@@ -467,27 +473,34 @@ function chonMode(mode) {
 }
 
 
+
 async function start() {
   // hàm chạy LED
   if (running) return; // nếu đã chạy thì không chạy thêm nữa
   document.getElementById("isRunning").innerText = "YES";
   document.getElementById("isPausing").innerText = "NO";
   running = true;
+  isSessionActive = true;
 
   let index = 0;
+  const sessionFlag = {};
+  isSessionActive = sessionFlag;
 
-  while (running) {
+  while (running && isSessionActive === sessionFlag) {
     funcs[index](); // chạy hàm
     await new Promise((resolve) => setTimeout(resolve, delays[index]));
+    // Nếu sessionFlag đã bị thay đổi (mode mới), kill ngay
+    if (isSessionActive !== sessionFlag) return;
     index = (index + 1) % funcs.length;
   }
 }
 
-function stop() {
+function dungLai() {
   // hàm dừng chạy
   document.getElementById("isRunning").innerText = "NO";
   document.getElementById("isPausing").innerText = "YES";
   running = false;
+  isSessionActive = false;
 }
 
 

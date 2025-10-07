@@ -95,7 +95,7 @@ function tatHieuUngNhay() {
 
 function reset() {
   // hàm xóa toàn bộ LED
-  stop();
+  dungLai();
 
   document.getElementById("isPausing").innerText = "NO";
 

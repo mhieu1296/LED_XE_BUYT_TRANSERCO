@@ -3,19 +3,36 @@
 // Đảm bảo các hàm đã được định nghĩa trong các file js khác
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Nút CHẠY
-  document.querySelectorAll('.ChayLed').forEach(btn => {
+  // Nút CHẠY và TẮT: disable/enable lẫn nhau
+  const chayBtns = document.querySelectorAll('.ChayLed');
+  const tatBtns = document.querySelectorAll('.RESET');
+
+  function setChayTatState(state) {
+    // state: 'chay' hoặc 'tat'
+    if (state === 'chay') {
+      chayBtns.forEach(b => b.disabled = true);
+      tatBtns.forEach(b => b.disabled = false);
+    } else if (state === 'tat') {
+      tatBtns.forEach(b => b.disabled = true);
+      chayBtns.forEach(b => b.disabled = false);
+    }
+  }
+
+  chayBtns.forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof start === 'function') start();
+      setChayTatState('chay');
+    });
+  });
+  tatBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (typeof reset === 'function') reset();
+      setChayTatState('tat');
     });
   });
 
-  // Nút RESET (TẮT)
-  document.querySelectorAll('.RESET').forEach(btn => {
-    btn.addEventListener('click', function() {
-      if (typeof reset === 'function') reset();
-    });
-  });
+  // Khởi tạo: CHẠY enable, TẮT disable
+  setChayTatState('tat');
 
   // Nút NÂNG CAO
   document.querySelectorAll('.Details').forEach(btn => {
@@ -34,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Nút ĐÓNG BĂNG
   document.querySelectorAll('.DungLed').forEach(btn => {
     btn.addEventListener('click', function() {
-      if (typeof stop === 'function') stop();
+      if (typeof stop === 'function') dungLai();
     });
   });
 
@@ -63,10 +80,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.DAYDU').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof chonMode === 'function'){
-        stop();
+        dungLai();
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('day_du');
+        setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function'){
         tatHieuUngNhay();
@@ -76,10 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.XEDIEN2').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof chonMode === 'function'){
-        stop();
+        dungLai();
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('xe_dien2');
+        setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function'){
         tatHieuUngNhay();
@@ -89,10 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.THUONG').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof chonMode === 'function'){
-        stop();
+        dungLai();
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('thuong');
+        setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function'){
         tatHieuUngNhay();
@@ -102,10 +122,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.LIENNINH').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof chonMode === 'function'){
-        stop();
+        dungLai();
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('lien_ninh');
+        setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function'){
         tatHieuUngNhay();
@@ -115,10 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.HANOIBRT').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof chonMode === 'function'){
-        stop();
+        dungLai();
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('hanoibrt');
+        setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function'){
         tatHieuUngNhay();
@@ -128,10 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.BAOYEN').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof chonMode === 'function'){
-        stop();
+        dungLai();
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('bao_yen');
+        setChayTatState('tat');
       }
       if (typeof batHieuUngNhay === 'function'){
         batHieuUngNhay();
@@ -141,10 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.DEMO').forEach(btn => {
     btn.addEventListener('click', function() {
       if (typeof chonMode === 'function'){
-        stop();
+        dungLai();
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('demo');
+        setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function'){
         tatHieuUngNhay();
