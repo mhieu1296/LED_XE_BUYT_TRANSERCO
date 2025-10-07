@@ -18,8 +18,8 @@ function getElements() {
 
 function hienThiMaTuyen_DiemDauCuoi() {
   // VD: 55A    CẦU GIẤY - TIMES CITY
-  if (!running) {
-    console.log("Hàm hiển thị mã tuyến + điểm đầu cuối bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiển thị mã tuyến + điểm đầu cuối bị dừng (session killed)");
     return;
   }
   console.clear();
@@ -43,8 +43,8 @@ function hienThiMaTuyen_DiemDauCuoi() {
 
 function hienThiMaTuyen_Hanoibus() {
   // VD: 55A      H A N O I B U S
-  if (!running) {
-    console.log("Hàm mã tuyến + Hanoibus bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm mã tuyến + Hanoibus bị dừng (session killed)");
     return;
   }
   console.clear();
@@ -68,8 +68,8 @@ function hienThiMaTuyen_Hanoibus() {
 
 function hienThiHanoibus() {
   // VD: H A N O I B U S
-  if (!running) {
-    console.log("Hàm hiển thị Hanoibus bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiển thị Hanoibus bị dừng (session killed)");
     return;
   }
   console.clear();
@@ -93,8 +93,8 @@ function hienThiHanoibus() {
 
 function hienThiMaTuyen_XiNghiep() {
   // VD: 55A      CÔNG TY CP XE ĐIỆN HÀ NỘI
-  if (!running) {
-    console.log("Hàm hiển thị mã tuyến + xí nghiệp bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiển thị mã tuyến + xí nghiệp bị dừng (session killed)");
     return;
   }
   console.clear();
@@ -119,8 +119,8 @@ function hienThiMaTuyen_XiNghiep() {
 // các hàm hiệu ứng trung gian
 function hienThiTrungGian1_1() {
   // hiệu ứng xóa mã tuyến
-  if (!running) {
-    console.log("Hàm hiệu ứng xóa mã tuyến bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiệu ứng xóa mã tuyến bị dừng (session killed)");
     return;
   }
   console.clear();
@@ -144,8 +144,8 @@ function hienThiTrungGian1_1() {
 
 function hienThiTrungGian1_2() {
   // hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa)
-  if (!running) {
-    console.log("Hàm hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa) bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa) bị dừng (session killed)");
     return;
   }
   console.clear();
@@ -169,8 +169,8 @@ function hienThiTrungGian1_2() {
 
 function hienThiTrungGian2() {
   // hiệu ứng xóa điểm đầu, cuối
-  if (!running) {
-    console.log("Hàm hiệu ứng xóa điểm đầu, cuối bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiệu ứng xóa điểm đầu, cuối bị dừng (session killed)");
     return;
   }
 
@@ -191,8 +191,8 @@ function hienThiTrungGian2() {
 
 function hienThiMaTuyenCanGiua() {
   // VD:      55A
-  if (!running) {
-    console.log("Hàm hiển thị mã tuyến căn giữa bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiển thị mã tuyến căn giữa bị dừng (session killed)");
     return;
   }
 
@@ -217,8 +217,8 @@ function hienThiMaTuyenCanGiua() {
 
 function hienThiTrungGian3() {
   // hiệu ứng xóa mã tuyến căn giữa
-  if (!running) {
-    console.log("Hàm hiệu ứng xóa mã tuyến căn giữa bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiệu ứng xóa mã tuyến căn giữa bị dừng (session killed)");
     return;
   }
 
@@ -239,8 +239,8 @@ function hienThiTrungGian3() {
 
 function hienThiTrungGian4() {
   // hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm hiển thị logo Transerco
-  if (!running) {
-    console.log("Hàm hiển thị mã tuyến để chuẩn bị cho hàm hiển thị logo Transerco bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiển thị mã tuyến để chuẩn bị cho hàm hiển thị logo Transerco bị dừng (session killed)");
     return;
   }
 
@@ -265,8 +265,8 @@ function hienThiTrungGian4() {
 
 function hienThiMaTuyen_Transerco() {
   // VD: 55A      T R A N S E R C O
-  if (!running) {
-    console.log("Hàm hiển thị mã tuyến và logo Tổng bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiển thị mã tuyến và logo Tổng bị dừng (session killed)");
     return;
   }
 
@@ -292,8 +292,8 @@ function hienThiMaTuyen_Transerco() {
 
 function hienThiTranserco() {
   // VD: T R A N S E R C O
-  if (!running) {
-    console.log("Hàm hiển thị logo Tổng bị dừng");
+  if (!running || isSessionActive !== sessionFlagGlobal) {
+    console.log("Hàm hiển thị logo Tổng bị dừng (session killed)");
     return;
   }
 
@@ -321,7 +321,7 @@ function HuyDongRaTuyen() {
   // hàm chỉ hiển thị HUY ĐỘNG RA TUYẾN
   dungLai();
   reset();
-  document.getElementById("HuyDongRaTuyen").style.display = "flex";  
+  document.getElementById("HuyDongRaTuyen").style.display = "flex";
   console.log("Mode Huy động ra tuyến");
 }
 
@@ -331,6 +331,37 @@ function XeVeGara() {
   reset();
   document.getElementById("XeVeGara").style.display = "flex";
   console.log("Mode XE VỀ GARA");
+// --- Session kill support for all effect functions ---
+// Global session flag for effect functions
+let sessionFlagGlobal = null;
+
+// Patch start() to set sessionFlagGlobal
+const _original_start = start;
+start = async function() {
+  if (running) return;
+  document.getElementById("isRunning").innerText = "YES";
+  document.getElementById("isPausing").innerText = "NO";
+  running = true;
+  const sessionFlag = {};
+  isSessionActive = sessionFlag;
+  sessionFlagGlobal = sessionFlag;
+  let index = 0;
+  while (running && isSessionActive === sessionFlag) {
+    funcs[index]();
+    await new Promise((resolve) => setTimeout(resolve, delays[index]));
+    if (isSessionActive !== sessionFlag) return;
+    index = (index + 1) % funcs.length;
+  }
+};
+
+// Patch chonMode to kill sessionFlagGlobal
+const _original_chonMode = chonMode;
+chonMode = function(mode) {
+  isSessionActive = false;
+  running = false;
+  sessionFlagGlobal = null;
+  _original_chonMode(mode);
+};
 }
 
 // danh sách hiệu ứng
@@ -480,12 +511,11 @@ async function start() {
   document.getElementById("isRunning").innerText = "YES";
   document.getElementById("isPausing").innerText = "NO";
   running = true;
-  isSessionActive = true;
-
-  let index = 0;
   const sessionFlag = {};
   isSessionActive = sessionFlag;
+  sessionFlagGlobal = sessionFlag;
 
+  let index = 0;
   while (running && isSessionActive === sessionFlag) {
     funcs[index](); // chạy hàm
     await new Promise((resolve) => setTimeout(resolve, delays[index]));
