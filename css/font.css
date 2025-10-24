@@ -11,12 +11,6 @@
 }
 
 @font-face {
-  font-family: "ChakraPetch";
-  src: url("../assets/fonts/ChakraPetch-Bold.ttf") format("truetype");
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Averta-Std-CY";
   src: url("../assets/fonts/Averta-Std-CY.otf") format("truetype");
   font-style: normal;
