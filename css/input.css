@@ -1,7 +1,7 @@
 body {
   background-color: rgb(17, 205, 142);
   /* allow smaller devices while keeping a sensible minimum */
-  min-width: 320px;
+  min-width: 350px;
   /* center the .Nhap container horizontally and vertically */
   display: flex;
   justify-content: center; /* horizontal */

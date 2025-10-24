@@ -10,7 +10,7 @@
 }
 body {
   background-color: rgb(17, 205, 142);
-  min-width: 450px;
+  min-width: 400px;
 
   /* Chèn ảnh nền */
   /* background-image: url('/assets/image/banner150.jpg');
@@ -370,7 +370,6 @@ body::before {
 }
 
 #logobus img {
-  max-height: 50px;
-  zoom: 75%;
+  max-height: 80px;
   margin: 10px;
 }
