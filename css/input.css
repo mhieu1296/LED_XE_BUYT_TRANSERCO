@@ -1,6 +1,6 @@
 body {
-  background-color: rgb(160,204,244);
-  min-width: 550px;
+  background-color: rgba(126, 208, 172, 1);
+  min-width: 600px;
 /* 
   display: flex;
   justify-content: center;
@@ -40,6 +40,10 @@ body {
 
 table{
   min-width: 500px;
+}
+td p {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 @media (min-aspect-ratio: 4/3) {

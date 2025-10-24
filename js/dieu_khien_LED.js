@@ -8,7 +8,7 @@ console.log(
   "color: red; font-size: 50px; font-weight: bold; font-family: tahoma"
 );
 console.log(
-  "%cLED xe buýt. Bạn có thể thao tác mọi thứ trên Dev Tools.",
+  "%cLED xe buýt. Chỉ dùng DevTools để debug.Không chèn mã vào đây nếu bạn không phải nhà phát triển.",
   "font-size: 20px; font-family: Arial"
 );
 
