@@ -1,16 +1,14 @@
 body {
   background-color: rgb(17, 205, 142);
-  /* keep a sensible minimum width for desktop layouts */
-  min-width: 600px;
-  /* vertically center the main .Nhap block without changing horizontal alignment */
+  /* allow smaller devices while keeping a sensible minimum */
+  min-width: 320px;
+  /* center the .Nhap container horizontally and vertically */
   display: flex;
-  flex-direction: column; /* main axis is vertical */
-  justify-content: center; /* centers along vertical axis */
-  align-items: center; /* center horizontally as well */
+  justify-content: center; /* horizontal */
+  align-items: center; /* vertical */
   /* ensure vertical centering covers the full viewport */
   min-height: 100vh;
-  padding-top: 12px; /* small breathing room at top */
-  padding-bottom: 12px;
+  padding: 16px; /* breathing room on small screens */
   box-sizing: border-box;
 }
 
@@ -19,16 +17,17 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 15px auto;
-  /* optional responsive width to keep card from being too narrow/wide */
-  width: clamp(320px, 85%, 1000px);
+  /* center block and keep responsive width */
+  margin: 0 auto;
   background-color: white;
   border-radius: 20px;
   flex-direction: column;
-  opacity: 0.9;
-  /* keep width behavior unchanged; use max-width to avoid over-wide card */
-  max-width: 1000px;
+  opacity: 0.95;
+  width: clamp(320px, 85%, 900px);
+  padding: 18px;
   box-sizing: border-box;
+  max-height: 90vh;
+  overflow: auto;
 }
 
 #NhapLabel {

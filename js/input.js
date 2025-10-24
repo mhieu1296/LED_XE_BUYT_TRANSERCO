@@ -27,42 +27,26 @@ function NhapDuLieu() {
   document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
 }
 
-// giảm cỡ chữ cho nhánh tuyến (mã tuyến)
-function toggleFontSize(paragraphId, button) {
-      const selection = window.getSelection();
-      if (!selection.rangeCount) return;
-
-      const range = selection.getRangeAt(0);
-      const p = document.getElementById(paragraphId);
-
-      // Kiểm tra phần được chọn có nằm trong p không
-      if (!p.contains(range.commonAncestorContainer)) return;
-
-      // Nếu đã giảm trước đó, phục hồi
-      if (range.startContainer.parentNode.dataset.originalFontSize) {
-        const parent = range.startContainer.parentNode;
-        parent.style.fontSize = parent.dataset.originalFontSize;
-        delete parent.dataset.originalFontSize;
-        button.textContent = "Giảm cỡ chữ";
-        selection.removeAllRanges();
-        return;
-      }
-
-      // Tạo span mới để áp dụng style
-      const span = document.createElement('span');
-
-      // Lưu font-size gốc để hồi phục
-      const computedStyle = window.getComputedStyle(range.startContainer.parentNode);
-      span.dataset.originalFontSize = computedStyle.fontSize;
-
-      // Giảm font-size 20%
-      const newSize = parseFloat(computedStyle.fontSize) * 0.8 + "px";
-      span.style.fontSize = newSize;
-
-      // Bọc vùng chọn bằng span
-      range.surroundContents(span);
-
-      button.textContent = "Hồi phục cỡ chữ";
-      selection.removeAllRanges();
+function setupDeleteButtons() {
+  const rows = document.querySelectorAll('table tr');
+  rows.forEach((tr) => {
+    const deleteImg = tr.querySelector('img[src*="delete.png"]');
+    const input = tr.querySelector('input[type="text"]');
+    if (deleteImg && input) {
+      deleteImg.style.cursor = 'pointer';
+      deleteImg.addEventListener('click', () => {
+        input.value = '';
+        const warning = document.getElementById('canhBao');
+        if (warning) warning.innerText = '';
+        try { input.focus(); } catch (e) {}
+      });
     }
+  });
+}
 
+// Thiết lập khi DOM sẵn sàng
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupDeleteButtons);
+} else {
+  setupDeleteButtons();
+}
