@@ -22,17 +22,6 @@ body {
   
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.096); /* Màu phủ đen với độ mờ */
-  z-index: -1; /* Đặt phía sau nội dung */
-}
-
 .LED {
   display: flex;
   justify-content: center;
@@ -40,6 +29,7 @@ body::before {
   margin: 30px;
   /* font-family: SVN-ProductSansBold; */
   font-family: ChakraPetch;
+
   text-align: center;
   border: 5px solid white;
   background-color: black;
@@ -141,15 +131,17 @@ body::before {
   color: red;
 }
 
-#maTuyen, #nhanhTuyen {
+#maTuyen{
   flex: 0.5;
   display: flex;
   color: rgb(246,29,4);
-  margin: 30px;
-  padding: 10px;
+  
+  margin-left: 15px;
+  /* margin-right: 15px;  */
   font-size: 150px;
   text-transform: uppercase;
   flex-shrink: 0;
+  transform: scaleX(.8);
 }
 
 @media screen and (max-width: 1024px) {
@@ -232,7 +224,7 @@ body::before {
   color: rgb(246,29,4);
   text-transform: uppercase;
   height: 100%;
-  letter-spacing: 15px;
+  letter-spacing: 10px;
 }
 
 @media screen and (max-width: 1024px) {
