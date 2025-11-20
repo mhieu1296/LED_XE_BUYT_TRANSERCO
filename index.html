@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BẢNG ĐIỆN TỬ XE BUÝT BÁN TỰ ĐỘNG</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/font.css" />
-    <link rel="icon" type="image/x-icon" href="assets/image/timbus.vn.ico" />
+    <link rel="shortcut icon" href="timbus.vn.ico" type="image/x-icon">
     <script src="js/dieu_khien_LED.js"></script>
     <script src="js/hien_thi_LED.js"></script>
     <script src="js/window_onload.js"></script>
     <script src="js/thu_gon_noi_dung.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/xac_nhan_xoa_du_lieu_tronglocal.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <div class="LED"> 
-      <p id="maTuyen">00</p>
+      <!-- <p class="version">v1.0</p> -->
+      <p id="maTuyen"></p>
       <div class="NoiDungChayChu">
         <div id="route-info">
-          <p id="diemDau">ĐÂY LÀ ĐIỂM ĐẦU</p>
+          <p id="diemDau"></p>
           <img id="mui_ten_xanh1" src="assets/image/mui_ten_xanh.gif" alt="->" />
-          <p id="diemGiua">ĐÂY LÀ ĐIỂM GIỮA</p>
+          <p id="diemGiua"></p>
           <img id="mui_ten_xanh2" src="assets/image/mui_ten_xanh.gif" alt="->" />
-          <p id="diemCuoi">ĐÂY LÀ ĐIỂM CUỐI</p>
+          <p id="diemCuoi"></p>
         </div>
-        <p id="xiNghiep">ĐÂY LÀ TÊN XÍ NGHIỆP</p>
-        <p id="MaTuyenCanGiua">00</p>
+        <p id="xiNghiep"></p>
+        <p id="MaTuyenCanGiua"></p>
         <p id="HuyDongRaTuyen">XE HUY ĐỘNG</p>
-        <p id="XeVeGara">XE VỀ GARA</p>
+        <p id="XeVeGara">XE VỀ GARA - KHÔNG ĐÓN KHÁCH</p>
         <div class="image">
           <img
             id="hanoibus"
@@ -47,6 +48,7 @@
       <div class="NutBam">
         <button class="ChayLed" id="xanhla">CHẠY</button>
         <button class="RESET">TẮT</button>
+        <button class="RESTART">RELOAD</button>
         <button class="Details">NÂNG CAO</button>
       </div>
     </div>
@@ -109,16 +111,17 @@
         </table>
       </div>
       <div class="thongTin">
-        <p class="UngDungHoTroTotNhat">NHÀ TÀI TRỢ</p>
+        <p class="UngDungHoTroTotNhat">BẢNG ĐIỆN TỬ XE BUÝT BÁN TỰ ĐỘNG</p>
         <div id="logobus">
           
           <!-- <img src="assets/image/HANOI BRT.png" alt="HANOI BRT" /> -->
           <!-- <img src="assets/image/bus_lien_ninh.png" alt="BUSLIENINH" /> -->
           <!-- <img src="assets/image/tt_tan_dat.png" alt="TANDAT" /> -->
-          <img src="assets/image/baoyengroup.png" alt="BAOYENGROUP" />
+          <!-- <img src="assets/image/baoyengroup.png" alt="BAOYENGROUP" />
           <img src="assets/image/logohanoibus.png" alt="TRANSERCO HANOIBUS" />
-          <img src="assets/image/vinbus.png" alt="VINBUS" />
+          <img src="assets/image/vinbus.png" alt="VINBUS" /> -->
           <!-- <img src="assets/image/oto_vantai_hatay.png" alt=""> -->
+           <img src="/assets/image/20nam_transerco.png" alt="">
         </div>
         <p></p>
         <p class="UngDungHoTroTotNhat">

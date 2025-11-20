@@ -34,6 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // Khởi tạo: CHẠY enable, TẮT disable
   setChayTatState('tat');
 
+  // nút reload trang
+  document.querySelectorAll('.RESTART').forEach(btn => {
+    btn.addEventListener('click', function() {
+      location.reload();
+    });
+  });
+  
   // Nút NÂNG CAO
   document.querySelectorAll('.Details').forEach(btn => {
     btn.addEventListener('click', function() {
