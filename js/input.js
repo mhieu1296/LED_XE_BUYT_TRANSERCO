@@ -3,10 +3,13 @@ function NhapDuLieu() {
 
   for (let input of inputs) {
     const isRequired = !input.classList.contains("khongBatBuoc");
-
+    
     if (isRequired && input.value.trim() === "") {
-      document.getElementById("canhBao").innerText = "NHẬP ĐỦ CÁC TRƯỜNG CÓ * !";
-      return;
+      // Báo lỗi bằng cách đổi border của chính input lỗi
+      input.style.borderBottom = "2px solid red";
+    } else {
+      // Trả lại màu cũ nếu đã nhập rồi
+      input.style.borderBottom = "2px solid rgb(17, 205, 142)";
     }
   }
 
@@ -24,7 +27,6 @@ function NhapDuLieu() {
   localStorage.setItem("xiNghiep", xiNghiep);
   localStorage.setItem("MaTuyenCanGiua", maTuyen);
   console.log("Đã nhập đầy đủ thông tin.");
-  document.getElementById("canhBao").innerText = "ĐÃ NHẬP ĐỦ";
 }
 
 function setupDeleteButtons() {
