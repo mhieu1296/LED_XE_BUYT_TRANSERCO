@@ -1,53 +1,55 @@
-Ứng dụng mô phỏng (không hoàn toàn giống) bảng LED hiển thị tuyến trên một số xe buýt của Tổng công ty Vận tải Hà Nội.
-Hiệu ứng LED chủ yếu là "hiển thị - không hiển thị" hay có thể gọi là "hiển thị luân phiên".
-Hỗ trợ nhiều mode chạy khác nhau: </br>
-1. Đầy đủ (1, 2, 3, TG1, TG2, 4, TG3, TG4, 5)</br>
-2. Xe điện 2 (1, 2, TG1, TG2, 4, TG3, TG4, 5)</br>
-3. Truyền thống (1, 2, 4, 5). Đây là mode mặc định</br>
-4. Liên Ninh (1, 4)</br>
-5. Hanoi BRT (1, 3, 4, 5)</br>
-6. Bảo Yến (nhấp nháy mã tuyến) (1, 3)</br>
-Ứng dụng này được làm dưới sự trợ giúp của ChatGPT và một sinh viên mới năm nhất (tính từ thời điểm commit lần đầu) chưa biết gì quá to tát về lập trình web.
+# Mô Phỏng Bảng LED Xe Buýt Hà Nội
 
-Trình tự hiển thị:
-1. Hiển thị mã tuyến, điểm đầu - điểm cuối trong 30 giây. </br> 
-   55A    CẦU GIẤY - TIMES CITY
-2. Hiển thị mã tuyến, logo Hanoibus trong 5 giây. </br>
-   55A    H A N O I B U S
-3. Hiển thị mã tuyến, tên xí nghiệp trong 5 giây.</br>
-   55A      CÔNG TY CP XE ĐIỆN HÀ NỘI
+Ứng dụng web mô phỏng bảng LED hiển thị thông tin tuyến trên các xe buýt của Tổng công ty Vận tải Hà Nội (Transerco) và các đơn vị vận tải công cộng khác. Ứng dụng này giúp tái hiện các hiệu ứng hiển thị quen thuộc trên đường phố Hà Nội ngay trên trình duyệt của bạn.
 
-{</br>
-HÀM HIỂN THỊ HIỆU ỨNG</br>
-TG1. hiệu ứng xóa mã tuyến trong 0.15 giây</br>
-TG2. hiệu ứng xoá tên xí nghiệp trong 0.15 giây.</br>
-}</br>
+##  Tính Năng Chính
 
-4. Hiển thị mã tuyến dạng căn giữa bảng LED trong 5 giây.</br>
-         55A
+*   **Mô phỏng chân thực**: Tái tạo các hiệu ứng LED hiển thị - ẩn, chuyển cảnh, chạy chữ.
+*   **Đa dạng chế độ (Modes)**: Hỗ trợ 7 chế độ chạy khác nhau tương ứng với các loại xe và đơn vị vận hành thực tế.
+*   **Tùy biến nội dung**: Cho phép người dùng tự nhập Mã tuyến, Điểm đầu, Điểm cuối, Tên xí nghiệp vận hành.
+*   **Điều khiển linh hoạt**:
+    *   **Đảo chiều**: Đổi vị trí điểm đầu và điểm cuối tức thì.
+    *   **Chạy chữ (Marquee)**: Hỗ trợ dòng chữ chạy ngang khi nội dung quá dài hoặc muốn gây chú ý.
+    *   **Xe ra tuyến, xe về gara**: Hiển thị "HUY ĐỘNG RA TUYẾN" hoặc "XE VỀ GARA".
+    *   **Đóng băng**: Tạm dừng hiệu ứng tại thời điểm hiện tại.
 
-{</br>
-HÀM HIỂN THỊ HIỆU ỨNG</br>
-TG3. hiệu ứng xóa mã tuyến căn giữa trong 0.25 giây.</br>
-TG4. hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm tiếp theo trong 0.25 giây.</br>
-}</br>
+##  Các Chế Độ Chạy (Modes)
 
-5. Hiển thị mã tuyến, logo Transerco trong 5 giây. </br>
-   55A      T R A N S E R C O
-</br>
-TẤT CẢ CHÚNG ĐỀU CHẠY VÔ HẠN ĐẾN KHI NHẤN NÚT ĐÓNG BĂNG HOẶC XOÁ LED THÌ MỚI NGƯNG. </br>
-Với các mode chạy sẽ có sự điều chỉnh về thứ tự các hàm chạy. </br>
-Ứng dụng hỗ trợ đảo chiều tuyến, đóng băng LED, hiển thị HUY ĐỘNG RA TUYẾN, XE VỀ GARA, xóa hoàn toàn LED. Hỗ trợ chạy chữ khi bảng LED quá nhỏ. </br>
-Có hỗ trợ preview mã tuyến - tên tuyến, và các trạng thái như bật/tắt, dừng/chạy, chạy chữ hay không, tên mode đang chạy. </br>
-Có nhiều màu nền khác nhau.</br>
-</br>
+Ứng dụng hỗ trợ các mode hiển thị với trình tự và thời gian khác nhau:
 
-Hướng dẫn sử dụng nhanh: </br>
-Bước 1: Vào trang, Khi mới khởi động lần đầu tiên và nhấn CHẠY, sẽ không có gì hiển thị trên LED trừ mũi tên xanh, logo Hanoibus và Transerco. </br>Hãy nhập thông tin LED bằng cách nhấn nút NHẬP.  </BR>
-Bước 2: Nhập mã tuyến, điểm đầu / giữa (optional) / cuối và xí nghiệp vận hành. Nhấn LƯU sau đó QUAY LẠI. Sẽ có cảnh báo khi không nhập đủ thông tin. </br>
-Bước 3: Chọn mode và nhấn nút CHẠY. Trong quá trình chạy, có thể đảo chiều hoặc cho chạy chữ. </br>
-Lưu ý: trước khi đổi mode, hiển thị XE HUY ĐỘNG / XE VỀ GARA, phải nhấn nút ĐÓNG BĂNG -> TẮT rồi mới được đổi mode. </br>
-</br>
-Nếu bạn muốn trải nghiệm, hãy truy cập [tại đây](https://ledxebuyt.netlify.app). </br>
-LƯU Ý: ỨNG DỤNG NÀY KHÔNG PHẢI CỦA TRANSERCO VÀ CÁC DOANH NGHIỆP VẬN TẢI CÔNG CỘNG. ĐÂY CHỈ LÀ SẢN PHẨM CÁ NHÂN.
-</br> Các ông đi qua, các bà đi lại thấy code xấu quá thì giơ cao đánh khẽ cháu thôi nha. Cháu đưa ý tưởng, và cùng sự hỗ trợ của ChatGPT, và sự điều chỉnh logic đã tạo nên sản phẩm này. Thôi thì cũng gọi là vibe coding cũng được nha".
+| Chế độ | Mô tả & Trình tự hiển thị |
+| :--- | :--- |
+| **1. Đầy Đủ** | Chế độ mặc định đầy đủ nhất.<br>1. Mã tuyến + Điểm Đ-C (30s)<br>2. Hanoibus (5s)<br>3. Tên Xí Nghiệp (5s)<br>4. Mã tuyến căn giữa (5s)<br>5. Transerco (5s) |
+| **2. Xe Điện 2** | Tương tự chế độ Đầy Đủ nhưng bỏ qua bước hiển thị tên Xí nghiệp. (Phù hợp cho LED của các tuyến buýt của Công ty Xe điện Hà Nội, trừ tuyến 34 mới) <br>Phù hợp cho các tuyến xe điện VinBus hoặc tương tự. |
+| **3. Thường** | Chế độ truyền thống, đơn giản. Mô phỏng LED của các tuyến buýt thông thường của TCT <br>1. Mã tuyến + Điểm Đ-C (30s)<br>2. Hanoibus (3s)<br>3. Mã tuyến căn giữa (5s)<br>4. Transerco (3s) |
+| **4. Liên Ninh** | Chế độ tối giản, chỉ hiển thị thông tin tuyến. Mô phỏng LED của Xn buýt Liên Ninh (trước khi thay toàn bộ sang xe điện) <br>1. Mã tuyến + Điểm Đ-C (30s)<br>2. Mã tuyến căn giữa (5s) |
+| **5. Hanoi BRT** | Dành cho tuyến buýt nhanh BRT.<br>1. Mã tuyến + Điểm Đ-C (30s)<br>2. Tên Xí Nghiệp (5s)<br>3. Mã tuyến căn giữa (5s)<br>4. Transerco (5s) |
+| **6. Bảo Yến** | Mô phỏng 1 phần xe buýt Bảo Yến với hiệu ứng **nhấp nháy mã tuyến**.<br>1. Mã tuyến + Điểm Đ-C (30s)<br>2. Tên Xí Nghiệp (5s) |
+| **7. Demo** | Chạy lướt qua tất cả các hiệu ứng của chế độ Đầy Đủ trong thời gian ngắn (2s/bước). |
+
+## Hướng Dẫn Sử Dụng Nhanh
+
+### Bước 1: Nhập liệu
+1.  Nhấn nút **NHẬP** trên giao diện chính.
+2.  Điền thông tin vào form:
+    *   **Mã tuyến**: (VD: 01, 32, 55A...)
+    *   **Điểm đầu / Điểm cuối**: (VD: Bến xe Gia Lâm, Bến xe Yên Nghĩa...)
+    *   **Tên Xí nghiệp**: (VD: Xí nghiệp xe buýt Hà Nội, Bảo Yến...)
+3.  Nhấn **LƯU** để lưu vào bộ nhớ trình duyệt, sau đó nhấn **QUAY LẠI**.
+
+### Bước 2: Chọn Chế độ & Chạy
+1.  Chọn một trong các chế độ bên dưới (ĐẦY ĐỦ, THƯỜNG, XE ĐIỆN 2...).
+2.  Nhấn nút **CHẠY** để bắt đầu hiển thị.
+
+### Bước 3: Điều khiển trong khi chạy
+*   **ĐẢO CHIỀU**: Nhấn để đảo ngược lộ trình (A → B thành B → A).
+*   **CHẠY CHỮ**: Bật/Tắt hiệu ứng chữ chạy ngang.
+*   **ĐÓNG BĂNG**: Tạm dừng mọi hoạt động của LED.
+*   **XE VỀ GARA / HUY ĐỘNG**: Chuyển ngay sang trạng thái thông báo tương ứng.
+*   **TẮT / RESET**: Xóa màn hình LED và dừng chạy.
+
+##  Lưu ý
+*   Trước khi đổi chế độ chạy khác, hãy nhấn **ĐÓNG BĂNG** -> **TẮT** (hoặc **RESET**) để đảm bảo hiệu ứng cũ dừng hoàn toàn.
+*   Dữ liệu được lưu hoàn toàn trong LocalStorage. Có thể truy ngược ra.
+---
+*Sản phẩm được phát triển cá nhân với mục đích học tập và giải trí. Không phải sản phẩm chính thức của Transerco hay bất kỳ đơn vị vận tải nào.*
