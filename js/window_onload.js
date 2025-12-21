@@ -1,3 +1,4 @@
+console.log("window_onload.js START");
 window.onload = function () {
   // xóa toàn bộ LED và dừng toàn bộ hoạt động LED khi tải xong trang, sẽ kích hoạt khi chạy hàm chạy
   stop();
@@ -36,5 +37,4 @@ window.onload = function () {
   }
   document.getElementById("diemCuoiLuu").innerText = diemCuoi;
   document.getElementById("xiNghiepLuu").innerText = xiNghiep;
-
 };

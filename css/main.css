@@ -142,6 +142,30 @@ body {
   height: 100%;
 }
 
+#speedControl {
+  
+  appearance: none;
+  width: 250px; /* Full-width */
+  height: 25px; /* Specified height */
+  /* background: #d3d3d3; */
+  border: rgb(17, 205, 142);
+  border-style: solid;
+  border-width: 2px;
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+#speedControl::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: rgb(17, 205, 142); /* Green background */
+  cursor: pointer;
+}
+
 #maTuyen{
   flex: 0.5;
   display: flex;
@@ -174,12 +198,16 @@ body {
   white-space: nowrap;
 }
 
+.NoiDungChayChu[data-force-hide="true"] .marquee {
+  display: none !important;
+}
+
 /* .NoiDungChayChu p{
   transform: scaleX(1.25);
   
 } */
 
-#route-info {
+.marquee {
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -191,8 +219,22 @@ body {
   
 }
 
+.marquee-hidden {
+  display: none !important;
+}
+
+#2nddiv{
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  position: absolute;
+  color: rgb(17, 205, 142);
+  font-size: 75px;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 1024px) {
-  #route-info{
+  .marquee{
     font-size: 35px;
   }
 }
@@ -201,10 +243,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(17, 205, 142);
+  color: rgb(246,29,4);
   text-transform: uppercase;
   font-size: 75px;
   height: 100%;
+
 }
 
 #HuyDongRaTuyen,
@@ -235,7 +278,7 @@ body {
   color: rgb(246,29,4);
   text-transform: uppercase;
   height: 100%;
-  letter-spacing: 10px;
+  letter-spacing: 2px;
 }
 
 @media screen and (max-width: 1024px) {

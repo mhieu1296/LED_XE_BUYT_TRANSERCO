@@ -8,7 +8,6 @@ function getElements() {
     maTuyen: document.getElementById("maTuyen"),
     routeInfo: document.getElementById("route-info"),
     hanoibus: document.getElementById("hanoibus"),
-    xiNghiep: document.getElementById("xiNghiep"),
     TuyenCanGiua: document.getElementById("MaTuyenCanGiua"),
     Transerco: document.getElementById("transerco"),
     HuyDong: document.getElementById("HuyDongRaTuyen"),
@@ -31,10 +30,16 @@ function hienThiMaTuyen_DiemDauCuoi() {
     return;
   }
 
+  if (marquee.coChayChuHayKhong() === false && document.getElementById("isTextMoving").innerText === "YES") {
+    marquee.ChayChu1();
+  } else if (document.getElementById("isTextMoving").innerText === "NO"){
+    marquee.DungChayChu1();
+  }
+  
   elements.maTuyen.style.display = "flex";
-  elements.routeInfo.style.display = "flex";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "false";
   elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -56,10 +61,11 @@ function hienThiMaTuyen_Hanoibus() {
     return;
   }
 
+  marquee.DungChayChu1();
   elements.maTuyen.style.visibility = "visible";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "block";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -82,65 +88,64 @@ function hienThiHanoibus() {
   }
 
   elements.maTuyen.style.display = "none";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "block";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
   elements.VeGara.style.display = "none";
 }
 
-function hienThiMaTuyen_XiNghiep() {
-  // VD: 55A      CÔNG TY CP XE ĐIỆN HÀ NỘI
-  if (!running || isSessionActive !== sessionFlagGlobal) {
-    console.log("Hàm hiển thị mã tuyến + xí nghiệp bị dừng (session killed)");
-    return;
-  }
-  console.clear();
-  console.log("Hàm hiển thị mã tuyến + xí nghiệp chạy");
+// function hienThiMaTuyen_XiNghiep() {
+//   // VD: 55A      CÔNG TY CP XE ĐIỆN HÀ NỘI
+//   if (!running || isSessionActive !== sessionFlagGlobal) {
+//     console.log("Hàm hiển thị mã tuyến + xí nghiệp bị dừng (session killed)");
+//     return;
+//   }
+//   console.clear();
+//   console.log("Hàm hiển thị mã tuyến + xí nghiệp chạy");
 
-  const elements = getElements();
-  if (!elements.maTuyen || !elements.xiNghiep) {
-    console.error("Mã tuyến và xí nghiệp không tồn tại trong DOM.");
-    return;
-  }
+//   const elements = getElements();
+//   if (!elements.maTuyen || !elements.xiNghiep) {
+//     console.error("Mã tuyến và xí nghiệp không tồn tại trong DOM.");
+//     return;
+//   }
 
-  elements.maTuyen.style.visibility = "visible";
-  elements.routeInfo.style.display = "none";
-  elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "flex";
-  elements.TuyenCanGiua.style.display = "none";
-  elements.Transerco.style.display = "none";
-  elements.HuyDong.style.display = "none";
-  elements.VeGara.style.display = "none";
-}
+//   elements.maTuyen.style.visibility = "visible";
+//   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
+//   elements.hanoibus.style.display = "none";
+//   elements.TuyenCanGiua.style.display = "none";
+//   elements.Transerco.style.display = "none";
+//   elements.HuyDong.style.display = "none";
+//   elements.VeGara.style.display = "none";
+// }
 
 // các hàm hiệu ứng trung gian
-function hienThiTrungGian1_1() {
-  // hiệu ứng xóa mã tuyến
-  if (!running || isSessionActive !== sessionFlagGlobal) {
-    console.log("Hàm hiệu ứng xóa mã tuyến bị dừng (session killed)");
-    return;
-  }
-  console.clear();
-  console.log("Hàm hiệu ứng xóa mã tuyến chạy");
+// function hienThiTrungGian1_1() {
+//   // hiệu ứng xóa mã tuyến
+//   if (!running || isSessionActive !== sessionFlagGlobal) {
+//     console.log("Hàm hiệu ứng xóa mã tuyến bị dừng (session killed)");
+//     return;
+//   }
+//   console.clear();
+//   console.log("Hàm hiệu ứng xóa mã tuyến chạy");
 
-  const elements = getElements();
-  if (!elements.maTuyen || !elements.xiNghiep) {
-    console.error("Mã tuyến và xí nghiệp không tồn tại trong DOM.");
-    return;
-  }
+//   const elements = getElements();
+//   if (!elements.maTuyen || !elements.xiNghiep) {
+//     console.error("Mã tuyến và xí nghiệp không tồn tại trong DOM.");
+//     return;
+//   }
 
-  elements.maTuyen.style.visibility = "hidden";
-  elements.routeInfo.style.display = "none";
-  elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "flex";
-  elements.TuyenCanGiua.style.display = "none";
-  elements.Transerco.style.display = "none";
-  elements.HuyDong.style.display = "none";
-  elements.VeGara.style.display = "none";
-}
+//   elements.maTuyen.style.visibility = "hidden";
+//   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
+//   elements.hanoibus.style.display = "none";
+  
+//   elements.TuyenCanGiua.style.display = "none";
+//   elements.Transerco.style.display = "none";
+//   elements.HuyDong.style.display = "none";
+//   elements.VeGara.style.display = "none";
+// }
 
 function hienThiTrungGian1_2() {
   // hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa)
@@ -158,9 +163,9 @@ function hienThiTrungGian1_2() {
   }
 
   elements.maTuyen.style.visibility = "hidden";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "flex";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -180,9 +185,9 @@ function hienThiTrungGian2() {
   const elements = getElements();
 
   elements.maTuyen.style.visibility = "hidden";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -206,9 +211,9 @@ function hienThiMaTuyenCanGiua() {
   }
 
   elements.maTuyen.style.display = "none";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "flex";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -228,9 +233,9 @@ function hienThiTrungGian3() {
   const elements = getElements();
   elements.maTuyen.style.display = "flex";
   elements.maTuyen.style.visibility = "hidden";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -254,9 +259,9 @@ function hienThiTrungGian4() {
   }
 
   elements.maTuyen.style.visibility = "visible";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -281,9 +286,9 @@ function hienThiMaTuyen_Transerco() {
 
   elements.maTuyen.style.display = "flex";
   elements.maTuyen.style.visibility = "visible";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "flex";
   elements.HuyDong.style.display = "none";
@@ -308,9 +313,9 @@ function hienThiTranserco() {
 
   elements.maTuyen.style.display = "none";
   elements.maTuyen.style.visibility = "visible";
-  elements.routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  elements.xiNghiep.style.display = "none";
+  
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "flex";
   elements.HuyDong.style.display = "none";
@@ -331,6 +336,7 @@ function XeVeGara() {
   reset();
   document.getElementById("XeVeGara").style.display = "flex";
   console.log("Mode XE VỀ GARA");
+}
 // --- Session kill support for all effect functions ---
 // Global session flag for effect functions
 let sessionFlagGlobal = null;
@@ -362,7 +368,6 @@ chonMode = function(mode) {
   sessionFlagGlobal = null;
   _original_chonMode(mode);
 };
-}
 
 // danh sách hiệu ứng
 let funcs = [
@@ -380,30 +385,8 @@ function chonMode(mode) {
   isSessionActive = false;
   running = false;
   // ...existing code...
-  if (mode === "day_du") {
+  if (mode === "xe_dien2") {
     // đầy đủ
-    console.log("ĐẦY ĐỦ");
-    document.getElementById("MODE").innerText = "ĐẦY ĐỦ";
-    delays.splice(
-      0,
-      delays.length,
-      ...[30000, 5000, 5000, 200, 200, 5000, 300, 300, 5000]
-    );
-    funcs.splice(
-      0,
-      funcs.length,
-      hienThiMaTuyen_DiemDauCuoi,
-      hienThiMaTuyen_Hanoibus,
-      hienThiMaTuyen_XiNghiep,
-      hienThiTrungGian1_1,
-      hienThiTrungGian2,
-      hienThiMaTuyenCanGiua,
-      hienThiTrungGian3,
-      hienThiTrungGian4,
-      hienThiMaTuyen_Transerco
-    );
-  } else if (mode === "xe_dien2") {
-    // đầy đủ, trừ hienThiMaTuyen_XiNghiep
     console.log("XE ĐIỆN 2");
     document.getElementById("MODE").innerText = "XE ĐIỆN 2";
     delays.splice(
@@ -455,12 +438,11 @@ function chonMode(mode) {
     // hienThiMaTuyen_Transerco
     console.log("HANOI BRT");
     document.getElementById("MODE").innerText = "HANOI BRT";
-    delays.splice(0, delays.length, ...[30000, 5000, 5000, 5000]);
+    delays.splice(0, delays.length, ...[30000, 5000, 5000]);
     funcs.splice(
       0,
       funcs.length,
       hienThiMaTuyen_DiemDauCuoi,
-      hienThiMaTuyen_XiNghiep,
       hienThiMaTuyenCanGiua,
       hienThiMaTuyen_Transerco
     );
@@ -471,12 +453,11 @@ function chonMode(mode) {
     // và nhấp nháy mã tuyến
     console.log("BẢO YẾN");
     document.getElementById("MODE").innerText = "BẢO YẾN";
-    delays.splice(0, delays.length, ...[30000, 5000]);
+    delays.splice(0, delays.length, ...[30000]);
     funcs.splice(
       0,
       funcs.length,
-      hienThiMaTuyen_DiemDauCuoi,
-      hienThiMaTuyen_XiNghiep
+      hienThiMaTuyen_DiemDauCuoi
     );
   } else if (mode === "demo") {
     // có đầy đủ hàm, nhưng các hàm chỉ chạy trong 2 giây.
@@ -485,15 +466,14 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[2000, 2000, 2000, 200, 200, 2000, 300, 300, 2000]
+      ...[10000, 2000, , 200, 200, 2000, 300, 300, 2000]
     );
     funcs.splice(
       0,
       funcs.length,
       hienThiMaTuyen_DiemDauCuoi,
       hienThiMaTuyen_Hanoibus,
-      hienThiMaTuyen_XiNghiep,
-      hienThiTrungGian1_1,
+      hienThiTrungGian1_2,
       hienThiTrungGian2,
       hienThiMaTuyenCanGiua,
       hienThiTrungGian3,

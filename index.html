@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BẢNG ĐIỆN TỬ XE BUÝT BÁN TỰ ĐỘNG</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/font.css" />
@@ -10,27 +10,40 @@
     <script src="js/hien_thi_LED.js"></script>
     <script src="js/window_onload.js"></script>
     <script src="js/thu_gon_noi_dung.js"></script>
-    <script src="js/theme.js"></script>
     <script src="js/xac_nhan_xoa_du_lieu_tronglocal.js"></script>
-    <link rel="shortcut icon" href="timbus.vn.ico" type="image/x-icon">
-</head>
-<body>
-    <body>
-    <div class="LED"> 
+    <script src="js/speed_indicator.js"></script>
+    <script src="js/marquee.js"></script>
+    <script src="js/event_listeners.js"></script>
+    
+
+    <link rel="shortcut icon" href="timbus.vn.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="LED">
       <!-- <p class="version">v1.0</p> -->
       <p id="maTuyen"></p>
-      <div class="NoiDungChayChu">
-        <div id="route-info">
+      <div class="NoiDungChayChu" data-force-hide="false">
+        <div class="marquee" id="route-info" data-enabled="true">
           <p id="diemDau"></p>
-          <img id="mui_ten_xanh1" src="assets/image/mui_ten_xanh.gif" alt="->" />
+          <img
+            id="mui_ten_xanh1"
+            src="assets/image/mui_ten_xanh.gif"
+            alt="->"
+          />
           <p id="diemGiua"></p>
-          <img id="mui_ten_xanh2" src="assets/image/mui_ten_xanh.gif" alt="->" />
+          <img
+            id="mui_ten_xanh2"
+            src="assets/image/mui_ten_xanh.gif"
+            alt="->"
+          />
           <p id="diemCuoi"></p>
         </div>
-        <p id="xiNghiep"></p>
+        <div class="marquee" id="xiNghiep" data-enabled="false">
+          <p>ĐÂY LÀ TÊN XÍ NGHIỆP</p>
+        </div>
         <p id="MaTuyenCanGiua"></p>
-        <p id="HuyDongRaTuyen">XE HUY ĐỘNG</p>
-        <p id="XeVeGara">XE VỀ GARA - KHÔNG ĐÓN KHÁCH</p>
+        <p id="HuyDongRaTuyen">XE RA TUYẾN</p>
+        <p id="XeVeGara">XE DỪNG PHỤC VỤ</p>
         <div class="image">
           <img
             id="hanoibus"
@@ -60,13 +73,25 @@
         <button class="RESET">TẮT</button>
         <button class="daoChieuTuyen">ĐẢO CHIỀU</button>
         <button class="DungLed">ĐÓNG BĂNG</button>
-        <button class="XeVeGara">XE VỀ GARA</button>
-        <button class="HuyDongRaTuyen">XE HUY ĐỘNG</button>
-        <button class="TEST">CHẠY CHỮ</button>
+        <button class="XeVeGara">DỪNG P.VỤ</button>
+        <button class="HuyDongRaTuyen">XE RA TUYẾN</button>
+        <button class="CHAYCHU">C.CHỮ&C.GIỮA</button>
+        <!-- <button class="HuyChayChu">HỦY C.CHỮ</button> -->
       </div>
+      <p class="BangDieuKhienLabel">ĐIỀU CHỈNH TỐC ĐỘ CHẠY CHỮ</p>
+      <input
+        type="range"
+        name="speed"
+        id="speedControl"
+        min="50"
+        max="1000"
+        value="200"
+        step="25"
+      />
+      <p class="BangDieuKhienLabel" id="speedValue">200 px/s</p>
       <p id="ModeDangChay">CHỌN MODE CHẠY</p>
       <div class="NutBam">
-        <button class="DAYDU">ĐẦY ĐỦ</button>
+        <button class="XEDIEN1">XE ĐIỆN 1</button>
         <button class="XEDIEN2">XE ĐIỆN 2</button>
         <button class="THUONG">THƯỜNG</button>
         <button class="LIENNINH">LIÊN NINH</button>
@@ -108,13 +133,12 @@
             <td id="isTextMoving">NO</td>
             <td id="MODE">THƯỜNG</td>
           </tr>
-          
         </table>
       </div>
       <div class="thongTin">
         <p class="UngDungHoTroTotNhat">BẢNG ĐIỆN TỬ XE BUÝT BÁN TỰ ĐỘNG</p>
         <div id="logobus">
-          <img src="assets/image/hanoibus_green.png" style="zoom: 60%" alt="">
+          <img src="assets/image/hanoibus_green.png" style="zoom: 60%" alt="" />
           <!-- <img src="assets/image/HANOI BRT.png" alt="HANOI BRT" /> -->
           <!-- <img src="assets/image/bus_lien_ninh.png" alt="BUSLIENINH" /> -->
           <!-- <img src="assets/image/tt_tan_dat.png" alt="TANDAT" /> -->
@@ -124,13 +148,19 @@
           <!-- <img src="assets/image/oto_vantai_hatay.png" alt=""> -->
         </div>
         <p class="UngDungHoTroTotNhat">
-          Tác giả: <a href= "https://github.com/mhieu1296" target="_blank" style="color: red">NGUYỄN MINH HIẾU</a>, KTPM02 K19 HAUI ✨
+          Tác giả:
+          <a
+            href="https://github.com/mhieu1296"
+            target="_blank"
+            style="color: red"
+            >NGUYỄN MINH HIẾU</a
+          >, KTPM02 K19 HAUI ✨
           <br />
-          Code có xấu xin các anh chị bỏ qua cho nhé 😭 <BR/> Vì sứ mệnh thay thế cho biển lật! <BR/> Bản quyền các logo thuộc về các cty vận tải công cộng
+          Code có xấu xin các anh chị bỏ qua cho nhé 😭 <br />
+          Vì sứ mệnh thay thế cho biển lật! <br />
+          Bản quyền các logo thuộc về các cty vận tải công cộng
         </p>
       </div>
     </div>
-    <script src="js/event_listeners.js"></script>
   </body>
-</body>
 </html>

@@ -31,55 +31,55 @@ function daoChieuLED(Dau, Cuoi) {
   }
 }
 
-// hiệu ứng chạy chữ từ phải sang trái
-let isRunning = false;
-let animationId = null;
-let pos = 0;
-let lastTime = null;
-const toc_do = 200; // tốc độ px/s
+// // hiệu ứng chạy chữ từ phải sang trái
+// let isRunning = false;
+// let animationId = null;
+// let pos = 0;
+// let lastTime = null;
 
-function scrollText(timestamp) {
-  if (!isRunning) return;
+// function scrollText(timestamp) {
+//   if (!isRunning) return;
 
-  if (!lastTime) lastTime = timestamp;
-  const elapsed = (timestamp - lastTime) / 1000;
-  lastTime = timestamp;
+//   if (!lastTime) lastTime = timestamp;
+//   const elapsed = (timestamp - lastTime) / 1000;
+//   lastTime = timestamp;
 
-  const chaychu = document.getElementById('route-info');
-  const khung = document.getElementsByClassName('NoiDungChayChu')[0];
+//   const chaychu = document.getElementById('route-info');
+//   const khung = document.getElementsByClassName('NoiDungChayChu')[0];
 
-  pos -= toc_do * elapsed;
-  if (pos < -chaychu.offsetWidth) {
-    pos = khung.offsetWidth;
-  }
+//   let toc_do = parseInt(document.getElementById("speedControl").value); // px/s
+//   pos -= toc_do * elapsed; // dòng 51
+//   if (pos < -chaychu.offsetWidth) {
+//     pos = khung.offsetWidth;
+//   }
 
-  chaychu.style.left = pos + 'px';
+//   chaychu.style.left = pos + 'px';
 
-  animationId = requestAnimationFrame(scrollText);
-}
+//   animationId = requestAnimationFrame(scrollText);
+// }
 
-function chayChu() {
-  const khung = document.getElementsByClassName('NoiDungChayChu')[0];
-  const chaychu = document.getElementById('route-info');
+// function chayChu() {
+//   const khung = document.getElementsByClassName('NoiDungChayChu')[0];
+//   const chaychu = document.getElementById('route-info');
 
-  if (!isRunning) {
-    pos = khung.offsetWidth;
-    lastTime = null;
-    isRunning = true;
-    animationId = requestAnimationFrame(scrollText);
-    console.log("Bắt đầu chạy chữ");
-    document.getElementById("isTextMoving").innerText = "YES";
-  } else {
-    isRunning = false;
-    cancelAnimationFrame(animationId);
+//   if (!isRunning) {
+//     pos = khung.offsetWidth;
+//     lastTime = null;
+//     isRunning = true;
+//     animationId = requestAnimationFrame(scrollText);
+//     console.log("Bắt đầu chạy chữ");
+//     document.getElementById("isTextMoving").innerText = "YES";
+//   } else {
+//     isRunning = false;
+//     cancelAnimationFrame(animationId);
 
-    //  Căn giữa dòng chữ khi dừng lại
-    const centerPos = (khung.offsetWidth - chaychu.offsetWidth) / 2;
-    chaychu.style.left = centerPos + 'px';
-    document.getElementById("isTextMoving").innerText = "NO";
-    console.log("Dừng chạy chữ");
-  }
-}
+//     //  Căn giữa dòng chữ khi dừng lại
+//     const centerPos = (khung.offsetWidth - chaychu.offsetWidth) / 2;
+//     chaychu.style.left = centerPos + 'px';
+//     document.getElementById("isTextMoving").innerText = "NO";
+//     console.log("Dừng chạy chữ");
+//   }
+// }
 
 function batHieuUngNhay() {
   // nhấp nháy mã tuyến
@@ -96,11 +96,13 @@ function tatHieuUngNhay() {
 function reset() {
   // hàm xóa toàn bộ LED
   dungLai();
+  marquee.DungChayChu1();
 
   document.getElementById("isPausing").innerText = "NO";
 
   const maTuyen = document.getElementById("maTuyen");
-  const routeInfo = document.getElementById("route-info");
+  
+  
   const hanoibus = document.getElementById("hanoibus");
   const transerco = document.getElementById("transerco");
   const xiNghiep = document.getElementById("xiNghiep");
@@ -109,7 +111,7 @@ function reset() {
   const VeGara = document.getElementById("XeVeGara");
 
   maTuyen.style.display = "none";
-  routeInfo.style.display = "none";
+  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   hanoibus.style.display = "none";
   transerco.style.display = "none";
   xiNghiep.style.display = "none";
