@@ -4,6 +4,8 @@ window.onload = function () {
   stop();
   reset();
 
+  
+
   document.getElementById("isPausing").innerText = "NO";
 
   // nhớ lại local storage
@@ -37,4 +39,5 @@ window.onload = function () {
   }
   document.getElementById("diemCuoiLuu").innerText = diemCuoi;
   document.getElementById("xiNghiepLuu").innerText = xiNghiep;
+  
 };

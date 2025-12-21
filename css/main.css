@@ -9,33 +9,11 @@
   box-shadow: 0 0 0 2px #ff0000;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("/assets/image/53498275023_66d40a35e1_o.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(1px);
-  transform: scale(1.05);
-  z-index: -1;
+body{
   background-color: rgb(17, 205, 142);
 
+  
 }
-
-
-
-
 
 .LED {
   display: flex;
