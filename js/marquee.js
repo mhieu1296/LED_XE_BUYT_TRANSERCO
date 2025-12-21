@@ -116,13 +116,15 @@ document.addEventListener("DOMContentLoaded", function () {
   //   }
   // }
 
-  function DungChayChu1() {
+  function DungChayChu1(canGiua = true) {
     isRunning = false;
 
     if (animationId) {
       cancelAnimationFrame(animationId);
       animationId = null;
     }
+
+    if (!canGiua) return;
 
     // ===== CĂN GIỮA MARQUEE THỨ NHẤT =====
     const firstItem = items[0];

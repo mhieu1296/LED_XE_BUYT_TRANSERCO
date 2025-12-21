@@ -32,14 +32,14 @@ function hienThiMaTuyen_DiemDauCuoi() {
 
   if (marquee.coChayChuHayKhong() === false && document.getElementById("isTextMoving").innerText === "YES") {
     marquee.ChayChu1();
-  } else if (document.getElementById("isTextMoving").innerText === "NO"){
-    marquee.DungChayChu1();
+  } else if (document.getElementById("isTextMoving").innerText === "NO") {
+    marquee.DungChayChu1(false);
   }
-  
+
   elements.maTuyen.style.display = "flex";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "false";
   elements.hanoibus.style.display = "none";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -65,7 +65,7 @@ function hienThiMaTuyen_Hanoibus() {
   elements.maTuyen.style.visibility = "visible";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "block";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -90,7 +90,7 @@ function hienThiHanoibus() {
   elements.maTuyen.style.display = "none";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "block";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -140,7 +140,7 @@ function hienThiHanoibus() {
 //   elements.maTuyen.style.visibility = "hidden";
 //   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
 //   elements.hanoibus.style.display = "none";
-  
+
 //   elements.TuyenCanGiua.style.display = "none";
 //   elements.Transerco.style.display = "none";
 //   elements.HuyDong.style.display = "none";
@@ -165,7 +165,7 @@ function hienThiTrungGian1_2() {
   elements.maTuyen.style.visibility = "hidden";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "flex";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -187,7 +187,7 @@ function hienThiTrungGian2() {
   elements.maTuyen.style.visibility = "hidden";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -213,7 +213,7 @@ function hienThiMaTuyenCanGiua() {
   elements.maTuyen.style.display = "none";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  
+
   elements.TuyenCanGiua.style.display = "flex";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -235,7 +235,7 @@ function hienThiTrungGian3() {
   elements.maTuyen.style.visibility = "hidden";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -261,7 +261,7 @@ function hienThiTrungGian4() {
   elements.maTuyen.style.visibility = "visible";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
@@ -288,7 +288,7 @@ function hienThiMaTuyen_Transerco() {
   elements.maTuyen.style.visibility = "visible";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "flex";
   elements.HuyDong.style.display = "none";
@@ -315,7 +315,7 @@ function hienThiTranserco() {
   elements.maTuyen.style.visibility = "visible";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
-  
+
   elements.TuyenCanGiua.style.display = "none";
   elements.Transerco.style.display = "flex";
   elements.HuyDong.style.display = "none";
@@ -343,7 +343,7 @@ let sessionFlagGlobal = null;
 
 // Patch start() to set sessionFlagGlobal
 const _original_start = start;
-start = async function() {
+start = async function () {
   if (running) return;
   document.getElementById("isRunning").innerText = "YES";
   document.getElementById("isPausing").innerText = "NO";
@@ -362,7 +362,7 @@ start = async function() {
 
 // Patch chonMode to kill sessionFlagGlobal
 const _original_chonMode = chonMode;
-chonMode = function(mode) {
+chonMode = function (mode) {
   isSessionActive = false;
   running = false;
   sessionFlagGlobal = null;
@@ -480,7 +480,7 @@ function chonMode(mode) {
       hienThiTrungGian4,
       hienThiMaTuyen_Transerco
     );
-  } 
+  }
 }
 
 
