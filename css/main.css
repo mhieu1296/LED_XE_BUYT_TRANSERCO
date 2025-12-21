@@ -8,19 +8,34 @@
   cursor: not-allowed;
   box-shadow: 0 0 0 2px #ff0000;
 }
-body {
-  background-color: rgb(17, 205, 142);
-  min-width: 400px;
 
-  /* Chèn ảnh nền */
-  /* background-image: url('/assets/image/banner150.jpg');
-  background-size: cover;
-  background-position: center; */
-  
-  /* Làm mờ ảnh nền */
-  /* filter: blur(5px); */
-  
+html, body {
+  height: 100%;
+  margin: 0;
 }
+
+body {
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/assets/image/53498275023_66d40a35e1_o.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(1px);
+  transform: scale(1.05);
+  z-index: -1;
+  background-color: rgb(17, 205, 142);
+
+}
+
+
+
+
 
 .LED {
   display: flex;

@@ -10,7 +10,15 @@ body {
   min-height: 100vh;
   padding: 16px; /* breathing room on small screens */
   box-sizing: border-box;
+
+  background-image: url('/assets/image/53498275023_66d40a35e1_o.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
+
 
 @media screen and (max-width: 1024px) {
   body{
