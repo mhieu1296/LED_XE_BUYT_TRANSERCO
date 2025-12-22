@@ -9,7 +9,7 @@
 * **Tùy biến nội dung**: Cho phép người dùng tự nhập Mã tuyến, Điểm đầu, Điểm cuối, Tên xí nghiệp vận hành.
 * **Điều khiển linh hoạt**:
   * **Đảo chiều**: Đổi vị trí điểm đầu và điểm cuối tức thì.
-  * **C.CHỮ&C.GIỮA**: Hỗ trợ dòng chữ chạy ngang với tốc độ tùy chỉnh, và căn tên tuyến ra giữa màn hình nếu chưa.
+  * **CHẠY CHỮ**: Hỗ trợ dòng chữ chạy ngang với tốc độ tùy chỉnh.
   * **Xe ra tuyến, xe dừng phục vụ**: Hiển thị "HUY ĐỘNG RA TUYẾN" hoặc "XE DỪNG PHỤC VỤ".
   * **Đóng băng**: Tạm dừng hiệu ứng tại thời điểm hiện tại.
   * **Điều chỉnh tốc độ**: Thanh trượt cho phép chỉnh tốc độ chạy chữ từ 50 đến 1000 px/s.

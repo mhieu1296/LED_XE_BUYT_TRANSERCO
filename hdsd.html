@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Mô Phỏng Bảng LED Xe Buýt Hà Nội</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/timbus.vn.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/font.css">
+<style>
+  :root {
+    --bg-main:#ffffff;
+    --bg-sidebar:#f6f8fa;
+    --border:#d0d7de;
+    --text:#24292f;
+    --link:rgb(17, 205, 142);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: Averta-Std-CY;
+    color: var(--text);
+    line-height: 1.65;
+
+    body {
+    text-align: justify;
+    line-height: 1.2;
+}
+  }
+
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  aside {
+    width: 320px;
+    padding: 24px;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  aside h2 {
+    margin-top: 0;
+    font-size: 16px;
+  }
+
+  aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  aside li { margin: 6px 0; }
+
+  aside a {
+    text-decoration: none;
+    color: var(--link);
+    font-size: 14px;
+  }
+
+  main {
+    flex: 1;
+    padding: 32px 48px;
+    max-width: 1100px;
+  }
+
+  h1 { font-size: 32px; margin-top: 0; color: rgb(17, 205, 142);}
+  h2 { font-size: 24px; margin-top: 48px; border-bottom: 1px solid var(--border); color: rgb(17, 205, 142)}
+  h3 { font-size: 20px; margin-top: 36px; color: rgb(17, 205, 142); }
+
+  ul, ol { padding-left: 24px; }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 12px 0;
+    border-radius: 5px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    border: 1px solid var(--border);
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  p,
+li,
+td,
+th {
+  text-align: justify;
+  line-height: 1.2;
+  margin-top: 0.75em;   /* ~3pt */
+  margin-bottom: 0.75em;/* ~3pt */
+}
+
+  @media (max-width: 900px) {
+    .layout { flex-direction: column; }
+    aside {
+      width: 100%;
+      height: auto;
+      position: relative;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="layout">
+
+<aside>
+<h2>Mục lục</h2>
+<ul>
+  <li><a href="#top">Giới thiệu</a></li>
+  <li><a href="#features">Tính Năng Chính</a></li>
+  <li><a href="#modes">Các Chế Độ Chạy</a></li>
+  <li><a href="#mode1">1. Xe Điện 1</a></li>
+  <li><a href="#mode2">2. Xe Điện 2</a></li>
+  <li><a href="#mode3">3. Thường</a></li>
+  <li><a href="#mode4">4. Liên Ninh</a></li>
+  <li><a href="#mode5">5. Hanoi BRT</a></li>
+  <li><a href="#mode6">6. Bảo Yến</a></li>
+  <li><a href="#mode7">7. Demo</a></li>
+  <li><a href="#usage">Hướng Dẫn Sử Dụng</a></li>
+  <li><a href="#notes">Lưu ý</a></li>
+</ul>
+</aside>
+
+<main id="top">
+
+<h1>Mô Phỏng Bảng LED Xe Buýt Hà Nội</h1>
+
+<p>
+Ứng dụng web mô phỏng bảng LED hiển thị thông tin tuyến trên các xe buýt của Tổng công ty Vận tải Hà Nội (Transerco) và các đơn vị vận tải công cộng khác.
+</p>
+
+<h2 id="features">Tính Năng Chính</h2>
+<ul>
+<li><strong>Mô phỏng LED</strong>: Tái tạo các hiệu ứng LED hiển thị - ẩn, chuyển cảnh, chạy chữ.</li>
+<li><strong>Đa dạng chế độ (Modes)</strong>: Hỗ trợ 7 chế độ chạy khác nhau tương ứng với các loại xe và đơn vị vận hành thực tế.</li>
+<li><strong>Tùy biến nội dung</strong>: Cho phép người dùng tự nhập Mã tuyến, Điểm đầu, Điểm cuối, Tên xí nghiệp vận hành.</li>
+<li><strong>Điều khiển linh hoạt</strong>:
+  <ul>
+    <li><strong>Đảo chiều</strong>: Đổi vị trí điểm đầu và điểm cuối tức thì.</li>
+    <li><strong>C.CHỮ&C.GIỮA</strong>: Hỗ trợ dòng chữ chạy ngang với tốc độ tùy chỉnh, và căn tên tuyến ra giữa màn hình nếu chưa.</li>
+    <li><strong>Xe ra tuyến, xe dừng phục vụ</strong>: Hiển thị "HUY ĐỘNG RA TUYẾN" hoặc "XE DỪNG PHỤC VỤ".</li>
+    <li><strong>Đóng băng</strong>: Tạm dừng hiệu ứng tại thời điểm hiện tại.</li>
+    <li><strong>Điều chỉnh tốc độ</strong>: Thanh trượt cho phép chỉnh tốc độ chạy chữ từ 50 đến 1000 px/s.</li>
+  </ul>
+</li>
+<li><strong>Bảng điều khiển nâng cao</strong>: Ẩn/Hiện các nút chức năng nâng cao để giữ giao diện gọn gàng.</li>
+<li><strong>Thông tin trạng thái</strong>: Bảng hiển thị trạng thái thời gian thực của LED (Đang chạy, Tạm dừng, Đang chạy chữ, Mode hiện tại).</li>
+</ul>
+
+<h2 id="modes">Các Chế Độ Chạy (Mode)</h2>
+<p>Bảng tóm tắt các chế độ:</p>
+
+<table>
+<tr><th>Chế độ</th><th>Mô tả ngắn</th></tr>
+<tr><td><strong>1. Xe Điện 1</strong></td><td>Hiệu ứng mở rộng, dùng kèm các mode khác</td></tr>
+<tr><td><strong>2. Xe Điện 2</strong></td><td>Dành cho xe điện Hà Nội</td></tr>
+<tr><td><strong>3. Thường</strong></td><td>Chế độ truyền thống của TCT</td></tr>
+<tr><td><strong>4. Liên Ninh</strong></td><td>Hiển thị tối giản</td></tr>
+<tr><td><strong>5. Hanoi BRT</strong></td><td>Dành cho tuyến BRT</td></tr>
+<tr><td><strong>6. Bảo Yến</strong></td><td>Nhấp nháy mã tuyến</td></tr>
+<tr><td><strong>7. Demo</strong></td><td>Trình diễn nhanh các hiệu ứng</td></tr>
+</table>
+
+<hr>
+
+<h3 id="mode1">1. Xe Điện 1</h3>
+<p>
+Không phải mode độc lập. Đây là hiệu ứng mở rộng được sử dụng chung với các mode còn lại.<br>
+Sử dụng nút bấm <strong>"XE ĐIỆN 1"</strong> để chuyển đổi qua lại giữa màn hình Thông tin tuyến và Tên xí nghiệp khi cuộn chữ.
+</p>
+
+<p>Cuộn luân phiên:</p>
+<img src="/assets/image/hdsd/matuyen+diemdaucuoi.png">
+<img src="/assets/image/hdsd/matuyen+xinghiep.png">
+
+<hr>
+
+<h3 id="mode2">2. Xe Điện 2</h3>
+<p>Phù hợp cho các tuyến xe điện Công ty cổ phần Xe điện Hà Nội hoặc tương tự.</p>
+
+<p>Trình tự:</p>
+<ol>
+<li>Mã tuyến + Điểm Đ-C (30s)</li>
+<li>Hanoibus (5s)</li>
+<li>Hiệu ứng xóa mã tuyến chuyển cảnh</li>
+<li>Mã tuyến căn giữa (5s)</li>
+<li>Transerco (5s)</li>
+</ol>
+
+<img src="/assets/image/hdsd/matuyen+diemdaucuoi.png"><p>30s</p>
+<img src="/assets/image/hdsd/matuyen+hanoibus.png"><p>5s</p>
+<img src="/assets/image/hdsd/hienthitrunggian1_2.png"><p>0.2s</p>
+<img src="/assets/image/hdsd/hienthitrunggian2.png"><p>0.2s</p>
+<img src="/assets/image/hdsd/hienthimatuyencangiua.png"><p>5s</p>
+<img src="/assets/image/hdsd/hienthitrunggian3.png"><p>0.3s</p>
+<img src="/assets/image/hdsd/hienthitrunggian4.png"><p>0.3s</p>
+<img src="/assets/image/hdsd/matuyen+transerco.png"><p>5s</p>
+
+<p>Lặp lại liên tục.</p>
+
+<hr>
+
+<h3 id="mode3">3. Thường</h3>
+<p>Chế độ truyền thống, đơn giản. Mô phỏng LED của các tuyến buýt thông thường của TCT.</p>
+
+<p>Trình tự:</p>
+<ol>
+<li>Mã tuyến + Điểm Đ-C (30s)</li>
+<li>Hanoibus (3s)</li>
+<li>Mã tuyến căn giữa (5s)</li>
+<li>Transerco (3s)</li>
+</ol>
+
+<img src="/assets/image/hdsd/matuyen+diemdaucuoi.png"><p>30s</p>
+<img src="/assets/image/hdsd/matuyen+hanoibus.png"><p>5s</p>
+<img src="/assets/image/hdsd/hienthimatuyencangiua.png"><p>5s</p>
+<img src="/assets/image/hdsd/matuyen+transerco.png"><p>5s</p>
+
+<p>Lặp lại liên tục.</p>
+
+<hr>
+
+<h3 id="mode4">4. Liên Ninh</h3>
+<p>Chế độ tối giản, chỉ hiển thị thông tin tuyến. Mô phỏng LED của Xn buýt Liên Ninh.</p>
+
+<img src="/assets/image/hdsd/matuyen+diemdaucuoi.png"><p>30s</p>
+<img src="/assets/image/hdsd/hienthimatuyencangiua.png"><p>5s</p>
+
+<p>Lặp lại liên tục.</p>
+
+<hr>
+
+<h3 id="mode5">5. Hanoi BRT</h3>
+<p>Dành cho tuyến buýt nhanh BRT của Xn BRT.</p>
+
+<img src="/assets/image/hdsd/matuyen+diemdaucuoi.png"><p>30s</p>
+<img src="/assets/image/hdsd/hienthimatuyencangiua.png"><p>5s</p>
+<img src="/assets/image/hdsd/matuyen+transerco.png"><p>5s</p>
+
+<p>Lặp lại liên tục.</p>
+
+<hr>
+
+<h3 id="mode6">6. Bảo Yến</h3>
+<p>Mô phỏng 1 phần xe buýt Bảo Yến với hiệu ứng <strong>nhấp nháy mã tuyến</strong>.</p>
+
+<img src="/assets/image/hdsd/matuyen+diemdaucuoi.png">
+<p>Luân phiên nhấp nháy, mỗi lần nhấp cách nhau 1.25s</p>
+
+<img src="/assets/image/hdsd/baoyen.png"><p>30s</p>
+
+<p>Lặp lại liên tục.</p>
+
+<hr>
+
+<h3 id="mode7">7. Demo</h3>
+<p>
+Chạy lướt qua tất cả các hiệu ứng của chế độ Xe điện 2 trong thời gian ngắn<br>
+(2s/bước, riêng Hiển thị mã tuyến, điểm đầu cuối chạy trong 10s) để kiểm tra.
+</p>
+
+<hr>
+
+<h2 id="usage">Hướng Dẫn Sử Dụng</h2>
+
+<h3>1. Nhập thông tin tuyến</h3>
+<ol>
+<li>Nhấn nút <strong>NHẬP</strong> trên giao diện chính.<br>
+Nếu không thấy nút này, nhấn <strong>NÂNG CAO</strong> (có thể cần nhấn 2 lần).</li>
+<li>Điền đầy đủ các thông tin trong biểu mẫu:
+  <ul>
+    <li><strong>Mã tuyến</strong>: Ví dụ: <code>01</code>, <code>32</code>, <code>20ATC</code>…</li>
+    <li><strong>Điểm đầu / Điểm giữa / Điểm cuối</strong>:<br>
+    Ví dụ: <em>Cầu Giấy, Ga Hà Nội, BX Giáp Bát, Phú Sơn (Ba Vì)</em>...</li>
+    <li><strong>Tên xí nghiệp vận hành</strong>:<br>
+    Ví dụ: <em>Xí nghiệp xe buýt Cầu Bươu</em>, <em>Bảo Yến CNG Bus</em>…</li>
+  </ul>
+</li>
+<li>Nhấn <strong>LƯU</strong> để lưu dữ liệu.</li>
+<li>Nhấn <strong>QUAY LẠI</strong> để trở về màn hình chính.</li>
+</ol>
+
+<hr>
+
+<h3>2. Chọn chế độ hiển thị và bắt đầu chạy</h3>
+<ol>
+<li>Nhấn <strong>NÂNG CAO</strong>.</li>
+<li>Chọn chế độ:
+  <ul>
+    <li>THƯỜNG</li>
+    <li>XE ĐIỆN 2</li>
+    <li>BRT</li>
+    <li>LIÊN NINH</li>
+    <li>BẢO YẾN</li>
+    <li>DEMO</li>
+  </ul>
+  (Có thể bật thêm phần mở rộng <strong>Xe Điện 1</strong> nếu cần.)
+</li>
+<li>Nhấn <strong>CHẠY</strong>.</li>
+</ol>
+
+<hr>
+
+<h3>3. Điều khiển trong quá trình chạy</h3>
+<ul>
+<li><strong>ĐẢO CHIỀU</strong>: Đảo ngược lộ trình.</li>
+<li><strong>CHẠY CHỮ</strong>: Bật/Tắt chữ chạy.</li>
+<li><strong>THANH TRƯỢT TỐC ĐỘ</strong>: 50–1000 px/s.</li>
+<li><strong>ĐÓNG BĂNG</strong>: Tạm dừng LED.</li>
+<li><strong>XE VỀ GARA / HUY ĐỘNG</strong>: Chuyển thông báo.</li>
+<li><strong>TẮT</strong>: Xóa màn hình.</li>
+<li><strong>RELOAD</strong>: Reset trang.</li>
+</ul>
+
+<hr>
+
+<h3>4. Lưu ý khi sử dụng</h3>
+<ul>
+<li>Chuyển mode sẽ tự động reset.</li>
+<li>Dữ liệu lưu trong LocalStorage.</li>
+<li>Nếu chưa căn giữa: tắt LED rồi bật lại.</li>
+</ul>
+
+<h2 id="notes">Lưu ý</h2>
+<ul>
+<li>Trước khi đổi chế độ chạy khác, hệ thống sẽ tự động reset.</li>
+<li>Dữ liệu được lưu hoàn toàn trong LocalStorage của trình duyệt.</li>
+<li>Khi điểm đầu cuối chưa được căn giữa, tắt đi bật lại LED để căn giữa.</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>Sản phẩm được phát triển cá nhân với mục đích học tập và thử nghiệm.</li>
+<li>Không phải sản phẩm chính thức của Tổng công ty Vận tải Hà Nội hay bất kỳ đơn vị vận tải nào.</li>
+<li>Xin cảm ơn Tổng công ty Vận tải Hà Nội với logo Hanoibus và Transerco.</li>
+<li>Trong tương lai, các xe đi vá có thể dùng sản phẩm này thay thế cho biển lật.</li>
+<li>Biển lật là gì? Là tấm biển chỉ mã tuyến và tên tuyến, thỉnh thoảng có thêm biển kiểm soát.</li>
+</ul>
+
+<img  src="/assets/image/bienlat6.png">
+<img src="/assets/image/bienlat5.png">
+<img src="/assets/image/bienlat4.png">
+
+</main>
+</div>
+</body>
+</html>
