@@ -17,6 +17,8 @@ window.onload = function () {
   
   document.getElementById("maTuyen").innerText = maTuyen;
   document.getElementById("diemDau").innerText = diemDau;
+
+  chonMode(localStorage.getItem("mode") || "thuong");
   // document.getElementById("diemGiua").innerText = diemGiua;
   if (diemGiua && diemGiua.trim() !== "") {
     document.getElementById("diemGiua").innerText = diemGiua;
@@ -40,4 +42,6 @@ window.onload = function () {
   document.getElementById("diemCuoiLuu").innerText = diemCuoi;
   document.getElementById("xiNghiepLuu").innerText = xiNghiep;
   
+  
+
 };

@@ -27,6 +27,7 @@ function NhapDuLieu() {
   localStorage.setItem("xiNghiep", xiNghiep);
   localStorage.setItem("MaTuyenCanGiua", maTuyen);
   console.log("Đã nhập đầy đủ thông tin.");
+  alert("Đã nhập đầy đủ thông tin.");
 }
 
 function setupDeleteButtons() {

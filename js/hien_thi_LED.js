@@ -389,6 +389,7 @@ function chonMode(mode) {
   if (mode === "xe_dien2") {
     // đầy đủ
     console.log("XE ĐIỆN 2");
+    localStorage.setItem("mode", "xe_dien2");
     document.getElementById("MODE").innerText = "XE ĐIỆN 2";
     delays.splice(
       0,
@@ -410,6 +411,7 @@ function chonMode(mode) {
   } else if (mode === "thuong") {
     // có hienThiMaTuyen_DiemDauCuoi, hienThiMaTuyen_Hanoibus, hienThiMaTuyenCanGiua và hienThiMaTuyen_Transerco
     console.log("THƯỜNG");
+    localStorage.setItem("mode", "thuong");
     document.getElementById("MODE").innerText = "THƯỜNG";
     delays.splice(0, delays.length, ...[30000, 3000, 5000, 3000]);
     funcs.splice(
@@ -423,6 +425,7 @@ function chonMode(mode) {
   } else if (mode === "lien_ninh") {
     // có hienThiMaTuyen_DiemDauCuoi và hienThiMaTuyenCanGiua
     console.log("LIÊN NINH");
+    localStorage.setItem("mode", "lien_ninh");
     document.getElementById("MODE").innerText = "LIÊN NINH";
     delays.splice(0, delays.length, ...[30000, 5000]);
     funcs.splice(
@@ -438,6 +441,7 @@ function chonMode(mode) {
     // hienThiMaTuyenCanGiua,
     // hienThiMaTuyen_Transerco
     console.log("HANOI BRT");
+    localStorage.setItem("mode", "hanoibrt"); 
     document.getElementById("MODE").innerText = "HANOI BRT";
     delays.splice(0, delays.length, ...[30000, 5000, 5000]);
     funcs.splice(
@@ -453,6 +457,7 @@ function chonMode(mode) {
     // hienThiMaTuyen_XiNghiep
     // và nhấp nháy mã tuyến
     console.log("BẢO YẾN");
+    localStorage.setItem("mode", "bao_yen");
     document.getElementById("MODE").innerText = "BẢO YẾN";
     delays.splice(0, delays.length, ...[30000]);
     funcs.splice(
@@ -463,11 +468,12 @@ function chonMode(mode) {
   } else if (mode === "demo") {
     // có đầy đủ hàm, nhưng các hàm chỉ chạy trong 2 giây.
     console.log("DEMO");
+    localStorage.setItem("mode", "demo");
     document.getElementById("MODE").innerText = "DEMO";
     delays.splice(
       0,
       delays.length,
-      ...[10000, 2000, , 200, 200, 2000, 300, 300, 2000]
+      ...[10000, 2000, 200, 200, 2000, 300, 300, 2000]
     );
     funcs.splice(
       0,
