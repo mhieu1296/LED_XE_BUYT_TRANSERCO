@@ -183,7 +183,6 @@ Chạy lướt qua tất cả các hiệu ứng của chế độ Xe điện 2 t
 
 1. Nhấn **NÂNG CAO** để mở bảng điều khiển chế độ (nếu chưa hiển thị).
 2. Chọn một trong các chế độ hiển thị:
-   - ĐẦY ĐỦ
    - THƯỜNG
    - XE ĐIỆN 2
    - BRT
