@@ -12,6 +12,23 @@ console.log(
   "font-size: 20px; font-family: Arial"
 );
 
+function centerChildInParent(parentId, childId) {
+  const parent = document.getElementById(parentId);
+  const child = document.getElementById(childId);
+
+  if (!parent || !child) {
+    console.warn("Không tìm thấy div cha hoặc div con");
+    return;
+  }
+
+  const parentWidth = parent.offsetWidth;
+  const childWidth = child.offsetWidth;
+
+  const left = (parentWidth - childWidth) / 2;
+
+  child.style.left = left + "px";
+}
+
 function daoChieuLED(Dau, Cuoi) {
   // đảo điểm đầu và điểm cuối
   let diemDau = document.getElementById(Dau);

@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
         marquee.hide("xiNghiep");
         marquee.show("route-info");
         console.log("ẩn");
-        document.getElementById("MODE").innerText = temp;
+        document.getElementById("MODE").innerText.split(" + XE ĐIỆN 1").join();
       } else {
         marquee.show("xiNghiep");
         // marquee.show("route-info");

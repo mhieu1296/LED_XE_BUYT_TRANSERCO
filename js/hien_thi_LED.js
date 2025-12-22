@@ -44,6 +44,7 @@ function hienThiMaTuyen_DiemDauCuoi() {
   elements.Transerco.style.display = "none";
   elements.HuyDong.style.display = "none";
   elements.VeGara.style.display = "none";
+  centerChildInParent('NoiDungChayChu', 'route-info');
 }
 
 function hienThiMaTuyen_Hanoibus() {
@@ -157,8 +158,8 @@ function hienThiTrungGian1_2() {
   console.log("Hàm hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa) chạy");
 
   const elements = getElements();
-  if (!elements.maTuyen || !elements.xiNghiep) {
-    console.error("Mã tuyến và xí nghiệp không tồn tại trong DOM.");
+  if (!elements.maTuyen || !elements.hanoibus) {
+    console.error("Mã tuyến và Hanoibus không tồn tại trong DOM.");
     return;
   }
 
@@ -494,6 +495,8 @@ async function start() {
   const sessionFlag = {};
   isSessionActive = sessionFlag;
   sessionFlagGlobal = sessionFlag;
+
+  
 
   let index = 0;
   while (running && isSessionActive === sessionFlag) {
