@@ -63,5 +63,11 @@
 *   Sản phẩm được phát triển cá nhân với mục đích học tập và giải trí. Không phải sản phẩm chính thức của Tổng công ty Vận tải Hà Nội hay bất kỳ đơn vị vận tải nào. 
 *   Xin cảm ơn Tổng công ty Vận tải Hà Nội với logo Hanoibus và Transerco.
 *   Trong tương lai, các xe đi vá có thể dùng sản phẩm này thay thế cho biển lật.
-![Biển lật là gì? Là tấm biển chỉ mã tuyến và tên tuyến, thỉnh thoảng có thêm biển kiểm soát.](/assets/image/bienlat.png)
+*   Biển lật là gì? Là tấm biển chỉ mã tuyến và tên tuyến, thỉnh thoảng có thêm biển kiểm soát.
+![](/assets/image/bienlat2.png)
+![](/assets/image/bienlat3.png)
+![](/assets/image/bienlat4.png)
+![](/assets/image/bienlat5.png)
+![](/assets/image/bienlat.png)
+
 
