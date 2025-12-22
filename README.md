@@ -162,7 +162,74 @@ Chạy lướt qua tất cả các hiệu ứng của chế độ Xe điện 2 t
 
 ---
 
-## Hướng Dẫn Sử Dụng Nhanh ### Bước 1: Nhập liệu 1. Nhấn nút **NHẬP** trên giao diện chính. Nếu không thấy, bấm nút NÂNG CAO (có thể phải nhấn 2 lần) để hiện ra. 2. Điền thông tin vào form: * **Mã tuyến**: (VD: 01, 32, 20ATC...) * **Điểm đầu/ Điểm giữa / Điểm cuối**: (VD: Bến xe Gia Lâm, Ga Hà Nội, Phú Sơn (Ba Vì)...) * **Tên Xí nghiệp**: (VD: Xí nghiệp xe buýt Cầu Bươu, Bảo Yến...) 3. Nhấn **LƯU** để lưu vào bộ nhớ trình duyệt, sau đó nhấn **QUAY LẠI**. ### Bước 2: Chọn Chế độ & Chạy 1. Nhấn nút **NÂNG CAO** để mở rộng bảng điều khiển nếu chưa thấy các nút chọn chế độ. 2. Chọn một trong các chế độ (ĐẦY ĐỦ, THƯỜNG, XE ĐIỆN 2...). Có thể chọn phần mở rộng Xe Điện 1. 3. Nhấn nút **CHẠY** để bắt đầu hiển thị. ### Bước 3: Điều khiển trong khi chạy * **ĐẢO CHIỀU**: Nhấn để đảo ngược lộ trình (A -> B thành B -> A). * **CHẠY CHỮ**: Bật/Tắt hiệu ứng chữ chạy ngang (với các tuyến có tên dài). * **THỬ THANH TRƯỢT TỐC ĐỘ**: Kéo thanh trượt để tăng/giảm tốc độ chạy chữ từ 50 px/s đến 1000 px/s. * **ĐÓNG BĂNG**: Tạm dừng mọi hoạt động của LED tại vị trí hiện tại. * **XE VỀ GARA / HUY ĐỘNG**: Chuyển ngay sang trạng thái thông báo tương ứng. * **TẮT**: Xóa màn hình LED và dừng chạy. * **RELOAD**: Tải lại toàn bộ trang web (reset mọi thứ).
+## Hướng Dẫn Sử Dụng
+
+### 1. Nhập thông tin tuyến
+
+1. Nhấn nút **NHẬP** trên giao diện chính.  
+   - Nếu không thấy nút này, nhấn **NÂNG CAO** (có thể cần nhấn 2 lần) để hiển thị các chức năng nâng cao.
+2. Điền đầy đủ các thông tin trong biểu mẫu:
+   - **Mã tuyến**: Ví dụ: `01`, `32`, `20ATC`…
+   - **Điểm đầu / Điểm giữa / Điểm cuối**:  
+     Ví dụ: *Cầu Giấy, Ga Hà Nội, BX Giáp Bát, Phú Sơn (Ba Vì)*...
+   - **Tên xí nghiệp vận hành**:  
+     Ví dụ: *Xí nghiệp xe buýt Cầu Bươu*, *Bảo Yến CNG Bus*…
+3. Nhấn **LƯU** để lưu dữ liệu vào bộ nhớ trình duyệt (LocalStorage).
+4. Nhấn **QUAY LẠI** để trở về màn hình chính.
+
+---
+
+### 2. Chọn chế độ hiển thị và bắt đầu chạy
+
+1. Nhấn **NÂNG CAO** để mở bảng điều khiển chế độ (nếu chưa hiển thị).
+2. Chọn một trong các chế độ hiển thị:
+   - ĐẦY ĐỦ
+   - THƯỜNG
+   - XE ĐIỆN 2
+   - BRT
+   - LIÊN NINH
+   - BẢO YẾN
+   - DEMO  
+   (Có thể bật thêm phần mở rộng **Xe Điện 1** nếu cần.)
+3. Nhấn **CHẠY** để bắt đầu mô phỏng bảng LED.
+
+---
+
+### 3. Điều khiển trong quá trình chạy
+
+Trong khi LED đang hoạt động, người dùng có thể sử dụng các nút điều khiển sau:
+
+- **ĐẢO CHIỀU**  
+  Đảo ngược lộ trình hiển thị (A → B thành B → A).
+
+- **CHẠY CHỮ**  
+  Bật hoặc tắt hiệu ứng chữ chạy ngang (phù hợp với các tuyến có tên dài).
+
+- **THANH TRƯỢT TỐC ĐỘ**  
+  Điều chỉnh tốc độ chạy chữ từ **50 px/s đến 1000 px/s**.
+
+- **ĐÓNG BĂNG**  
+  Tạm dừng toàn bộ hiệu ứng LED tại thời điểm hiện tại.
+
+- **XE VỀ GARA / HUY ĐỘNG**  
+  Chuyển nhanh sang màn hình thông báo tương ứng.
+
+- **TẮT**  
+  Xóa toàn bộ nội dung hiển thị và dừng mô phỏng LED.
+
+- **RELOAD**  
+  Tải lại trang web và đưa ứng dụng về trạng thái ban đầu.
+
+---
+
+### 4. Lưu ý khi sử dụng
+
+- Mỗi khi chuyển sang một chế độ chạy khác, hệ thống sẽ tự động **reset**.
+- Toàn bộ dữ liệu nhập (thông tin tuyến, chế độ chạy…) được lưu **cục bộ trong LocalStorage** của trình duyệt.
+- Trong trường hợp nội dung điểm đầu – điểm cuối chưa được căn giữa đúng:
+  - Tắt LED
+  - Sau đó bật lại để hệ thống tự căn chỉnh.
+
 
 ## Lưu ý
 
