@@ -165,12 +165,6 @@ document.addEventListener('DOMContentLoaded', function () {
         chonMode('xe_dien2');
 
         
-        XEDIEN2.style.backgroundColor = selected;
-        THUONG.style.backgroundColor = unselected;
-        LIENNINH.style.backgroundColor = unselected;
-        HANOIBRT.style.backgroundColor = unselected;
-        BAOYEN.style.backgroundColor = unselected;
-        DEMO.style.backgroundColor = unselected;
         setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function') {
