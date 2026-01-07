@@ -498,7 +498,7 @@ function chonMode(mode) {
     delays.splice(
       0,
       delays.length,
-      ...[10000, 2000, 200, 200, 2000, 300, 300, 2000]
+      ...[2000, 2000, 200, 200, 2000, 300, 300, 2000]
     );
     funcs.splice(
       0,

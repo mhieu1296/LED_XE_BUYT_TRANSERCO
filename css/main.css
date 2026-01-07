@@ -2,7 +2,10 @@ a{
   text-decoration: none;
 }
 
-
+sup{
+  font-size: 0.6em;
+  vertical-align: super;
+}
 
 .NutBam button:disabled {
   opacity: 0.5;
@@ -277,11 +280,9 @@ body{
 #MaTuyenCanGiua{
   font-size: 150px;
   display: flex;
-  align-items: center;
   justify-content: center;
   color: rgb(246,29,4);
   text-transform: uppercase;
-  height: 100%;
   letter-spacing: 2px;
 }
 

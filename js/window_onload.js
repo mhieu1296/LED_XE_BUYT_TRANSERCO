@@ -33,7 +33,7 @@ window.onload = function () {
   }
   document.getElementById("diemCuoi").innerText = diemCuoi;
   document.getElementById("xiNghiep").innerText = xiNghiep;
-  document.getElementById("MaTuyenCanGiua").innerText = toSuperscript(maTuyen);
+  document.getElementById("MaTuyenCanGiua").innerHTML = toSuperscript(maTuyen);
 
   document.getElementById("maTuyenLuu").innerText = maTuyen;
   document.getElementById("diemDauLuu").innerText = diemDau;
