@@ -13,7 +13,9 @@ body {
 
 }
 
-
+a{
+  text-decoration: none;
+}
 
 @media screen and (max-width: 1024px) {
   body{
@@ -76,6 +78,7 @@ body {
   background-color: white;
   border-radius: 20px;
   max-width: auto;
+  flex-wrap: wrap;
 }
 
 .NutBam button {

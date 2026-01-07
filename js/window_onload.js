@@ -1,4 +1,9 @@
 console.log("window_onload.js START");
+
+function toSuperscript(str) {
+  return str.replace(/^(\d+)([a-zA-Z]+)/, "$1<sup>$2</sup>");
+}
+
 window.onload = function () {
   // xóa toàn bộ LED và dừng toàn bộ hoạt động LED khi tải xong trang, sẽ kích hoạt khi chạy hàm chạy
   stop();
@@ -15,7 +20,7 @@ window.onload = function () {
   const diemCuoi = localStorage.getItem("diemCuoi");
   const xiNghiep = localStorage.getItem("xiNghiep");
   
-  document.getElementById("maTuyen").innerText = maTuyen;
+  document.getElementById("maTuyen").innerHTML = toSuperscript(maTuyen);
   document.getElementById("diemDau").innerText = diemDau;
 
   chonMode(localStorage.getItem("mode") || "thuong");
@@ -41,6 +46,8 @@ window.onload = function () {
   }
   document.getElementById("diemCuoiLuu").innerText = diemCuoi;
   document.getElementById("xiNghiepLuu").innerText = xiNghiep;
+  
+
   
   
 

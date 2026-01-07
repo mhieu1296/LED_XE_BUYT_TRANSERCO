@@ -1,3 +1,22 @@
+const selected   = "rgba(221, 103, 95)";
+const unselected = "rgba(17, 205, 142)";
+
+const modes = [
+  "XEDIEN2",
+  "THUONG",
+  "LIENNINH",
+  "HANOIBRT",
+  "BAOYEN",
+  "DEMO"
+];
+
+function doiMauNut(activeMode) {
+  modes.forEach(mode => {
+    const btn = document.querySelector("." + mode);
+    btn.style.backgroundColor =
+      mode === activeMode ? selected : unselected;
+  });
+}
 
 let running = false;
 let isSessionActive = false;
@@ -391,6 +410,7 @@ function chonMode(mode) {
     console.log("XE ĐIỆN 2");
     localStorage.setItem("mode", "xe_dien2");
     document.getElementById("MODE").innerText = "XE ĐIỆN 2";
+    doiMauNut("XEDIEN2");
     delays.splice(
       0,
       delays.length,
@@ -413,6 +433,7 @@ function chonMode(mode) {
     console.log("THƯỜNG");
     localStorage.setItem("mode", "thuong");
     document.getElementById("MODE").innerText = "THƯỜNG";
+    doiMauNut("THUONG");
     delays.splice(0, delays.length, ...[30000, 3000, 5000, 3000]);
     funcs.splice(
       0,
@@ -427,6 +448,7 @@ function chonMode(mode) {
     console.log("LIÊN NINH");
     localStorage.setItem("mode", "lien_ninh");
     document.getElementById("MODE").innerText = "LIÊN NINH";
+    doiMauNut("LIENNINH");
     delays.splice(0, delays.length, ...[30000, 5000]);
     funcs.splice(
       0,
@@ -443,6 +465,7 @@ function chonMode(mode) {
     console.log("HANOI BRT");
     localStorage.setItem("mode", "hanoibrt"); 
     document.getElementById("MODE").innerText = "HANOI BRT";
+    doiMauNut("HANOIBRT");
     delays.splice(0, delays.length, ...[30000, 5000, 5000]);
     funcs.splice(
       0,
@@ -459,6 +482,7 @@ function chonMode(mode) {
     console.log("BẢO YẾN");
     localStorage.setItem("mode", "bao_yen");
     document.getElementById("MODE").innerText = "BẢO YẾN";
+    doiMauNut("BAOYEN");
     delays.splice(0, delays.length, ...[30000]);
     funcs.splice(
       0,
@@ -470,6 +494,7 @@ function chonMode(mode) {
     console.log("DEMO");
     localStorage.setItem("mode", "demo");
     document.getElementById("MODE").innerText = "DEMO";
+    doiMauNut("DEMO");
     delays.splice(
       0,
       delays.length,

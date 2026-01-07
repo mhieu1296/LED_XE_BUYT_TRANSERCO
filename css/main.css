@@ -1,3 +1,9 @@
+a{
+  text-decoration: none;
+}
+
+
+
 .NutBam button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -30,6 +36,7 @@ body{
   border-radius: 5px;
   overflow: hidden;
 }
+
 
 @media screen and (max-width: 1024px) {
   .LED {
@@ -172,12 +179,15 @@ body{
   transform: scaleX(.8);
 }
 
+
 @media screen and (max-width: 1024px) {
   #maTuyen{
     font-size: 70px;
     margin: 5px;
   }
 }
+
+
 
 .NoiDungChayChu {
   display: flex;
@@ -218,6 +228,7 @@ body{
 
 #2nddiv{
   display: flex;
+  /* padding: 10px; */
   align-items: center;
   white-space: nowrap;
   position: absolute;
@@ -429,6 +440,6 @@ body{
 }
 
 #logobus img {
-  max-height: 80px;
-  margin: 10px;
+  max-height: 50px;
+  /* margin: 10px; */
 }

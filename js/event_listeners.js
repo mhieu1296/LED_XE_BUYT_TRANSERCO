@@ -2,6 +2,8 @@
 // Chuyển các lời gọi hàm trong các thuộc tính onclick thành event listener
 // Đảm bảo các hàm đã được định nghĩa trong các file js khác
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
   // Nút CHẠY và TẮT: disable/enable lẫn nhau
   const chayBtns = document.querySelectorAll('.ChayLed');
@@ -20,7 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   chayBtns.forEach(btn => {
     btn.addEventListener('click', function () {
-      if (typeof start === 'function') start();
+      if (typeof start === 'function') {
+        start();
+        marquee.DungChayChu1();
+      }
       setChayTatState('chay');
     });
   });
@@ -65,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Nút XE VỀ GARA
   document.querySelectorAll('.XeVeGara').forEach(btn => {
     btn.addEventListener('click', function () {
-      if (typeof XeVeGara === 'function'){
+      if (typeof XeVeGara === 'function') {
         stop();
         reset();
         setChayTatState('tat');
@@ -77,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Nút XE HUY ĐỘNG
   document.querySelectorAll('.HuyDongRaTuyen').forEach(btn => {
     btn.addEventListener('click', function () {
-      if (typeof HuyDongRaTuyen === 'function'){
+      if (typeof HuyDongRaTuyen === 'function') {
         stop();
         reset();
         setChayTatState('tat');
@@ -91,12 +96,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.CHAYCHU').forEach(btn => {
     btn.addEventListener('click', function () {
-      if (onOff){
+      if (onOff === false) {
         marquee.ChayChu1();
         document.getElementById("isTextMoving").innerText = "YES";
-      } else{
+        console.log(onOff);
+      } else {
         marquee.DungChayChu1();
         document.getElementById("isTextMoving").innerText = "NO";
+        console.log(onOff);
       }
       onOff = !onOff;
     });
@@ -104,6 +111,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Mode chạy
   let isA = false;
+
+  const selectedForXD1 = "rgb(155, 206, 237)";
+  const unselectedForXD1 = "rgba(17, 205, 142)";
+  const XEDIEN1 = document.getElementsByClassName("XEDIEN1")[0];
+
   document.querySelectorAll('.XEDIEN1').forEach(btn => {
     btn.addEventListener('click', function () {
 
@@ -116,12 +128,12 @@ document.addEventListener('DOMContentLoaded', function () {
         marquee.hide("xiNghiep");
         marquee.show("route-info");
         console.log("ẩn");
-        document.getElementById("MODE").innerText.split(" + XE ĐIỆN 1").join();
+        XEDIEN1.style.backgroundColor = unselectedForXD1;
       } else {
         marquee.show("xiNghiep");
         // marquee.show("route-info");
         console.log("hiện");
-        document.getElementById("MODE").innerText += " + XE ĐIỆN 1";
+        XEDIEN1.style.backgroundColor = selectedForXD1;
       }
 
       isA = !isA;
@@ -132,6 +144,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+
+
+
+
+  // XEDIEN1.style.backgroundColor  = selected;
+  // XEDIEN2.style.backgroundColor  = selected;
+  // THUONG.style.backgroundColor   = selected;
+  // LIENNINH.style.backgroundColor = selected;
+  // HANOIBRT.style.backgroundColor = selected;
+  // BAOYEN.style.backgroundColor   = selected;
+  // DEMO.style.backgroundColor     = selected;
+
   document.querySelectorAll('.XEDIEN2').forEach(btn => {
     btn.addEventListener('click', function () {
       if (typeof chonMode === 'function') {
@@ -139,6 +163,14 @@ document.addEventListener('DOMContentLoaded', function () {
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('xe_dien2');
+
+        
+        XEDIEN2.style.backgroundColor = selected;
+        THUONG.style.backgroundColor = unselected;
+        LIENNINH.style.backgroundColor = unselected;
+        HANOIBRT.style.backgroundColor = unselected;
+        BAOYEN.style.backgroundColor = unselected;
+        DEMO.style.backgroundColor = unselected;
         setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function') {
@@ -153,6 +185,10 @@ document.addEventListener('DOMContentLoaded', function () {
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('thuong');
+
+        
+        
+
         setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function') {
@@ -167,6 +203,10 @@ document.addEventListener('DOMContentLoaded', function () {
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('lien_ninh');
+
+        
+        
+
         setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function') {
@@ -181,6 +221,8 @@ document.addEventListener('DOMContentLoaded', function () {
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('hanoibrt');
+
+
         setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function') {
@@ -195,6 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('bao_yen');
+
         setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function') {
@@ -209,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
         reset();
         alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
         chonMode('demo');
+
         setChayTatState('tat');
       }
       if (typeof tatHieuUngNhay === 'function') {

@@ -1,12 +1,14 @@
 function NhapDuLieu() {
   const inputs = document.querySelectorAll("input");
-
+  let isDayDu = true;
   for (let input of inputs) {
     const isRequired = !input.classList.contains("khongBatBuoc");
     
     if (isRequired && input.value.trim() === "") {
+      isDayDu = false;
       // Báo lỗi bằng cách đổi border của chính input lỗi
       input.style.borderBottom = "2px solid red";
+      
     } else {
       // Trả lại màu cũ nếu đã nhập rồi
       input.style.borderBottom = "2px solid rgb(17, 205, 142)";
@@ -26,9 +28,19 @@ function NhapDuLieu() {
   localStorage.setItem("diemCuoi", diemCuoi);
   localStorage.setItem("xiNghiep", xiNghiep);
   localStorage.setItem("MaTuyenCanGiua", maTuyen);
-  console.log("Đã nhập đầy đủ thông tin.");
-  alert("Đã nhập đầy đủ thông tin.");
+
+  if (isDayDu === true) {
+    document.getElementById("canhBao").innerText = "Đã lưu thông tin thành công!";
+    document.getElementById("canhBao").style.color = "green";
+  } else {
+    document.getElementById("canhBao").innerText = "Vui lòng nhập đầy đủ thông tin bắt buộc!";
+    document.getElementById("canhBao").style.color = "red";
+  }
+  
+  document.getElementsByClassName("NhapDuLieu")[3].focus();
 }
+
+
 
 function setupDeleteButtons() {
   const rows = document.querySelectorAll('table tr');
@@ -45,6 +57,14 @@ function setupDeleteButtons() {
       });
     }
   });
+}
+
+function tuyenDemo(){
+  document.getElementById("maTuyenInput").value = "20ATC";
+  document.getElementById("diemDauInput").value = "NHỔN";
+  document.getElementById("diemGiuaInput").value = "QL32";
+  document.getElementById("diemCuoiInput").value = "MINH CHÂU";
+  document.getElementById("xiNghiepInput").value = "XÍ NGHIỆP XE BUÝT 10-10 HÀ NỘI";
 }
 
 // Thiết lập khi DOM sẵn sàng
