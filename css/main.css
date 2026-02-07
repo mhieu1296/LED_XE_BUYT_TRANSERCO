@@ -2,6 +2,23 @@ a{
   text-decoration: none;
 }
 
+body{
+  /* background-color: rgba(66, 113, 163); */
+  min-width: 410px;
+  
+}
+
+.normalText{
+  /* display: flex; */
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  font-family: Averta-Std-CY;
+  
+  font-size: 20px;
+  color: red;
+}
+
 sup{
   font-size: 0.6em;
   vertical-align: super;
@@ -18,31 +35,51 @@ sup{
   box-shadow: 0 0 0 2px #ff0000;
 }
 
-body{
-  background-color: rgb(17, 205, 142);
-  min-width: 410px;
-  
-}
 
-.LED {
+
+#LED {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 30px;
   /* font-family: SVN-ProductSansBold; */
   font-family: ChakraPetch;
-
+  
   text-align: center;
   border: 5px solid white;
   background-color: black;
   height: 200px;
   border-radius: 5px;
   overflow: hidden;
+  position: fixed;
+
+  border-style: solid;
+  border-color: rgba(66, 113, 163);
+  border-width: 2.5px;
+
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  
+  z-index: 999; 
+  /* Nằm dưới LED và Button nhưng trên mọi thứ khác */
+  pointer-events: none; /* Cho phép click xuyên qua nếu cần, hoặc bỏ dòng này để chặn tương tác bên dưới */
 }
 
+#LED, .DayAndNight {
+    position: relative;
+    z-index: 1000;
+}
+
+/* #LED .inactive {
+  opacity: 1;
+  pointer-events: auto;
+} */
 
 @media screen and (max-width: 1024px) {
-  .LED {
+  #LED {
     height: 100px;
   }
 }
@@ -57,6 +94,10 @@ body{
   background-color: white;
   border-radius: 5px;
   opacity: 0.9;
+
+  border-style: solid;
+  border-color: rgba(66, 113, 163);
+  border-width: 2.5px;
 }
 
 #BangDieuKhien {
@@ -69,18 +110,12 @@ body{
   background-color: white;
   border-radius: 5px;
   opacity: 0.9;
+  border-style: solid;
+  border-color: rgba(66, 113, 163);
+  border-width: 2.5px;
 }
 
-.BangDieuKhienLabel {
-  display: flex;
-  margin: 10px;
-  justify-content: center;
-  align-items: center;
-  font-family: Averta-Std-CY;
-  
-  font-size: 20px;
-  color: red;
-}
+
 
 .NutBam {
   display: flex;
@@ -96,8 +131,8 @@ body{
   margin: 10px;
   font-size: 15pt;
   border-radius: 5px;
-  background: rgb(17, 205, 142);
-  color: #fff;
+  background: rgba(66, 113, 163);
+  color: white;
   /* transition: none; */
   border: none;
   cursor: pointer;
@@ -106,6 +141,11 @@ body{
   font-family: Averta-Std-CY;
 }
 
+#modeSelection button {
+  border-style: none;
+  background-color: #fff;
+  color:rgba(128, 128, 128, 0.808)
+}
 
 .NutBam button:hover{
   border-style: solid;
@@ -151,7 +191,7 @@ body{
   width: 250px; /* Full-width */
   height: 25px; /* Specified height */
   /* background: #d3d3d3; */
-  border: rgb(17, 205, 142);
+  border: rgba(66, 113, 163);
   border-style: solid;
   border-width: 2px;
   outline: none; /* Remove outline */
@@ -165,7 +205,7 @@ body{
   appearance: none;
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: rgb(17, 205, 142); /* Green background */
+  background: rgba(66, 113, 163); /* Green background */
   cursor: pointer;
 }
 
@@ -235,7 +275,7 @@ body{
   align-items: center;
   white-space: nowrap;
   position: absolute;
-  color: rgb(17, 205, 142);
+  color: rgba(66, 113, 163);
   font-size: 75px;
   text-transform: uppercase;
 }
@@ -284,6 +324,8 @@ body{
   color: rgb(246,29,4);
   text-transform: uppercase;
   letter-spacing: 2px;
+  transform: scaleX(1.3);
+  letter-spacing: 5px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -341,8 +383,8 @@ body{
   gap: 30px;
 }
 
-.trangThai,
-.thongTin {
+#trangThai,
+#thongTin {
   display: flex;
   flex-wrap: wrap;
   flex: 1 1 auto;
@@ -354,28 +396,31 @@ body{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
+  border-style: solid;
+  border-color: rgba(66, 113, 163);
+  border-width: 2.5px;
 }
 
-.trangThai {
+#trangThai {
   flex-direction: column;
 }
 
 .tuyenPreview {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 7.5px;
   justify-content: center;
   align-items: center;
   font-family: Averta-Std-CY;
   font-size: 20px;
   color: rgb(17, 205, 142);
   text-transform: uppercase;
-  flex-direction: row;
   text-overflow: ellipsis;
 }
 
-.tuyenPreview p{
-  max-width: 200px;
+.diemDauLuu, .diemGiuaLuu, .diemCuoiLuu , mui_ten1, mui_ten2 {
+  max-width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
 
@@ -402,13 +447,13 @@ body{
   margin: 15px;
   text-transform: uppercase;
   table-layout: auto;
-  color: rgb(17, 205, 142);
+  color: rgba(66, 113, 163);
 }
 
 .Table th,
 .Table td {
   flex-wrap: wrap;
-  border: 1px solid rgb(17, 205, 142);
+  border: 1px solid rgba(66, 113, 163);
   padding: 5px;
   text-align: center;
 }
@@ -421,16 +466,8 @@ body{
 
 
 
-.thongTin {
+#thongTin {
   flex-direction: column;
-}
-
-.UngDungHoTroTotNhat {
-  font-family: Averta-Std-CY;
-  font-size: 20px;
-  margin: 15px;
-  color: red;
-  text-align: center;
 }
 
 #logobus {

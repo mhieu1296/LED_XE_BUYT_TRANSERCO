@@ -15,3 +15,9 @@
   src: url("../assets/fonts/Averta-Std-CY.otf") format("truetype");
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Linotte";
+  src: url("../assets/fonts/LinotteBold.ttf") format("truetype");
+  font-style: normal;
+}

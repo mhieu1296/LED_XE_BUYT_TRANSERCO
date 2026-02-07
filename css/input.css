@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(17, 205, 142);
+  
   /* allow smaller devices while keeping a sensible minimum */
   
   /* center the .Nhap container horizontally and vertically */
@@ -47,6 +47,8 @@ a{
   background-color: white;
   border-radius: 5px;
   opacity: 0.9;
+  
+  border: 2px solid rgb(17, 205, 142);
 }
 
 

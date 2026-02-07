@@ -1,266 +1,187 @@
-// js/event_listeners.js
-// Chuyển các lời gọi hàm trong các thuộc tính onclick thành event listener
-// Đảm bảo các hàm đã được định nghĩa trong các file js khác
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
-  // Nút CHẠY và TẮT: disable/enable lẫn nhau
-  const chayBtns = document.querySelectorAll('.ChayLed');
-  const tatBtns = document.querySelectorAll('.RESET');
+    // Nút CHẠY và TẮT: disable/enable lẫn nhau
+    const chayBtns = document.querySelectorAll('.ChayLed');
+    const tatBtns = document.querySelectorAll('.RESET');
 
-  function setChayTatState(state) {
-    // state: 'chay' hoặc 'tat'
-    if (state === 'chay') {
-      chayBtns.forEach(b => b.disabled = true);
-      tatBtns.forEach(b => b.disabled = false);
-    } else if (state === 'tat') {
-      tatBtns.forEach(b => b.disabled = true);
-      chayBtns.forEach(b => b.disabled = false);
+    function setChayTatState(state) {
+        if (state === 'chay') {
+            chayBtns.forEach(b => b.disabled = true);
+            tatBtns.forEach(b => b.disabled = false);
+        } else if (state === 'tat') {
+            tatBtns.forEach(b => b.disabled = true);
+            chayBtns.forEach(b => b.disabled = false);
+        }
     }
-  }
 
-  chayBtns.forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof start === 'function') {
-        start();
-        marquee.DungChayChu1();
-      }
-      setChayTatState('chay');
+    chayBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (typeof start === 'function') {
+                start();
+                if (window.marquee) marquee.DungChayChu1();
+            }
+            setChayTatState('chay');
+        });
     });
-  });
-  tatBtns.forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof reset === 'function') reset();
-      setChayTatState('tat');
+
+    tatBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (typeof reset === 'function') reset();
+            setChayTatState('tat');
+        });
     });
-  });
 
-  // Khởi tạo: CHẠY enable, TẮT disable
-  setChayTatState('tat');
+    setChayTatState('tat');
 
-  // nút reload trang
-  document.querySelectorAll('.RESTART').forEach(btn => {
-    btn.addEventListener('click', function () {
-      location.reload();
+    // nút reload trang
+    document.querySelectorAll('.RESTART').forEach(btn => {
+        btn.addEventListener('click', function () {
+            location.reload();
+        });
     });
-  });
 
-  // Nút NÂNG CAO
-  document.querySelectorAll('.Details').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof toggleDivs === 'function') toggleDivs();
+    // Nút NÂNG CAO
+    document.querySelectorAll('.Details').forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (typeof toggleDivs === 'function') toggleDivs();
+        });
     });
-  });
 
-  // Nút ĐẢO CHIỀU
-  document.querySelectorAll('.daoChieuTuyen').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof daoChieuLED === 'function') daoChieuLED('diemDau', 'diemCuoi');
+    // Nút NGÀY/ĐÊM
+    document.querySelectorAll('.DayAndNight').forEach(btn => {
+        btn.addEventListener('click', toggleDayNight);
     });
-  });
 
-  // Nút ĐÓNG BĂNG
-  document.querySelectorAll('.DungLed').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof stop === 'function') dungLai();
+    // NHÓM NÚT BẤM (Xử lý Hover nổi lên trên màn tối)
+    // Sửa lỗi: Phải dùng forEach để gán sự kiện cho từng nút
+    document.querySelectorAll('.NutBam').forEach(btn => {
+        btn.addEventListener('mouseenter', function () {
+            if (document.getElementById('nightModeOverlay')) {
+                if (typeof setElevated === 'function') setElevated(this, true);
+            }
+        });
+
+        btn.addEventListener('mouseleave', function () {
+            if (document.getElementById('nightModeOverlay')) {
+                if (!this.classList.contains('DayAndNight')) {
+                    if (typeof setElevated === 'function') setElevated(this, false);
+                }
+            }
+        });
     });
-  });
 
-  // Nút XE VỀ GARA
-  document.querySelectorAll('.XeVeGara').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof XeVeGara === 'function') {
-        stop();
-        reset();
-        setChayTatState('tat');
-        XeVeGara();
-      }
+    // Nút ĐẢO CHIỀU
+    document.querySelectorAll('.daoChieuTuyen').forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (typeof daoChieuLED === 'function') daoChieuLED('diemDau', 'diemCuoi');
+        });
     });
-  });
 
-  // Nút XE HUY ĐỘNG
-  document.querySelectorAll('.HuyDongRaTuyen').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof HuyDongRaTuyen === 'function') {
-        stop();
-        reset();
-        setChayTatState('tat');
-        HuyDongRaTuyen();
-      }
+    // Nút ĐÓNG BĂNG
+    document.querySelectorAll('.DungLed').forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (typeof dungLai === 'function') {
+                dungLai();
+            }
+        });
     });
-  });
 
-  // Nút CHẠY CHỮ
-  let onOff = false; // trạng thái luân phiên
-
-  document.querySelectorAll('.CHAYCHU').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (onOff === false) {
-        marquee.ChayChu1();
-        document.getElementById("isTextMoving").innerText = "YES";
-        console.log(onOff);
-      } else {
-        marquee.DungChayChu1();
-        document.getElementById("isTextMoving").innerText = "NO";
-        console.log(onOff);
-      }
-      onOff = !onOff;
+    // Nút XE VỀ GARA
+    document.querySelectorAll('.XeVeGara').forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (typeof XeVeGara === 'function') {
+                if (typeof stop === 'function') stop();
+                if (typeof reset === 'function') reset();
+                setChayTatState('tat');
+                XeVeGara();
+            }
+        });
     });
-  });
 
-  // Mode chạy
-  let isA = false;
-
-  const selectedForXD1 = "rgb(155, 206, 237)";
-  const unselectedForXD1 = "rgba(17, 205, 142)";
-  const XEDIEN1 = document.getElementsByClassName("XEDIEN1")[0];
-
-  document.querySelectorAll('.XEDIEN1').forEach(btn => {
-    btn.addEventListener('click', function () {
-
-      if (!window.marquee) {
-        console.warn("marquee engine chưa sẵn sàng");
-        return;
-      }
-      const temp = document.getElementById("MODE").innerText;
-      if (isA) {
-        marquee.hide("xiNghiep");
-        marquee.show("route-info");
-        console.log("ẩn");
-        XEDIEN1.style.backgroundColor = unselectedForXD1;
-      } else {
-        marquee.show("xiNghiep");
-        // marquee.show("route-info");
-        console.log("hiện");
-        XEDIEN1.style.backgroundColor = selectedForXD1;
-      }
-
-      isA = !isA;
-
-      if (typeof tatHieuUngNhay === 'function') {
-        tatHieuUngNhay();
-      }
+    // Nút XE HUY ĐỘNG
+    document.querySelectorAll('.HuyDongRaTuyen').forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (typeof HuyDongRaTuyen === 'function') {
+                if (typeof stop === 'function') stop();
+                if (typeof reset === 'function') reset();
+                setChayTatState('tat');
+                HuyDongRaTuyen();
+            }
+        });
     });
-  });
 
-
-
-
-
-  // XEDIEN1.style.backgroundColor  = selected;
-  // XEDIEN2.style.backgroundColor  = selected;
-  // THUONG.style.backgroundColor   = selected;
-  // LIENNINH.style.backgroundColor = selected;
-  // HANOIBRT.style.backgroundColor = selected;
-  // BAOYEN.style.backgroundColor   = selected;
-  // DEMO.style.backgroundColor     = selected;
-
-  document.querySelectorAll('.XEDIEN2').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof chonMode === 'function') {
-        dungLai();
-        reset();
-        alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
-        chonMode('xe_dien2');
-
-        
-        setChayTatState('tat');
-      }
-      if (typeof tatHieuUngNhay === 'function') {
-        tatHieuUngNhay();
-      }
+    // Nút CHẠY CHỮ
+    let onOff = false; 
+    document.querySelectorAll('.CHAYCHU').forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (!window.marquee) return;
+            if (onOff === false) {
+                marquee.ChayChu1();
+                document.getElementById("isTextMoving").innerText = "YES";
+            } else {
+                marquee.DungChayChu1();
+                document.getElementById("isTextMoving").innerText = "NO";
+            }
+            onOff = !onOff;
+        });
     });
-  });
-  document.querySelectorAll('.THUONG').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof chonMode === 'function') {
-        dungLai();
-        reset();
-        alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
-        chonMode('thuong');
 
-        
-        
+    // Mode chạy XEDIEN1
+    let isA = false;
+    const selectedForXD1 = "rgba(66, 113, 163)";
+    const unselectedForXD1 = "rgba(128, 128, 128, 0.808)";
 
-        setChayTatState('tat');
-      }
-      if (typeof tatHieuUngNhay === 'function') {
-        tatHieuUngNhay();
-      }
+    document.querySelectorAll('.XEDIEN1').forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (!window.marquee) return;
+            if (isA) {
+                marquee.hide("xiNghiep");
+                marquee.show("route-info");
+                this.style.color = unselectedForXD1;
+                this.style.borderColor = unselectedForXD1;
+                this.style.borderStyle = "none";
+            } else {
+                marquee.show("xiNghiep");
+                this.style.color = selectedForXD1;
+                this.style.borderColor = selectedForXD1;
+                this.style.borderStyle = "solid";
+            }
+            isA = !isA;
+            if (typeof tatHieuUngNhay === 'function') tatHieuUngNhay();
+        });
     });
-  });
-  document.querySelectorAll('.LIENNINH').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof chonMode === 'function') {
-        dungLai();
-        reset();
-        alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
-        chonMode('lien_ninh');
 
-        
-        
+    // Các Mode chạy (XEDIEN2, THUONG, LIENNINH, HANOIBRT, BAOYEN, DEMO)
+  const modes = ['.XEDIEN2', '.THUONG', '.LIENNINH', '.HANOIBRT', '.BAOYEN', '.DEMO'];
+  const modeNames = ['xe_dien2', 'thuong', 'lien_ninh', 'hanoibrt', 'bao_yen', 'demo'];
 
-        setChayTatState('tat');
-      }
-      if (typeof tatHieuUngNhay === 'function') {
-        tatHieuUngNhay();
-      }
-    });
-  });
-  document.querySelectorAll('.HANOIBRT').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof chonMode === 'function') {
-        dungLai();
-        reset();
-        alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
-        chonMode('hanoibrt');
-
-
-        setChayTatState('tat');
-      }
-      if (typeof tatHieuUngNhay === 'function') {
-        tatHieuUngNhay();
-      }
-    });
-  });
-  document.querySelectorAll('.BAOYEN').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof chonMode === 'function') {
-        dungLai();
-        reset();
-        alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
-        chonMode('bao_yen');
-
-        setChayTatState('tat');
-      }
-      if (typeof tatHieuUngNhay === 'function') {
-        batHieuUngNhay();
-      }
-    });
-  });
-  document.querySelectorAll('.DEMO').forEach(btn => {
-    btn.addEventListener('click', function () {
-      if (typeof chonMode === 'function') {
-        dungLai();
-        reset();
-        alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
-        chonMode('demo');
-
-        setChayTatState('tat');
-      }
-      if (typeof tatHieuUngNhay === 'function') {
-        tatHieuUngNhay();
-      }
-    });
-  });
-
-  // Nút NHẬP
-  document.querySelectorAll('.NhapDuLieu').forEach(btn => {
-    if (btn.tagName === 'BUTTON') {
+  modes.forEach((selector, index) => {
+    document.querySelectorAll(selector).forEach(btn => {
       btn.addEventListener('click', function () {
-        if (btn.innerText === 'XÓA' && typeof xacNhan === 'function') xacNhan();
+        if (typeof chonMode === 'function') {
+          if (typeof dungLai === 'function') dungLai();
+          if (typeof reset === 'function') reset();
+          
+          alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
+          chonMode(modeNames[index]);
+          setChayTatState('tat');
+        }
+
+        // Logic riêng cho hiệu ứng nhảy
+        if (selector === '.BAOYEN') {
+          if (typeof batHieuUngNhay === 'function') batHieuUngNhay();
+        } else {
+          if (typeof tatHieuUngNhay === 'function') tatHieuUngNhay();
+        }
       });
-    }
+    });
   });
-});
+
+    // Nút NHẬP
+    document.querySelectorAll('.NhapDuLieu').forEach(btn => {
+        if (btn.tagName === 'BUTTON') {
+            btn.addEventListener('click', function () {
+                if (btn.innerText === 'XÓA' && typeof xacNhan === 'function') xacNhan();
+            });
+        }
+    });
+}); 

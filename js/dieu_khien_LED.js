@@ -137,3 +137,51 @@ function reset() {
   VeGara.style.display = "none";
   console.log("Xóa LED thành công");
 }
+
+
+// DAY AND NIGHT MODE FUNCTIONALITY
+
+function setElevated(element, isElevated) {
+  if (!element) return;
+  if (isElevated) {
+    element.style.position = 'relative'; // Bắt buộc có để z-index hoạt động
+    element.style.zIndex = '10000';      // Cao hơn mức 9999 của màn tối
+  } else {
+    element.style.position = '';
+    element.style.zIndex = '';
+  }
+}
+
+function toggleDayNight() {
+  const overlayId = 'nightModeOverlay';
+  let overlay = document.getElementById(overlayId);
+  const led = document.getElementById('LED');
+  const allButtons = document.querySelectorAll('.DayAndNight, .NutBam');
+
+  if (!overlay) {
+    // 1. Tạo màn tối bao phủ toàn bộ màn hình
+    overlay = document.createElement('div');
+    overlay.id = overlayId;
+    Object.assign(overlay.style, {
+      position: 'fixed',
+      top: '0', left: '0', right: '0', bottom: '0',
+      width: '100%', height: '100%',
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      zIndex: '9999',
+      pointerEvents: 'none' // Cho phép cuộn và tương tác xuyên qua lớp này
+    });
+    document.body.appendChild(overlay);
+
+    // 2. Đưa LED lên trên lớp tối
+    setElevated(led, true);
+
+    // 3. Đưa các nút DayAndNight lên trên (để nhấn tắt được)
+    document.querySelectorAll('.DayAndNight').forEach(btn => setElevated(btn, true));
+
+  } else {
+    // Tắt chế độ tối: Xóa màn tối và trả lại z-index gốc
+    overlay.remove();
+    setElevated(led, false);
+    allButtons.forEach(btn => setElevated(btn, false));
+  }
+}

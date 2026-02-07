@@ -1,5 +1,5 @@
-const selected   = "rgba(221, 103, 95)";
-const unselected = "rgba(17, 205, 142)";
+const selected   = "rgba(66, 113, 163";
+const unselected = "rgba(128, 128, 128, 0.808)";
 
 const modes = [
   "XEDIEN2",
@@ -13,9 +13,16 @@ const modes = [
 function doiMauNut(activeMode) {
   modes.forEach(mode => {
     const btn = document.querySelector("." + mode);
-    btn.style.backgroundColor =
-      mode === activeMode ? selected : unselected;
-  });
+    const color = mode === activeMode ? selected : unselected;
+    btn.style.color =
+      color;
+    if (color === unselected) {
+      btn.style.borderStyle = "none";
+    } else{
+      btn.style.borderStyle = "solid";
+    }
+    btn.style.borderColor = color;
+  });``
 }
 
 let running = false;

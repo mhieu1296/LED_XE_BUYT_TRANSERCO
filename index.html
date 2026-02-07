@@ -17,9 +17,8 @@
     <link rel="icon" href="/timbus.vn.ico">
 </head>
 <body>
-    
-    <div class="LED">
-      <!-- <p class="version">v1.0</p> -->
+    <div id="LED">
+      <!-- <p class="version">LED_V1.0_HANOI_72</p> -->
       <p id="maTuyen"></p>
       <div class="NoiDungChayChu" data-force-hide="false">
         <div class="marquee" id="route-info" data-enabled="true">
@@ -63,10 +62,11 @@
         <button class="RESET">TẮT</button>
         <button class="RESTART">RELOAD</button>
         <button class="Details">NÂNG CAO</button>
+        <button class="DayAndNight">NGÀY/ĐÊM</button>
       </div>
     </div>
     <div id="BangDieuKhien" class="hiddenDiv">
-      <p class="BangDieuKhienLabel">BẢNG ĐIỀU KHIỂN</p>
+      <p class="normalText">BẢNG ĐIỀU KHIỂN</p>
       <div class="NutBam">
         <button class="ChayLed" id="xanhla">CHẠY</button>
         <button class="RESET">TẮT</button>
@@ -77,7 +77,7 @@
         <button class="CHAYCHU">CHẠY CHỮ</button>
         <!-- <button class="HuyChayChu">HỦY C.CHỮ</button> -->
       </div>
-      <p class="BangDieuKhienLabel">ĐIỀU CHỈNH TỐC ĐỘ CHẠY CHỮ</p>
+      <p class="normalText">ĐIỀU CHỈNH TỐC ĐỘ CHẠY CHỮ</p>
       <input
         type="range"
         name="speed"
@@ -87,10 +87,11 @@
         value="200"
         step="25"
       />
-      <p class="BangDieuKhienLabel" id="speedValue">200 px/s</p>
-      <p id="ModeDangChay">CHỌN MODE CHẠY</p>
-      <div class="NutBam">
+      <p class="normalText" id="speedValue">200 px/s</p>
+      <p class="normalText">CHỌN MODE CHẠY</p>
+      <div class="NutBam" id="modeSelection">
         <button class="XEDIEN1">XE ĐIỆN 1</button>
+        <p style="color: rgba(66, 113, 163); font-size: 25px; font-weight: bolder;">|</p>
         <button class="XEDIEN2">XE ĐIỆN 2</button>
         <button class="THUONG">THƯỜNG</button>
         <button class="LIENNINH">LIÊN NINH</button>
@@ -98,7 +99,7 @@
         <button class="BAOYEN">BẢO YẾN</button>
         <button class="DEMO">DEMO</button>
       </div>
-      <p class="BangDieuKhienLabel">NHẬP, XÓA DỮ LIỆU TUYẾN</p>
+      <p class="normalText">NHẬP, XÓA DỮ LIỆU TUYẾN</p>
       <div class="NutBam">
         <a href="input.html">
           <button class="NhapDuLieu">NHẬP</button>
@@ -107,8 +108,8 @@
       </div>
     </div>
     <div id="container">
-      <div class="trangThai">
-        <p class="BangDieuKhienLabel">THÔNG TIN TUYẾN</p>
+      <div id="trangThai">
+        <p class="normalText">THÔNG TIN TUYẾN</p>
         <div class="tuyenPreview">
           <p id="maTuyenLuu"></p>
           <p id="diemDauLuu"></p>
@@ -117,7 +118,7 @@
           <p id="mui_ten2">➜</p>
           <p id="diemCuoiLuu"></p>
         </div>
-        <p class="BangDieuKhienLabel">TRẠNG THÁI HOẠT ĐỘNG</p>
+        <p class="normalText">TRẠNG THÁI HOẠT ĐỘNG</p>
         <table class="Table">
           <tr>
             <th>CHẠY?</th>
@@ -125,7 +126,7 @@
             <th>CHẠY CHỮ?</th>
             <th>MODE</th>
             <!-- <th>XE ĐIỆN 1</th>  -->
-            <!-- không phải xe buýt điện mà là CÔNG TY CỔ PHẦN XE ĐIỆN HÀ NỘI -->
+            <!-- không phải xe buýt điện mà là CÔNG TY CỔ PHẦN XE ĐIỆN HÀ NỘI (454 Phạm Văn Đồng) -->
           </tr>
           <tr>
             <td id="isRunning"></td>
@@ -136,13 +137,14 @@
           </tr>
         </table>
       </div>
-      <div class="thongTin">
-        <p class="UngDungHoTroTotNhat">BẢNG ĐIỆN TỬ XE BUÝT BÁN TỰ ĐỘNG</p>
+      <div id="thongTin" class="hiddenDiv">
+        <p class="normalText">BẢNG ĐIỆN TỬ XE BUÝT BÁN TỰ ĐỘNG</p>
         <div id="logobus">
+          <p class="normalText">Special Thanks to</p>
           <img src="assets/image/logohanoibus.png" alt="Transerco Hanoibus" srcset="">
         </div>
-        <a href="hdsd.html" class="UngDungHoTroTotNhat">HƯỚNG DẪN SỬ DỤNG</a>
-        <p class="UngDungHoTroTotNhat">
+        <a href="hdsd.html" ><p class="normalText">HƯỚNG DẪN SỬ DỤNG</p></a>
+        <p class="normalText">
           Tác giả:
           <a
             href="https://github.com/mhieu1296"
