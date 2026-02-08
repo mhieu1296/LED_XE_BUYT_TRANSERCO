@@ -1,0 +1,49 @@
+:root {
+  --primary-color: rgba(66, 113, 163);
+  --bg-overlay: rgba(255, 255, 255, 0.1); 
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.3s ease;
+}
+
+/* Lớp nền */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 9999; opacity: 0; animation: fadeIn 0.3s forwards;
+}
+
+/* Hộp thoại */
+.modal-box {
+  font-family: Averta-Std-CY;
+  background: white; padding: 30px; width: 400px;
+  border-radius: 20px; text-align: center;
+  position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transform: translateY(-20px); animation: slideUp 0.3s forwards;
+}
+
+/* Nút đóng X */
+.modal-close {
+  position: absolute; top: -15px; right: -15px;
+  width: 35px; height: 35px; border-radius: 50%;
+  background: var(--primary-color); color: white;
+  border: none; cursor: pointer; font-size: 20px;
+}
+
+/* Nút bấm chung */
+.modal-btn {
+  font-family: Averta-Std-CY;
+  padding: 10px 25px; border-radius: 25px; border: none;
+  font-weight: 600; cursor: pointer; transition: var(--transition);
+}
+
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-secondary { background: #eee; color: #555; margin-right: 10px; }
+
+.btn-primary:hover { opacity: 0.9; transform: scale(1.05); }
+
+/* Hiệu ứng */
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes slideUp { to { transform: translateY(0); } }

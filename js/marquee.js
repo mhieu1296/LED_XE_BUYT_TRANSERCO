@@ -23,11 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let animationId = null;
 
   // ===== UTILS =====
+  // Lấy tốc độ chạy chữ từ input
   function getSpeed() {
     const input = document.getElementById("speedControl");
     return input ? parseInt(input.value, 10) || 50 : 50;
   }
 
+  // Ẩn tất cả các thẻ marquee
   function hideAll() {
     items.forEach(item => {
       item.el.style.display = "none";
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ===== ANIMATION LOOP (SOURCE OF TRUTH = data-enabled) =====
+  // Vòng lặp animation để di chuyển chữ
   function animate(timestamp) {
     if (!isRunning) return;
 
@@ -98,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ===== CONTROL =====
+  // Bắt đầu chạy chữ
   function ChayChu1() {
     if (isRunning) return;
 
@@ -116,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //   }
   // }
 
+  // Dừng chạy chữ
   function DungChayChu1(canGiua = true) {
     isRunning = false;
 
@@ -146,10 +151,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
+  // Kiểm tra xem chữ có đang chạy không
   function coChayChuHayKhong() {
     return isRunning === true;
   }
 
+  // Hiển thị một thẻ marquee cụ thể
   function show(id) {
     const item = items.find(i => i.el.id === id);
     if (!item) return;
@@ -157,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     item.el.dataset.enabled = "true";
   }
 
+  // Ẩn một thẻ marquee cụ thể
   function hide(id) {
     const item = items.find(i => i.el.id === id);
     if (!item) return;

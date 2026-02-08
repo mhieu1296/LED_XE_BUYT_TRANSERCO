@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const chayBtns = document.querySelectorAll('.ChayLed');
     const tatBtns = document.querySelectorAll('.RESET');
 
+    // Cập nhật trạng thái enable/disable cho nút Chạy và Tắt
     function setChayTatState(state) {
         if (state === 'chay') {
             chayBtns.forEach(b => b.disabled = true);
@@ -110,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Nút CHẠY CHỮ
-    let onOff = false; 
+    let onOff = false;
     document.querySelectorAll('.CHAYCHU').forEach(btn => {
         btn.addEventListener('click', function () {
             if (!window.marquee) return;
@@ -151,33 +152,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Các Mode chạy (XEDIEN2, THUONG, LIENNINH, HANOIBRT, BAOYEN, DEMO)
-  const modes = ['.XEDIEN2', '.THUONG', '.LIENNINH', '.HANOIBRT', '.BAOYEN', '.DEMO'];
-  const modeNames = ['xe_dien2', 'thuong', 'lien_ninh', 'hanoibrt', 'bao_yen', 'demo'];
+    const modes = ['.XEDIEN2', '.THUONG', '.LIENNINH', '.HANOIBRT', '.BAOYEN', '.DEMO'];
+    const modeNames = ['xe_dien2', 'thuong', 'lien_ninh', 'hanoibrt', 'bao_yen', 'demo'];
+    const modeNamesVn = ['Xe Điện 2', 'Thường', 'Liên Ninh', 'Hanoi BRT', 'Bảo Yến', 'Demo'];
 
-  modes.forEach((selector, index) => {
-    document.querySelectorAll(selector).forEach(btn => {
-      btn.addEventListener('click', function () {
-        if (typeof chonMode === 'function') {
-          if (typeof dungLai === 'function') dungLai();
-          if (typeof reset === 'function') reset();
-          
-          alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
-          chonMode(modeNames[index]);
-          setChayTatState('tat');
-        }
+    modes.forEach((selector, index) => {
+        document.querySelectorAll(selector).forEach(btn => {
+            btn.addEventListener('click', function () {
+                if (typeof chonMode === 'function') {
+                    if (typeof dungLai === 'function') dungLai();
+                    if (typeof reset === 'function') reset();
 
-        // Logic riêng cho hiệu ứng nhảy
-        if (selector === '.BAOYEN') {
-          if (typeof batHieuUngNhay === 'function') batHieuUngNhay();
-        } else {
-          if (typeof tatHieuUngNhay === 'function') tatHieuUngNhay();
-        }
-      });
+                    //   alert("Đổi mode thành công. LED sẽ tắt. Nhấn Chạy để hiển thị.");
+                    popup.show("Đổi mode thành công!", "Mode đã chọn: " + modeNamesVn[index] + ". \nLED sẽ tắt. Nhấn Chạy để hiển thị.", () => { window.scrollTo(0, 0); }, "none");
+                    chonMode(modeNames[index]);
+                    setChayTatState('tat');
+                }
+
+                // Logic riêng cho hiệu ứng nhảy
+                if (selector === '.BAOYEN') {
+                    if (typeof batHieuUngNhay === 'function') batHieuUngNhay();
+                } else {
+                    if (typeof tatHieuUngNhay === 'function') tatHieuUngNhay();
+                }
+            });
+        });
     });
-  });
 
-    // Nút NHẬP
-    document.querySelectorAll('.NhapDuLieu').forEach(btn => {
+    // Nút XÓA
+    document.querySelectorAll('.XoaDuLieu').forEach(btn => {
         if (btn.tagName === 'BUTTON') {
             btn.addEventListener('click', function () {
                 if (btn.innerText === 'XÓA' && typeof xacNhan === 'function') xacNhan();

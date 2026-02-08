@@ -1,4 +1,4 @@
-const selected   = "rgba(66, 113, 163";
+const selected = "rgba(66, 113, 163)";
 const unselected = "rgba(128, 128, 128, 0.808)";
 
 const modes = [
@@ -10,6 +10,7 @@ const modes = [
   "DEMO"
 ];
 
+// Đổi màu nút khi chuyển chế độ
 function doiMauNut(activeMode) {
   modes.forEach(mode => {
     const btn = document.querySelector("." + mode);
@@ -18,16 +19,17 @@ function doiMauNut(activeMode) {
       color;
     if (color === unselected) {
       btn.style.borderStyle = "none";
-    } else{
+    } else {
       btn.style.borderStyle = "solid";
     }
     btn.style.borderColor = color;
-  });``
+  }); ``
 }
 
 let running = false;
 let isSessionActive = false;
 
+// Lấy các phần tử DOM cần thiết để điều khiển hiển thị
 function getElements() {
   // lấy elements để điều khiển trạng thái hiển thị của từng elements
   return {
@@ -41,6 +43,7 @@ function getElements() {
   };
 }
 
+// Hiển thị Mã tuyến + Điểm đầu/Điểm cuối
 function hienThiMaTuyen_DiemDauCuoi() {
   // VD: 55A    CẦU GIẤY - TIMES CITY
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -73,6 +76,7 @@ function hienThiMaTuyen_DiemDauCuoi() {
   centerChildInParent('NoiDungChayChu', 'route-info');
 }
 
+// Hiển thị Mã tuyến + Logo Hanoibus
 function hienThiMaTuyen_Hanoibus() {
   // VD: 55A      H A N O I B U S
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -99,6 +103,7 @@ function hienThiMaTuyen_Hanoibus() {
   elements.VeGara.style.display = "none";
 }
 
+// Hiển thị Logo Hanoibus
 function hienThiHanoibus() {
   // VD: H A N O I B U S
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -174,6 +179,7 @@ function hienThiHanoibus() {
 //   elements.VeGara.style.display = "none";
 // }
 
+// Hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus)
 function hienThiTrungGian1_2() {
   // hiệu ứng xóa mã tuyến (mode xe điện 2, giữ logo Hanoibus trước khi xóa)
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -199,6 +205,7 @@ function hienThiTrungGian1_2() {
   elements.VeGara.style.display = "none";
 }
 
+// Hiệu ứng xóa điểm đầu, cuối
 function hienThiTrungGian2() {
   // hiệu ứng xóa điểm đầu, cuối
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -221,6 +228,7 @@ function hienThiTrungGian2() {
   elements.VeGara.style.display = "none";
 }
 
+// Hiển thị Mã tuyến căn giữa
 function hienThiMaTuyenCanGiua() {
   // VD:      55A
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -247,6 +255,7 @@ function hienThiMaTuyenCanGiua() {
   elements.VeGara.style.display = "none";
 }
 
+// Hiệu ứng xóa mã tuyến căn giữa
 function hienThiTrungGian3() {
   // hiệu ứng xóa mã tuyến căn giữa
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -269,6 +278,7 @@ function hienThiTrungGian3() {
   elements.VeGara.style.display = "none";
 }
 
+// Hiển thị lại mã tuyến để chuẩn bị cho logo Transerco
 function hienThiTrungGian4() {
   // hiệu ứng hiển thị mã tuyến để chuẩn bị cho hàm hiển thị logo Transerco
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -295,6 +305,7 @@ function hienThiTrungGian4() {
   elements.VeGara.style.display = "none";
 }
 
+// Hiển thị Mã tuyến + Logo Transerco
 function hienThiMaTuyen_Transerco() {
   // VD: 55A      T R A N S E R C O
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -322,6 +333,7 @@ function hienThiMaTuyen_Transerco() {
   elements.VeGara.style.display = "none";
 }
 
+// Hiển thị Logo Transerco
 function hienThiTranserco() {
   // VD: T R A N S E R C O
   if (!running || isSessionActive !== sessionFlagGlobal) {
@@ -349,6 +361,7 @@ function hienThiTranserco() {
   elements.VeGara.style.display = "none";
 }
 
+// Chế độ Hiển thị "HUY ĐỘNG RA TUYẾN"
 function HuyDongRaTuyen() {
   // hàm chỉ hiển thị HUY ĐỘNG RA TUYẾN
   dungLai();
@@ -357,6 +370,7 @@ function HuyDongRaTuyen() {
   console.log("Mode Huy động ra tuyến");
 }
 
+// Chế độ Hiển thị "XE VỀ GARA"
 function XeVeGara() {
   // hàm chỉ hiển thị XE VỀ GARA
   dungLai();
@@ -407,6 +421,7 @@ let funcs = [
 // thời gian delay từng hiệu ứng mặc định
 let delays = [30000, 3000, 5000, 3000]; // mode truyền thống
 
+// Chọn chế độ chạy (Xe điện 2, Thường, Liên Ninh,...)
 function chonMode(mode) {
   // Kill mọi hiệu ứng cũ ngay lập tức
   isSessionActive = false;
@@ -470,7 +485,7 @@ function chonMode(mode) {
     // hienThiMaTuyenCanGiua,
     // hienThiMaTuyen_Transerco
     console.log("HANOI BRT");
-    localStorage.setItem("mode", "hanoibrt"); 
+    localStorage.setItem("mode", "hanoibrt");
     document.getElementById("MODE").innerText = "HANOI BRT";
     doiMauNut("HANOIBRT");
     delays.splice(0, delays.length, ...[30000, 5000, 5000]);
@@ -524,6 +539,7 @@ function chonMode(mode) {
 
 
 
+// Bắt đầu chạy các hiệu ứng LED theo mode đã chọn
 async function start() {
   // hàm chạy LED
   if (running) return; // nếu đã chạy thì không chạy thêm nữa
@@ -534,7 +550,7 @@ async function start() {
   isSessionActive = sessionFlag;
   sessionFlagGlobal = sessionFlag;
 
-  
+
 
   let index = 0;
   while (running && isSessionActive === sessionFlag) {
@@ -546,6 +562,7 @@ async function start() {
   }
 }
 
+// Dừng chạy các hiệu ứng
 function dungLai() {
   // hàm dừng chạy
   document.getElementById("isRunning").innerText = "NO";

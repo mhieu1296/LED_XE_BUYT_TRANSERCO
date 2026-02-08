@@ -1,15 +1,17 @@
 console.log("window_onload.js START");
 
+// Chuyển chuỗi số thành dạng chỉ số trên (superscript)
 function toSuperscript(str) {
   return str.replace(/^(\d+)([a-zA-Z]+)/, "$1<sup>$2</sup>");
 }
 
+// Hàm chạy khi tải xong trang (reset, load data từ localStorage)
 window.onload = function () {
   // xóa toàn bộ LED và dừng toàn bộ hoạt động LED khi tải xong trang, sẽ kích hoạt khi chạy hàm chạy
   stop();
   reset();
 
-  
+
 
   document.getElementById("isPausing").innerText = "NO";
 
@@ -19,9 +21,10 @@ window.onload = function () {
   const diemGiua = localStorage.getItem("diemGiua");
   const diemCuoi = localStorage.getItem("diemCuoi");
   const xiNghiep = localStorage.getItem("xiNghiep");
-  
+
   document.getElementById("maTuyen").innerHTML = toSuperscript(maTuyen);
   document.getElementById("diemDau").innerText = diemDau;
+
 
   chonMode(localStorage.getItem("mode") || "thuong");
   // document.getElementById("diemGiua").innerText = diemGiua;
@@ -38,7 +41,7 @@ window.onload = function () {
   document.getElementById("maTuyenLuu").innerText = maTuyen;
   document.getElementById("diemDauLuu").innerText = diemDau;
   // document.getElementById("diemGiuaLuu").innerText = diemGiua;
-    if (diemGiua && diemGiua.trim() !== "") {
+  if (diemGiua && diemGiua.trim() !== "") {
     document.getElementById("diemGiuaLuu").innerText = diemGiua;
   } else {
     document.getElementById("mui_ten1").style.display = "none";
@@ -46,9 +49,9 @@ window.onload = function () {
   }
   document.getElementById("diemCuoiLuu").innerText = diemCuoi;
   document.getElementById("xiNghiepLuu").innerText = xiNghiep;
-  
 
-  
-  
+
+
+
 
 };

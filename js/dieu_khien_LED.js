@@ -12,6 +12,7 @@ console.log(
   "font-size: 20px; font-family: Arial"
 );
 
+// Căn giữa phần tử con trong phần tử cha
 function centerChildInParent(parentId, childId) {
   const parent = document.getElementById(parentId);
   const child = document.getElementById(childId);
@@ -29,6 +30,7 @@ function centerChildInParent(parentId, childId) {
   child.style.left = left + "px";
 }
 
+// Đảo ngược vị trí điểm đầu và điểm cuối
 function daoChieuLED(Dau, Cuoi) {
   // đảo điểm đầu và điểm cuối
   let diemDau = document.getElementById(Dau);
@@ -98,18 +100,21 @@ function daoChieuLED(Dau, Cuoi) {
 //   }
 // }
 
+// Bật hiệu ứng nhấp nháy cho mã tuyến
 function batHieuUngNhay() {
   // nhấp nháy mã tuyến
   const element = document.getElementById("maTuyen");
   element.style.animation = "blink 1.25s steps(1, end) infinite";
 }
 
+// Tắt hiệu ứng nhấp nháy cho mã tuyến
 function tatHieuUngNhay() {
   // tắt nhấp nháy mã tuyến
   const element = document.getElementById("maTuyen");
   element.style.animation = "none";
 }
 
+// Đặt lại trạng thái ban đầu của bảng LED
 function reset() {
   // hàm xóa toàn bộ LED
   dungLai();
@@ -118,8 +123,8 @@ function reset() {
   document.getElementById("isPausing").innerText = "NO";
 
   const maTuyen = document.getElementById("maTuyen");
-  
-  
+
+
   const hanoibus = document.getElementById("hanoibus");
   const transerco = document.getElementById("transerco");
   const xiNghiep = document.getElementById("xiNghiep");
@@ -141,6 +146,7 @@ function reset() {
 
 // DAY AND NIGHT MODE FUNCTIONALITY
 
+// Đưa phần tử lên lớp trên cùng (z-index cao)
 function setElevated(element, isElevated) {
   if (!element) return;
   if (isElevated) {
@@ -152,6 +158,7 @@ function setElevated(element, isElevated) {
   }
 }
 
+// Chuyển đổi chế độ Sáng/Tối
 function toggleDayNight() {
   const overlayId = 'nightModeOverlay';
   let overlay = document.getElementById(overlayId);

@@ -15,6 +15,10 @@
   * **Điều chỉnh tốc độ**: Thanh trượt cho phép chỉnh tốc độ chạy chữ từ 50 đến 1000 px/s.
 * **Bảng điều khiển nâng cao**: Ẩn/Hiện các nút chức năng nâng cao để giữ giao diện gọn gàng.
 * **Thông tin trạng thái**: Bảng hiển thị trạng thái thời gian thực của LED (Đang chạy, Tạm dừng, Đang chạy chữ, Mode hiện tại).
+* **Ngày/Đêm**: Làm tối phần còn lại của trang, trừ phần LED để nổi bật trong đêm.
+* **Trải nghiệm người dùng tối ưu**:
+  * **Popup & Toast**: Hệ thống thông báo và xác nhận đẹp mắt, không dùng hộp thoại mặc định.
+  * **Hỗ trợ nhập liệu**: Tự động kiểm tra dữ liệu, nút xóa nhanh, và định dạng mã tuyến (VD: 55A hiển thị 55^A).
 
 ## Các Chế Độ Chạy (Mode)
 
@@ -229,6 +233,25 @@ Trong khi LED đang hoạt động, người dùng có thể sử dụng các n�
   - Tắt LED
   - Sau đó bật lại để hệ thống tự căn chỉnh.
 
+
+## Cấu trúc Mã nguồn (Dành cho Nhà phát triển)
+
+Bộ mã nguồn được tổ chức trong thư mục `js/` với các chức năng được chia nhỏ rõ ràng:
+
+*   **`js/`**:
+    *   **`dieu_khien_LED.js`**: Chứa các hàm điều khiển chung (reset, bật/tắt hiệu ứng, chuyển chế độ ngày/đêm...).
+    *   **`hien_thi_LED.js`**: Chứa logic hiển thị của từng chế độ (Transerco, Hanoibus, Xe điện...).
+    *   **`event_listeners.js`**: Gán sự kiện click cho các nút bấm.
+    *   **`marquee.js`**: Quản lý hiệu ứng chạy chữ (marquee).
+    *   **`input.js`**: Xử lý nhập liệu và validate thông tin tuyến.
+    *   **`window_onload.js`**: Khởi tạo trạng thái khi tải trang (đọc từ LocalStorage).
+    *   **`thu_gon_noi_dung.js`**: Xử lý ẩn/hiện bảng điều khiển.
+    *   **`popup.js`**, **`speed_indicator.js`**, **`xac_nhan...js`**: Các tiện ích nhỏ khác.
+*   **`css/`**: Chứa các file style cho giao diện (`main.css`, `input.css`, `popup.css`, ...).
+*   **`assets/`**: Hình ảnh và icon.
+*   **`routes.json`**: Dữ liệu danh sách các tuyến xe buýt (dùng cho tính năng gợi ý/tìm kiếm).
+
+Toàn bộ code đã được thêm chú thích chi tiết để thuận tiện cho việc tìm hiểu và phát triển tiếp.
 
 ## Lưu ý
 

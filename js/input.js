@@ -1,47 +1,78 @@
+// Hiển thị thông báo (toast) trên màn hình
+function showToast(type, message) {
+  const container = document.getElementById('toast-container');
+
+
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.innerHTML = `<span>${message}</span>`;
+
+  let iconHTML = "";
+  if (type === 'success') {
+    iconHTML = '<i class="fa-solid fa-circle-check"></i>';
+  } else if (type === 'error') {
+    iconHTML = '<i class="fas fa-times-circle"></i>';
+  } else if (type === 'warning') {
+    iconHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+  } else {
+    iconHTML = '<i class="fa-solid fa-circle-info"></i>';
+  }
+
+  toast.innerHTML = `${iconHTML} <span>${message}</span>`;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.animation = "slideIn 0.4s ease reverse forwards";
+    setTimeout(() => toast.remove(), 400);
+  }, 3000);
+}
+
+// Kiểm tra và lưu dữ liệu nhập vào localStorage
 function NhapDuLieu() {
   const inputs = document.querySelectorAll("input");
   let isDayDu = true;
   for (let input of inputs) {
     const isRequired = !input.classList.contains("khongBatBuoc");
-    
+
     if (isRequired && input.value.trim() === "") {
       isDayDu = false;
-      // Báo lỗi bằng cách đổi border của chính input lỗi
       input.style.borderBottom = "2px solid red";
-      
+
+
     } else {
-      // Trả lại màu cũ nếu đã nhập rồi
-      input.style.borderBottom = "2px solid rgb(17, 205, 142)";
+      input.style.borderBottom = "2px solid rgba(66, 113, 163)";
     }
   }
 
-  // Gán giá trị từ input vào localStorage để gán vào khi load trang (window_onload.js)
-  const maTuyen = inputs[0].value;
-  const diemDau = inputs[1].value;
-  const diemGiua = inputs[2].value;
-  const diemCuoi = inputs[3].value;
-  const xiNghiep = inputs[4].value;
-
-  localStorage.setItem("maTuyen", maTuyen);
-  localStorage.setItem("diemDau", diemDau);
-  localStorage.setItem("diemGiua", diemGiua);
-  localStorage.setItem("diemCuoi", diemCuoi);
-  localStorage.setItem("xiNghiep", xiNghiep);
-  localStorage.setItem("MaTuyenCanGiua", maTuyen);
 
   if (isDayDu === true) {
-    document.getElementById("canhBao").innerText = "Đã lưu thông tin thành công!";
+    const maTuyen = inputs[0].value;
+    const diemDau = inputs[1].value;
+    const diemGiua = inputs[2].value;
+    const diemCuoi = inputs[3].value;
+    const xiNghiep = inputs[4].value;
+
+    localStorage.setItem("maTuyen", maTuyen);
+    localStorage.setItem("diemDau", diemDau);
+    localStorage.setItem("diemGiua", diemGiua);
+    localStorage.setItem("diemCuoi", diemCuoi);
+    localStorage.setItem("xiNghiep", xiNghiep);
+    localStorage.setItem("MaTuyenCanGiua", maTuyen);
+
+    showToast('success', 'Đã lưu thông tin thành công!');
     document.getElementById("canhBao").style.color = "green";
   } else {
-    document.getElementById("canhBao").innerText = "Vui lòng nhập đầy đủ thông tin bắt buộc!";
+    showToast('error', 'Vui lòng nhập đầy đủ thông tin bắt buộc!');
     document.getElementById("canhBao").style.color = "red";
   }
-  
+
   document.getElementsByClassName("NhapDuLieu")[3].focus();
 }
 
 
 
+// Cài đặt sự kiện click cho các nút xóa
 function setupDeleteButtons() {
   const rows = document.querySelectorAll('table tr');
   rows.forEach((tr) => {
@@ -53,18 +84,19 @@ function setupDeleteButtons() {
         input.value = '';
         const warning = document.getElementById('canhBao');
         if (warning) warning.innerText = '';
-        try { input.focus(); } catch (e) {}
+        try { input.focus(); } catch (e) { }
       });
     }
   });
 }
 
-function tuyenDemo(){
-  document.getElementById("maTuyenInput").value = "56A";
-  document.getElementById("diemDauInput").value = "MỸ ĐÌNH";  // không phải bx mỹ đình
-  document.getElementById("diemGiuaInput").value = "KCN NỘI BÀI";
-  document.getElementById("diemCuoiInput").value = "NÚI ĐÔI";
-  document.getElementById("xiNghiepInput").value = "CÔNG TY CP XE ĐIỆN HÀ NỘI";
+// Lấy dữ liệu từ localStorage và hiển thị lên các ô nhập
+function tuyenDemo() {
+  document.getElementById("maTuyenInput").value = localStorage.getItem("maTuyen");
+  document.getElementById("diemDauInput").value = localStorage.getItem("diemDau");
+  document.getElementById("diemGiuaInput").value = localStorage.getItem("diemGiua");
+  document.getElementById("diemCuoiInput").value = localStorage.getItem("diemCuoi");
+  document.getElementById("xiNghiepInput").value = localStorage.getItem("xiNghiep");
 }
 
 // Thiết lập khi DOM sẵn sàng
@@ -129,6 +161,7 @@ search.addEventListener("input", () => {
 });
 
 /* ===== SELECT ROUTE ===== */
+// Chọn tuyến xe và điền thông tin vào các ô nhập
 function selectRoute(route) {
   selectedRoute = route;
 

@@ -1,25 +1,25 @@
-a{
+a {
   text-decoration: none;
 }
 
-body{
+body {
   /* background-color: rgba(66, 113, 163); */
   min-width: 410px;
-  
+
 }
 
-.normalText{
+.normalText {
   /* display: flex; */
   margin: 10px;
   justify-content: center;
   align-items: center;
   font-family: Averta-Std-CY;
-  
+
   font-size: 20px;
-  color: red;
+  color: rgba(66, 113, 163);
 }
 
-sup{
+sup {
   font-size: 0.6em;
   vertical-align: super;
 }
@@ -44,7 +44,7 @@ sup{
   margin: 30px;
   /* font-family: SVN-ProductSansBold; */
   font-family: ChakraPetch;
-  
+
   text-align: center;
   border: 5px solid white;
   background-color: black;
@@ -62,15 +62,17 @@ sup{
   left: 0;
   width: 100%;
   height: 100%; */
-  
-  z-index: 999; 
+
+  z-index: 999;
   /* Nằm dưới LED và Button nhưng trên mọi thứ khác */
-  pointer-events: none; /* Cho phép click xuyên qua nếu cần, hoặc bỏ dòng này để chặn tương tác bên dưới */
+  pointer-events: none;
+  /* Cho phép click xuyên qua nếu cần, hoặc bỏ dòng này để chặn tương tác bên dưới */
 }
 
-#LED, .DayAndNight {
-    position: relative;
-    z-index: 1000;
+#LED,
+.DayAndNight {
+  position: relative;
+  z-index: 1000;
 }
 
 /* #LED .inactive {
@@ -144,21 +146,23 @@ sup{
 #modeSelection button {
   border-style: none;
   background-color: #fff;
-  color:rgba(128, 128, 128, 0.808)
+  color: rgba(128, 128, 128, 0.808)
 }
 
-.NutBam button:hover{
+.NutBam button:hover {
   border-style: solid;
-  border-color: chartreuse;
+  border-color: rgb(0, 115, 255);
   border-width: 2px;
 }
 
 /* hiệu ứng nhấp nháy maTuyen */
 @keyframes blink {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
@@ -166,7 +170,7 @@ sup{
 
 #ModeDangChay {
   display: flex;
-  
+
   margin: 10px;
   justify-content: center;
   align-items: center;
@@ -179,41 +183,50 @@ sup{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(246,29,4);
+  color: rgb(246, 29, 4);
   text-transform: uppercase;
   font-size: 75px;
   height: 100%;
 }
 
 #speedControl {
-  
+
   appearance: none;
-  width: 250px; /* Full-width */
-  height: 25px; /* Specified height */
+  width: 250px;
+  /* Full-width */
+  height: 25px;
+  /* Specified height */
   /* background: #d3d3d3; */
   border: rgba(66, 113, 163);
   border-style: solid;
   border-width: 2px;
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
   transition: opacity .2s;
 }
 
 #speedControl::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;
+  /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: rgba(66, 113, 163); /* Green background */
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: rgba(66, 113, 163);
+  /* Green background */
   cursor: pointer;
 }
 
-#maTuyen{
+#maTuyen {
   flex: 0.5;
   display: flex;
-  color: rgb(246,29,4);
-  
+  color: rgb(246, 29, 4);
+
   margin-left: 15px;
   /* margin-right: 15px;  */
   font-size: 150px;
@@ -224,7 +237,7 @@ sup{
 
 
 @media screen and (max-width: 1024px) {
-  #maTuyen{
+  #maTuyen {
     font-size: 70px;
     margin: 5px;
   }
@@ -234,12 +247,12 @@ sup{
 
 .NoiDungChayChu {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
   flex: 7.5;
-  height: 100%; 
+  height: 100%;
   color: rgb(17, 205, 142);
   white-space: nowrap;
 }
@@ -262,14 +275,14 @@ sup{
   font-size: 75px;
   text-transform: uppercase;
 
-  
+
 }
 
 .marquee-hidden {
   display: none !important;
 }
 
-#2nddiv{
+#2nddiv {
   display: flex;
   /* padding: 10px; */
   align-items: center;
@@ -281,16 +294,16 @@ sup{
 }
 
 @media screen and (max-width: 1024px) {
-  .marquee{
+  .marquee {
     font-size: 35px;
   }
 }
 
-#xiNghiep{
+#xiNghiep {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(246,29,4);
+  color: rgb(246, 29, 4);
   text-transform: uppercase;
   font-size: 75px;
   height: 100%;
@@ -302,26 +315,27 @@ sup{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(246,29,4);
+  color: rgb(246, 29, 4);
   text-transform: uppercase;
   font-size: 75px;
   height: 100%;
 }
 
 @media screen and (max-width: 1024px) {
+
   #xiNghiep,
   #HuyDongRaTuyen,
   #XeHuyDong,
-  #XeVeGara{
+  #XeVeGara {
     font-size: 35px;
   }
 }
 
-#MaTuyenCanGiua{
+#MaTuyenCanGiua {
   font-size: 150px;
   display: flex;
   justify-content: center;
-  color: rgb(246,29,4);
+  color: rgb(246, 29, 4);
   text-transform: uppercase;
   letter-spacing: 2px;
   transform: scaleX(1.3);
@@ -329,7 +343,7 @@ sup{
 }
 
 @media screen and (max-width: 1024px) {
-  #MaTuyenCanGiua{
+  #MaTuyenCanGiua {
     font-size: 70px;
   }
 }
@@ -345,6 +359,7 @@ sup{
 }
 
 @media screen and (max-width: 1024px) {
+
   #mui_ten_xanh1,
   #mui_ten_xanh2 {
     transform: scale(0.75);
@@ -369,6 +384,7 @@ sup{
 }
 
 @media screen and (max-width: 1024px) {
+
   #hanoibus,
   #transerco {
     max-height: 40pt;
@@ -419,13 +435,18 @@ sup{
   text-overflow: ellipsis;
 }
 
-.diemDauLuu, .diemGiuaLuu, .diemCuoiLuu , mui_ten1, mui_ten2 {
+.diemDauLuu,
+.diemGiuaLuu,
+.diemCuoiLuu,
+mui_ten1,
+mui_ten2 {
   max-width: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
 
   display: -webkit-box;
-  -webkit-line-clamp: 1;      /* số dòng muốn hiển thị */
+  -webkit-line-clamp: 1;
+  /* số dòng muốn hiển thị */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -433,6 +454,7 @@ sup{
 #maTuyenLuu {
   color: red;
 }
+
 .Table {
   display: flex;
   justify-content: center;
@@ -480,4 +502,116 @@ sup{
 #logobus img {
   max-height: 50px;
   /* margin: 10px; */
+}
+
+
+/* Thiết lập font cho toàn bộ popup */
+.p-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  /* Nền tối nhẹ giúp nổi bật popup */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s;
+  font-family: 'Averta-Std-CY', sans-serif;
+}
+
+.p-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.p-box {
+  background: #fff;
+  padding: 40px 30px 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.p-overlay.active .p-box {
+  transform: translateY(0);
+}
+
+/* Nút X đóng ở góc */
+.p-close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.p-close-icon:hover {
+  color: #ff4757;
+}
+
+#p-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(66, 113, 163);
+}
+
+#p-msg {
+  margin: 0;
+  font-size: 16px;
+  color: rgba(66, 113, 163);
+  line-height: 1.6;
+}
+
+/* Nút bấm */
+.p-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.p-btn {
+  font-family: 'Averta-Std-CY', sans-serif;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.p-primary {
+  background: rgba(66, 113, 163);
+  color: #fff;
+}
+
+.p-secondary {
+  background: #f0f2f5;
+  color: #555;
+}
+
+.p-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.p-btn:active {
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none !important;
 }

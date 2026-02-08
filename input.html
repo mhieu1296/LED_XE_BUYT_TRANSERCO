@@ -1,98 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NHẬP DỮ LIỆU TUYẾN | LED XE BUÝT BÁN TỰ ĐỘNG</title>
-    <link rel="shortcut icon" href="/timbus.vn.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/input.css" />
-    <link rel="stylesheet" href="css/font.css" />
-    <script src="js/dieu_khien_LED.js"></script>
-    <script src="js/input.js"></script>
-    <script src="js/window_onload.js"></script>
-  </head>
-  <body>
-    <div class="Nhap">
-      <p id="NhapLabel">NHẬP DỮ LIỆU TUYẾN</p>
-      <div class="NhapDuLieu">
-        <table>
-          
-          <tr>
-            <td><p class="InputLabel">mã tuyến *</p></td>
-          </tr>
-          <tr>
-            <td>
-              <input id="maTuyenInput" type="text" placeholder="20ATC..." />
-            </td>
-            <td>
-              <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td><p class="InputLabel">điểm đầu *</p></td>
-          </tr>
-          <tr>
-            <td>
-              <input id="diemDauInput" type="text" placeholder="NHỔN..." />
-            </td>
-            <td>
-              <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td><p class="InputLabel">ĐIỂM GIỮA</p></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                id="diemGiuaInput"
-                type="text"
-                placeholder="QL32..."
-                class="khongBatBuoc"
-              />
-            </td>
-            <td>
-              <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td><p class="InputLabel">điểm cuối *</p></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                id="diemCuoiInput"
-                type="text"
-                placeholder="MINH CHÂU..."
-              />
-            </td>
-            <td>
-              <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td><p class="InputLabel">xí nghiệp *</p></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                id="xiNghiepInput"
-                type="text"
-                placeholder="XN BUS 10-10..."
-              />
-            </td>
-            <td>
-              <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="NutBam">
-        <button onclick="NhapDuLieu()">LƯU</button>
-        <a href="/"><button ">QUAY LẠI</button></a>
-        <button onclick="tuyenDemo()">TUYẾN DEMO</button>
-      </div>
-      <p id="canhBao"></p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NHẬP DỮ LIỆU TUYẾN | LED XE BUÝT BÁN TỰ ĐỘNG</title>
+  <link rel="shortcut icon" href="/timbus.vn.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/input.css" />
+  <link rel="stylesheet" href="css/font.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="js/dieu_khien_LED.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/window_onload.js"></script>
+</head>
+
+<body>
+  <div class="Nhap">
+    <div id="toast-container">
+      <!-- <div class="toast success">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>1</span>
+        </div>
+
+        <div class="toast error">
+            <i class="fas fa-times-circle"></i>
+            <span>0</span>
+        </div> -->
     </div>
-  </body>
+    <p id="NhapLabel">NHẬP DỮ LIỆU TUYẾN</p>
+    <div class="NhapDuLieu">
+      <table>
+
+        <tr>
+          <td>
+            <p class="InputLabel">mã tuyến *</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="maTuyenInput" type="text" placeholder="20ATC..." />
+          </td>
+          <td>
+            <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="InputLabel">điểm đầu *</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="diemDauInput" type="text" placeholder="NHỔN..." />
+          </td>
+          <td>
+            <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="InputLabel">ĐIỂM GIỮA</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="diemGiuaInput" type="text" placeholder="QL32..." class="khongBatBuoc" />
+          </td>
+          <td>
+            <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="InputLabel">điểm cuối *</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="diemCuoiInput" type="text" placeholder="MINH CHÂU..." />
+          </td>
+          <td>
+            <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="InputLabel">xí nghiệp *</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input id="xiNghiepInput" type="text" placeholder="XN BUS 10-10..." />
+          </td>
+          <td>
+            <img src="assets/image/delete.png" style="zoom: 10%" alt="" />
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="NutBam">
+      <button onclick="NhapDuLieu()">LƯU</button>
+      <a href="/"><button>QUAY LẠI</button></a>
+      <button onclick="tuyenDemo()">TUYẾN DEMO</button>
+    </div>
+  </div>
+</body>
+
 </html>
