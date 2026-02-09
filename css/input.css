@@ -124,25 +124,19 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0px;
-  border-radius: 5px;
-  background-color: white;
-  border-radius: 20px;
-  max-width: auto;
   flex-wrap: wrap;
+  background-color: white;
+  border-radius: 0px;
+  margin: 5px;
 }
 
 .NutBam button {
-  margin: 15px;
-  gap: 10px;
+  margin: 10px;
   font-size: 15pt;
-  padding: 5px;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
   background: rgba(66, 113, 163);
-  color: #fff;
-  transition: none;
+  color: white;
+  /* transition: none; */
   border: none;
   cursor: pointer;
   width: 160px;
@@ -209,16 +203,6 @@ input[type="text"] {
 
   .NhapDuLieu {
     padding: 8px;
-  }
-
-  .NutBam {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .NutBam button {
-    width: 100%;
-    max-width: 200px;
   }
 
   .search-dropdown {
