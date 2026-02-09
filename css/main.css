@@ -459,9 +459,10 @@ mui_ten2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-style: solid;
-  border-color: rgba(126, 208, 172, 1);
+  /* border-style: solid;
+  border-color: rgba(126, 208, 172, 1); */
   border-collapse: collapse;
+  /* border: 2px solid rgba(66, 113, 163); */
   font-family: Averta-Std-CY;
   font-size: 20px;
   /* min-width: 500px; */
@@ -475,7 +476,7 @@ mui_ten2 {
 .Table th,
 .Table td {
   flex-wrap: wrap;
-  border: 1px solid rgba(66, 113, 163);
+  border: 2px solid rgba(66, 113, 163);
   padding: 5px;
   text-align: center;
 }
@@ -484,6 +485,7 @@ mui_ten2 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
 }
 
 
@@ -594,7 +596,7 @@ mui_ten2 {
 }
 
 .p-primary {
-  background: rgba(66, 113, 163);
+  background: rgb(66, 163, 100);
   color: #fff;
 }
 
@@ -614,4 +616,74 @@ mui_ten2 {
 
 .hidden {
   display: none !important;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+  background-color: #121212;
+}
+
+body.dark-mode .normalText {
+  color: #e0e0e0;
+}
+
+body.dark-mode .ThuGonNoiDung,
+body.dark-mode #BangDieuKhien {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode .NutBam {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .NutBam button {
+  background: #333;
+  color: #fff;
+}
+
+body.dark-mode .NutBam button:hover {
+  border-color: #555;
+}
+
+body.dark-mode #modeSelection button {
+  background-color: #1e1e1e;
+  color: #888;
+}
+
+body.dark-mode #trangThai,
+body.dark-mode #thongTin {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark-mode .Table {
+  color: #e0e0e0;
+}
+
+body.dark-mode .Table th,
+body.dark-mode .Table td {
+  border-color: #333;
+}
+
+body.dark-mode .p-box {
+  background: #1e1e1e;
+}
+
+body.dark-mode #p-title,
+body.dark-mode #p-msg {
+  color: #e0e0e0;
+}
+
+body.dark-mode .p-primary {
+  background: #444;
+}
+
+body.dark-mode .p-secondary {
+  background: #2a2a2a;
+  color: #e0e0e0;
+}
+
+body.dark-mode #ModeDangChay {
+  color: #ff6b6b;
 }

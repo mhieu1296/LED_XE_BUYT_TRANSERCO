@@ -12,10 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  const items = Array.from(elements).map(el => ({
-    el,
-    pos: 0
-  }));
+  const items = Array.from(elements).map(el => {
+    // Tối ưu hóa GPU bằng will-change
+    el.style.willChange = "transform";
+    // Đảm bảo position absolute để transform hoạt động mượt
+    el.style.position = "absolute";
+    // el.style.top = "0"; // BỎ DÒNG NÀY: Để CSS tự động căn giữa theo vertical (flex align-items: center)
+    el.style.left = "0"; // Reset left về 0, dùng transform để di chuyển
+    return {
+      el,
+      pos: 0
+    };
+  });
 
   let isRunning = false;
   let lastTime = null;
@@ -74,7 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
       hideAll();
       currentItem.pos = container.offsetWidth;
       currentItem.el.style.display = "flex";
-      currentItem.el.style.left = currentItem.pos + "px";
+
+      // BẢN GỐC: currentItem.el.style.left = currentItem.pos + "px";
+      // TỐI ƯU: Sử dụng translateX để GPU xử lý
+      currentItem.el.style.transform = `translateX(${currentItem.pos}px) translateZ(0)`;
     }
 
     // Di chuyển
@@ -86,7 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // CHỈ 1 MARQUEE → LẶP LẠI CHÍNH NÓ
       if (enabledItems.length === 1) {
         currentItem.pos = container.offsetWidth;
-        currentItem.el.style.left = currentItem.pos + "px";
+        // BẢN GỐC: currentItem.el.style.left = currentItem.pos + "px";
+        currentItem.el.style.transform = `translateX(${currentItem.pos}px) translateZ(0)`;
       }
       // >= 2 MARQUEE → CHUYỂN LƯỢT
       else {
@@ -94,7 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
         hideAll();
       }
     } else {
-      currentItem.el.style.left = currentItem.pos + "px";
+      // BẢN GỐC: currentItem.el.style.left = currentItem.pos + "px";
+      // TỐI ƯU: translateZ(0) kích hoạt 3D acceleration giúp chữ đỡ mờ
+      currentItem.el.style.transform = `translateX(${currentItem.pos}px) translateZ(0)`;
     }
 
     animationId = requestAnimationFrame(animate);
@@ -111,14 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     animationId = requestAnimationFrame(animate);
   }
-
-  // function DungChayChu1() {
-  //   isRunning = false;
-  //   if (animationId) {
-  //     cancelAnimationFrame(animationId);
-  //     animationId = null;
-  //   }
-  // }
 
   // Dừng chạy chữ
   function DungChayChu1(canGiua = true) {
@@ -146,7 +152,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Tính vị trí căn giữa
       firstItem.pos = (containerWidth - itemWidth) / 2;
-      firstItem.el.style.left = firstItem.pos + "px";
+
+      // BẢN GỐC: firstItem.el.style.left = firstItem.pos + "px";
+      // TỐI ƯU: Sử dụng transform để giữ sự đồng nhất và mượt mà
+      firstItem.el.style.transform = `translateX(${firstItem.pos}px) translateZ(0)`;
     }
   }
 
@@ -182,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
     hide
   };
 
-  console.log("Marquee engine READY (state-driven)");
+  console.log("Marquee engine OPTIMIZED (GPU accelerated)");
 
 });
 

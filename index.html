@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LED XE BUÝT BÁN TỰ ĐỘNG</title>
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/font.css" />
   <link rel="stylesheet" href="css/popup.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/toast.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script src="js/dieu_khien_LED.js"></script>
   <script src="js/hien_thi_LED.js"></script>
   <script src="js/window_onload.js"></script>
@@ -18,10 +19,13 @@
   <script src="js/marquee.js"></script>
   <script src="js/event_listeners.js"></script>
   <script src="js/popup.js" defer></script>
-  <link rel="icon" href="/timbus.vn.ico">
+  <script src="js/toast.js"></script>
+  <script src="js/dark_mode.js"></script>
+  <link rel="icon" href="/timbus.vn.ico" />
 </head>
 
 <body>
+  <div id="toast-container"></div>
   <div id="LED">
     <!-- <p class="version">LED_V1.0_HANOI_72</p> -->
     <p id="maTuyen"></p>
@@ -72,7 +76,13 @@
     <p class="normalText">CHỌN MODE CHẠY</p>
     <div class="NutBam" id="modeSelection">
       <button class="XEDIEN1">XE ĐIỆN 1</button>
-      <p style="color: rgba(66, 113, 163); font-size: 25px; font-weight: bolder;">|</p>
+      <p style="
+            color: rgba(66, 113, 163);
+            font-size: 25px;
+            font-weight: bolder;
+          ">
+        |
+      </p>
       <button class="XEDIEN2">XE ĐIỆN 2</button>
       <button class="THUONG">THƯỜNG</button>
       <button class="LIENNINH">LIÊN NINH</button>
@@ -87,6 +97,10 @@
       </a>
       <button class="XoaDuLieu">XÓA</button>
     </div>
+    <p class="normalText">DARK MODE</p>
+    <div class="NutBam">
+      <button class="DarkMode">DARK MODE</button>
+    </div>
   </div>
   <div id="container">
     <div id="trangThai">
@@ -99,22 +113,16 @@
         <p id="mui_ten2">➜</p>
         <p id="diemCuoiLuu"></p>
       </div>
-      <p class="normalText">TRẠNG THÁI HOẠT ĐỘNG</p>
+      <p class="normalText">MODE ĐANG CHẠY: <span id="MODE"></span></p>
       <table class="Table">
         <tr>
           <th>CHẠY?</th>
           <th>TẠM DỪNG?</th>
           <th>CHẠY CHỮ?</th>
-          <th>MODE</th>
-          <!-- <th>XE ĐIỆN 1</th>  -->
-          <!-- không phải xe buýt điện mà là CÔNG TY CỔ PHẦN XE ĐIỆN HÀ NỘI (454 Phạm Văn Đồng) -->
-        </tr>
         <tr>
           <td id="isRunning"></td>
           <td id="isPausing">NO</td>
           <td id="isTextMoving">NO</td>
-          <td id="MODE">THƯỜNG</td>
-          <!-- <td id="isXD1">NO</td> -->
         </tr>
       </table>
     </div>
@@ -122,7 +130,7 @@
       <p class="normalText">BẢNG ĐIỆN TỬ XE BUÝT BÁN TỰ ĐỘNG</p>
       <div id="logobus">
         <p class="normalText">Special Thanks to</p>
-        <img src="assets/image/logohanoibus.png" alt="Transerco Hanoibus" srcset="">
+        <img src="assets/image/logohanoibus.png" alt="Transerco Hanoibus" srcset="" />
       </div>
       <a href="hdsd.html">
         <p class="normalText">HƯỚNG DẪN SỬ DỤNG</p>
@@ -136,7 +144,6 @@
         Vì sứ mệnh thay thế cho biển lật! <br />
         Bản quyền các logo thuộc về các cty vận tải công cộng
       </p>
-
     </div>
   </div>
 </body>

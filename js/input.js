@@ -1,57 +1,34 @@
-// Hiển thị thông báo (toast) trên màn hình
-function showToast(type, message) {
-  const container = document.getElementById('toast-container');
-
-
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.innerHTML = `<span>${message}</span>`;
-
-  let iconHTML = "";
-  if (type === 'success') {
-    iconHTML = '<i class="fa-solid fa-circle-check"></i>';
-  } else if (type === 'error') {
-    iconHTML = '<i class="fas fa-times-circle"></i>';
-  } else if (type === 'warning') {
-    iconHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
-  } else {
-    iconHTML = '<i class="fa-solid fa-circle-info"></i>';
-  }
-
-  toast.innerHTML = `${iconHTML} <span>${message}</span>`;
-
-  container.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.animation = "slideIn 0.4s ease reverse forwards";
-    setTimeout(() => toast.remove(), 400);
-  }, 3000);
-}
-
 // Kiểm tra và lưu dữ liệu nhập vào localStorage
 function NhapDuLieu() {
-  const inputs = document.querySelectorAll("input");
-  let isDayDu = true;
-  for (let input of inputs) {
-    const isRequired = !input.classList.contains("khongBatBuoc");
+  // Lấy các input theo ID thay vì index
+  const maTuyenInput = document.getElementById("maTuyenInput");
+  const diemDauInput = document.getElementById("diemDauInput");
+  const diemGiuaInput = document.getElementById("diemGiuaInput");
+  const diemCuoiInput = document.getElementById("diemCuoiInput");
+  const xiNghiepInput = document.getElementById("xiNghiepInput");
 
-    if (isRequired && input.value.trim() === "") {
+  const requiredInputs = [maTuyenInput, diemDauInput, diemCuoiInput, xiNghiepInput];
+  let isDayDu = true;
+
+  // Kiểm tra các input bắt buộc
+  requiredInputs.forEach(input => {
+    if (input.value.trim() === "") {
       isDayDu = false;
       input.style.borderBottom = "2px solid red";
-
-
     } else {
       input.style.borderBottom = "2px solid rgba(66, 113, 163)";
     }
-  }
+  });
 
+  // diemGiua không bắt buộc, chỉ reset border
+  diemGiuaInput.style.borderBottom = "2px solid rgba(66, 113, 163)";
 
   if (isDayDu === true) {
-    const maTuyen = inputs[0].value;
-    const diemDau = inputs[1].value;
-    const diemGiua = inputs[2].value;
-    const diemCuoi = inputs[3].value;
-    const xiNghiep = inputs[4].value;
+    const maTuyen = maTuyenInput.value;
+    const diemDau = diemDauInput.value;
+    const diemGiua = diemGiuaInput.value;
+    const diemCuoi = diemCuoiInput.value;
+    const xiNghiep = xiNghiepInput.value;
 
     localStorage.setItem("maTuyen", maTuyen);
     localStorage.setItem("diemDau", diemDau);
@@ -61,16 +38,12 @@ function NhapDuLieu() {
     localStorage.setItem("MaTuyenCanGiua", maTuyen);
 
     showToast('success', 'Đã lưu thông tin thành công!');
-    document.getElementById("canhBao").style.color = "green";
+    try { document.getElementById("canhBao").style.color = "green"; } catch (e) { }
   } else {
     showToast('error', 'Vui lòng nhập đầy đủ thông tin bắt buộc!');
-    document.getElementById("canhBao").style.color = "red";
+    try { document.getElementById("canhBao").style.color = "red"; } catch (e) { }
   }
-
-  document.getElementsByClassName("NhapDuLieu")[3].focus();
 }
-
-
 
 // Cài đặt sự kiện click cho các nút xóa
 function setupDeleteButtons() {
@@ -99,107 +72,155 @@ function tuyenDemo() {
   document.getElementById("xiNghiepInput").value = localStorage.getItem("xiNghiep");
 }
 
-// Thiết lập khi DOM sẵn sàng
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', setupDeleteButtons);
-} else {
+// ===== ROUTE SEARCH LOGIC =====
+let routesData = [];
+
+document.addEventListener("DOMContentLoaded", () => {
   setupDeleteButtons();
-}
 
+  const routeSearch = document.getElementById("routeSearch");
+  const searchDropdown = document.getElementById("searchDropdown");
+  const maTuyenInput = document.getElementById("maTuyenInput");
+  const diemDauInput = document.getElementById("diemDauInput");
+  const diemGiuaInput = document.getElementById("diemGiuaInput");
+  const diemCuoiInput = document.getElementById("diemCuoiInput");
+  const xiNghiepInput = document.getElementById("xiNghiepInput");
 
-let routes = [];
-let selectedRoute = null;
+  // Load routes.json
+  fetch("routes.json")
+    .then(response => {
+      if (!response.ok) throw new Error("Không tải được file JSON");
+      return response.json();
+    })
+    .then(data => {
+      routesData = data;
+    })
+    .catch(error => console.error("Lỗi load JSON:", error));
 
-/* ===== LOAD DATA ===== */
-fetch("routes.json")
-  .then(r => r.json())
-  .then(data => routes = data);
-
-/* ===== ELEMENTS ===== */
-const search = document.getElementById("searchTuyenInput");
-const dropdown = document.getElementById("searchDropdown");
-
-const fields = {
-  maTuyen: document.getElementById("maTuyenInput"),
-  diemDau: document.getElementById("diemDauInput"),
-  diemGiua: document.getElementById("diemGiuaInput"),
-  diemCuoi: document.getElementById("diemCuoiInput"),
-  xiNghiep: document.getElementById("xiNghiepInput")
-};
-
-/* ===== SEARCH ===== */
-search.addEventListener("input", () => {
-  const q = search.value.trim().toLowerCase();
-  dropdown.innerHTML = "";
-
-  if (!q) {
-    dropdown.classList.add("hidden");
-    return;
+  // Format tên tuyến để hiển thị
+  function formatRouteName(route) {
+    return route.maTuyen + ": " +
+      [route.diemDau, route.diemGiua, route.diemCuoi]
+        .filter(Boolean)
+        .join(" - ");
   }
 
-  const matches = routes.filter(r =>
-    r.maTuyen.toLowerCase().includes(q) ||
-    r.diemDau.toLowerCase().includes(q) ||
-    (r.diemGiua && r.diemGiua.toLowerCase().includes(q)) ||
-    r.diemCuoi.toLowerCase().includes(q)
-  );
+  // Lưu danh sách matches hiện tại và index được chọn
+  let currentMatches = [];
+  let selectedIndex = -1;
 
-  if (!matches.length) {
-    dropdown.classList.add("hidden");
-    return;
+  // Tìm kiếm và hiển thị dropdown
+  if (routeSearch) {
+    routeSearch.addEventListener("input", () => {
+      const query = routeSearch.value.trim().toLowerCase();
+      searchDropdown.innerHTML = "";
+      selectedIndex = -1;
+
+      if (!query) {
+        searchDropdown.classList.add("hidden");
+        currentMatches = [];
+        return;
+      }
+
+      // Filter routes theo mã tuyến, điểm đầu, điểm giữa, điểm cuối
+      currentMatches = routesData.filter(r =>
+        r.maTuyen.toLowerCase().includes(query) ||
+        r.diemDau.toLowerCase().includes(query) ||
+        (r.diemGiua && r.diemGiua.toLowerCase().includes(query)) ||
+        r.diemCuoi.toLowerCase().includes(query)
+      );
+
+      if (currentMatches.length === 0) {
+        searchDropdown.classList.add("hidden");
+        return;
+      }
+
+      currentMatches.forEach((route, index) => {
+        const item = document.createElement("div");
+        item.className = "dropdown-item";
+        item.textContent = formatRouteName(route);
+        item.addEventListener("click", () => selectRoute(route));
+        item.addEventListener("mouseenter", () => {
+          selectedIndex = index;
+          updateHighlight();
+        });
+        searchDropdown.appendChild(item);
+      });
+
+      searchDropdown.classList.remove("hidden");
+    });
+
+    // Keyboard navigation
+    routeSearch.addEventListener("keydown", (e) => {
+      const items = searchDropdown.querySelectorAll(".dropdown-item");
+      if (items.length === 0) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        selectedIndex = (selectedIndex + 1) % items.length;
+        updateHighlight();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+        updateHighlight();
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (selectedIndex >= 0 && selectedIndex < currentMatches.length) {
+          selectRoute(currentMatches[selectedIndex]);
+        }
+      } else if (e.key === "Escape") {
+        searchDropdown.classList.add("hidden");
+        selectedIndex = -1;
+      }
+    });
+
+    // Cập nhật highlight cho item được chọn
+    function updateHighlight() {
+      const items = searchDropdown.querySelectorAll(".dropdown-item");
+      items.forEach((item, index) => {
+        if (index === selectedIndex) {
+          item.classList.add("highlighted");
+          item.scrollIntoView({ block: "nearest" });
+        } else {
+          item.classList.remove("highlighted");
+        }
+      });
+    }
+
+    // Focus vào search -> hiện dropdown nếu có text
+    routeSearch.addEventListener("focus", () => {
+      if (routeSearch.value.trim() && searchDropdown.children.length > 0) {
+        searchDropdown.classList.remove("hidden");
+      }
+    });
   }
 
-  matches.forEach(route => {
-    const item = document.createElement("div");
-    item.className = "dropdown-item";
-    item.textContent = `${route.maTuyen} – ${route.diemDau} → ${route.diemCuoi}`;
-    item.onclick = () => selectRoute(route);
-    dropdown.appendChild(item);
-  });
+  // Chọn tuyến -> điền vào các input
+  function selectRoute(route) {
+    maTuyenInput.value = route.maTuyen || "";
+    diemDauInput.value = route.diemDau || "";
+    diemGiuaInput.value = route.diemGiua || "";
+    diemCuoiInput.value = route.diemCuoi || "";
+    xiNghiepInput.value = route.xiNghiep || "";
 
-  dropdown.classList.remove("hidden");
-});
+    routeSearch.value = formatRouteName(route);
+    searchDropdown.classList.add("hidden");
+  }
 
-/* ===== SELECT ROUTE ===== */
-// Chọn tuyến xe và điền thông tin vào các ô nhập
-function selectRoute(route) {
-  selectedRoute = route;
-
-  fields.maTuyen.value = route.maTuyen;
-  fields.diemDau.value = route.diemDau;
-  fields.diemGiua.value = route.diemGiua ?? "";
-  fields.diemCuoi.value = route.diemCuoi;
-  fields.xiNghiep.value = route.xiNghiep;
-
-  Object.values(fields).forEach(i => i.readOnly = true);
-
-  search.value = `${route.maTuyen} – ${route.diemDau} → ${route.diemCuoi}`;
-  dropdown.classList.add("hidden");
-}
-
-/* ===== DETECT CUSTOM ROUTE ===== */
-Object.values(fields).forEach(input => {
-  input.addEventListener("input", () => {
-    if (!selectedRoute) return;
-
-    const isCustom =
-      fields.maTuyen.value !== selectedRoute.maTuyen ||
-      fields.diemDau.value !== selectedRoute.diemDau ||
-      fields.diemGiua.value !== (selectedRoute.diemGiua ?? "") ||
-      fields.diemCuoi.value !== selectedRoute.diemCuoi ||
-      fields.xiNghiep.value !== selectedRoute.xiNghiep;
-
-    if (isCustom) {
-      search.value = "Tuyến tuỳ chỉnh";
-      selectedRoute = null;
-      Object.values(fields).forEach(i => i.readOnly = false);
+  // Khi sửa bất kỳ input nào -> xóa search
+  const allInputs = [maTuyenInput, diemDauInput, diemGiuaInput, diemCuoiInput, xiNghiepInput];
+  allInputs.forEach(input => {
+    if (input) {
+      input.addEventListener("input", () => {
+        routeSearch.value = "";
+      });
     }
   });
-});
 
-/* ===== CLICK OUTSIDE ===== */
-document.addEventListener("click", e => {
-  if (!search.contains(e.target) && !dropdown.contains(e.target)) {
-    dropdown.classList.add("hidden");
-  }
+  // Click bên ngoài -> ẩn dropdown
+  document.addEventListener("click", (e) => {
+    if (!routeSearch.contains(e.target) && !searchDropdown.contains(e.target)) {
+      searchDropdown.classList.add("hidden");
+    }
+  });
 });

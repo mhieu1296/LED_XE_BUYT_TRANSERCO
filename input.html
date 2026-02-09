@@ -8,10 +8,13 @@
   <link rel="shortcut icon" href="/timbus.vn.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/input.css" />
   <link rel="stylesheet" href="css/font.css" />
+  <link rel="stylesheet" href="css/toast.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script src="js/dieu_khien_LED.js"></script>
   <script src="js/input.js"></script>
   <script src="js/window_onload.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/dark_mode.js"></script>
 </head>
 
 <body>
@@ -31,6 +34,20 @@
     <div class="NhapDuLieu">
       <table>
 
+        <tr>
+          <td>
+            <p class="InputLabel">tìm tuyến (tự động điền)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="search-container">
+              <input id="routeSearch" type="text" placeholder="Nhập mã tuyến hoặc điểm đầu/cuối..."
+                autocomplete="off" />
+              <div id="searchDropdown" class="search-dropdown hidden"></div>
+            </div>
+          </td>
+        </tr>
         <tr>
           <td>
             <p class="InputLabel">mã tuyến *</p>
@@ -101,7 +118,7 @@
     <div class="NutBam">
       <button onclick="NhapDuLieu()">LƯU</button>
       <a href="/"><button>QUAY LẠI</button></a>
-      <button onclick="tuyenDemo()">TUYẾN DEMO</button>
+      <button onclick="tuyenDemo()">TUYẾN LOCAL</button>
     </div>
   </div>
 </body>

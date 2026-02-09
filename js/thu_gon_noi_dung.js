@@ -3,10 +3,12 @@ function toggleDivs() {
   const divs = document.getElementsByClassName("hiddenDiv");
   for (let i = 0; i < divs.length; i++) {
     const div = divs[i];
-    if (div.style.display === "flex") {
-      div.style.display = "none";
-    } else {
+    // Dùng getComputedStyle để lấy style thực tế (kể cả từ CSS)
+    const computedDisplay = window.getComputedStyle(div).display;
+    if (computedDisplay === "none") {
       div.style.display = "flex";
+    } else {
+      div.style.display = "none";
     }
   }
 }

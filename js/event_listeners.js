@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
     chayBtns.forEach(btn => {
         btn.addEventListener('click', function () {
             if (typeof start === 'function') {
+                if (localStorage.getItem("maTuyen") === null || localStorage.getItem("maTuyen") === "") {
+                    showToast('error', 'Nạp LED trước khi chạy!');
+                    return;
+                }
                 start();
                 if (window.marquee) marquee.DungChayChu1();
             }
@@ -50,6 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Nút NGÀY/ĐÊM
     document.querySelectorAll('.DayAndNight').forEach(btn => {
         btn.addEventListener('click', toggleDayNight);
+    });
+
+    // Nút DARK MODE
+    document.querySelectorAll('.DarkMode').forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (typeof toggleDarkMode === 'function') toggleDarkMode();
+        });
     });
 
     // NHÓM NÚT BẤM (Xử lý Hover nổi lên trên màn tối)
@@ -140,11 +151,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.style.color = unselectedForXD1;
                 this.style.borderColor = unselectedForXD1;
                 this.style.borderStyle = "none";
+                showToast('error', 'Đã hủy chọn phần mở rộng\nXE ĐIỆN 1!');
             } else {
                 marquee.show("xiNghiep");
                 this.style.color = selectedForXD1;
                 this.style.borderColor = selectedForXD1;
                 this.style.borderStyle = "solid";
+                showToast('success', 'Đã chọn phần mở rộng\nXE ĐIỆN 1!');
             }
             isA = !isA;
             if (typeof tatHieuUngNhay === 'function') tatHieuUngNhay();

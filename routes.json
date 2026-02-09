@@ -4,7 +4,7 @@
     "diemDau": "Bến xe Gia Lâm",
     "diemGiua": null,
     "diemCuoi": "Bến xe Yên Nghĩa",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "11-13-15-20 phút/chuyến",
     "thoiGian": "5h00-21h00",
     "giaVe": "10000đ/lượt"
@@ -14,7 +14,7 @@
     "diemDau": "Bác Cổ",
     "diemGiua": null,
     "diemCuoi": "Bến xe Yên Nghĩa",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "11-13-16-20 phút/chuyến",
     "thoiGian": "5h00 - 22h30",
     "giaVe": "10000đ/lượt"
@@ -24,7 +24,7 @@
     "diemDau": "Bến xe Giáp Bát",
     "diemGiua": null,
     "diemCuoi": "Bến xe Gia Lâm",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "11-13-16-20 phút/chuyến",
     "thoiGian": "5h03 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -34,7 +34,7 @@
     "diemDau": "Bến xe Nước Ngầm",
     "diemGiua": null,
     "diemCuoi": "Giang Biên (Long Biên)",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "20 phút/chuyến",
     "thoiGian": "Đầu A:5h00-21h00; Đầu B:5h10-21h10",
     "giaVe": "10000đ/lượt"
@@ -44,7 +44,7 @@
     "diemDau": "Long Biên",
     "diemGiua": null,
     "diemCuoi": "Bệnh viện Nội tiết trung ương cơ sở 2",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "14-15-22 phút/chuyến",
     "thoiGian": "5h00-21h00",
     "giaVe": "10000đ/lượt"
@@ -54,7 +54,7 @@
     "diemDau": "MAI ĐỘNG",
     "diemGiua": null,
     "diemCuoi": "ĐẠI HỌC TÀI NGUYÊN VÀ MÔI TRƯỜNG HÀ NỘI",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "20-25-30 phút/chuyến",
     "thoiGian": "Đầu A:5h00-21h25; Đầu B:5h00-21h20",
     "giaVe": "10000đ/lượt"
@@ -94,7 +94,7 @@
     "diemDau": "Bến xe Giáp Bát",
     "diemGiua": null,
     "diemCuoi": "Tân Dân",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "22 -28 phút/chuyến",
     "thoiGian": "Đầu A:5h25-20h00; Đầu B:5h15-20h15",
     "giaVe": "15000đ/lượt"
@@ -104,7 +104,7 @@
     "diemDau": "Bến xe Giáp Bát",
     "diemGiua": null,
     "diemCuoi": "Phú Túc",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "20-30-phút/chuyến",
     "thoiGian": "Đầu A:5h28-20h03; Đầu B:5h15-20h15",
     "giaVe": "15000đ/lượt"
@@ -114,7 +114,7 @@
     "diemDau": "Cầu Giấy",
     "diemGiua": null,
     "diemCuoi": "Sân bay Nội Bài (điểm đỗ T1)",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "10-15 phút/chuyến",
     "thoiGian": "5h00 - 22h35",
     "giaVe": "12000đ/lượt"
@@ -163,8 +163,8 @@
     "maTuyen": "11",
     "diemDau": "Công viên Thống Nhất",
     "diemGiua": null,
-    "diemCuoi": "Học viện Nông Nghiệp VIệt Nam",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "diemCuoi": "Học viện Nông Nghiệp Việt Nam",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "10 - 12 - 15 phút/chuyến",
     "thoiGian": "5h00 - 22h00",
     "giaVe": "10000đ/lượt"
@@ -184,7 +184,7 @@
     "diemDau": "CV nước Hồ Tây",
     "diemGiua": null,
     "diemCuoi": "Cổ Nhuế (HVCS)",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "16 phút/chuyến",
     "thoiGian": "5h00 - 21h06",
     "giaVe": "8000đ/lượt"
@@ -194,7 +194,7 @@
     "diemDau": "Bến xe Gia Lâm",
     "diemGiua": null,
     "diemCuoi": "Phố Nỉ",
-    "xiNghiep": "XN xe buýt Yên Viên",
+    "xiNghiep": "Xí nghiệp xe buýt Yên Viên",
     "gianCach": "12-10-15 phút/chuyến",
     "thoiGian": "Đầu A: 5h00-19h35; Đầu B: 5h05 - 21h05",
     "giaVe": "15000đ/lượt"
@@ -204,7 +204,7 @@
     "diemDau": "Bến xe Mỹ Đình",
     "diemGiua": null,
     "diemCuoi": "Bến xe Nước Ngầm",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "10-12-15-20 phút/chuyến",
     "thoiGian": "4h50 - 21h20",
     "giaVe": "8000đ/lượt"
@@ -214,7 +214,7 @@
     "diemDau": "Long Biên",
     "diemGiua": null,
     "diemCuoi": "Sân bay Nội Bài (điểm đỗ xe buýt nhà ga T1).",
-    "xiNghiep": "XN xe buýt Yên Viên",
+    "xiNghiep": "Xí nghiệp xe buýt Yên Viên",
     "gianCach": "10-15 phút/chuyến",
     "thoiGian": "5h00-22h00",
     "giaVe": "15000đ/lượt"
@@ -234,7 +234,7 @@
     "diemDau": "Nhổn",
     "diemGiua": "Quốc lộ 32",
     "diemCuoi": "Bến xe Sơn Tây",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "10-12-16 phút/chuyến",
     "thoiGian": "Đầu A:5h00-22h05; Đầu B:4h30-21h30",
     "giaVe": "12000đ/lượt"
@@ -244,7 +244,7 @@
     "diemDau": "Nhổn",
     "diemGiua": "Quốc lộ 32",
     "diemCuoi": "Minh Châu",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "30-50 phút/lượt",
     "thoiGian": "4h40 - 19h50",
     "giaVe": "20000đ/lượt"
@@ -254,7 +254,7 @@
     "diemDau": "Nhổn",
     "diemGiua": null,
     "diemCuoi": "Bến xe Sơn Tây",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "22 phút/chuyến",
     "thoiGian": "5h00 - 20h04",
     "giaVe": "15000đ/lượt"
@@ -284,7 +284,7 @@
     "diemDau": "Bến xe Gia Lâm",
     "diemGiua": null,
     "diemCuoi": "Khu đô thị Kiến Hưng",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "10-12 phút/chuyến",
     "thoiGian": "Đầu A:5h00-22h05; Đầu B: 4h40 - 21h35",
     "giaVe": "10000đ/lượt"
@@ -294,7 +294,7 @@
     "diemDau": "Bến xe Giáp Bát",
     "diemGiua": null,
     "diemCuoi": "Đô Nghĩa (Hà Đông)",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "23-25-36 phút/chuyến",
     "thoiGian": "5h00-21h30",
     "giaVe": "10000đ/lượt"
@@ -304,7 +304,7 @@
     "diemDau": "Nguyễn Công Trứ",
     "diemGiua": null,
     "diemCuoi": "Nguyễn Công Trứ",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "17 - 20 phút/chuyến",
     "thoiGian": "5h00 - 21h15",
     "giaVe": "10000đ/lượt"
@@ -314,7 +314,7 @@
     "diemDau": "Long Biên",
     "diemGiua": "Ngã Tư Sở",
     "diemCuoi": "Cầu Giấy",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "12 -15 -20 phút/chuyến",
     "thoiGian": "5h00-22h00",
     "giaVe": "10000đ/lượt"
@@ -324,7 +324,7 @@
     "diemDau": "BV Nhiệt đới TW Cơ sở 2",
     "diemGiua": null,
     "diemCuoi": "Bến xe Giáp Bát",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "11 - 14 - 15- 20 - 25 phút/chuyến",
     "thoiGian": "5h09 - 21h00",
     "giaVe": "12000đ/lượt"
@@ -334,7 +334,7 @@
     "diemDau": "Mai Động",
     "diemGiua": null,
     "diemCuoi": "SVĐ Quốc gia",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "9-10-15 phút/chuyến",
     "thoiGian": "5h00 - 22h00",
     "giaVe": "10000đ/lượt"
@@ -344,7 +344,7 @@
     "diemDau": "Bến xe Yên Nghĩa",
     "diemGiua": null,
     "diemCuoi": "Bến xe Nam Thăng Long",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "7 - 8 -10 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -354,7 +354,7 @@
     "diemDau": "BX Nước Ngầm",
     "diemGiua": "Đông Ngạc",
     "diemCuoi": "Đại học Mỏ",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "12-13-14-15 phút/chuyến",
     "thoiGian": "5h00 - 21h30",
     "giaVe": "10000đ/lượt"
@@ -364,7 +364,7 @@
     "diemDau": "BX Giáp Bát",
     "diemGiua": null,
     "diemCuoi": "Tân Lập",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "12 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -374,7 +374,7 @@
     "diemDau": "Khu đô thị Gamuda",
     "diemGiua": null,
     "diemCuoi": "Bến xe Mỹ Đình",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "14-15-18 phút/chuyến",
     "thoiGian": "5h00 - 21h25",
     "giaVe": "10000đ/lượt"
@@ -384,7 +384,7 @@
     "diemDau": "Bách Khoa",
     "diemGiua": null,
     "diemCuoi": "Chèm (ĐH Mỏ)",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "10-12-15-20 phút/chuyến",
     "thoiGian": "5h05 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -394,7 +394,7 @@
     "diemDau": "Bến xe Giáp Bát",
     "diemGiua": null,
     "diemCuoi": "Nhổn",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "7-15-20 phút/chuyến",
     "thoiGian": "5h00 - 22h30",
     "giaVe": "10000đ/lượt"
@@ -414,7 +414,7 @@
     "diemDau": "Bến xe Mỹ Đình",
     "diemGiua": null,
     "diemCuoi": "Bến xe Gia Lâm",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "10-15 phút/Chuyến",
     "thoiGian": "5h00 - 22h30",
     "giaVe": "10000đ/lượt"
@@ -424,7 +424,7 @@
     "diemDau": "Trần Khánh Dư",
     "diemGiua": null,
     "diemCuoi": "Nam Thăng Long",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "15 - 20 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -434,7 +434,7 @@
     "diemDau": "Nam Thăng Long",
     "diemGiua": null,
     "diemCuoi": "Thanh Lâm",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "15-30 phút/Chuyến",
     "thoiGian": "5h05 - 20h00",
     "giaVe": "10000đ/lượt"
@@ -444,7 +444,7 @@
     "diemDau": "Yên Phụ",
     "diemGiua": null,
     "diemCuoi": "Khu đô thị Linh Đàm",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "25 phút/chuyến",
     "thoiGian": "5h00 - 21h10",
     "giaVe": "8000đ/lượt"
@@ -464,7 +464,7 @@
     "diemDau": "Tân Xuân",
     "diemGiua": null,
     "diemCuoi": "Mai Động",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "18-19-22 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -474,7 +474,7 @@
     "diemDau": "CÔNG VIÊN NGHĨA ĐÔ",
     "diemGiua": null,
     "diemCuoi": "MAI ĐỘNG",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "15-20 phút/chuyến",
     "thoiGian": "5h00 - 21h20",
     "giaVe": "12000đ/lượt"
@@ -484,7 +484,7 @@
     "diemDau": "Công viên Thống Nhất",
     "diemGiua": null,
     "diemCuoi": "Văn Lâm",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "12 phút/chuyến",
     "thoiGian": "5h00 - 22h00",
     "giaVe": "10000đ/lượt"
@@ -494,7 +494,7 @@
     "diemDau": "Nam Thăng Long",
     "diemGiua": null,
     "diemCuoi": "BX Giáp Bát",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "17 - 19 - 20 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -504,7 +504,7 @@
     "diemDau": "Bến xe Giáp Bát",
     "diemGiua": null,
     "diemCuoi": "Trung Mầu (Gia Lâm)",
-    "xiNghiep": "Công ty CP Xe Khách",
+    "xiNghiep": "Công ty Cổ phần Xe Khách Hà Nội",
     "gianCach": "15 - 20 phút/chuyến",
     "thoiGian": "5:00 - 21:00",
     "giaVe": "12000đ/lượt"
@@ -564,7 +564,7 @@
     "diemDau": "Trần Khánh Dư",
     "diemGiua": null,
     "diemCuoi": "Nhổn",
-    "xiNghiep": "Công ty CP Xe Khách",
+    "xiNghiep": "Công ty Cổ phần Xe Khách Hà Nội",
     "gianCach": "10 - 15 - 20 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -574,7 +574,7 @@
     "diemDau": "Long Biên",
     "diemGiua": null,
     "diemCuoi": "Khu đô thị An Lạc (Hoài Đức)",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "14-17 phút",
     "thoiGian": "5h00-21h00",
     "giaVe": "10000đ/lượt"
@@ -584,7 +584,7 @@
     "diemDau": "Bến Xe Gia Lâm",
     "diemGiua": null,
     "diemCuoi": "Trần Vỹ (Học viện Tư Pháp)",
-    "xiNghiep": "Công ty CP Xe Khách",
+    "xiNghiep": "Công ty Cổ phần Xe Khách Hà Nội",
     "gianCach": "10 - 15 - 20 phút/chuyến",
     "thoiGian": "5h00 - 21h10",
     "giaVe": "10000đ/lượt"
@@ -594,7 +594,7 @@
     "diemDau": "Công viên Thống Nhất",
     "diemGiua": null,
     "diemCuoi": "Lệ Chi (Gia Lâm)",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "11-12-14-16 phút/chuyến",
     "thoiGian": "5h00 - 21h15",
     "giaVe": "10000đ/lượt"
@@ -604,7 +604,7 @@
     "diemDau": "Công viên Thống Nhất",
     "diemGiua": null,
     "diemCuoi": "Lệ Chi (Gia Lâm)",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "11-12-14-16 phút/chuyến",
     "thoiGian": "5h00 - 21h15",
     "giaVe": "10000đ/lượt"
@@ -614,7 +614,7 @@
     "diemDau": "Hoàng Quốc Việt",
     "diemGiua": null,
     "diemCuoi": "Đông Anh",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "20-21-22-23-24 phút/chuyến",
     "thoiGian": "5h00-20h35",
     "giaVe": "10000đ/lượt"
@@ -624,7 +624,7 @@
     "diemDau": "Bến xe Mỹ Đình",
     "diemGiua": null,
     "diemCuoi": "Kim Hoa (Mê Linh)",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "20-21-22-24 phút/chuyến",
     "thoiGian": "5h00-20h35",
     "giaVe": "10000đ/lượt"
@@ -634,7 +634,7 @@
     "diemDau": "Long Biên",
     "diemGiua": null,
     "diemCuoi": "Bắc Ninh",
-    "xiNghiep": "XN xe buýt Yên Viên",
+    "xiNghiep": "Xí nghiệp xe buýt Yên Viên",
     "gianCach": "10-15 phút/chuyến",
     "thoiGian": "4h45-21h15",
     "giaVe": "15000đ/lượt"
@@ -644,7 +644,7 @@
     "diemDau": "TTTM Aeon Mall Long Biên",
     "diemGiua": null,
     "diemCuoi": "Cầu Giấy",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "12-15 -20 phút/chuyến",
     "thoiGian": "5h00-21h00",
     "giaVe": "10000đ/lượt"
@@ -654,7 +654,7 @@
     "diemDau": "Mỹ Đình",
     "diemGiua": null,
     "diemCuoi": "Núi Đôi",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "25-30 phút/chuyến",
     "thoiGian": "Mỹ Đình (5h35-20h40) - Núi Đôi (5h30-20h00)",
     "giaVe": "15000đ/lượt"
@@ -664,7 +664,7 @@
     "diemDau": "Học viện Phật Giáo VN",
     "diemGiua": "Xuân Giang - Bắc Phú",
     "diemCuoi": "Học viện Phật Giáo VN",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "20- 25 phút/Chuyến",
     "thoiGian": "4h50 - 18h40",
     "giaVe": "15000đ/lượt"
@@ -744,7 +744,7 @@
     "diemDau": "Khu công nghiệp Bắc Thăng Long",
     "diemGiua": null,
     "diemCuoi": "Tiến Thịnh (Mê Linh)",
-    "xiNghiep": "XN xe buýt Yên Viên",
+    "xiNghiep": "Xí nghiệp xe buýt Yên Viên",
     "gianCach": "15-20 phút/Chuyến",
     "thoiGian": "5h00-21h30",
     "giaVe": "12000đ/lượt"
@@ -752,8 +752,8 @@
   {
     "maTuyen": "64",
     "diemDau": "BX Mỹ Đình",
-    "diemGiua": "Phố Nỉ",
-    "diemCuoi": "TTTM Bình An",
+    "diemGiua": null,
+    "diemCuoi": "Phố Nỉ (TTTM Bình An)",
     "xiNghiep": "Công ty Hải Vân",
     "gianCach": "15 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
@@ -774,7 +774,7 @@
     "diemDau": "Bến xe Yên Nghĩa",
     "diemGiua": null,
     "diemCuoi": "Đan Phượng",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "20 - 30 phút/Chuyến",
     "thoiGian": "5h00 - 20h30",
     "giaVe": "12000đ/lượt"
@@ -784,10 +784,20 @@
     "diemDau": "Đan Phượng",
     "diemGiua": null,
     "diemCuoi": "Đoài Phương",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "25-27-28-30 phút/Chuyến",
     "thoiGian": "4h50 - 20h30",
     "giaVe": "15000đ/lượt"
+  },
+  {
+    "maTuyen": "68",
+    "diemDau": "Hà Đông (BX Yên Nghĩa)",
+    "diemGiua": null,
+    "diemCuoi": "Sân bay Nội Bài",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
+    "gianCach": "30 phút/chuyến",
+    "thoiGian": "Đầu A: 05:15 - 20:15, Đầu B: 07:25 - 22:20",
+    "giaVe": "50000đ/lượt"
   },
   {
     "maTuyen": "69",
@@ -824,7 +834,7 @@
     "diemDau": "Cầu Diễn",
     "diemGiua": null,
     "diemCuoi": "Khu đô thị Linh Đàm",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "20 -25 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -834,17 +844,27 @@
     "diemDau": "Công viên Nghĩa Đô",
     "diemGiua": null,
     "diemCuoi": "Khu đô thị Thanh Hà",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "20-30 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
+  },
+  {
+    "maTuyen": "86",
+    "diemDau": "Ga Hà Nội",
+    "diemGiua": null,
+    "diemCuoi": "Sân bay Nội Bài",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
+    "gianCach": "45 phút/chuyến",
+    "thoiGian": "Đầu A: 05:15 - 20:40, Đầu B: 06:40 - 22:15",
+    "giaVe": "45000đ/lượt"
   },
   {
     "maTuyen": "87",
     "diemDau": "Bến xe Mỹ Đình",
     "diemGiua": "Quốc Oai",
     "diemCuoi": "Xuân Mai",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "15 - 20 - 30 phút/chuyến",
     "thoiGian": "05h00 - 19h45",
     "giaVe": "15000đ/lượt"
@@ -854,7 +874,7 @@
     "diemDau": "Bến xe Mỹ Đình",
     "diemGiua": "Hòa Lạc",
     "diemCuoi": "Xuân Mai",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "15-25 phút/chuyến.",
     "thoiGian": "BX Mỹ Đình(5h05 - 18h30); Xuân Mai (5h00 - 20h10)",
     "giaVe": "20000đ/lượt"
@@ -864,7 +884,7 @@
     "diemDau": "Bến xe Yên Nghĩa",
     "diemGiua": null,
     "diemCuoi": "Bến xe Sơn Tây",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "22-30 phút/chuyến",
     "thoiGian": "Đầu A:5h00-20h50; Đầu B:5h00-20h30",
     "giaVe": "20000đ/lượt"
@@ -874,7 +894,7 @@
     "diemDau": "Hào Nam (điểm đỗ xe buýt – ga Cát Linh).",
     "diemGiua": null,
     "diemCuoi": "Sân bay Nội Bài (bãi đỗ xe nhà ga T2).",
-    "xiNghiep": "XN xe buýt Yên Viên",
+    "xiNghiep": "Xí nghiệp xe buýt Yên Viên",
     "gianCach": "20 phút/chuyến",
     "thoiGian": "5h30-22h30",
     "giaVe": "15000đ/lượt"
@@ -884,7 +904,7 @@
     "diemDau": "Bến xe Yên Nghĩa",
     "diemGiua": "Kim Bài",
     "diemCuoi": "Phú Túc",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "14-15-20-30 phút/ chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "12000đ/lượt"
@@ -894,7 +914,7 @@
     "diemDau": "Nhổn",
     "diemGiua": null,
     "diemCuoi": "Phú Sơn (Ba Vì)",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "10-15 phút/chuyến",
     "thoiGian": "Nhổn (5h00-21h00); Tây Đằng (4h30-21h00)",
     "giaVe": "20000đ/lượt"
@@ -904,7 +924,7 @@
     "diemDau": "Nam Thăng Long",
     "diemGiua": null,
     "diemCuoi": "Bắc Sơn (Sóc Sơn)",
-    "xiNghiep": "XN xe buýt Yên Viên",
+    "xiNghiep": "Xí nghiệp xe buýt Yên Viên",
     "gianCach": "22 - 25 phút/chuyến",
     "thoiGian": "Nam Thăng Long(5h05-18h50); Bắc Sơn (5h25-20h45)",
     "giaVe": "20000đ/lượt"
@@ -924,7 +944,7 @@
     "diemDau": "Nam Thăng Long",
     "diemGiua": null,
     "diemCuoi": "Xuân Hòa",
-    "xiNghiep": "XN xe buýt Yên Viên",
+    "xiNghiep": "Xí nghiệp xe buýt Yên Viên",
     "gianCach": "20 -30 phút/chuyến",
     "thoiGian": "Đầu A:5h10-19h50; Đầu B:5h00-20h30",
     "giaVe": "12000đ/lượt"
@@ -934,7 +954,7 @@
     "diemDau": "Cầu Giấy",
     "diemGiua": null,
     "diemCuoi": "Đông Anh",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "20-23-25 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "15000đ/lượt"
@@ -944,7 +964,7 @@
     "diemDau": "Hoài Đức",
     "diemGiua": null,
     "diemCuoi": "Công viên Nghĩa Đô",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "20 - 30 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -954,7 +974,7 @@
     "diemDau": "Long Biên",
     "diemGiua": null,
     "diemCuoi": "TTTM Aeon Mall Long Biên",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "20 -25 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -964,7 +984,7 @@
     "diemDau": "Kim Mã",
     "diemGiua": null,
     "diemCuoi": "Ngũ Hiệp (Thanh Trì)",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "20 phút/chuyến",
     "thoiGian": "5h00 - 21h10",
     "giaVe": "10000đ/lượt"
@@ -974,7 +994,7 @@
     "diemDau": "Long Biên",
     "diemGiua": null,
     "diemCuoi": "Đặng Xá (Gia Lâm)",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "20 - 30 phút/chuyến",
     "thoiGian": "5h00 - 21h10",
     "giaVe": "10000đ/lượt"
@@ -1004,7 +1024,7 @@
     "diemDau": "Bến xe Yên Nghĩa",
     "diemGiua": null,
     "diemCuoi": "Vân Đình",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "20 - 30 phút/chuyến",
     "thoiGian": "5h00 - 21h20",
     "giaVe": "15000đ/lượt"
@@ -1014,7 +1034,7 @@
     "diemDau": "Bến xe Mỹ Đình",
     "diemGiua": null,
     "diemCuoi": "Hương Sơn",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "15-25phút/chuyến",
     "thoiGian": "4h50-21h05",
     "giaVe": "20000đ/lượt"
@@ -1024,7 +1044,7 @@
     "diemDau": "Bến xe Mỹ Đình",
     "diemGiua": "Hồng Quang",
     "diemCuoi": "Hương Sơn",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "17-20 - 25 phút/chuyến",
     "thoiGian": "4h55-20h55",
     "giaVe": "20000đ/lượt"
@@ -1044,7 +1064,7 @@
     "diemDau": "Đô Nghĩa",
     "diemGiua": null,
     "diemCuoi": "Cầu Giấy",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "15-18 phút/chuyến",
     "thoiGian": "Đầu A:5h00-21h00; Đầu B:5h00-21h20",
     "giaVe": "10000đ/lượt"
@@ -1054,7 +1074,7 @@
     "diemDau": "KĐT Mỗ Lao",
     "diemGiua": null,
     "diemCuoi": "TTTM Aeon Mall Long Biên",
-    "xiNghiep": "XN Xe Khách Nam",
+    "xiNghiep": "Xí nghiệp Xe Khách Nam",
     "gianCach": "21 - 26 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "10000đ/lượt"
@@ -1064,7 +1084,7 @@
     "diemDau": "Kim Mã",
     "diemGiua": null,
     "diemCuoi": "Làng văn hóa du lịch các dân tộc VN",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "15 - 20 phút/chuyến",
     "thoiGian": "Đầu A:5h00-20h40; Đầu B:5h00-21h00",
     "giaVe": "20000đ/lượt"
@@ -1074,7 +1094,7 @@
     "diemDau": "Bến xe Thường Tín",
     "diemGiua": null,
     "diemCuoi": "Minh Tân",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "20- 30 - 40 phút/chuyến",
     "thoiGian": "4h25 - 21h10",
     "giaVe": "15000đ/lượt"
@@ -1084,7 +1104,7 @@
     "diemDau": "Bến xe Thường Tín",
     "diemGiua": null,
     "diemCuoi": "Quang Lãng (Đại Xuyên)",
-    "xiNghiep": "XN xe buýt Hà Nội",
+    "xiNghiep": "Xí nghiệp xe buýt Hà Nội",
     "gianCach": "40-60 phút/chuyến",
     "thoiGian": "5h00-21h00",
     "giaVe": "12000đ/lượt"
@@ -1094,7 +1114,7 @@
     "diemDau": "Bến xe Mỹ Đình",
     "diemGiua": null,
     "diemCuoi": "Sân bay Nội Bài (điểm đỗ xe buýt nhà ga T1)",
-    "xiNghiep": "Công ty CP Xe Điện",
+    "xiNghiep": "Công ty CP Xe Điện Hà Nội",
     "gianCach": "20 - 30 phút/chuyến",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "12000đ/lượt"
@@ -1104,7 +1124,7 @@
     "diemDau": "BX Sơn Tây",
     "diemGiua": null,
     "diemCuoi": "Minh Quang (Ba Vì)",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "20- 28- 30 phút/chuyến",
     "thoiGian": "5h00 - 19h30",
     "giaVe": "12000đ/lượt"
@@ -1114,7 +1134,7 @@
     "diemDau": "BX Sơn Tây",
     "diemGiua": null,
     "diemCuoi": "Bất Bạt",
-    "xiNghiep": "XN xe buýt 10-10",
+    "xiNghiep": "Xí nghiệp xe buýt 10-10",
     "gianCach": "25 phút/chuyến",
     "thoiGian": "4h30-20h20",
     "giaVe": "12000đ/lượt"
@@ -1124,7 +1144,7 @@
     "diemDau": "Nam Thăng Long",
     "diemGiua": null,
     "diemCuoi": "Thạch Đà (Mê Linh)",
-    "xiNghiep": "XN xe buýt Yên Viên",
+    "xiNghiep": "Xí nghiệp xe buýt Yên Viên",
     "gianCach": "20 phút/chuyến",
     "thoiGian": "Nam Thăng Long(4h45-19h42); Thạch Đà (5h19-20h16)",
     "giaVe": "10000đ/lượt"
@@ -1144,7 +1164,7 @@
     "diemDau": "Bến xe Yên Nghĩa",
     "diemGiua": null,
     "diemCuoi": "Miếu Môn",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "20-25-30 phút/chuyến",
     "thoiGian": "Đầu A:5h00-20h30; Đầu B:5h00-21h00",
     "giaVe": "10000đ/lượt"
@@ -1164,7 +1184,7 @@
     "diemDau": "Bến xe Yên Nghĩa",
     "diemGiua": null,
     "diemCuoi": "Yên Xuân",
-    "xiNghiep": "XN xe buýt nhanh BRT HN",
+    "xiNghiep": "Xí nghiệp xe buýt nhanh BRT HN",
     "gianCach": "17-22-26-30 phút phút/Chuyến",
     "thoiGian": "5h00-19h30",
     "giaVe": "15000đ/lượt"
@@ -1174,7 +1194,7 @@
     "diemDau": "Hòa Lạc",
     "diemGiua": null,
     "diemCuoi": "Nhổn",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "20 - 25 phút/Chuyến",
     "thoiGian": "5h30-20h30",
     "giaVe": "15000đ/lượt"
@@ -1194,7 +1214,7 @@
     "diemDau": "Hòa Lạc",
     "diemGiua": null,
     "diemCuoi": "Bất Bạt (Ba Vì)",
-    "xiNghiep": "XN xe buýt Cầu Bươu",
+    "xiNghiep": "Xí nghiệp xe buýt Cầu Bươu",
     "gianCach": "20 - 25 phút/Chuyến",
     "thoiGian": "Đầu A:5h30-20h30; Đầu B:5h00-19h30",
     "giaVe": "20000đ/lượt"
@@ -1204,7 +1224,7 @@
     "diemDau": "Bến xe Gia Lâm",
     "diemGiua": null,
     "diemCuoi": "KCN Bắc Thăng Long",
-    "xiNghiep": "Công ty CP Xe Khách",
+    "xiNghiep": "Công ty Cổ phần Xe Khách Hà Nội",
     "gianCach": "20 - 25 phút/lượt",
     "thoiGian": "5h00 - 21h00",
     "giaVe": "15000đ/lượt"
@@ -1224,7 +1244,7 @@
     "diemDau": "BX Yên Nghĩa",
     "diemGiua": "Chúc Sơn",
     "diemCuoi": "Thị trấn Kim Bài",
-    "xiNghiep": "Công ty CP Xe Khách",
+    "xiNghiep": "Công ty Cổ phần Xe Khách Hà Nội",
     "gianCach": "",
     "thoiGian": "Giá vé",
     "giaVe": "12000đ/lượt"
@@ -1284,7 +1304,7 @@
     "diemDau": "Hào Nam",
     "diemGiua": null,
     "diemCuoi": "Phù Đổng",
-    "xiNghiep": "Công ty CP Xe Khách",
+    "xiNghiep": "Công ty Cổ phần Xe Khách Hà Nội",
     "gianCach": "10-15 phút/chuyến",
     "thoiGian": "5h00-21h00",
     "giaVe": "10000đ/lượt"
@@ -1422,7 +1442,7 @@
   {
     "maTuyen": "E07",
     "diemDau": "Long Biên",
-    "diemGiua": null,
+    "diemGiua": "Cửa Nam",
     "diemCuoi": "KĐT Smart City",
     "xiNghiep": "Vinbus",
     "gianCach": "12-15-20 phút/chuyến",
@@ -1431,7 +1451,7 @@
   },
   {
     "maTuyen": "E08",
-    "diemDau": "Khu Liên Cơ Quan Sở Ngành HN",
+    "diemDau": "Nam Thăng Long",
     "diemGiua": null,
     "diemCuoi": "KĐT Times City",
     "xiNghiep": "Vinbus",
