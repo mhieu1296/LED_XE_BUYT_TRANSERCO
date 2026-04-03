@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modeNames = ['xe_dien2', 'thuong', 'lien_ninh', 'hanoibrt', 'bao_yen', 'demo'];
     const modeNamesVn = ['Xe Điện 2', 'Thường', 'Liên Ninh', 'Hanoi BRT', 'Bảo Yến', 'Demo'];
 
+    const maTuyen = document.getElementById("maTuyen");  
     modes.forEach((selector, index) => {
         document.querySelectorAll(selector).forEach(btn => {
             btn.addEventListener('click', function () {
@@ -184,9 +185,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Logic riêng cho hiệu ứng nhảy
                 if (selector === '.BAOYEN') {
-                    if (typeof batHieuUngNhay === 'function') batHieuUngNhay();
+                    if (typeof batHieuUngNhay === 'function'){
+                        batHieuUngNhay();
+                        maTuyen.style.borderStyle = "none";
+                    }
                 } else {
-                    if (typeof tatHieuUngNhay === 'function') tatHieuUngNhay();
+                    if (typeof tatHieuUngNhay === 'function'){
+                        tatHieuUngNhay();
+                        maTuyen.style.borderStyle = "solid";
+                    }
                 }
             });
         });

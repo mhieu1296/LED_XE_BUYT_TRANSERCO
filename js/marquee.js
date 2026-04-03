@@ -15,10 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const items = Array.from(elements).map(el => {
     // Tối ưu hóa GPU bằng will-change
     el.style.willChange = "transform";
-    // Đảm bảo position absolute để transform hoạt động mượt
-    el.style.position = "absolute";
-    // el.style.top = "0"; // BỎ DÒNG NÀY: Để CSS tự động căn giữa theo vertical (flex align-items: center)
-    el.style.left = "0"; // Reset left về 0, dùng transform để di chuyển
+    // el.style.position = "absolute"; // BỎ: CSS sẽ xử lý dựa trên class .scrolling
+    // el.style.left = "0"; // BỎ: CSS sẽ xử lý dựa trên class .scrolling
     return {
       el,
       pos: 0
@@ -80,10 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Render marquee hiện tại (chỉ khi được phép)
     if (currentItem.el.style.display === "none") {
       hideAll();
+      currentItem.el.classList.add("scrolling"); // Kích hoạt absolute cho việc transform
       currentItem.pos = container.offsetWidth;
       currentItem.el.style.display = "flex";
 
-      // BẢN GỐC: currentItem.el.style.left = currentItem.pos + "px";
       // TỐI ƯU: Sử dụng translateX để GPU xử lý
       currentItem.el.style.transform = `translateX(${currentItem.pos}px) translateZ(0)`;
     }
@@ -119,9 +117,24 @@ document.addEventListener("DOMContentLoaded", function () {
   function ChayChu1() {
     if (isRunning) return;
 
-    currentIndex = 0;
-    lastTime = null;
     isRunning = true;
+    lastTime = null;
+    currentIndex = 0;
+
+    // Reset vị trí bắt đầu cho CHỈ marquee đầu tiên đang được phép chạy
+    hideAll();
+    const enabledItems = items.filter(item => item.el.dataset.enabled === "true");
+
+    if (enabledItems.length > 0) {
+      const firstItem = enabledItems[0];
+      firstItem.el.classList.add("scrolling");
+      // Bắt đầu từ vị trí hiện tại (giả sử đang được căn giữa bởi CSS Flexbox)
+      const containerWidth = container.offsetWidth;
+      const itemWidth = firstItem.el.offsetWidth;
+      firstItem.pos = (containerWidth - itemWidth) / 2;
+      firstItem.el.style.transform = `translateX(${firstItem.pos}px) translateZ(0)`;
+      firstItem.el.style.display = "flex";
+    }
 
     animationId = requestAnimationFrame(animate);
   }
@@ -135,27 +148,21 @@ document.addEventListener("DOMContentLoaded", function () {
       animationId = null;
     }
 
+    // Xóa class scrolling và reset state từ tất cả items
+    items.forEach(item => {
+      item.el.classList.remove("scrolling");
+      item.el.style.transform = ""; // Reset transform để centering CSS có hiệu lực
+      item.pos = 0; // Reset internal pos
+    });
+
     if (!canGiua) return;
 
-    // ===== CĂN GIỮA MARQUEE THỨ NHẤT =====
+    // Hiển thị marquee thứ nhất
     const firstItem = items[0];
-    if (!firstItem) return;
-
-    // Chỉ căn giữa nếu marquee này được phép hiển thị
-    if (firstItem.el.dataset.enabled === "true") {
-      const containerWidth = container.offsetWidth;
-      const itemWidth = firstItem.el.offsetWidth;
-
-      // Hiển thị marquee thứ nhất
+    if (firstItem && firstItem.el.dataset.enabled === "true") {
       hideAll();
       firstItem.el.style.display = "flex";
-
-      // Tính vị trí căn giữa
-      firstItem.pos = (containerWidth - itemWidth) / 2;
-
-      // BẢN GỐC: firstItem.el.style.left = firstItem.pos + "px";
-      // TỐI ƯU: Sử dụng transform để giữ sự đồng nhất và mượt mà
-      firstItem.el.style.transform = `translateX(${firstItem.pos}px) translateZ(0)`;
+      // KHÔNG CẦN TÍNH TOÁN: CSS (flexbox) sẽ tự động căn giữa vì position không còn là absolute
     }
   }
 

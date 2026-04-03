@@ -12,23 +12,7 @@ console.log(
   "font-size: 20px; font-family: Arial"
 );
 
-// Căn giữa phần tử con trong phần tử cha
-function centerChildInParent(parentId, childId) {
-  const parent = document.getElementById(parentId);
-  const child = document.getElementById(childId);
-
-  if (!parent || !child) {
-    console.warn("Không tìm thấy div cha hoặc div con");
-    return;
-  }
-
-  const parentWidth = parent.offsetWidth;
-  const childWidth = child.offsetWidth;
-
-  const left = (parentWidth - childWidth) / 2;
-
-  child.style.left = left + "px";
-}
+// (Đã thay thế bằng CSS Flexbox để tự động căn giữa và thích ứng mọi màn hình)
 
 // Đảo ngược vị trí điểm đầu và điểm cuối
 function daoChieuLED(Dau, Cuoi) {
@@ -104,7 +88,7 @@ function daoChieuLED(Dau, Cuoi) {
 function batHieuUngNhay() {
   // nhấp nháy mã tuyến
   const element = document.getElementById("maTuyen");
-  element.style.animation = "blink 1.25s steps(1, end) infinite";
+  element.style.animation = "blink 2s steps(1, end) infinite";
 }
 
 // Tắt hiệu ứng nhấp nháy cho mã tuyến
@@ -117,6 +101,7 @@ function tatHieuUngNhay() {
 // Đặt lại trạng thái ban đầu của bảng LED
 function reset() {
   // hàm xóa toàn bộ LED
+  floatTransition.cancel();
   dungLai();
   marquee.DungChayChu1();
 

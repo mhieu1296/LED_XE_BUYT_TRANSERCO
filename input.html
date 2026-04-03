@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -8,13 +8,17 @@
   <link rel="shortcut icon" href="/timbus.vn.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/input.css" />
   <link rel="stylesheet" href="css/font.css" />
-  <link rel="stylesheet" href="css/toast.css">
+  <link rel="stylesheet" href="css/toast.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <script src="js/dieu_khien_LED.js"></script>
-  <script src="js/input.js"></script>
-  <script src="js/window_onload.js"></script>
-  <script src="js/toast.js"></script>
-  <script src="js/dark_mode.js"></script>
+  <script defer src="js/dieu_khien_LED.js"></script>
+  <script defer src="js/input.js"></script>
+  <script defer src="js/window_onload.js"></script>
+  <script defer src="js/toast.js"></script>
+  <script defer src="js/dark_mode.js"></script>
+  <script defer src="js/fetch_api.js"></script>
+
+  <!-- for IndexedDB -->
+  <script defer type="module" src="main.js"></script>
 </head>
 
 <body>
@@ -33,7 +37,6 @@
     <p id="NhapLabel">NHẬP DỮ LIỆU TUYẾN</p>
     <div class="NhapDuLieu">
       <table>
-
         <tr>
           <td>
             <p class="InputLabel">tìm tuyến (tự động điền)</p>
@@ -42,8 +45,7 @@
         <tr>
           <td>
             <div class="search-container">
-              <input id="routeSearch" type="text" placeholder="Nhập mã tuyến hoặc điểm đầu/cuối..."
-                autocomplete="off" />
+              <input id="routeSearch" type="text" placeholder="Tính năng đang phát triển" autocomplete="off" disabled />
               <div id="searchDropdown" class="search-dropdown hidden"></div>
             </div>
           </td>

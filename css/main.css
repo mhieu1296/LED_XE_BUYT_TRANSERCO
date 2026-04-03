@@ -228,17 +228,24 @@ sup {
   color: rgb(246, 29, 4);
 
   margin-left: 15px;
+  margin-right: 15px;
+  padding: 10px;
   /* margin-right: 15px;  */
-  font-size: 150px;
+  font-size: 100px;
   text-transform: uppercase;
   flex-shrink: 0;
-  transform: scaleX(.8);
+  /* transform: scaleX(.8); */
+
+  border-style: solid;
+  border-color: yellow;
+  border-width: 2px;
+  /* border-radius: 5px; */
 }
 
 
 @media screen and (max-width: 1024px) {
   #maTuyen {
-    font-size: 70px;
+    font-size: 45px;
     margin: 5px;
   }
 }
@@ -257,7 +264,7 @@ sup {
   white-space: nowrap;
 }
 
-.NoiDungChayChu[data-force-hide="true"] .marquee {
+.NoiDungChayChu[data-force-hide="true"]>.marquee {
   display: none !important;
 }
 
@@ -270,12 +277,19 @@ sup {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  position: absolute;
+  position: relative;
+  /* Default to relative for flex centering */
   color: rgb(17, 205, 142);
   font-size: 75px;
   text-transform: uppercase;
+  width: fit-content;
+  /* Ensure it only takes as much space as the text */
+}
 
-
+.marquee.scrolling {
+  position: absolute;
+  /* Set to absolute ONLY when scrolling */
+  left: 0;
 }
 
 .marquee-hidden {

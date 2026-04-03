@@ -59,21 +59,22 @@ function hienThiMaTuyen_DiemDauCuoi() {
     return;
   }
 
-  if (marquee.coChayChuHayKhong() === false && document.getElementById("isTextMoving").innerText === "YES") {
-    marquee.ChayChu1();
-  } else if (document.getElementById("isTextMoving").innerText === "NO") {
-    marquee.DungChayChu1(false);
-  }
+  floatTransition.apply(function () {
+    if (marquee.coChayChuHayKhong() === false && document.getElementById("isTextMoving").innerText === "YES") {
+      marquee.ChayChu1();
+    } else if (document.getElementById("isTextMoving").innerText === "NO") {
+      marquee.DungChayChu1(); // canGiua = true → căn giữa route-info trước khi float
+    }
 
-  elements.maTuyen.style.display = "flex";
-  document.querySelector(".NoiDungChayChu").dataset.forceHide = "false";
-  elements.hanoibus.style.display = "none";
+    elements.maTuyen.style.display = "flex";
+    document.querySelector(".NoiDungChayChu").dataset.forceHide = "false";
+    elements.hanoibus.style.display = "none";
 
-  elements.TuyenCanGiua.style.display = "none";
-  elements.Transerco.style.display = "none";
-  elements.HuyDong.style.display = "none";
-  elements.VeGara.style.display = "none";
-  centerChildInParent('NoiDungChayChu', 'route-info');
+    elements.TuyenCanGiua.style.display = "none";
+    elements.Transerco.style.display = "none";
+    elements.HuyDong.style.display = "none";
+    elements.VeGara.style.display = "none";
+  });
 }
 
 // Hiển thị Mã tuyến + Logo Hanoibus
@@ -92,15 +93,17 @@ function hienThiMaTuyen_Hanoibus() {
     return;
   }
 
-  marquee.DungChayChu1();
-  elements.maTuyen.style.visibility = "visible";
-  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
-  elements.hanoibus.style.display = "block";
+  floatTransition.apply(function () {
+    marquee.DungChayChu1();
+    elements.maTuyen.style.visibility = "visible";
+    document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
+    elements.hanoibus.style.display = "block";
 
-  elements.TuyenCanGiua.style.display = "none";
-  elements.Transerco.style.display = "none";
-  elements.HuyDong.style.display = "none";
-  elements.VeGara.style.display = "none";
+    elements.TuyenCanGiua.style.display = "none";
+    elements.Transerco.style.display = "none";
+    elements.HuyDong.style.display = "none";
+    elements.VeGara.style.display = "none";
+  });
 }
 
 // Hiển thị Logo Hanoibus
@@ -119,14 +122,16 @@ function hienThiHanoibus() {
     return;
   }
 
-  elements.maTuyen.style.display = "none";
-  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
-  elements.hanoibus.style.display = "block";
+  floatTransition.apply(function () {
+    elements.maTuyen.style.display = "none";
+    document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
+    elements.hanoibus.style.display = "block";
 
-  elements.TuyenCanGiua.style.display = "none";
-  elements.Transerco.style.display = "none";
-  elements.HuyDong.style.display = "none";
-  elements.VeGara.style.display = "none";
+    elements.TuyenCanGiua.style.display = "none";
+    elements.Transerco.style.display = "none";
+    elements.HuyDong.style.display = "none";
+    elements.VeGara.style.display = "none";
+  });
 }
 
 // function hienThiMaTuyen_XiNghiep() {
@@ -195,6 +200,7 @@ function hienThiTrungGian1_2() {
     return;
   }
 
+  floatTransition.cancel();
   elements.maTuyen.style.visibility = "hidden";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "flex";
@@ -218,6 +224,7 @@ function hienThiTrungGian2() {
 
   const elements = getElements();
 
+  floatTransition.cancel();
   elements.maTuyen.style.visibility = "hidden";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
@@ -245,14 +252,16 @@ function hienThiMaTuyenCanGiua() {
     return;
   }
 
-  elements.maTuyen.style.display = "none";
-  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
-  elements.hanoibus.style.display = "none";
+  floatTransition.apply(function () {
+    elements.maTuyen.style.display = "none";
+    document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
+    elements.hanoibus.style.display = "none";
 
-  elements.TuyenCanGiua.style.display = "flex";
-  elements.Transerco.style.display = "none";
-  elements.HuyDong.style.display = "none";
-  elements.VeGara.style.display = "none";
+    elements.TuyenCanGiua.style.display = "flex";
+    elements.Transerco.style.display = "none";
+    elements.HuyDong.style.display = "none";
+    elements.VeGara.style.display = "none";
+  });
 }
 
 // Hiệu ứng xóa mã tuyến căn giữa
@@ -267,6 +276,7 @@ function hienThiTrungGian3() {
   console.log("Hàm hiệu ứng xóa mã tuyến căn giữa chạy");
 
   const elements = getElements();
+  floatTransition.cancel();
   elements.maTuyen.style.display = "flex";
   elements.maTuyen.style.visibility = "hidden";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
@@ -295,6 +305,7 @@ function hienThiTrungGian4() {
     return;
   }
 
+  floatTransition.cancel();
   elements.maTuyen.style.visibility = "visible";
   document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
   elements.hanoibus.style.display = "none";
@@ -322,15 +333,17 @@ function hienThiMaTuyen_Transerco() {
     return;
   }
 
-  elements.maTuyen.style.display = "flex";
-  elements.maTuyen.style.visibility = "visible";
-  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
-  elements.hanoibus.style.display = "none";
+  floatTransition.apply(function () {
+    elements.maTuyen.style.display = "flex";
+    elements.maTuyen.style.visibility = "visible";
+    document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
+    elements.hanoibus.style.display = "none";
 
-  elements.TuyenCanGiua.style.display = "none";
-  elements.Transerco.style.display = "flex";
-  elements.HuyDong.style.display = "none";
-  elements.VeGara.style.display = "none";
+    elements.TuyenCanGiua.style.display = "none";
+    elements.Transerco.style.display = "flex";
+    elements.HuyDong.style.display = "none";
+    elements.VeGara.style.display = "none";
+  });
 }
 
 // Hiển thị Logo Transerco
@@ -350,15 +363,17 @@ function hienThiTranserco() {
     return;
   }
 
-  elements.maTuyen.style.display = "none";
-  elements.maTuyen.style.visibility = "visible";
-  document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
-  elements.hanoibus.style.display = "none";
+  floatTransition.apply(function () {
+    elements.maTuyen.style.display = "none";
+    elements.maTuyen.style.visibility = "visible";
+    document.querySelector(".NoiDungChayChu").dataset.forceHide = "true";
+    elements.hanoibus.style.display = "none";
 
-  elements.TuyenCanGiua.style.display = "none";
-  elements.Transerco.style.display = "flex";
-  elements.HuyDong.style.display = "none";
-  elements.VeGara.style.display = "none";
+    elements.TuyenCanGiua.style.display = "none";
+    elements.Transerco.style.display = "flex";
+    elements.HuyDong.style.display = "none";
+    elements.VeGara.style.display = "none";
+  });
 }
 
 // Chế độ Hiển thị "HUY ĐỘNG RA TUYẾN"
@@ -565,6 +580,7 @@ async function start() {
 // Dừng chạy các hiệu ứng
 function dungLai() {
   // hàm dừng chạy
+  floatTransition.cancel();
   document.getElementById("isRunning").innerText = "NO";
   document.getElementById("isPausing").innerText = "YES";
   running = false;
