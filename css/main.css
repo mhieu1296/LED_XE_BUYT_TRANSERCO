@@ -5,7 +5,32 @@ a {
 body {
   /* background-color: rgba(66, 113, 163); */
   min-width: 410px;
+  margin: 0;
+  padding-top: 230px;
+  /* Offset for fixed LED display */
+}
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 260px;
+  /* Match body padding-top */
+  background-color: white;
+  z-index: 1000;
+}
+
+body.dark-mode::before {
+  background-color: #121212;
+}
+
+@media screen and (max-width: 1024px) {
+  body::before {
+    height: 160px;
+    /* Match mobile body padding-top */
+  }
 }
 
 .normalText {
@@ -41,7 +66,6 @@ sup {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px;
   /* font-family: SVN-ProductSansBold; */
   font-family: ChakraPetch;
 
@@ -52,24 +76,21 @@ sup {
   border-radius: 5px;
   overflow: hidden;
   position: fixed;
+  top: 30px;
+  left: 30px;
+  width: calc(100% - 60px);
+  margin: 0;
+  box-sizing: border-box;
 
   border-style: solid;
   border-color: rgba(66, 113, 163);
   border-width: 2.5px;
 
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; */
-
-  z-index: 999;
-  /* Nằm dưới LED và Button nhưng trên mọi thứ khác */
+  z-index: 1001;
+  /* Ensure it stays above everything */
   pointer-events: none;
-  /* Cho phép click xuyên qua nếu cần, hoặc bỏ dòng này để chặn tương tác bên dưới */
 }
 
-#LED,
 .DayAndNight {
   position: relative;
   z-index: 1000;
@@ -81,6 +102,11 @@ sup {
 } */
 
 @media screen and (max-width: 1024px) {
+  body {
+    padding-top: 130px;
+    /* Offset for smaller LED display */
+  }
+
   #LED {
     height: 100px;
   }
@@ -460,6 +486,7 @@ mui_ten2 {
 
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   /* số dòng muốn hiển thị */
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -700,4 +727,63 @@ body.dark-mode .p-secondary {
 
 body.dark-mode #ModeDangChay {
   color: #ff6b6b;
+}
+
+/* ===== RADIO BUTTON STYLES ===== */
+.ScrollModeArea {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Averta-Std-CY;
+  color: rgba(66, 113, 163);
+  user-select: none;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 2px solid rgba(66, 113, 163);
+}
+
+.radio-container:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.radio-container input:checked~.checkmark {
+  background-color: rgba(66, 113, 163);
+}
+
+.checkmark:after {
+  display: none;
+}
+
+body.dark-mode .radio-container {
+  color: #e0e0e0;
+}
+
+body.dark-mode .checkmark {
+  background-color: #333;
+  border-color: #555;
 }

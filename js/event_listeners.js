@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modeNames = ['xe_dien2', 'thuong', 'lien_ninh', 'hanoibrt', 'bao_yen', 'demo'];
     const modeNamesVn = ['Xe Điện 2', 'Thường', 'Liên Ninh', 'Hanoi BRT', 'Bảo Yến', 'Demo'];
 
-    const maTuyen = document.getElementById("maTuyen");  
+    const maTuyen = document.getElementById("maTuyen");
     modes.forEach((selector, index) => {
         document.querySelectorAll(selector).forEach(btn => {
             btn.addEventListener('click', function () {
@@ -185,12 +185,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Logic riêng cho hiệu ứng nhảy
                 if (selector === '.BAOYEN') {
-                    if (typeof batHieuUngNhay === 'function'){
+                    if (typeof batHieuUngNhay === 'function') {
                         batHieuUngNhay();
                         maTuyen.style.borderStyle = "none";
                     }
                 } else {
-                    if (typeof tatHieuUngNhay === 'function'){
+                    if (typeof tatHieuUngNhay === 'function') {
                         tatHieuUngNhay();
                         maTuyen.style.borderStyle = "solid";
                     }
@@ -206,5 +206,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (btn.innerText === 'XÓA' && typeof xacNhan === 'function') xacNhan();
             });
         }
+    });
+
+    // Sự kiện đổi kiểu cuộn dọc
+    document.querySelectorAll('input[name="scrollMode"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            localStorage.setItem("scrollMode", this.value);
+            if (typeof showToast === 'function') {
+                showToast('success', 'Đã đổi kiểu cuộn thành: ' + (this.value === 'bounce' ? 'Bouncing' : 'Thường'));
+            }
+        });
     });
 }); 

@@ -50,8 +50,8 @@ window.onload = function () {
   document.getElementById("diemCuoiLuu").innerText = diemCuoi;
   document.getElementById("xiNghiepLuu").innerText = xiNghiep;
 
-
-
-
-
+  // Khôi phục kiểu cuộn dọc
+  const scrollMode = localStorage.getItem("scrollMode") || "linear";
+  const radio = document.querySelector(`input[name="scrollMode"][value="${scrollMode}"]`);
+  if (radio) radio.checked = true;
 };

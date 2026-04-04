@@ -132,39 +132,82 @@ const floatTransition = (function () {
         container.appendChild(newWrapper);
 
         // ===== BƯỚC 4: Animation loop =====
+        const scrollMode = (function () {
+            const saved = localStorage.getItem("scrollMode");
+            const radio = document.querySelector('input[name="scrollMode"]:checked');
+            return radio ? radio.value : (saved || "linear");
+        })();
+
         let lastTime = null;
-        let oldOffset = 0;             // offset hiện tại của nội dung cũ (bắt đầu 0, giảm dần → lên trên)
-        let newOffset = containerHeight; // offset hiện tại của nội dung mới (bắt đầu = containerHeight, giảm → 0)
+        let startTime = null;
+        const DURATION = 1200; // ms for bouncing
+        let oldOffset = 0;
+        let newOffset = containerHeight;
+
+        // Easing function for bouncing
+        function easeOutBack(x) {
+            const c1 = 1.5;
+            const c3 = c1 + 1.2; // Slightly more overshoot
+            return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+        }
 
         function animateFrame(timestamp) {
+            if (!startTime) startTime = timestamp;
             if (!lastTime) lastTime = timestamp;
-            const elapsed = (timestamp - lastTime) / 1000;
+            const elapsedSinceLast = (timestamp - lastTime) / 1000;
+            const totalElapsed = timestamp - startTime;
             lastTime = timestamp;
 
-            const delta = SPEED * elapsed;
             let done = true;
 
-            // Di chuyển nội dung cũ lên trên
-            if (oldClone) {
-                oldOffset -= delta;
-                if (oldOffset <= -containerHeight) {
-                    oldClone.remove();
-                    oldClone = null;
-                } else {
-                    oldClone.style.transform = `translateY(${oldOffset}px)`;
-                    done = false;
-                }
-            }
+            if (scrollMode === "bounce") {
+                const progress = Math.min(totalElapsed / DURATION, 1);
+                const easedProgress = easeOutBack(progress);
 
-            // Di chuyển nội dung mới lên
-            if (newWrapper) {
-                newOffset -= delta;
-                if (newOffset <= 0) {
-                    newOffset = 0;
-                    newWrapper.style.transform = `translateY(0px)`;
-                } else {
+                // Di chuyển nội dung cũ
+                if (oldClone) {
+                    oldOffset = -containerHeight * easedProgress;
+                    oldClone.style.transform = `translateY(${oldOffset}px)`;
+                    if (progress >= 1) {
+                        oldClone.remove();
+                        oldClone = null;
+                    } else {
+                        done = false;
+                    }
+                }
+
+                // Di chuyển nội dung mới
+                if (newWrapper) {
+                    newOffset = containerHeight * (1 - easedProgress);
                     newWrapper.style.transform = `translateY(${newOffset}px)`;
-                    done = false;
+                    if (progress < 1) done = false;
+                }
+            } else {
+                // Chế độ LINEAR (Mặc định)
+                const delta = SPEED * elapsedSinceLast;
+
+                // Di chuyển nội dung cũ lên trên
+                if (oldClone) {
+                    oldOffset -= delta;
+                    if (oldOffset <= -containerHeight) {
+                        oldClone.remove();
+                        oldClone = null;
+                    } else {
+                        oldClone.style.transform = `translateY(${oldOffset}px)`;
+                        done = false;
+                    }
+                }
+
+                // Di chuyển nội dung mới lên
+                if (newWrapper) {
+                    newOffset -= delta;
+                    if (newOffset <= 0) {
+                        newOffset = 0;
+                        newWrapper.style.transform = `translateY(0px)`;
+                    } else {
+                        newWrapper.style.transform = `translateY(${newOffset}px)`;
+                        done = false;
+                    }
                 }
             }
 

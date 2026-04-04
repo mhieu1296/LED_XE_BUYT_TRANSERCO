@@ -135,10 +135,15 @@ function reset() {
 function setElevated(element, isElevated) {
   if (!element) return;
   if (isElevated) {
-    element.style.position = 'relative'; // Bắt buộc có để z-index hoạt động
-    element.style.zIndex = '10000';      // Cao hơn mức 9999 của màn tối
+    // Nếu là LED thì giữ fixed, các cái khác thì dùng relative để z-index có tác dụng
+    if (element.id !== 'LED') {
+      element.style.position = 'relative';
+    }
+    element.style.zIndex = '10002'; // Cao hơn mức 9999 của màn tối
   } else {
-    element.style.position = '';
+    if (element.id !== 'LED') {
+      element.style.position = '';
+    }
     element.style.zIndex = '';
   }
 }
