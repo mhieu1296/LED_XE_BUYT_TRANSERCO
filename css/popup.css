@@ -17,7 +17,7 @@
 
 /* Hộp thoại */
 .modal-box {
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   background: white; padding: 30px; width: 400px;
   border-radius: 20px; text-align: center;
   position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.2);
@@ -34,7 +34,7 @@
 
 /* Nút bấm chung */
 .modal-btn {
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   padding: 10px 25px; border-radius: 25px; border: none;
   font-weight: 600; cursor: pointer; transition: var(--transition);
 }

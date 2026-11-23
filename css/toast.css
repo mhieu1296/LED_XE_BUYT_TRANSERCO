@@ -21,7 +21,7 @@
     padding: 15px 25px;
     border-radius: 8px;
     color: white;
-    font-family: Averta-Std-CY;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
     font-weight: 500;
     min-width: 300px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);

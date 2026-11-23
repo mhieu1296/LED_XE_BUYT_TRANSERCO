@@ -33,7 +33,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   font-size: clamp(16px, 4vw, 20px);
   color: rgba(66, 113, 163);
   margin: 10px 0;
@@ -69,7 +69,7 @@ a {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   font-size: 16px;
   color: #333;
   background-color: #fff;
@@ -103,7 +103,7 @@ a {
 .search-dropdown .dropdown-item {
   padding: 10px 12px;
   cursor: pointer;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   font-size: 14px;
   border-bottom: 1px solid #eee;
 }
@@ -141,7 +141,7 @@ a {
   cursor: pointer;
   width: 160px;
   height: 40px;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
 }
 
 .NutBam button:hover {
@@ -152,7 +152,7 @@ a {
 
 .InputLabel {
   width: max-content;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   font-size: clamp(14px, 3.5vw, 20px);
   color: rgba(66, 113, 163);
   text-transform: uppercase;
@@ -163,7 +163,7 @@ input[type="text"] {
   min-width: 0;
   border: none;
   border-bottom: 2px solid rgba(66, 113, 163);
-  font-family: "Courier New", Courier, monospace;
+  font-family: -apple-system-monospaced, "SF Mono", Menlo, Monaco, "Courier New", Courier, monospace;
   font-size: clamp(14px, 3.5vw, 20px);
   font-weight: bold;
   box-sizing: border-box;

@@ -21,3 +21,24 @@
   src: url("../assets/fonts/LinotteBold.ttf") format("truetype");
   font-style: normal;
 }
+
+:root {
+  /* ==========================================================================
+     CẤU HÌNH FONT VÀ LOGIC THEO NỀN TẢNG (APPLE NATIVE FONT FALLBACK)
+     - Trên thiết bị Apple (macOS, iOS, iPadOS): Trình duyệt nhận diện
+       -apple-system, BlinkMacSystemFont và SF Pro để hiển thị font native của Apple.
+     - Trên các hệ điều hành khác (Windows, Android, Linux): Các thuộc tính Apple
+       tự động bị bỏ qua (không hỗ trợ), trình duyệt dùng font cũ (Averta-Std-CY, Quicksand, Courier New).
+     ========================================================================== */
+  --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display";
+  --font-apple-mono: -apple-system-monospaced, "SF Mono", Menlo, Monaco;
+
+  /* Font chính cho toàn bộ giao diện (ngoại trừ #LED) */
+  --font-primary: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Averta-Std-CY", sans-serif;
+
+  /* Font cho trang HDSD */
+  --font-hdsd: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Quicksand, sans-serif;
+
+  /* Font monospace cho các ô nhập văn bản */
+  --font-mono: -apple-system-monospaced, "SF Mono", Menlo, Monaco, "Courier New", Courier, monospace;
+}

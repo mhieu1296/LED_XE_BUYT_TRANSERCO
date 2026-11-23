@@ -38,7 +38,7 @@ body.dark-mode::before {
   margin: 10px;
   justify-content: center;
   align-items: center;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
 
   font-size: 20px;
   color: rgba(66, 113, 163);
@@ -166,7 +166,7 @@ sup {
   cursor: pointer;
   width: 160px;
   height: 40px;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
 }
 
 #modeSelection button {
@@ -200,7 +200,7 @@ sup {
   margin: 10px;
   justify-content: center;
   align-items: center;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   font-size: 20px;
   color: red;
 }
@@ -468,7 +468,7 @@ sup {
   gap: 7.5px;
   justify-content: center;
   align-items: center;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   font-size: 20px;
   color: rgb(17, 205, 142);
   text-transform: uppercase;
@@ -504,7 +504,7 @@ mui_ten2 {
   border-color: rgba(126, 208, 172, 1); */
   border-collapse: collapse;
   /* border: 2px solid rgba(66, 113, 163); */
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   font-size: 20px;
   /* min-width: 500px; */
   table-layout: fixed;
@@ -561,7 +561,7 @@ mui_ten2 {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease, visibility 0.2s;
-  font-family: 'Averta-Std-CY', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", 'Averta-Std-CY', sans-serif;
 }
 
 .p-overlay.active {
@@ -626,7 +626,7 @@ mui_ten2 {
 }
 
 .p-btn {
-  font-family: 'Averta-Std-CY', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", 'Averta-Std-CY', sans-serif;
   padding: 12px 28px;
   border: none;
   border-radius: 12px;
@@ -745,7 +745,7 @@ body.dark-mode #ModeDangChay {
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 18px;
-  font-family: Averta-Std-CY;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Averta-Std-CY, sans-serif;
   color: rgba(66, 113, 163);
   user-select: none;
 }
